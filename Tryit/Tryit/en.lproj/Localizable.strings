@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Tryit
+
+  Created by Mars on 2/24/14.
+  Copyright (c) 2014 Sktlab. All rights reserved.
+*/
+
+"MENU_EXPLOER_DISHES" = "Exploer Dishes";
+"MENU_CREATE_COUPON" = "Create Coupon";
+"MENU_MY_PROFILE" = "My Profile";
