@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+#import "FitViewController.h"
+@interface MenuViewController : FitViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *menuTable;
 

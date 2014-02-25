@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AA8C5F18BC3C830081EA29 /* FitViewController.m */; };
 		41B4545818B461C70054E406 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545718B461C70054E406 /* Foundation.framework */; };
 		41B4545A18B461C70054E406 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545918B461C70054E406 /* CoreGraphics.framework */; };
 		41B4545C18B461C70054E406 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545B18B461C70054E406 /* UIKit.framework */; };
@@ -19,6 +20,8 @@
 		41B4547918B461C70054E406 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545B18B461C70054E406 /* UIKit.framework */; };
 		41B4548118B461C70054E406 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41B4547F18B461C70054E406 /* InfoPlist.strings */; };
 		41B4548318B461C70054E406 /* TryitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B4548218B461C70054E406 /* TryitTests.m */; };
+		41C2BC7D18BB7E9200686CE8 /* DishesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C2BC7C18BB7E9200686CE8 /* DishesCell.m */; };
+		41C2BC7F18BB7EE700686CE8 /* DishesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C2BC7E18BB7EE700686CE8 /* DishesCell.xib */; };
 		41C46B2518BAE011006E2B80 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C46B2318BAE011006E2B80 /* MenuViewController.m */; };
 		41C46B2618BAE011006E2B80 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C46B2418BAE011006E2B80 /* MenuViewController.xib */; };
 		41C46B2B18BAE485006E2B80 /* DishesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C46B2918BAE485006E2B80 /* DishesViewController.m */; };
@@ -30,6 +33,7 @@
 		41FB011F18BB322500E852B5 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FB011E18BB322500E852B5 /* CenterViewController.m */; };
 		41FB012318BB323700E852B5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FB012118BB323700E852B5 /* ProfileViewController.m */; };
 		41FB012418BB323700E852B5 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FB012218BB323700E852B5 /* ProfileViewController.xib */; };
+		41FB012818BB52F500E852B5 /* DishItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FB012718BB52F500E852B5 /* DishItem.m */; };
 		FA770C91FC564E06B19B5368 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ADC66DCC014BB3BC4D9158 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41AA8C5E18BC3C830081EA29 /* FitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FitViewController.h; path = UI/FitViewController.h; sourceTree = "<group>"; };
+		41AA8C5F18BC3C830081EA29 /* FitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FitViewController.m; path = UI/FitViewController.m; sourceTree = "<group>"; };
 		41B4545418B461C70054E406 /* Tryit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tryit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B4545718B461C70054E406 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		41B4545918B461C70054E406 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,6 +66,9 @@
 		41B4547E18B461C70054E406 /* TryitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TryitTests-Info.plist"; sourceTree = "<group>"; };
 		41B4548018B461C70054E406 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		41B4548218B461C70054E406 /* TryitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TryitTests.m; sourceTree = "<group>"; };
+		41C2BC7B18BB7E9200686CE8 /* DishesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DishesCell.h; path = UI/DishesCell.h; sourceTree = "<group>"; };
+		41C2BC7C18BB7E9200686CE8 /* DishesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DishesCell.m; path = UI/DishesCell.m; sourceTree = "<group>"; };
+		41C2BC7E18BB7EE700686CE8 /* DishesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DishesCell.xib; path = UI/DishesCell.xib; sourceTree = "<group>"; };
 		41C46B2218BAE011006E2B80 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = UI/MenuViewController.h; sourceTree = "<group>"; };
 		41C46B2318BAE011006E2B80 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = UI/MenuViewController.m; sourceTree = "<group>"; };
 		41C46B2418BAE011006E2B80 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = UI/MenuViewController.xib; sourceTree = "<group>"; };
@@ -71,12 +80,14 @@
 		41FB010C18BAF2C100E852B5 /* CouponViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CouponViewController.xib; path = UI/CouponViewController.xib; sourceTree = "<group>"; };
 		41FB010F18BAF65D00E852B5 /* MenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuItem.h; path = Source/MenuItem.h; sourceTree = "<group>"; };
 		41FB011018BAF65D00E852B5 /* MenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuItem.m; path = Source/MenuItem.m; sourceTree = "<group>"; };
-		41FB011B18BAF90B00E852B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		41FB011B18BAF90B00E852B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		41FB011D18BB322500E852B5 /* CenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CenterViewController.h; path = UI/CenterViewController.h; sourceTree = "<group>"; };
 		41FB011E18BB322500E852B5 /* CenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CenterViewController.m; path = UI/CenterViewController.m; sourceTree = "<group>"; };
 		41FB012018BB323700E852B5 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = UI/ProfileViewController.h; sourceTree = "<group>"; };
 		41FB012118BB323700E852B5 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = UI/ProfileViewController.m; sourceTree = "<group>"; };
 		41FB012218BB323700E852B5 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = UI/ProfileViewController.xib; sourceTree = "<group>"; };
+		41FB012618BB52F500E852B5 /* DishItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DishItem.h; path = Source/DishItem.h; sourceTree = "<group>"; };
+		41FB012718BB52F500E852B5 /* DishItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DishItem.m; path = Source/DishItem.m; sourceTree = "<group>"; };
 		A0EDB0FA7E6146E69ED79D4A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D7ADC66DCC014BB3BC4D9158 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -194,6 +205,11 @@
 				41FB012018BB323700E852B5 /* ProfileViewController.h */,
 				41FB012118BB323700E852B5 /* ProfileViewController.m */,
 				41FB012218BB323700E852B5 /* ProfileViewController.xib */,
+				41C2BC7B18BB7E9200686CE8 /* DishesCell.h */,
+				41C2BC7C18BB7E9200686CE8 /* DishesCell.m */,
+				41C2BC7E18BB7EE700686CE8 /* DishesCell.xib */,
+				41AA8C5E18BC3C830081EA29 /* FitViewController.h */,
+				41AA8C5F18BC3C830081EA29 /* FitViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -203,6 +219,8 @@
 			children = (
 				41FB010F18BAF65D00E852B5 /* MenuItem.h */,
 				41FB011018BAF65D00E852B5 /* MenuItem.m */,
+				41FB012618BB52F500E852B5 /* DishItem.h */,
+				41FB012718BB52F500E852B5 /* DishItem.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -304,6 +322,7 @@
 				41C46B2618BAE011006E2B80 /* MenuViewController.xib in Resources */,
 				41B4546218B461C70054E406 /* InfoPlist.strings in Resources */,
 				41FB010E18BAF2C100E852B5 /* CouponViewController.xib in Resources */,
+				41C2BC7F18BB7EE700686CE8 /* DishesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +374,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41FB012818BB52F500E852B5 /* DishItem.m in Sources */,
+				41C2BC7D18BB7E9200686CE8 /* DishesCell.m in Sources */,
+				41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */,
 				41B4546818B461C70054E406 /* AppDelegate.m in Sources */,
 				41FB010D18BAF2C100E852B5 /* CouponViewController.m in Sources */,
 				41FB012318BB323700E852B5 /* ProfileViewController.m in Sources */,

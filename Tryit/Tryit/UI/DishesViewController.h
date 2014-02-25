@@ -11,4 +11,6 @@
 
 @interface DishesViewController : CenterViewController
 
+@property (weak, nonatomic) IBOutlet UITableView *dishesTable;
+
 @end

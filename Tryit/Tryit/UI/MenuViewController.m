@@ -29,21 +29,27 @@ NSString *const ItemTableCellIdentifier  = @"ItemTableCellIdentifier";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+
+        self.title = NSLocalizedString(@"MENU_TITLE", nil);
+
         // Custom initialization
         DishesViewController *dishedViewController = [[DishesViewController alloc] initWithNibName:@"DishesViewController" bundle:nil];
         UINavigationController *dishesNavViewController = [[UINavigationController alloc] initWithRootViewController:dishedViewController];
         MenuItem *exploerDishesItem = [[MenuItem alloc] initWithName:NSLocalizedString(@"MENU_EXPLOER_DISHES", nil) Image:@"exploerDishesItem"];
         exploerDishesItem.viewController = dishesNavViewController;
+        dishedViewController.title = NSLocalizedString(@"MENU_EXPLOER_DISHES", nil);
 
         CouponViewController *couponViewController = [[CouponViewController alloc] initWithNibName:@"CouponViewController" bundle:nil];
         UINavigationController *couponNavViewController = [[UINavigationController alloc] initWithRootViewController:couponViewController];
         MenuItem *createCouponItem = [[MenuItem alloc] initWithName:NSLocalizedString(@"MENU_CREATE_COUPON", nil) Image:@"createCouponItem"];
         createCouponItem.viewController = couponNavViewController;
+        couponViewController.title = NSLocalizedString(@"MENU_CREATE_COUPON", nil);
 
         ProfileViewController *profileViewController = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController" bundle:nil];
         UINavigationController *profileNavViewController = [[UINavigationController alloc] initWithRootViewController:profileViewController];
         MenuItem *myProfileItem = [[MenuItem alloc] initWithName:NSLocalizedString(@"MENU_MY_PROFILE", nil) Image:@"myProfileItem"];
         myProfileItem.viewController = profileNavViewController;
+        profileViewController.title = NSLocalizedString(@"MENU_MY_PROFILE", nil);
 
         self.itemArray = @[exploerDishesItem, createCouponItem, myProfileItem];
     }

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface CenterViewController : UIViewController
+#import "FitViewController.h"
+@interface CenterViewController : FitViewController
 
 @end

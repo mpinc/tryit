@@ -29,7 +29,9 @@
 
     MenuViewController *menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:Nil];
 
-    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:[menuViewController getFristViewController] leftDrawerViewController:menuViewController];
+    UINavigationController *menuNavViewController = [[UINavigationController alloc] initWithRootViewController:menuViewController];
+
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:[menuViewController getFristViewController] leftDrawerViewController:menuNavViewController];
 
 
     [self.drawerController
