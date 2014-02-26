@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CenterViewController.h"
 
-@interface DishesViewController : CenterViewController
+@interface DishesViewController : CenterViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *dishesTable;
 
