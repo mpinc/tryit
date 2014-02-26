@@ -9,6 +9,8 @@
 #import "CouponViewController.h"
 
 @interface CouponViewController ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 
 @end
 
@@ -34,5 +36,31 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - UITextViewDelegate
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    [UIView animateWithDuration:0.25 animations:^
+     {
+         int offsetY = (-textView.frame.origin.y + 20) > 0?0:(-textView.frame.origin.y + 20);
+         self.topConstraint.constant = offsetY;
+         self.bottomConstraint.constant = 216;
+         [self.view layoutIfNeeded];
+     }];
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        self.topConstraint.constant = 10;
+        self.bottomConstraint.constant = 10;
+        [self.view layoutIfNeeded];
+        return NO;
+    }
+    return YES;
+}
+
 
 @end

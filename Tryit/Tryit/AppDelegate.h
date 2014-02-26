@@ -15,6 +15,6 @@
 
 + (id) getAppdelegate;
 
-- (void) setCenterViewController:(UIViewController *) viewController;
+- (void) setCenterViewControllerWithIndex:(int) index;
 
 @end

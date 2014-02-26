@@ -17,8 +17,8 @@
 
 @interface AppDelegate ()
 
-@property (nonatomic,strong) MMDrawerController * drawerController;
-
+@property (nonatomic, strong) MMDrawerController *drawerController;
+@property (nonatomic, strong) MenuViewController *menuViewController;
 @end
 
 @implementation AppDelegate
@@ -27,11 +27,11 @@
 {
     // Override point for customization after application launch.
 
-    MenuViewController *menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:Nil];
+    self.menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:Nil];
 
-    UINavigationController *menuNavViewController = [[UINavigationController alloc] initWithRootViewController:menuViewController];
+    UINavigationController *menuNavViewController = [[UINavigationController alloc] initWithRootViewController:self.menuViewController];
 
-    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:[menuViewController getFristViewController] leftDrawerViewController:menuNavViewController];
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:[self.menuViewController getViewControllerWithIndex:0] leftDrawerViewController:menuNavViewController];
 
 
     [self.drawerController
@@ -93,9 +93,10 @@
 	return app;
 }
 
-- (void) setCenterViewController:(UIViewController *) viewController
+- (void) setCenterViewControllerWithIndex:(int) index;
 {
-    [self.drawerController setCenterViewController:viewController];
+    [self.drawerController setCenterViewController:[self.menuViewController getViewControllerWithIndex:index]];
+    [self.drawerController closeDrawerAnimated:YES completion:nil];
 }
 
 @end

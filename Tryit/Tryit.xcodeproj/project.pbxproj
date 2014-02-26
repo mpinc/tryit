@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		412FBD4018BD7F3B009EF882 /* CouponListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD3E18BD7F3B009EF882 /* CouponListViewController.m */; };
+		412FBD4118BD7F3B009EF882 /* CouponListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412FBD3F18BD7F3B009EF882 /* CouponListViewController.xib */; };
+		412FBD4418BDCC21009EF882 /* RestaurantItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD4318BDCC21009EF882 /* RestaurantItem.m */; };
+		412FBD4718BDEA14009EF882 /* WebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD4618BDEA14009EF882 /* WebAPI.m */; };
+		412FBD4918BDEB64009EF882 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412FBD4818BDEB64009EF882 /* CoreLocation.framework */; };
 		41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AA8C5F18BC3C830081EA29 /* FitViewController.m */; };
 		41B4545818B461C70054E406 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545718B461C70054E406 /* Foundation.framework */; };
 		41B4545A18B461C70054E406 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545918B461C70054E406 /* CoreGraphics.framework */; };
@@ -48,6 +53,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		412FBD3D18BD7F3B009EF882 /* CouponListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CouponListViewController.h; path = UI/CouponListViewController.h; sourceTree = "<group>"; };
+		412FBD3E18BD7F3B009EF882 /* CouponListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CouponListViewController.m; path = UI/CouponListViewController.m; sourceTree = "<group>"; };
+		412FBD3F18BD7F3B009EF882 /* CouponListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CouponListViewController.xib; path = UI/CouponListViewController.xib; sourceTree = "<group>"; };
+		412FBD4218BDCC21009EF882 /* RestaurantItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantItem.h; path = Source/RestaurantItem.h; sourceTree = "<group>"; };
+		412FBD4318BDCC21009EF882 /* RestaurantItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantItem.m; path = Source/RestaurantItem.m; sourceTree = "<group>"; };
+		412FBD4518BDEA14009EF882 /* WebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebAPI.h; path = Source/WebAPI.h; sourceTree = "<group>"; };
+		412FBD4618BDEA14009EF882 /* WebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebAPI.m; path = Source/WebAPI.m; sourceTree = "<group>"; };
+		412FBD4818BDEB64009EF882 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		41AA8C5E18BC3C830081EA29 /* FitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FitViewController.h; path = UI/FitViewController.h; sourceTree = "<group>"; };
 		41AA8C5F18BC3C830081EA29 /* FitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FitViewController.m; path = UI/FitViewController.m; sourceTree = "<group>"; };
 		41B4545418B461C70054E406 /* Tryit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tryit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				412FBD4918BDEB64009EF882 /* CoreLocation.framework in Frameworks */,
 				41B4545A18B461C70054E406 /* CoreGraphics.framework in Frameworks */,
 				41B4545C18B461C70054E406 /* UIKit.framework in Frameworks */,
 				41B4545818B461C70054E406 /* Foundation.framework in Frameworks */,
@@ -117,6 +131,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41AA8C6118BC7AA70081EA29 /* Dishes */ = {
+			isa = PBXGroup;
+			children = (
+				41C2BC7B18BB7E9200686CE8 /* DishesCell.h */,
+				41C2BC7C18BB7E9200686CE8 /* DishesCell.m */,
+				41C2BC7E18BB7EE700686CE8 /* DishesCell.xib */,
+				41C46B2818BAE485006E2B80 /* DishesViewController.h */,
+				41C46B2918BAE485006E2B80 /* DishesViewController.m */,
+				41C46B2A18BAE485006E2B80 /* DishesViewController.xib */,
+			);
+			name = Dishes;
+			sourceTree = "<group>";
+		};
+		41AA8C6218BC7AC90081EA29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41FB010F18BAF65D00E852B5 /* MenuItem.h */,
+				41FB011018BAF65D00E852B5 /* MenuItem.m */,
+				41FB012618BB52F500E852B5 /* DishItem.h */,
+				41FB012718BB52F500E852B5 /* DishItem.m */,
+				412FBD4218BDCC21009EF882 /* RestaurantItem.h */,
+				412FBD4318BDCC21009EF882 /* RestaurantItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		41AA8C6318BC7AE50081EA29 /* Coupon */ = {
+			isa = PBXGroup;
+			children = (
+				41FB010A18BAF2C100E852B5 /* CouponViewController.h */,
+				41FB010B18BAF2C100E852B5 /* CouponViewController.m */,
+				41FB010C18BAF2C100E852B5 /* CouponViewController.xib */,
+				412FBD3D18BD7F3B009EF882 /* CouponListViewController.h */,
+				412FBD3E18BD7F3B009EF882 /* CouponListViewController.m */,
+				412FBD3F18BD7F3B009EF882 /* CouponListViewController.xib */,
+			);
+			name = Coupon;
+			sourceTree = "<group>";
+		};
+		41AA8C6418BC7BAF0081EA29 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				41FB012018BB323700E852B5 /* ProfileViewController.h */,
+				41FB012118BB323700E852B5 /* ProfileViewController.m */,
+				41FB012218BB323700E852B5 /* ProfileViewController.xib */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		41B4544B18B461C70054E406 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +203,7 @@
 		41B4545618B461C70054E406 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				412FBD4818BDEB64009EF882 /* CoreLocation.framework */,
 				41B4545718B461C70054E406 /* Foundation.framework */,
 				41B4545918B461C70054E406 /* CoreGraphics.framework */,
 				41B4545B18B461C70054E406 /* UIKit.framework */,
@@ -196,20 +260,9 @@
 			isa = PBXGroup;
 			children = (
 				41FB012518BB325100E852B5 /* Menu */,
-				41C46B2818BAE485006E2B80 /* DishesViewController.h */,
-				41C46B2918BAE485006E2B80 /* DishesViewController.m */,
-				41C46B2A18BAE485006E2B80 /* DishesViewController.xib */,
-				41FB010A18BAF2C100E852B5 /* CouponViewController.h */,
-				41FB010B18BAF2C100E852B5 /* CouponViewController.m */,
-				41FB010C18BAF2C100E852B5 /* CouponViewController.xib */,
-				41FB012018BB323700E852B5 /* ProfileViewController.h */,
-				41FB012118BB323700E852B5 /* ProfileViewController.m */,
-				41FB012218BB323700E852B5 /* ProfileViewController.xib */,
-				41C2BC7B18BB7E9200686CE8 /* DishesCell.h */,
-				41C2BC7C18BB7E9200686CE8 /* DishesCell.m */,
-				41C2BC7E18BB7EE700686CE8 /* DishesCell.xib */,
-				41AA8C5E18BC3C830081EA29 /* FitViewController.h */,
-				41AA8C5F18BC3C830081EA29 /* FitViewController.m */,
+				41AA8C6118BC7AA70081EA29 /* Dishes */,
+				41AA8C6318BC7AE50081EA29 /* Coupon */,
+				41AA8C6418BC7BAF0081EA29 /* Profile */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -217,10 +270,9 @@
 		41FB011218BAF68400E852B5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				41FB010F18BAF65D00E852B5 /* MenuItem.h */,
-				41FB011018BAF65D00E852B5 /* MenuItem.m */,
-				41FB012618BB52F500E852B5 /* DishItem.h */,
-				41FB012718BB52F500E852B5 /* DishItem.m */,
+				41AA8C6218BC7AC90081EA29 /* Model */,
+				412FBD4518BDEA14009EF882 /* WebAPI.h */,
+				412FBD4618BDEA14009EF882 /* WebAPI.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -233,6 +285,8 @@
 				41C46B2218BAE011006E2B80 /* MenuViewController.h */,
 				41C46B2318BAE011006E2B80 /* MenuViewController.m */,
 				41C46B2418BAE011006E2B80 /* MenuViewController.xib */,
+				41AA8C5E18BC3C830081EA29 /* FitViewController.h */,
+				41AA8C5F18BC3C830081EA29 /* FitViewController.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -319,6 +373,7 @@
 				41C46B2C18BAE485006E2B80 /* DishesViewController.xib in Resources */,
 				41FB011A18BAF90B00E852B5 /* Localizable.strings in Resources */,
 				41B4547018B461C70054E406 /* Images.xcassets in Resources */,
+				412FBD4118BD7F3B009EF882 /* CouponListViewController.xib in Resources */,
 				41C46B2618BAE011006E2B80 /* MenuViewController.xib in Resources */,
 				41B4546218B461C70054E406 /* InfoPlist.strings in Resources */,
 				41FB010E18BAF2C100E852B5 /* CouponViewController.xib in Resources */,
@@ -374,8 +429,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				412FBD4018BD7F3B009EF882 /* CouponListViewController.m in Sources */,
 				41FB012818BB52F500E852B5 /* DishItem.m in Sources */,
 				41C2BC7D18BB7E9200686CE8 /* DishesCell.m in Sources */,
+				412FBD4718BDEA14009EF882 /* WebAPI.m in Sources */,
 				41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */,
 				41B4546818B461C70054E406 /* AppDelegate.m in Sources */,
 				41FB010D18BAF2C100E852B5 /* CouponViewController.m in Sources */,
@@ -384,6 +441,7 @@
 				41FB011118BAF65D00E852B5 /* MenuItem.m in Sources */,
 				41B4546418B461C70054E406 /* main.m in Sources */,
 				41C46B2518BAE011006E2B80 /* MenuViewController.m in Sources */,
+				412FBD4418BDCC21009EF882 /* RestaurantItem.m in Sources */,
 				41FB011F18BB322500E852B5 /* CenterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

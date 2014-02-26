@@ -12,6 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *menuTable;
 
-- (id) getFristViewController;
+- (id) getViewControllerWithIndex:(int) index;
 
 @end

@@ -68,10 +68,13 @@ NSString *const ItemTableCellIdentifier  = @"ItemTableCellIdentifier";
     // Dispose of any resources that can be recreated.
 }
 
-- (id) getFristViewController
+- (id) getViewControllerWithIndex:(int) index
 {
-    MenuItem *menuItem = self.itemArray[0];
-    return menuItem.viewController;
+    if (self.itemArray.count > index) {
+        MenuItem *menuItem = self.itemArray[index];
+        return menuItem.viewController;
+    }
+    return nil;
 }
 
 #pragma mark - UITableViewDataSource
@@ -102,9 +105,8 @@ NSString *const ItemTableCellIdentifier  = @"ItemTableCellIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MenuItem *item = self.itemArray[indexPath.row];
     AppDelegate *appDelegate = [AppDelegate getAppdelegate];
-    [appDelegate setCenterViewController:item.viewController];
+    [appDelegate setCenterViewControllerWithIndex:indexPath.row];
 }
 
 @end
