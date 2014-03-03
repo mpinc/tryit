@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		410124A818C459E600C6D87C /* SCCaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 410124A218C459E600C6D87C /* SCCaptureSessionManager.m */; };
+		410124A918C459E600C6D87C /* SCCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 410124A418C459E600C6D87C /* SCCommon.m */; };
+		410124AA18C459E600C6D87C /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 410124A718C459E600C6D87C /* UIImage+Resize.m */; };
+		410124AE18C45AEC00C6D87C /* CaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410124AC18C45AEC00C6D87C /* CaptureViewController.m */; };
+		410124AF18C45AEC00C6D87C /* CaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410124AD18C45AEC00C6D87C /* CaptureViewController.xib */; };
 		412FBD4018BD7F3B009EF882 /* CouponListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD3E18BD7F3B009EF882 /* CouponListViewController.m */; };
 		412FBD4118BD7F3B009EF882 /* CouponListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412FBD3F18BD7F3B009EF882 /* CouponListViewController.xib */; };
 		412FBD4418BDCC21009EF882 /* RestaurantItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD4318BDCC21009EF882 /* RestaurantItem.m */; };
@@ -53,6 +58,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		410124A118C459E600C6D87C /* SCCaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCaptureSessionManager.h; sourceTree = "<group>"; };
+		410124A218C459E600C6D87C /* SCCaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCaptureSessionManager.m; sourceTree = "<group>"; };
+		410124A318C459E600C6D87C /* SCCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCommon.h; sourceTree = "<group>"; };
+		410124A418C459E600C6D87C /* SCCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCommon.m; sourceTree = "<group>"; };
+		410124A518C459E600C6D87C /* SCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCDefines.h; sourceTree = "<group>"; };
+		410124A618C459E600C6D87C /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		410124A718C459E600C6D87C /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		410124AB18C45AEC00C6D87C /* CaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaptureViewController.h; path = UI/CaptureViewController.h; sourceTree = "<group>"; };
+		410124AC18C45AEC00C6D87C /* CaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaptureViewController.m; path = UI/CaptureViewController.m; sourceTree = "<group>"; };
+		410124AD18C45AEC00C6D87C /* CaptureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CaptureViewController.xib; path = UI/CaptureViewController.xib; sourceTree = "<group>"; };
 		412FBD3D18BD7F3B009EF882 /* CouponListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CouponListViewController.h; path = UI/CouponListViewController.h; sourceTree = "<group>"; };
 		412FBD3E18BD7F3B009EF882 /* CouponListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CouponListViewController.m; path = UI/CouponListViewController.m; sourceTree = "<group>"; };
 		412FBD3F18BD7F3B009EF882 /* CouponListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CouponListViewController.xib; path = UI/CouponListViewController.xib; sourceTree = "<group>"; };
@@ -131,6 +146,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		410124A018C459E600C6D87C /* SCCam */ = {
+			isa = PBXGroup;
+			children = (
+				410124A118C459E600C6D87C /* SCCaptureSessionManager.h */,
+				410124A218C459E600C6D87C /* SCCaptureSessionManager.m */,
+				410124A318C459E600C6D87C /* SCCommon.h */,
+				410124A418C459E600C6D87C /* SCCommon.m */,
+				410124A518C459E600C6D87C /* SCDefines.h */,
+				410124A618C459E600C6D87C /* UIImage+Resize.h */,
+				410124A718C459E600C6D87C /* UIImage+Resize.m */,
+			);
+			name = SCCam;
+			path = UI/SCCam;
+			sourceTree = "<group>";
+		};
 		41AA8C6118BC7AA70081EA29 /* Dishes */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +196,7 @@
 				412FBD3D18BD7F3B009EF882 /* CouponListViewController.h */,
 				412FBD3E18BD7F3B009EF882 /* CouponListViewController.m */,
 				412FBD3F18BD7F3B009EF882 /* CouponListViewController.xib */,
+				41D1DBE818C430C4003F274B /* Capture */,
 			);
 			name = Coupon;
 			sourceTree = "<group>";
@@ -265,6 +296,17 @@
 				41AA8C6418BC7BAF0081EA29 /* Profile */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		41D1DBE818C430C4003F274B /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				410124A018C459E600C6D87C /* SCCam */,
+				410124AB18C45AEC00C6D87C /* CaptureViewController.h */,
+				410124AC18C45AEC00C6D87C /* CaptureViewController.m */,
+				410124AD18C45AEC00C6D87C /* CaptureViewController.xib */,
+			);
+			name = Capture;
 			sourceTree = "<group>";
 		};
 		41FB011218BAF68400E852B5 /* Source */ = {
@@ -374,6 +416,7 @@
 				41FB011A18BAF90B00E852B5 /* Localizable.strings in Resources */,
 				41B4547018B461C70054E406 /* Images.xcassets in Resources */,
 				412FBD4118BD7F3B009EF882 /* CouponListViewController.xib in Resources */,
+				410124AF18C45AEC00C6D87C /* CaptureViewController.xib in Resources */,
 				41C46B2618BAE011006E2B80 /* MenuViewController.xib in Resources */,
 				41B4546218B461C70054E406 /* InfoPlist.strings in Resources */,
 				41FB010E18BAF2C100E852B5 /* CouponViewController.xib in Resources */,
@@ -434,13 +477,17 @@
 				41C2BC7D18BB7E9200686CE8 /* DishesCell.m in Sources */,
 				412FBD4718BDEA14009EF882 /* WebAPI.m in Sources */,
 				41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */,
+				410124AE18C45AEC00C6D87C /* CaptureViewController.m in Sources */,
+				410124AA18C459E600C6D87C /* UIImage+Resize.m in Sources */,
 				41B4546818B461C70054E406 /* AppDelegate.m in Sources */,
 				41FB010D18BAF2C100E852B5 /* CouponViewController.m in Sources */,
 				41FB012318BB323700E852B5 /* ProfileViewController.m in Sources */,
 				41C46B2B18BAE485006E2B80 /* DishesViewController.m in Sources */,
 				41FB011118BAF65D00E852B5 /* MenuItem.m in Sources */,
 				41B4546418B461C70054E406 /* main.m in Sources */,
+				410124A918C459E600C6D87C /* SCCommon.m in Sources */,
 				41C46B2518BAE011006E2B80 /* MenuViewController.m in Sources */,
+				410124A818C459E600C6D87C /* SCCaptureSessionManager.m in Sources */,
 				412FBD4418BDCC21009EF882 /* RestaurantItem.m in Sources */,
 				41FB011F18BB322500E852B5 /* CenterViewController.m in Sources */,
 			);

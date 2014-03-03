@@ -7,6 +7,7 @@
 //
 
 #import "CouponViewController.h"
+#import "CaptureViewController.h"
 
 @interface CouponViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
@@ -62,5 +63,23 @@
     return YES;
 }
 
+#pragma mark - Button Action
+
+- (IBAction)touchPhotoButton:(id)sender {
+
+     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+
+    CaptureViewController *captureViewController = [[CaptureViewController alloc] initWithNibName:@"CaptureViewController" bundle:nil];
+
+    WEAKSELF_SC
+    captureViewController.getImageBlock = ^(UIImage *takeImage) {
+        [weakSelf_SC.pictureImageView setImage:takeImage];
+        [weakSelf_SC.cameraButton setAlpha:0.6];
+    };
+
+    [self presentViewController:captureViewController animated:YES completion:^{
+        
+    }];
+}
 
 @end
