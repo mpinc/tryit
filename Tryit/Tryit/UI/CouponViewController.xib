@@ -51,6 +51,9 @@
                     <state key="normal" title="Button">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="touchAddFriendsButton:" destination="-1" eventType="touchUpInside" id="3hK-9z-P7R"/>
+                    </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type Some words...." translatesAutoresizingMaskIntoConstraints="NO" id="PKq-r0-3hL">
                     <rect key="frame" x="10" y="274" width="300" height="142"/>

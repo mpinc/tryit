@@ -8,6 +8,7 @@
 
 #import "CouponViewController.h"
 #import "CaptureViewController.h"
+#import "ContactViewController.h"
 
 @interface CouponViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
@@ -80,6 +81,11 @@
     [self presentViewController:captureViewController animated:YES completion:^{
         
     }];
+}
+
+- (IBAction)touchAddFriendsButton:(id)sender {
+    ContactViewController *contactViewController = [[ContactViewController alloc] initWithNibName:@"ContactViewController" bundle:nil];
+    [self.navigationController pushViewController:contactViewController animated:YES];
 }
 
 @end

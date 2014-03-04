@@ -17,6 +17,15 @@
 		412FBD4418BDCC21009EF882 /* RestaurantItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD4318BDCC21009EF882 /* RestaurantItem.m */; };
 		412FBD4718BDEA14009EF882 /* WebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD4618BDEA14009EF882 /* WebAPI.m */; };
 		412FBD4918BDEB64009EF882 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412FBD4818BDEB64009EF882 /* CoreLocation.framework */; };
+		41959E8A18C5C20A009241FF /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959E8818C5C20A009241FF /* ContactViewController.m */; };
+		41959E8B18C5C20A009241FF /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41959E8918C5C20A009241FF /* ContactViewController.xib */; };
+		41959E8D18C5CF28009241FF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41959E8C18C5CF28009241FF /* AddressBook.framework */; };
+		41959E9918C5D18C009241FF /* ABContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959E9118C5D18C009241FF /* ABContact.m */; };
+		41959E9A18C5D18C009241FF /* ABContactsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959E9318C5D18C009241FF /* ABContactsHelper.m */; };
+		41959E9B18C5D18C009241FF /* ABGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959E9518C5D18C009241FF /* ABGroup.m */; };
+		41959E9C18C5D18C009241FF /* ABStandin.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959E9718C5D18C009241FF /* ABStandin.m */; };
+		41959E9F18C5D48E009241FF /* UIFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959E9E18C5D48E009241FF /* UIFunction.m */; };
+		41959EA218C5D62B009241FF /* TIContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959EA118C5D62B009241FF /* TIContact.m */; };
 		41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AA8C5F18BC3C830081EA29 /* FitViewController.m */; };
 		41B4545818B461C70054E406 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545718B461C70054E406 /* Foundation.framework */; };
 		41B4545A18B461C70054E406 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545918B461C70054E406 /* CoreGraphics.framework */; };
@@ -76,6 +85,23 @@
 		412FBD4518BDEA14009EF882 /* WebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebAPI.h; path = Source/WebAPI.h; sourceTree = "<group>"; };
 		412FBD4618BDEA14009EF882 /* WebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebAPI.m; path = Source/WebAPI.m; sourceTree = "<group>"; };
 		412FBD4818BDEB64009EF882 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		41959E8718C5C20A009241FF /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactViewController.h; path = UI/ContactViewController.h; sourceTree = "<group>"; };
+		41959E8818C5C20A009241FF /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactViewController.m; path = UI/ContactViewController.m; sourceTree = "<group>"; };
+		41959E8918C5C20A009241FF /* ContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactViewController.xib; path = UI/ContactViewController.xib; sourceTree = "<group>"; };
+		41959E8C18C5CF28009241FF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		41959E9018C5D18C009241FF /* ABContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABContact.h; sourceTree = "<group>"; };
+		41959E9118C5D18C009241FF /* ABContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABContact.m; sourceTree = "<group>"; };
+		41959E9218C5D18C009241FF /* ABContactsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABContactsHelper.h; sourceTree = "<group>"; };
+		41959E9318C5D18C009241FF /* ABContactsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABContactsHelper.m; sourceTree = "<group>"; };
+		41959E9418C5D18C009241FF /* ABGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABGroup.h; sourceTree = "<group>"; };
+		41959E9518C5D18C009241FF /* ABGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABGroup.m; sourceTree = "<group>"; };
+		41959E9618C5D18C009241FF /* ABStandin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABStandin.h; sourceTree = "<group>"; };
+		41959E9718C5D18C009241FF /* ABStandin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABStandin.m; sourceTree = "<group>"; };
+		41959E9818C5D18C009241FF /* ABWrappers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABWrappers.h; sourceTree = "<group>"; };
+		41959E9D18C5D48E009241FF /* UIFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFunction.h; sourceTree = "<group>"; };
+		41959E9E18C5D48E009241FF /* UIFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFunction.m; sourceTree = "<group>"; };
+		41959EA018C5D62B009241FF /* TIContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIContact.h; path = Source/TIContact.h; sourceTree = "<group>"; };
+		41959EA118C5D62B009241FF /* TIContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIContact.m; path = Source/TIContact.m; sourceTree = "<group>"; };
 		41AA8C5E18BC3C830081EA29 /* FitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FitViewController.h; path = UI/FitViewController.h; sourceTree = "<group>"; };
 		41AA8C5F18BC3C830081EA29 /* FitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FitViewController.m; path = UI/FitViewController.m; sourceTree = "<group>"; };
 		41B4545418B461C70054E406 /* Tryit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tryit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41959E8D18C5CF28009241FF /* AddressBook.framework in Frameworks */,
 				412FBD4918BDEB64009EF882 /* CoreLocation.framework in Frameworks */,
 				41B4545A18B461C70054E406 /* CoreGraphics.framework in Frameworks */,
 				41B4545C18B461C70054E406 /* UIKit.framework in Frameworks */,
@@ -161,6 +188,33 @@
 			path = UI/SCCam;
 			sourceTree = "<group>";
 		};
+		41959E8E18C5D18C009241FF /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				41959E9D18C5D48E009241FF /* UIFunction.h */,
+				41959E9E18C5D48E009241FF /* UIFunction.m */,
+				41959E8F18C5D18C009241FF /* Address Book Wrappers */,
+			);
+			name = Tools;
+			path = Source/Tools;
+			sourceTree = "<group>";
+		};
+		41959E8F18C5D18C009241FF /* Address Book Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				41959E9018C5D18C009241FF /* ABContact.h */,
+				41959E9118C5D18C009241FF /* ABContact.m */,
+				41959E9218C5D18C009241FF /* ABContactsHelper.h */,
+				41959E9318C5D18C009241FF /* ABContactsHelper.m */,
+				41959E9418C5D18C009241FF /* ABGroup.h */,
+				41959E9518C5D18C009241FF /* ABGroup.m */,
+				41959E9618C5D18C009241FF /* ABStandin.h */,
+				41959E9718C5D18C009241FF /* ABStandin.m */,
+				41959E9818C5D18C009241FF /* ABWrappers.h */,
+			);
+			path = "Address Book Wrappers";
+			sourceTree = "<group>";
+		};
 		41AA8C6118BC7AA70081EA29 /* Dishes */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +237,8 @@
 				41FB012718BB52F500E852B5 /* DishItem.m */,
 				412FBD4218BDCC21009EF882 /* RestaurantItem.h */,
 				412FBD4318BDCC21009EF882 /* RestaurantItem.m */,
+				41959EA018C5D62B009241FF /* TIContact.h */,
+				41959EA118C5D62B009241FF /* TIContact.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -197,6 +253,9 @@
 				412FBD3E18BD7F3B009EF882 /* CouponListViewController.m */,
 				412FBD3F18BD7F3B009EF882 /* CouponListViewController.xib */,
 				41D1DBE818C430C4003F274B /* Capture */,
+				41959E8718C5C20A009241FF /* ContactViewController.h */,
+				41959E8818C5C20A009241FF /* ContactViewController.m */,
+				41959E8918C5C20A009241FF /* ContactViewController.xib */,
 			);
 			name = Coupon;
 			sourceTree = "<group>";
@@ -234,6 +293,7 @@
 		41B4545618B461C70054E406 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41959E8C18C5CF28009241FF /* AddressBook.framework */,
 				412FBD4818BDEB64009EF882 /* CoreLocation.framework */,
 				41B4545718B461C70054E406 /* Foundation.framework */,
 				41B4545918B461C70054E406 /* CoreGraphics.framework */,
@@ -312,6 +372,7 @@
 		41FB011218BAF68400E852B5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				41959E8E18C5D18C009241FF /* Tools */,
 				41AA8C6218BC7AC90081EA29 /* Model */,
 				412FBD4518BDEA14009EF882 /* WebAPI.h */,
 				412FBD4618BDEA14009EF882 /* WebAPI.m */,
@@ -413,6 +474,7 @@
 			files = (
 				41FB012418BB323700E852B5 /* ProfileViewController.xib in Resources */,
 				41C46B2C18BAE485006E2B80 /* DishesViewController.xib in Resources */,
+				41959E8B18C5C20A009241FF /* ContactViewController.xib in Resources */,
 				41FB011A18BAF90B00E852B5 /* Localizable.strings in Resources */,
 				41B4547018B461C70054E406 /* Images.xcassets in Resources */,
 				412FBD4118BD7F3B009EF882 /* CouponListViewController.xib in Resources */,
@@ -473,23 +535,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				412FBD4018BD7F3B009EF882 /* CouponListViewController.m in Sources */,
+				41959E9C18C5D18C009241FF /* ABStandin.m in Sources */,
 				41FB012818BB52F500E852B5 /* DishItem.m in Sources */,
+				41959E9F18C5D48E009241FF /* UIFunction.m in Sources */,
 				41C2BC7D18BB7E9200686CE8 /* DishesCell.m in Sources */,
 				412FBD4718BDEA14009EF882 /* WebAPI.m in Sources */,
 				41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */,
 				410124AE18C45AEC00C6D87C /* CaptureViewController.m in Sources */,
 				410124AA18C459E600C6D87C /* UIImage+Resize.m in Sources */,
 				41B4546818B461C70054E406 /* AppDelegate.m in Sources */,
+				41959E8A18C5C20A009241FF /* ContactViewController.m in Sources */,
 				41FB010D18BAF2C100E852B5 /* CouponViewController.m in Sources */,
 				41FB012318BB323700E852B5 /* ProfileViewController.m in Sources */,
 				41C46B2B18BAE485006E2B80 /* DishesViewController.m in Sources */,
 				41FB011118BAF65D00E852B5 /* MenuItem.m in Sources */,
+				41959E9918C5D18C009241FF /* ABContact.m in Sources */,
 				41B4546418B461C70054E406 /* main.m in Sources */,
 				410124A918C459E600C6D87C /* SCCommon.m in Sources */,
 				41C46B2518BAE011006E2B80 /* MenuViewController.m in Sources */,
 				410124A818C459E600C6D87C /* SCCaptureSessionManager.m in Sources */,
+				41959EA218C5D62B009241FF /* TIContact.m in Sources */,
+				41959E9B18C5D18C009241FF /* ABGroup.m in Sources */,
 				412FBD4418BDCC21009EF882 /* RestaurantItem.m in Sources */,
 				41FB011F18BB322500E852B5 /* CenterViewController.m in Sources */,
+				41959E9A18C5D18C009241FF /* ABContactsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

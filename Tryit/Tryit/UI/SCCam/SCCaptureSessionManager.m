@@ -157,8 +157,6 @@
     NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG,AVVideoCodecKey,nil];//输出jpeg
     tmpOutput.outputSettings = outputSettings;
     
-//    AVCaptureConnection *videoConnection = [self findVideoConnection];
-    
     [_session addOutput:tmpOutput];
     
     self.stillImageOutput = tmpOutput;
@@ -186,9 +184,6 @@
 - (void)takePicture:(DidCapturePhotoBlock)block {
     AVCaptureConnection *videoConnection = [self findVideoConnection];
     
-//	UIDeviceOrientation curDeviceOrientation = [[UIDevice currentDevice] orientation];
-//	AVCaptureVideoOrientation avcaptureOrientation = [self avOrientationForDeviceOrientation:curDeviceOrientation];
-//    [videoConnection setVideoOrientation:avcaptureOrientation];
     [videoConnection setVideoScaleAndCropFactor:_scaleNum];
     
 	SCDLog(@"about to request a capture from: %@", _stillImageOutput);
@@ -204,7 +199,6 @@
         NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
         UIImage *image = [[UIImage alloc] initWithData:imageData];
         SCDLog(@"originImage:%@", [NSValue valueWithCGSize:image.size]);
-//        [SCCommon saveImageToPhotoAlbum:image];
         
         CGFloat squareLength = SC_APP_SIZE.width;
         CGFloat headHeight = _previewLayer.bounds.size.height - squareLength;//_previewLayer的frame是(0, 44, 320, 320 + 44)
@@ -212,8 +206,14 @@
         
         UIImage *scaledImage = [image resizedImageWithContentMode:UIViewContentModeScaleAspectFill bounds:size interpolationQuality:kCGInterpolationHigh];
         SCDLog(@"scaledImage:%@", [NSValue valueWithCGSize:scaledImage.size]);
-        
-        CGRect cropFrame = CGRectMake((scaledImage.size.width - size.width) / 2, (scaledImage.size.height - size.height) / 2 + headHeight, size.width, size.height);
+
+        CGRect cropFrame = CGRectZero;
+        if (iPhone5) {
+            cropFrame = CGRectMake(0.0, 88.0, 640, 960);
+        }else {
+            cropFrame = CGRectMake(0.0, 0.0, 640, 960);
+        }
+
         SCDLog(@"cropFrame:%@", [NSValue valueWithCGRect:cropFrame]);
         UIImage *croppedImage = [scaledImage croppedImage:cropFrame];
         SCDLog(@"croppedImage:%@", [NSValue valueWithCGSize:croppedImage.size]);
@@ -232,17 +232,9 @@
             }
             croppedImage = [croppedImage rotatedByDegrees:degree];
         }
-        
-//        self.imageView.image = croppedImage;
-        
-        //block、delegate、notification 3选1，传值
-        if (block) {
-            block(croppedImage);
-        } else if ([_delegate respondsToSelector:@selector(didCapturePhoto:)]) {
-            [_delegate didCapturePhoto:croppedImage];
-        } else {
-            [[NSNotificationCenter defaultCenter] postNotificationName:kCapturedPhotoSuccessfully object:croppedImage];
-        }
+
+        block(croppedImage);
+
     }];
 }
 

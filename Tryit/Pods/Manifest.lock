@@ -29,19 +29,16 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.5.3):
     - MMDrawerController/Core
-  - SVProgressHUD (1.0)
   - UICKeyChainStore (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.1.0)
   - MMDrawerController (~> 0.5.3)
-  - SVProgressHUD
   - UICKeyChainStore
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
   MMDrawerController: 4445e1927e8947b7e2382136c9b7109840efbfb9
-  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
   UICKeyChainStore: b42c6252b8bfd7fbf6326668467572b6b231e11a
 
 COCOAPODS: 0.29.0
