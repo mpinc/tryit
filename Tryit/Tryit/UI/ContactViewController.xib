@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactViewController">
             <connections>
                 <outlet property="contactTableView" destination="8Wv-1r-2dh" id="jUo-N8-46n"/>
+                <outlet property="searchDisplayController" destination="QB3-eY-XTN" id="hDB-ez-Oyc"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -32,6 +33,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <searchBar key="tableHeaderView" contentMode="redraw" id="QeS-a6-xWj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <outlet property="delegate" destination="-1" id="NJR-hl-BM6"/>
+                        </connections>
+                    </searchBar>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="jXT-QM-3EN"/>
                         <outlet property="delegate" destination="-1" id="Q6y-hu-I2i"/>
@@ -51,5 +60,14 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
+        <searchDisplayController id="QB3-eY-XTN">
+            <connections>
+                <outlet property="delegate" destination="-1" id="khw-OX-sUO"/>
+                <outlet property="searchBar" destination="QeS-a6-xWj" id="1Rf-tv-IGE"/>
+                <outlet property="searchContentsController" destination="-1" id="afy-K7-v7b"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="wF5-qQ-Fd9"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="Iz3-Cq-M5n"/>
+            </connections>
+        </searchDisplayController>
     </objects>
 </document>

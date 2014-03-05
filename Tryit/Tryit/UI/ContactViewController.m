@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *contactTableView;
 
 @property (strong, nonatomic) NSMutableArray *contactList;
+@property (strong, nonatomic) NSMutableArray *filteredList;
 
 @end
 
@@ -33,6 +34,7 @@
         self.title = NSLocalizedString(@"TITEL_ADD_FRIENDS", nil);
 
         self.contactList = [[NSMutableArray alloc] initWithCapacity:0];
+        self.filteredList = [[NSMutableArray alloc] initWithCapacity:0];
     }
     return self;
 }
@@ -65,9 +67,9 @@
 {
     if (yorn)
     {
-        [UIFunction showWaitingAlertWithString:NSLocalizedString(@"DATA_LOADING", nil)];
         WEAKSELF_SC
         dispatch_async(dispatch_get_main_queue(), ^{
+            [UIFunction showWaitingAlertWithString:NSLocalizedString(@"DATA_LOADING", nil)];
             NSMutableArray *tempContacts = [NSMutableArray arrayWithArray:[ABContactsHelper contactsWithOrder]];
             NSMutableArray *tempTableItems = [NSMutableArray arrayWithCapacity:tempContacts.count];
 
@@ -122,16 +124,19 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.contactList.count;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return 1;
+	} else {
+        return [self.contactList count];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSArray *contacts = self.contactList[section];
-    if (contacts != nil) {
-        return contacts.count;
-    }else {
-        return 0;
+	if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [self.filteredList count];
+    } else {
+        return [[self.contactList objectAtIndex:section] count];
     }
 }
 
@@ -143,7 +148,14 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
 
-    TIContact *contact = self.contactList[indexPath.section][indexPath.row];
+	TIContact *contact = nil;
+	if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        contact = (TIContact *)[self.filteredList objectAtIndex:indexPath.row];
+    }else{
+        contact = (TIContact *)[[self.contactList objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    }
+
     cell.textLabel.text = contact.contactName;
     cell.detailTextLabel.text = contact.email;
     [cell.imageView setImage:contact.image];
@@ -184,6 +196,63 @@
     } else {
         return [[self.contactList objectAtIndex:section] count] ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
     }
+}
+
+#pragma mark -
+#pragma mark UISearchBarDelegate
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)_searchBar
+{
+	[self.searchDisplayController.searchBar setShowsCancelButton:NO];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)_searchBar
+{
+	[self.searchDisplayController setActive:NO animated:YES];
+	[self.contactTableView reloadData];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)_searchBar
+{
+	[self.searchDisplayController setActive:NO animated:YES];
+	[self.contactTableView reloadData];
+}
+
+#pragma mark -
+#pragma mark ContentFiltering
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+	[self.filteredList removeAllObjects];
+    for (NSArray *section in self.contactList) {
+        for (TIContact *contact in section)
+        {
+            NSComparisonResult result = [contact.contactName compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
+            if (result == NSOrderedSame)
+            {
+                [self.filteredList addObject:contact];
+            }
+        }
+    }
+}
+
+#pragma mark -
+#pragma mark UISearchDisplayControllerDelegate
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString scope:
+	 [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+
+    return YES;
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:
+	 [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+
+    return YES;
 }
 
 #pragma mark - UITableViewDelegate
