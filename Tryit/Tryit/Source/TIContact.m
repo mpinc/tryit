@@ -18,7 +18,7 @@
         self.isSelected = NO;
         self.sectionNumber = 0;
         self.contactName = abContact.contactName;
-        self.email = abContact.emailaddresses;
+        self.email = abContact.emailArray[0];
         self.image = abContact.image;
     }
     return self;

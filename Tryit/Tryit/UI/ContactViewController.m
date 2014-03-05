@@ -15,6 +15,10 @@
 #import "UIFunction.h"
 #import "TIContact.h"
 
+#import "ContactCell.h"
+
+NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
+
 @interface ContactViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *contactTableView;
@@ -42,8 +46,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self.contactTableView registerNib:[UINib nibWithNibName:@"ContactCell" bundle:nil] forCellReuseIdentifier:ContactCellIdentifier];
     // Do any additional setup after loading the view from its nib.
     [self initAddressBook];
+
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,6 +63,7 @@
 - (void) initAddressBook
 {
     WEAKSELF_SC
+    [UIFunction showWaitingAlertWithString:NSLocalizedString(@"DATA_LOADING", nil)];
     [[NSNotificationCenter defaultCenter] addObserverForName:kAuthorizationUpdateNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note)
      {
          NSNumber *granted = note.object;
@@ -69,16 +78,17 @@
     {
         WEAKSELF_SC
         dispatch_async(dispatch_get_main_queue(), ^{
-            [UIFunction showWaitingAlertWithString:NSLocalizedString(@"DATA_LOADING", nil)];
+
             NSMutableArray *tempContacts = [NSMutableArray arrayWithArray:[ABContactsHelper contactsWithOrder]];
             NSMutableArray *tempTableItems = [NSMutableArray arrayWithCapacity:tempContacts.count];
 
             // get All Data
             for (int i = 0; i<tempContacts.count; i++) {
                 ABContact *contact = (ABContact*) tempContacts[i];
-
-                TIContact *tiContact = [[TIContact alloc] initWithContact:contact];
-                [tempTableItems addObject:tiContact];
+                if (contact.emailArray.count > 0) {
+                    TIContact *tiContact = [[TIContact alloc] initWithContact:contact];
+                    [tempTableItems addObject:tiContact];
+                }
             }
 
             // Sort data
@@ -142,11 +152,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyIdentifier"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"MyIdentifier"];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
+    ContactCell *cell =  (ContactCell*)[tableView dequeueReusableCellWithIdentifier:ContactCellIdentifier];
 
 	TIContact *contact = nil;
 	if (tableView == self.searchDisplayController.searchResultsTableView)
@@ -156,15 +162,13 @@
         contact = (TIContact *)[[self.contactList objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     }
 
-    cell.textLabel.text = contact.contactName;
-    cell.detailTextLabel.text = contact.email;
-    [cell.imageView setImage:contact.image];
+    [cell setContact:contact];
 
     return cell;
 }
 
 #pragma mark - index
-
+/*
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
@@ -174,7 +178,7 @@
                 [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles]];
     }
 }
-
+ */
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
 {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
@@ -197,6 +201,7 @@
         return [[self.contactList objectAtIndex:section] count] ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
     }
 }
+
 
 #pragma mark -
 #pragma mark UISearchBarDelegate
@@ -257,6 +262,9 @@
 
 #pragma mark - UITableViewDelegate
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 72;
+}
 
 @end

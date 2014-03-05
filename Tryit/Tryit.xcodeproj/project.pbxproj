@@ -45,6 +45,8 @@
 		41C46B2618BAE011006E2B80 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C46B2418BAE011006E2B80 /* MenuViewController.xib */; };
 		41C46B2B18BAE485006E2B80 /* DishesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C46B2918BAE485006E2B80 /* DishesViewController.m */; };
 		41C46B2C18BAE485006E2B80 /* DishesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C46B2A18BAE485006E2B80 /* DishesViewController.xib */; };
+		41F6684618C6F7B300A0A260 /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F6684518C6F7B300A0A260 /* ContactCell.m */; };
+		41F6684818C6F9D900A0A260 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F6684718C6F9D900A0A260 /* ContactCell.xib */; };
 		41FB010D18BAF2C100E852B5 /* CouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FB010B18BAF2C100E852B5 /* CouponViewController.m */; };
 		41FB010E18BAF2C100E852B5 /* CouponViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FB010C18BAF2C100E852B5 /* CouponViewController.xib */; };
 		41FB011118BAF65D00E852B5 /* MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FB011018BAF65D00E852B5 /* MenuItem.m */; };
@@ -129,6 +131,9 @@
 		41C46B2818BAE485006E2B80 /* DishesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DishesViewController.h; path = UI/DishesViewController.h; sourceTree = "<group>"; };
 		41C46B2918BAE485006E2B80 /* DishesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DishesViewController.m; path = UI/DishesViewController.m; sourceTree = "<group>"; };
 		41C46B2A18BAE485006E2B80 /* DishesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DishesViewController.xib; path = UI/DishesViewController.xib; sourceTree = "<group>"; };
+		41F6684418C6F7B300A0A260 /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactCell.h; path = UI/ContactCell.h; sourceTree = "<group>"; };
+		41F6684518C6F7B300A0A260 /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactCell.m; path = UI/ContactCell.m; sourceTree = "<group>"; };
+		41F6684718C6F9D900A0A260 /* ContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactCell.xib; path = UI/ContactCell.xib; sourceTree = "<group>"; };
 		41FB010A18BAF2C100E852B5 /* CouponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CouponViewController.h; path = UI/CouponViewController.h; sourceTree = "<group>"; };
 		41FB010B18BAF2C100E852B5 /* CouponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CouponViewController.m; path = UI/CouponViewController.m; sourceTree = "<group>"; };
 		41FB010C18BAF2C100E852B5 /* CouponViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CouponViewController.xib; path = UI/CouponViewController.xib; sourceTree = "<group>"; };
@@ -256,6 +261,9 @@
 				41959E8718C5C20A009241FF /* ContactViewController.h */,
 				41959E8818C5C20A009241FF /* ContactViewController.m */,
 				41959E8918C5C20A009241FF /* ContactViewController.xib */,
+				41F6684418C6F7B300A0A260 /* ContactCell.h */,
+				41F6684518C6F7B300A0A260 /* ContactCell.m */,
+				41F6684718C6F9D900A0A260 /* ContactCell.xib */,
 			);
 			name = Coupon;
 			sourceTree = "<group>";
@@ -472,6 +480,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41F6684818C6F9D900A0A260 /* ContactCell.xib in Resources */,
 				41FB012418BB323700E852B5 /* ProfileViewController.xib in Resources */,
 				41C46B2C18BAE485006E2B80 /* DishesViewController.xib in Resources */,
 				41959E8B18C5C20A009241FF /* ContactViewController.xib in Resources */,
@@ -540,6 +549,7 @@
 				41959E9F18C5D48E009241FF /* UIFunction.m in Sources */,
 				41C2BC7D18BB7E9200686CE8 /* DishesCell.m in Sources */,
 				412FBD4718BDEA14009EF882 /* WebAPI.m in Sources */,
+				41F6684618C6F7B300A0A260 /* ContactCell.m in Sources */,
 				41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */,
 				410124AE18C45AEC00C6D87C /* CaptureViewController.m in Sources */,
 				410124AA18C459E600C6D87C /* UIImage+Resize.m in Sources */,
