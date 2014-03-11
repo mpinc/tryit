@@ -12,6 +12,10 @@
 		410124AA18C459E600C6D87C /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 410124A718C459E600C6D87C /* UIImage+Resize.m */; };
 		410124AE18C45AEC00C6D87C /* CaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410124AC18C45AEC00C6D87C /* CaptureViewController.m */; };
 		410124AF18C45AEC00C6D87C /* CaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410124AD18C45AEC00C6D87C /* CaptureViewController.xib */; };
+		41287E8618CEE40A000F9F27 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41287E8418CEE40A000F9F27 /* SignInViewController.m */; };
+		41287E8718CEE40A000F9F27 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41287E8518CEE40A000F9F27 /* SignInViewController.xib */; };
+		41287E8B18CEE42D000F9F27 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41287E8918CEE42D000F9F27 /* SignUpViewController.m */; };
+		41287E8C18CEE42D000F9F27 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41287E8A18CEE42D000F9F27 /* SignUpViewController.xib */; };
 		412FBD4018BD7F3B009EF882 /* CouponListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD3E18BD7F3B009EF882 /* CouponListViewController.m */; };
 		412FBD4118BD7F3B009EF882 /* CouponListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412FBD3F18BD7F3B009EF882 /* CouponListViewController.xib */; };
 		412FBD4418BDCC21009EF882 /* RestaurantItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD4318BDCC21009EF882 /* RestaurantItem.m */; };
@@ -79,6 +83,12 @@
 		410124AB18C45AEC00C6D87C /* CaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaptureViewController.h; path = UI/CaptureViewController.h; sourceTree = "<group>"; };
 		410124AC18C45AEC00C6D87C /* CaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaptureViewController.m; path = UI/CaptureViewController.m; sourceTree = "<group>"; };
 		410124AD18C45AEC00C6D87C /* CaptureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CaptureViewController.xib; path = UI/CaptureViewController.xib; sourceTree = "<group>"; };
+		41287E8318CEE40A000F9F27 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInViewController.h; path = UI/SignInViewController.h; sourceTree = "<group>"; };
+		41287E8418CEE40A000F9F27 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInViewController.m; path = UI/SignInViewController.m; sourceTree = "<group>"; };
+		41287E8518CEE40A000F9F27 /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInViewController.xib; path = UI/SignInViewController.xib; sourceTree = "<group>"; };
+		41287E8818CEE42D000F9F27 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = UI/SignUpViewController.h; sourceTree = "<group>"; };
+		41287E8918CEE42D000F9F27 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = UI/SignUpViewController.m; sourceTree = "<group>"; };
+		41287E8A18CEE42D000F9F27 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignUpViewController.xib; path = UI/SignUpViewController.xib; sourceTree = "<group>"; };
 		412FBD3D18BD7F3B009EF882 /* CouponListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CouponListViewController.h; path = UI/CouponListViewController.h; sourceTree = "<group>"; };
 		412FBD3E18BD7F3B009EF882 /* CouponListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CouponListViewController.m; path = UI/CouponListViewController.m; sourceTree = "<group>"; };
 		412FBD3F18BD7F3B009EF882 /* CouponListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CouponListViewController.xib; path = UI/CouponListViewController.xib; sourceTree = "<group>"; };
@@ -191,6 +201,19 @@
 			);
 			name = SCCam;
 			path = UI/SCCam;
+			sourceTree = "<group>";
+		};
+		41287E8218CEE3E2000F9F27 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				41287E8318CEE40A000F9F27 /* SignInViewController.h */,
+				41287E8418CEE40A000F9F27 /* SignInViewController.m */,
+				41287E8518CEE40A000F9F27 /* SignInViewController.xib */,
+				41287E8818CEE42D000F9F27 /* SignUpViewController.h */,
+				41287E8918CEE42D000F9F27 /* SignUpViewController.m */,
+				41287E8A18CEE42D000F9F27 /* SignUpViewController.xib */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		41959E8E18C5D18C009241FF /* Tools */ = {
@@ -358,6 +381,7 @@
 		41C46B2718BAE023006E2B80 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				41287E8218CEE3E2000F9F27 /* Login */,
 				41FB012518BB325100E852B5 /* Menu */,
 				41AA8C6118BC7AA70081EA29 /* Dishes */,
 				41AA8C6318BC7AE50081EA29 /* Coupon */,
@@ -482,7 +506,9 @@
 			files = (
 				41F6684818C6F9D900A0A260 /* ContactCell.xib in Resources */,
 				41FB012418BB323700E852B5 /* ProfileViewController.xib in Resources */,
+				41287E8C18CEE42D000F9F27 /* SignUpViewController.xib in Resources */,
 				41C46B2C18BAE485006E2B80 /* DishesViewController.xib in Resources */,
+				41287E8718CEE40A000F9F27 /* SignInViewController.xib in Resources */,
 				41959E8B18C5C20A009241FF /* ContactViewController.xib in Resources */,
 				41FB011A18BAF90B00E852B5 /* Localizable.strings in Resources */,
 				41B4547018B461C70054E406 /* Images.xcassets in Resources */,
@@ -550,6 +576,7 @@
 				41C2BC7D18BB7E9200686CE8 /* DishesCell.m in Sources */,
 				412FBD4718BDEA14009EF882 /* WebAPI.m in Sources */,
 				41F6684618C6F7B300A0A260 /* ContactCell.m in Sources */,
+				41287E8618CEE40A000F9F27 /* SignInViewController.m in Sources */,
 				41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */,
 				410124AE18C45AEC00C6D87C /* CaptureViewController.m in Sources */,
 				410124AA18C459E600C6D87C /* UIImage+Resize.m in Sources */,
@@ -568,6 +595,7 @@
 				41959E9B18C5D18C009241FF /* ABGroup.m in Sources */,
 				412FBD4418BDCC21009EF882 /* RestaurantItem.m in Sources */,
 				41FB011F18BB322500E852B5 /* CenterViewController.m in Sources */,
+				41287E8B18CEE42D000F9F27 /* SignUpViewController.m in Sources */,
 				41959E9A18C5D18C009241FF /* ABContactsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
