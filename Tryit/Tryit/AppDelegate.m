@@ -14,6 +14,8 @@
 #import "MenuViewController.h"
 #import "DishesViewController.h"
 
+#import "SignInViewController.h"
+#import "SignUpViewController.h"
 
 @interface AppDelegate ()
 
@@ -52,6 +54,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window setHidden:NO];
     [self.window setRootViewController:self.drawerController];
+
+    [self showSignInViewController];
 
     return YES;
 }
@@ -97,6 +101,51 @@
 {
     [self.drawerController setCenterViewController:[self.menuViewController getViewControllerWithIndex:index]];
     [self.drawerController closeDrawerAnimated:YES completion:nil];
+}
+
+
+
+- (void) showSignInViewController
+{
+    if (self.signInNavViewController == nil) {
+
+        WEAKSELF_SC
+        FlipToSignIn flipInBlock = ^(){
+            weakSelf_SC.signUpNavViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+            [weakSelf_SC.signInNavViewController presentViewController:self.signUpNavViewController animated:YES completion:^{
+
+            }];
+        };
+
+        FlipToSignUp flipUpBlock = ^(){
+            weakSelf_SC.signUpNavViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+            [weakSelf_SC.signInNavViewController dismissViewControllerAnimated:YES completion:^{
+                
+            }];
+        };
+
+        SignInViewController *signInViewController = [[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:nil];
+        signInViewController.flipBlock = flipInBlock;
+        self.signInNavViewController = [[UINavigationController alloc] initWithRootViewController:signInViewController];
+
+        SignUpViewController *signUpViewController = [[SignUpViewController alloc] initWithNibName:@"SignUpViewController" bundle:nil];
+        signUpViewController.flipBlock = flipUpBlock;
+        self.signUpNavViewController = [[UINavigationController alloc] initWithRootViewController:signUpViewController];
+    }
+
+
+
+    [self.drawerController presentViewController:self.signInNavViewController animated:NO completion:^{
+
+    }];
+}
+
+- (void) hiddeSignInViewController
+{
+    self.drawerController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self.drawerController dismissViewControllerAnimated:YES completion:^{
+
+    } ];
 }
 
 @end

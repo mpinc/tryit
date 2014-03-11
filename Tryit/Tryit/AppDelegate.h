@@ -11,10 +11,15 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) UINavigationController *signInNavViewController;
+@property (strong, nonatomic) UINavigationController *signUpNavViewController;
 
 + (id) getAppdelegate;
 
 - (void) setCenterViewControllerWithIndex:(int) index;
+
+- (void) showSignInViewController;
+- (void) hiddeSignInViewController;
+
 
 @end

@@ -15,6 +15,10 @@
 
 "TITEL_ADD_FRIENDS" = "Add Friends";
 
+"TITEL_SIGN_IN" = "Sign In";
+"TITEL_SIGN_UP" = "Sign Up";
+
+
 "PROMPT_CONTACTS_AUTHORITY" = "No contacts permission. Please return to the main screen, click Settings -> Privacy -> Contacts, open Try It permissions switch.";
 
 "FORMAT_TITEL_ADD_FRIENDS" = "Add Friends (%d)";
