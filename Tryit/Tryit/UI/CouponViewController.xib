@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -55,7 +55,7 @@
                         <action selector="touchAddFriendsButton:" destination="-1" eventType="touchUpInside" id="3hK-9z-P7R"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type Some words...." translatesAutoresizingMaskIntoConstraints="NO" id="PKq-r0-3hL">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKq-r0-3hL">
                     <rect key="frame" x="10" y="274" width="300" height="142"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.6153951781" green="1" blue="0.55195286099999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -80,13 +80,26 @@
                         <action selector="touchPhotoButton:" destination="-1" eventType="touchUpInside" id="KO6-Ub-jb1"/>
                     </connections>
                 </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type Some words to your friends..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ka0-6g-13l">
+                    <rect key="frame" x="15" y="282" width="285" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="285" id="LJX-rl-ABB"/>
+                        <constraint firstAttribute="height" constant="21" id="bWL-6Q-B0j"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="E6z-Up-M8D" firstAttribute="top" secondItem="gLx-A5-vSv" secondAttribute="bottom" constant="10" id="0y1-8t-nAp"/>
                 <constraint firstAttribute="trailing" secondItem="xz6-yW-CcQ" secondAttribute="trailing" constant="10" id="1i7-uu-gWl"/>
                 <constraint firstItem="xz6-yW-CcQ" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="Il1-gW-ddt"/>
+                <constraint firstItem="Ka0-6g-13l" firstAttribute="leading" secondItem="PKq-r0-3hL" secondAttribute="trailing" constant="-295" id="M7u-LV-Ue3"/>
                 <constraint firstItem="xz6-yW-CcQ" firstAttribute="top" secondItem="PKq-r0-3hL" secondAttribute="bottom" constant="10" id="PBP-JR-1ds"/>
+                <constraint firstItem="Ka0-6g-13l" firstAttribute="top" secondItem="PKq-r0-3hL" secondAttribute="bottom" constant="-134" id="QCS-6W-EGG"/>
                 <constraint firstAttribute="trailing" secondItem="PKq-r0-3hL" secondAttribute="trailing" constant="10" id="UsZ-Qw-sMt"/>
                 <constraint firstAttribute="bottom" secondItem="xz6-yW-CcQ" secondAttribute="bottom" constant="10" id="YXW-4T-fNZ"/>
                 <constraint firstItem="PKq-r0-3hL" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="bms-6A-TDL"/>
