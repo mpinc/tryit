@@ -42,14 +42,14 @@
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Retype Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZYt-ci-fbR">
-                    <rect key="frame" x="30" y="276" width="260" height="44"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Retype Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZYt-ci-fbR">
+                    <rect key="frame" x="30" y="276" width="261" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ga1-ce-EoO">
-                    <rect key="frame" x="30" y="406" width="260" height="44"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ga1-ce-EoO">
+                    <rect key="frame" x="30" y="406" width="261" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.70980393890000004" green="0.79607850309999995" blue="0.40392160420000001" alpha="1" colorSpace="deviceRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>

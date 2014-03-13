@@ -5,8 +5,9 @@
 //  Created by Mars on 2/24/14.
 //  Copyright (c) 2014 Sktlab. All rights reserved.
 //
-
+#import "LocationViewController.h"
 #import "DishesViewController.h"
+
 #import "DishesCell.h"
 #import "DishItem.h"
 #import "AppDelegate.h"
@@ -70,7 +71,7 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 242;
+    return 210;
 }
 
 #pragma mark - Button Action 
@@ -84,6 +85,8 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
 
 - (IBAction)touchLocationButton:(id)sender {
     [WebAPI getNearRestaurantWithCoordinate:CLLocationCoordinate2DMake(0, 0)];
+    LocationViewController *locationViewController = [[LocationViewController alloc] initWithNibName:@"LocationViewController" bundle:nil];
+    [self.navigationController pushViewController:locationViewController animated:YES];
 }
 
 @end

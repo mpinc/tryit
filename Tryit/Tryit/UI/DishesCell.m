@@ -36,9 +36,20 @@
 
 - (void) setDishItem:(DishItem *) dishItem
 {
-    self.userNameLabel.text = dishItem.userName;
-    [self.headImageView setImageWithURL:dishItem.headImageUrl];
     [self.dishImageView setImageWithURL:dishItem.dishImageUrl];
+    self.restaurantLabel.text = @"KKFFCCKKFFCC";
+}
+
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+
+    CGSize size = [self.restaurantLabel.text sizeWithFont:self.restaurantLabel.font constrainedToSize:CGSizeMake(200.0f, 200.0f) lineBreakMode:NSLineBreakByWordWrapping];
+
+    NSLayoutConstraint *restaurantWidthConstraint = self.restaurantLabel.constraints[0];
+    restaurantWidthConstraint.constant = size.width + 10;
+
+    [super layoutSubviews];
 }
 
 @end

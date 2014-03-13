@@ -49,6 +49,9 @@
 		41C46B2618BAE011006E2B80 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C46B2418BAE011006E2B80 /* MenuViewController.xib */; };
 		41C46B2B18BAE485006E2B80 /* DishesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C46B2918BAE485006E2B80 /* DishesViewController.m */; };
 		41C46B2C18BAE485006E2B80 /* DishesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C46B2A18BAE485006E2B80 /* DishesViewController.xib */; };
+		41EA4F6318D15F7400915A52 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EA4F6118D15F7400915A52 /* LocationViewController.m */; };
+		41EA4F6418D15F7400915A52 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41EA4F6218D15F7400915A52 /* LocationViewController.xib */; };
+		41EA4F6618D160DD00915A52 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EA4F6518D160DD00915A52 /* MapKit.framework */; };
 		41F6684618C6F7B300A0A260 /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F6684518C6F7B300A0A260 /* ContactCell.m */; };
 		41F6684818C6F9D900A0A260 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F6684718C6F9D900A0A260 /* ContactCell.xib */; };
 		41FB010D18BAF2C100E852B5 /* CouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FB010B18BAF2C100E852B5 /* CouponViewController.m */; };
@@ -141,6 +144,10 @@
 		41C46B2818BAE485006E2B80 /* DishesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DishesViewController.h; path = UI/DishesViewController.h; sourceTree = "<group>"; };
 		41C46B2918BAE485006E2B80 /* DishesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DishesViewController.m; path = UI/DishesViewController.m; sourceTree = "<group>"; };
 		41C46B2A18BAE485006E2B80 /* DishesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DishesViewController.xib; path = UI/DishesViewController.xib; sourceTree = "<group>"; };
+		41EA4F6018D15F7400915A52 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationViewController.h; path = UI/LocationViewController.h; sourceTree = "<group>"; };
+		41EA4F6118D15F7400915A52 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationViewController.m; path = UI/LocationViewController.m; sourceTree = "<group>"; };
+		41EA4F6218D15F7400915A52 /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationViewController.xib; path = UI/LocationViewController.xib; sourceTree = "<group>"; };
+		41EA4F6518D160DD00915A52 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		41F6684418C6F7B300A0A260 /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactCell.h; path = UI/ContactCell.h; sourceTree = "<group>"; };
 		41F6684518C6F7B300A0A260 /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactCell.m; path = UI/ContactCell.m; sourceTree = "<group>"; };
 		41F6684718C6F9D900A0A260 /* ContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactCell.xib; path = UI/ContactCell.xib; sourceTree = "<group>"; };
@@ -166,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41EA4F6618D160DD00915A52 /* MapKit.framework in Frameworks */,
 				41959E8D18C5CF28009241FF /* AddressBook.framework in Frameworks */,
 				412FBD4918BDEB64009EF882 /* CoreLocation.framework in Frameworks */,
 				41B4545A18B461C70054E406 /* CoreGraphics.framework in Frameworks */,
@@ -252,6 +260,9 @@
 				41C46B2818BAE485006E2B80 /* DishesViewController.h */,
 				41C46B2918BAE485006E2B80 /* DishesViewController.m */,
 				41C46B2A18BAE485006E2B80 /* DishesViewController.xib */,
+				41EA4F6018D15F7400915A52 /* LocationViewController.h */,
+				41EA4F6118D15F7400915A52 /* LocationViewController.m */,
+				41EA4F6218D15F7400915A52 /* LocationViewController.xib */,
 			);
 			name = Dishes;
 			sourceTree = "<group>";
@@ -324,6 +335,7 @@
 		41B4545618B461C70054E406 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41EA4F6518D160DD00915A52 /* MapKit.framework */,
 				41959E8C18C5CF28009241FF /* AddressBook.framework */,
 				412FBD4818BDEB64009EF882 /* CoreLocation.framework */,
 				41B4545718B461C70054E406 /* Foundation.framework */,
@@ -381,11 +393,11 @@
 		41C46B2718BAE023006E2B80 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				41AA8C6318BC7AE50081EA29 /* Coupon */,
-				41AA8C6118BC7AA70081EA29 /* Dishes */,
-				41287E8218CEE3E2000F9F27 /* Login */,
 				41FB012518BB325100E852B5 /* Menu */,
+				41AA8C6118BC7AA70081EA29 /* Dishes */,
+				41AA8C6318BC7AE50081EA29 /* Coupon */,
 				41AA8C6418BC7BAF0081EA29 /* Profile */,
+				41287E8218CEE3E2000F9F27 /* Login */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -517,6 +529,7 @@
 				41C46B2618BAE011006E2B80 /* MenuViewController.xib in Resources */,
 				41B4546218B461C70054E406 /* InfoPlist.strings in Resources */,
 				41FB010E18BAF2C100E852B5 /* CouponViewController.xib in Resources */,
+				41EA4F6418D15F7400915A52 /* LocationViewController.xib in Resources */,
 				41C2BC7F18BB7EE700686CE8 /* DishesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,6 +583,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				412FBD4018BD7F3B009EF882 /* CouponListViewController.m in Sources */,
+				41EA4F6318D15F7400915A52 /* LocationViewController.m in Sources */,
 				41959E9C18C5D18C009241FF /* ABStandin.m in Sources */,
 				41FB012818BB52F500E852B5 /* DishItem.m in Sources */,
 				41959E9F18C5D48E009241FF /* UIFunction.m in Sources */,

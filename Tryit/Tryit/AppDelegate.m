@@ -55,7 +55,7 @@
     [self.window setHidden:NO];
     [self.window setRootViewController:self.drawerController];
 
-    [self showSignInViewController];
+//    [self showSignInViewController];
 
     return YES;
 }

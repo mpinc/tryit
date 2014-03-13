@@ -10,9 +10,11 @@
 #import "DishItem.h"
 
 @interface DishesCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *dishImageView;
-@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UIView *descriptionView;
+@property (weak, nonatomic) IBOutlet UILabel *dishNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *restaurantLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 - (void) setDishItem:(DishItem *) dishItem;
 
