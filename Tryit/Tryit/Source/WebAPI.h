@@ -12,6 +12,6 @@
 
 @interface WebAPI : NSObject
 
-+ (void) getNearRestaurantWithCoordinate:(CLLocationCoordinate2D) coordinate;
++ (void) getNearRestaurantWithCoordinate:(CLLocationCoordinate2D) coordinate success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
 
 @end

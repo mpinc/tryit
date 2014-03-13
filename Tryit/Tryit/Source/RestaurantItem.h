@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSString *phone_no;
-@property (nonatomic, strong) NSString *restaurantImageUrl;
+@property (nonatomic, strong) NSURL *restaurantImageUrl;
 @property (nonatomic) float latitude;
 @property (nonatomic) float longitude;
 

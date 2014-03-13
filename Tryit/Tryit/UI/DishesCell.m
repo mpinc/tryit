@@ -37,7 +37,7 @@
 - (void) setDishItem:(DishItem *) dishItem
 {
     [self.dishImageView setImageWithURL:dishItem.dishImageUrl];
-    self.restaurantLabel.text = @"KKFFCCKKFFCC";
+    self.restaurantLabel.text = @"KFC";
 }
 
 -(void)layoutSubviews

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="laQ-Td-xtE" customClass="NearRestaurantCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="laQ-Td-xtE" id="zka-65-v9w">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pqm-se-J8D">
+                        <rect key="frame" x="9" y="3" width="44" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="I5Q-j5-Q7T"/>
+                            <constraint firstAttribute="width" constant="44" id="bkm-4u-9oS"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manrunan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kj-Gu-S9w">
+                        <rect key="frame" x="61" y="8" width="251" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="oCw-6c-c6V"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wub-E2-Ppo">
+                        <rect key="frame" x="61" y="31" width="251" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Wub-E2-Ppo" secondAttribute="trailing" constant="8" id="CT4-Rm-OkK"/>
+                    <constraint firstItem="6kj-Gu-S9w" firstAttribute="top" secondItem="zka-65-v9w" secondAttribute="top" constant="8" id="G8K-mQ-4zH"/>
+                    <constraint firstItem="Wub-E2-Ppo" firstAttribute="leading" secondItem="Pqm-se-J8D" secondAttribute="trailing" constant="8" id="XBR-sJ-ibp"/>
+                    <constraint firstItem="Wub-E2-Ppo" firstAttribute="top" secondItem="6kj-Gu-S9w" secondAttribute="bottom" constant="3" id="acT-hm-2qs"/>
+                    <constraint firstItem="Pqm-se-J8D" firstAttribute="leading" secondItem="zka-65-v9w" secondAttribute="leading" constant="9" id="erZ-m5-XyY"/>
+                    <constraint firstAttribute="centerY" secondItem="Pqm-se-J8D" secondAttribute="centerY" constant="-0.5" id="kRU-yc-gox"/>
+                    <constraint firstItem="6kj-Gu-S9w" firstAttribute="leading" secondItem="Pqm-se-J8D" secondAttribute="trailing" constant="8" id="wg7-Y1-aGo"/>
+                    <constraint firstAttribute="trailing" secondItem="6kj-Gu-S9w" secondAttribute="trailing" constant="8" id="xuQ-y3-kdf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addressLabel" destination="Wub-E2-Ppo" id="Rye-1A-Vmi"/>
+                <outlet property="nameLabel" destination="6kj-Gu-S9w" id="hlE-OP-8hl"/>
+                <outlet property="restaurantImage" destination="Pqm-se-J8D" id="EeU-kW-pHv"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

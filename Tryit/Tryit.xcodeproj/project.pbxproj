@@ -52,6 +52,9 @@
 		41EA4F6318D15F7400915A52 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EA4F6118D15F7400915A52 /* LocationViewController.m */; };
 		41EA4F6418D15F7400915A52 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41EA4F6218D15F7400915A52 /* LocationViewController.xib */; };
 		41EA4F6618D160DD00915A52 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EA4F6518D160DD00915A52 /* MapKit.framework */; };
+		41EA4F6918D1998200915A52 /* NearRestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EA4F6818D1998200915A52 /* NearRestaurantCell.m */; };
+		41EA4F6B18D1999800915A52 /* NearRestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41EA4F6A18D1999800915A52 /* NearRestaurantCell.xib */; };
+		41EA4F6E18D1B7CB00915A52 /* RestaurantAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EA4F6D18D1B7CB00915A52 /* RestaurantAnnotation.m */; };
 		41F6684618C6F7B300A0A260 /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F6684518C6F7B300A0A260 /* ContactCell.m */; };
 		41F6684818C6F9D900A0A260 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F6684718C6F9D900A0A260 /* ContactCell.xib */; };
 		41FB010D18BAF2C100E852B5 /* CouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FB010B18BAF2C100E852B5 /* CouponViewController.m */; };
@@ -148,6 +151,11 @@
 		41EA4F6118D15F7400915A52 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationViewController.m; path = UI/LocationViewController.m; sourceTree = "<group>"; };
 		41EA4F6218D15F7400915A52 /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationViewController.xib; path = UI/LocationViewController.xib; sourceTree = "<group>"; };
 		41EA4F6518D160DD00915A52 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		41EA4F6718D1998200915A52 /* NearRestaurantCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NearRestaurantCell.h; path = UI/NearRestaurantCell.h; sourceTree = "<group>"; };
+		41EA4F6818D1998200915A52 /* NearRestaurantCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NearRestaurantCell.m; path = UI/NearRestaurantCell.m; sourceTree = "<group>"; };
+		41EA4F6A18D1999800915A52 /* NearRestaurantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NearRestaurantCell.xib; path = UI/NearRestaurantCell.xib; sourceTree = "<group>"; };
+		41EA4F6C18D1B7CB00915A52 /* RestaurantAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantAnnotation.h; path = UI/RestaurantAnnotation.h; sourceTree = "<group>"; };
+		41EA4F6D18D1B7CB00915A52 /* RestaurantAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantAnnotation.m; path = UI/RestaurantAnnotation.m; sourceTree = "<group>"; };
 		41F6684418C6F7B300A0A260 /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactCell.h; path = UI/ContactCell.h; sourceTree = "<group>"; };
 		41F6684518C6F7B300A0A260 /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactCell.m; path = UI/ContactCell.m; sourceTree = "<group>"; };
 		41F6684718C6F9D900A0A260 /* ContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactCell.xib; path = UI/ContactCell.xib; sourceTree = "<group>"; };
@@ -263,6 +271,11 @@
 				41EA4F6018D15F7400915A52 /* LocationViewController.h */,
 				41EA4F6118D15F7400915A52 /* LocationViewController.m */,
 				41EA4F6218D15F7400915A52 /* LocationViewController.xib */,
+				41EA4F6718D1998200915A52 /* NearRestaurantCell.h */,
+				41EA4F6818D1998200915A52 /* NearRestaurantCell.m */,
+				41EA4F6A18D1999800915A52 /* NearRestaurantCell.xib */,
+				41EA4F6C18D1B7CB00915A52 /* RestaurantAnnotation.h */,
+				41EA4F6D18D1B7CB00915A52 /* RestaurantAnnotation.m */,
 			);
 			name = Dishes;
 			sourceTree = "<group>";
@@ -522,6 +535,7 @@
 				41C46B2C18BAE485006E2B80 /* DishesViewController.xib in Resources */,
 				41287E8718CEE40A000F9F27 /* SignInViewController.xib in Resources */,
 				41959E8B18C5C20A009241FF /* ContactViewController.xib in Resources */,
+				41EA4F6B18D1999800915A52 /* NearRestaurantCell.xib in Resources */,
 				41FB011A18BAF90B00E852B5 /* Localizable.strings in Resources */,
 				41B4547018B461C70054E406 /* Images.xcassets in Resources */,
 				412FBD4118BD7F3B009EF882 /* CouponListViewController.xib in Resources */,
@@ -592,8 +606,10 @@
 				41F6684618C6F7B300A0A260 /* ContactCell.m in Sources */,
 				41287E8618CEE40A000F9F27 /* SignInViewController.m in Sources */,
 				41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */,
+				41EA4F6E18D1B7CB00915A52 /* RestaurantAnnotation.m in Sources */,
 				410124AE18C45AEC00C6D87C /* CaptureViewController.m in Sources */,
 				410124AA18C459E600C6D87C /* UIImage+Resize.m in Sources */,
+				41EA4F6918D1998200915A52 /* NearRestaurantCell.m in Sources */,
 				41B4546818B461C70054E406 /* AppDelegate.m in Sources */,
 				41959E8A18C5C20A009241FF /* ContactViewController.m in Sources */,
 				41FB010D18BAF2C100E852B5 /* CouponViewController.m in Sources */,

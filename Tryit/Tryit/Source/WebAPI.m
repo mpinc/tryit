@@ -23,7 +23,7 @@
     return manager;
 }
 
-+ (void) getNearRestaurantWithCoordinate:(CLLocationCoordinate2D) coordinate
++ (void) getNearRestaurantWithCoordinate:(CLLocationCoordinate2D) coordinate success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
 {
     [[WebAPI getManager] GET:@"/biz" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 
@@ -33,9 +33,11 @@
             [array addObject:item];
         }
         NSLog(@"array:%@", array);
+        success(array);
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error); 
+        NSLog(@"Error: %@", error);
+        failure();
     }];
 }
 

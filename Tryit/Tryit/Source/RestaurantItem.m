@@ -19,7 +19,11 @@
         self.name = dict[@"name"];
         self.address = dict[@"address"];
         self.phone_no = dict[@"phone_no"];
-//        self.restaurantImageUrl = dict[@"restaurantImageUrl"];
+
+        if (dict[@"restaurantImageUrl"] != nil) {
+            self.restaurantImageUrl = [NSURL URLWithString:dict[@"restaurantImageUrl"]];
+        }
+
         self.latitude = [dict[@"latitude"] floatValue];
         self.longitude = [dict[@"longitude"] floatValue];
     }

@@ -52,7 +52,7 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UITableViewDataSource & UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -84,7 +84,6 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
 }
 
 - (IBAction)touchLocationButton:(id)sender {
-    [WebAPI getNearRestaurantWithCoordinate:CLLocationCoordinate2DMake(0, 0)];
     LocationViewController *locationViewController = [[LocationViewController alloc] initWithNibName:@"LocationViewController" bundle:nil];
     [self.navigationController pushViewController:locationViewController animated:YES];
 }

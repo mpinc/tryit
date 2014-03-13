@@ -48,6 +48,7 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
     [super viewDidLoad];
 
     [self.contactTableView registerNib:[UINib nibWithNibName:@"ContactCell" bundle:nil] forCellReuseIdentifier:ContactCellIdentifier];
+    [self.searchDisplayController.searchResultsTableView registerNib:[UINib nibWithNibName:@"ContactCell" bundle:nil] forCellReuseIdentifier:ContactCellIdentifier];
     // Do any additional setup after loading the view from its nib.
     [self initAddressBook];
 
