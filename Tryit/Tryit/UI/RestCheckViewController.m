@@ -7,6 +7,7 @@
 //
 
 #import "RestCheckViewController.h"
+#import "CouponListViewController.h"
 #import "ProductItem.h"
 #import "ProductCell.h"
 #import "CheckSectionView.h"
@@ -55,6 +56,8 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
     } failure:^{
         [UIFunction removeMaskView];
     }];
+
+    self.title = self.restItem.name;
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,6 +104,14 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 80;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CouponListViewController *couponListViewController = [[CouponListViewController alloc] initWithNibName:@"CouponListViewController" bundle:Nil];
+    ProductItem *item = [self.productArray objectAtIndex:indexPath.row];
+    couponListViewController.productItem = item;
+    [self.navigationController pushViewController:couponListViewController animated:YES];
 }
 
 @end

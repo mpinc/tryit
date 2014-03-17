@@ -10,6 +10,7 @@
 
 @interface ProductItem : NSObject
 
+@property (nonatomic, strong) NSString *biz_id;
 @property (nonatomic, strong) NSString *prod_id;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *price;

@@ -15,6 +15,7 @@
     self = [super init];
     if(self)
     {
+        self.biz_id = dict[@"biz_id"];
         self.prod_id = dict[@"prod_id"];
         self.name = dict[@"name"];
         self.price = dict[@"price"];

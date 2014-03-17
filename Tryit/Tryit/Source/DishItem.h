@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSString *userName;
 @property (nonatomic, strong) NSURL *dishImageUrl;
 @property (nonatomic, strong) NSString *itemId;
+@property (nonatomic, strong) NSString *dish_id;
 
 - (id) initWithEx;
 

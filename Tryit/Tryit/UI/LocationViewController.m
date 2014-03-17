@@ -52,6 +52,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 
     [self.tableView registerNib:[UINib nibWithNibName:@"NearRestaurantCell" bundle:nil] forCellReuseIdentifier:NearRestaurantCellIdentifier];
     [self.searchDisplayController.searchResultsTableView registerNib:[UINib nibWithNibName:@"NearRestaurantCell" bundle:nil] forCellReuseIdentifier:NearRestaurantCellIdentifier];
+    [self.mapView setShowsUserLocation:YES];
 }
 
 - (void)didReceiveMemoryWarning
