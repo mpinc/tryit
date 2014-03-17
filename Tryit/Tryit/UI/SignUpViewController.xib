@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Te7-JL-Tlo">
-                    <rect key="frame" x="30" y="20" width="260" height="44"/>
+                    <rect key="frame" x="30" y="45" width="260" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="i5c-Ve-Iyb"/>
@@ -25,25 +25,19 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DFK-QC-TcJ">
-                    <rect key="frame" x="30" y="84" width="260" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Retypr Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHk-sh-Wda">
-                    <rect key="frame" x="30" y="148" width="260" height="44"/>
+                    <rect key="frame" x="30" y="114" width="260" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kX9-0N-rgp">
-                    <rect key="frame" x="30" y="212" width="260" height="44"/>
+                    <rect key="frame" x="30" y="183" width="260" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Retype Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZYt-ci-fbR">
-                    <rect key="frame" x="30" y="276" width="261" height="44"/>
+                    <rect key="frame" x="30" y="252" width="261" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <textInputTraits key="textInputTraits"/>
@@ -52,6 +46,9 @@
                     <rect key="frame" x="30" y="406" width="261" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.70980393890000004" green="0.79607850309999995" blue="0.40392160420000001" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Jnq-QA-8n2"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="Sign Up">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,29 +58,24 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Te7-JL-Tlo" firstAttribute="width" secondItem="ZYt-ci-fbR" secondAttribute="width" id="3z9-rk-d8N"/>
-                <constraint firstItem="Te7-JL-Tlo" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="30" id="6Ya-5c-vNr"/>
-                <constraint firstItem="kX9-0N-rgp" firstAttribute="height" secondItem="Te7-JL-Tlo" secondAttribute="height" id="7ye-73-9KU"/>
-                <constraint firstItem="DFK-QC-TcJ" firstAttribute="top" secondItem="Te7-JL-Tlo" secondAttribute="bottom" constant="20" id="9CG-WF-6xf"/>
-                <constraint firstItem="LHk-sh-Wda" firstAttribute="top" secondItem="DFK-QC-TcJ" secondAttribute="bottom" constant="20" id="9RC-Ik-vdl"/>
-                <constraint firstItem="Te7-JL-Tlo" firstAttribute="height" secondItem="LHk-sh-Wda" secondAttribute="height" id="9W3-Yd-cMM"/>
-                <constraint firstItem="kX9-0N-rgp" firstAttribute="leading" secondItem="Te7-JL-Tlo" secondAttribute="leading" id="A8h-Rt-R3T"/>
-                <constraint firstItem="ZYt-ci-fbR" firstAttribute="top" secondItem="kX9-0N-rgp" secondAttribute="bottom" constant="20" id="ByL-BN-PsC"/>
-                <constraint firstAttribute="trailing" secondItem="Te7-JL-Tlo" secondAttribute="trailing" constant="30" id="CEl-sV-NWE"/>
-                <constraint firstItem="Te7-JL-Tlo" firstAttribute="height" secondItem="DFK-QC-TcJ" secondAttribute="height" id="CFh-JU-Yik"/>
-                <constraint firstItem="Te7-JL-Tlo" firstAttribute="width" secondItem="DFK-QC-TcJ" secondAttribute="width" id="I8H-gC-eaV"/>
-                <constraint firstAttribute="bottom" secondItem="Ga1-ce-EoO" secondAttribute="bottom" constant="30" id="IES-R0-0N8"/>
-                <constraint firstItem="Te7-JL-Tlo" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="KVg-V8-ufP"/>
-                <constraint firstItem="Te7-JL-Tlo" firstAttribute="leading" secondItem="DFK-QC-TcJ" secondAttribute="leading" id="PcC-8E-cfE"/>
-                <constraint firstItem="ZYt-ci-fbR" firstAttribute="leading" secondItem="Ga1-ce-EoO" secondAttribute="leading" id="R9h-Bk-hfB"/>
-                <constraint firstItem="kX9-0N-rgp" firstAttribute="top" secondItem="LHk-sh-Wda" secondAttribute="bottom" constant="20" id="SHN-Hi-aQn"/>
-                <constraint firstItem="ZYt-ci-fbR" firstAttribute="width" secondItem="Ga1-ce-EoO" secondAttribute="width" id="U8i-oL-4e2"/>
-                <constraint firstItem="ZYt-ci-fbR" firstAttribute="height" secondItem="Ga1-ce-EoO" secondAttribute="height" id="W2K-Le-SDx"/>
-                <constraint firstItem="Te7-JL-Tlo" firstAttribute="height" secondItem="ZYt-ci-fbR" secondAttribute="height" id="Y7g-CX-xLi"/>
-                <constraint firstItem="Te7-JL-Tlo" firstAttribute="leading" secondItem="ZYt-ci-fbR" secondAttribute="leading" id="YlO-Ca-w9c"/>
-                <constraint firstItem="Te7-JL-Tlo" firstAttribute="leading" secondItem="LHk-sh-Wda" secondAttribute="leading" id="lnb-wH-BPc"/>
-                <constraint firstItem="Te7-JL-Tlo" firstAttribute="width" secondItem="LHk-sh-Wda" secondAttribute="width" id="mQT-wc-JmM"/>
-                <constraint firstItem="kX9-0N-rgp" firstAttribute="width" secondItem="Te7-JL-Tlo" secondAttribute="width" id="s0M-ZQ-sMg"/>
+                <constraint firstItem="DFK-QC-TcJ" firstAttribute="trailing" secondItem="Te7-JL-Tlo" secondAttribute="trailing" id="2yt-Uo-msc"/>
+                <constraint firstItem="kX9-0N-rgp" firstAttribute="top" secondItem="DFK-QC-TcJ" secondAttribute="bottom" constant="25" id="4FI-Ld-d19"/>
+                <constraint firstItem="Te7-JL-Tlo" firstAttribute="top" secondItem="1" secondAttribute="top" constant="45" id="7Nx-x7-vNC"/>
+                <constraint firstAttribute="trailing" secondItem="Te7-JL-Tlo" secondAttribute="trailing" constant="30" id="By7-aH-ICh"/>
+                <constraint firstItem="DFK-QC-TcJ" firstAttribute="height" secondItem="kX9-0N-rgp" secondAttribute="height" id="E0k-ir-tIb"/>
+                <constraint firstItem="ZYt-ci-fbR" firstAttribute="height" secondItem="kX9-0N-rgp" secondAttribute="height" id="Ekd-jw-1JQ"/>
+                <constraint firstItem="Ga1-ce-EoO" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="30" id="JC2-kp-Mfx"/>
+                <constraint firstItem="DFK-QC-TcJ" firstAttribute="trailing" secondItem="kX9-0N-rgp" secondAttribute="trailing" id="MHR-6f-dof"/>
+                <constraint firstItem="ZYt-ci-fbR" firstAttribute="leading" secondItem="kX9-0N-rgp" secondAttribute="leading" id="Ni0-u5-483"/>
+                <constraint firstItem="ZYt-ci-fbR" firstAttribute="top" secondItem="kX9-0N-rgp" secondAttribute="bottom" constant="25" id="VVt-Hn-t0W"/>
+                <constraint firstItem="Te7-JL-Tlo" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="30" id="b2u-gG-6JS"/>
+                <constraint firstAttribute="bottom" secondItem="Ga1-ce-EoO" secondAttribute="bottom" constant="30" id="fJv-yb-vgD"/>
+                <constraint firstItem="DFK-QC-TcJ" firstAttribute="leading" secondItem="kX9-0N-rgp" secondAttribute="leading" id="hQz-rW-ZNb"/>
+                <constraint firstAttribute="trailing" secondItem="Ga1-ce-EoO" secondAttribute="trailing" constant="29" id="l8O-1J-2Mg"/>
+                <constraint firstItem="DFK-QC-TcJ" firstAttribute="leading" secondItem="Te7-JL-Tlo" secondAttribute="leading" id="lqr-OI-hBZ"/>
+                <constraint firstItem="DFK-QC-TcJ" firstAttribute="top" secondItem="Te7-JL-Tlo" secondAttribute="bottom" constant="25" id="tIW-JX-crn"/>
+                <constraint firstItem="DFK-QC-TcJ" firstAttribute="height" secondItem="Te7-JL-Tlo" secondAttribute="height" id="vSv-LK-fQx"/>
+                <constraint firstItem="ZYt-ci-fbR" firstAttribute="trailing" secondItem="kX9-0N-rgp" secondAttribute="trailing" constant="1" id="wfh-lT-6Pt"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
