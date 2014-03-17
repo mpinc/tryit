@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "FitViewController.h"
-@interface LocationViewController : FitViewController <UITableViewDataSource, UITableViewDelegate>
+@interface LocationViewController : FitViewController <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
 
 @end

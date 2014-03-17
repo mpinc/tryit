@@ -15,8 +15,7 @@
     self = [super init];
     if (self) {
         self.userName = @"Tom";
-        self.headImageUrl = [NSURL URLWithString:@"http://www.baidu.com/img/bdlogo.gif" ];
-        self.dishImageUrl = [NSURL URLWithString:@"http://b.hiphotos.baidu.com/image/w%3D2048/sign=7586b08a2d2eb938ec6d7df2e15a8435/b2de9c82d158ccbf4de006511bd8bc3eb1354178.jpg" ];
+        self.dishImageUrl = [NSURL URLWithString:@"http://www.baidu.com/img/bdlogo.gif" ];
     }
     return self;
 }

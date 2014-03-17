@@ -19,15 +19,18 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxj-x5-KUO">
-                    <rect key="frame" x="0.0" y="44" width="320" height="195"/>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxj-x5-KUO">
+                    <rect key="frame" x="0.0" y="44" width="320" height="180"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="gHu-t1-7IE"/>
+                    </constraints>
                     <connections>
                         <outlet property="delegate" destination="-1" id="u2V-TS-V9y"/>
                     </connections>
                 </mapView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="i0p-OF-etN">
-                    <rect key="frame" x="0.0" y="240" width="320" height="240"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="i0p-OF-etN">
+                    <rect key="frame" x="0.0" y="224" width="320" height="256"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -35,7 +38,7 @@
                         <outlet property="delegate" destination="-1" id="wz7-bl-Vvu"/>
                     </connections>
                 </tableView>
-                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xor-YT-86C">
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="xor-YT-86C">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <color key="barTintColor" red="0.2274509804" green="0.52941176469999995" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,13 +49,24 @@
                 </searchBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="yxj-x5-KUO" firstAttribute="top" secondItem="xor-YT-86C" secondAttribute="bottom" id="31m-wM-JQT"/>
+                <constraint firstAttribute="trailing" secondItem="yxj-x5-KUO" secondAttribute="trailing" id="9lZ-y4-aWJ"/>
+                <constraint firstItem="i0p-OF-etN" firstAttribute="top" secondItem="yxj-x5-KUO" secondAttribute="bottom" id="Dwn-JI-HRG"/>
+                <constraint firstItem="xor-YT-86C" firstAttribute="top" secondItem="1" secondAttribute="top" id="FDb-0o-JlU"/>
+                <constraint firstItem="i0p-OF-etN" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="GoF-OG-CjJ"/>
+                <constraint firstAttribute="trailing" secondItem="i0p-OF-etN" secondAttribute="trailing" id="JGj-3W-TRq"/>
+                <constraint firstAttribute="bottom" secondItem="i0p-OF-etN" secondAttribute="bottom" id="WUd-Xw-5pP"/>
+                <constraint firstItem="xor-YT-86C" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="bUF-cu-fo5"/>
+                <constraint firstAttribute="trailing" secondItem="xor-YT-86C" secondAttribute="trailing" id="mY4-Qi-als"/>
+                <constraint firstItem="yxj-x5-KUO" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="pOO-By-RNH"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
         <searchDisplayController id="QVm-PQ-blc">
             <connections>
                 <outlet property="delegate" destination="-1" id="JHw-gh-2C7"/>
-                <outlet property="searchBar" destination="xor-YT-86C" id="shR-Jm-Gxn"/>
                 <outlet property="searchContentsController" destination="-1" id="pbv-63-ZgS"/>
                 <outlet property="searchResultsDataSource" destination="-1" id="iWs-Nn-IRa"/>
                 <outlet property="searchResultsDelegate" destination="-1" id="dgb-S8-twf"/>

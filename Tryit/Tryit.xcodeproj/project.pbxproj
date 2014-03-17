@@ -12,6 +12,13 @@
 		410124AA18C459E600C6D87C /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 410124A718C459E600C6D87C /* UIImage+Resize.m */; };
 		410124AE18C45AEC00C6D87C /* CaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410124AC18C45AEC00C6D87C /* CaptureViewController.m */; };
 		410124AF18C45AEC00C6D87C /* CaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410124AD18C45AEC00C6D87C /* CaptureViewController.xib */; };
+		411B957118D68D2300AAD73A /* ProductItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 411B957018D68D2300AAD73A /* ProductItem.m */; };
+		412371E818D297FB001DE23E /* RestCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412371E618D297FA001DE23E /* RestCheckViewController.m */; };
+		412371E918D297FB001DE23E /* RestCheckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412371E718D297FB001DE23E /* RestCheckViewController.xib */; };
+		412371EC18D2A1DF001DE23E /* CheckSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 412371EB18D2A1DF001DE23E /* CheckSectionView.m */; };
+		412371F018D2A287001DE23E /* CheckSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412371EF18D2A287001DE23E /* CheckSectionView.xib */; };
+		412371F318D2A72E001DE23E /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 412371F218D2A72E001DE23E /* ProductCell.m */; };
+		412371F518D2A74D001DE23E /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412371F418D2A74D001DE23E /* ProductCell.xib */; };
 		41287E8618CEE40A000F9F27 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41287E8418CEE40A000F9F27 /* SignInViewController.m */; };
 		41287E8718CEE40A000F9F27 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41287E8518CEE40A000F9F27 /* SignInViewController.xib */; };
 		41287E8B18CEE42D000F9F27 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41287E8918CEE42D000F9F27 /* SignUpViewController.m */; };
@@ -89,6 +96,17 @@
 		410124AB18C45AEC00C6D87C /* CaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaptureViewController.h; path = UI/CaptureViewController.h; sourceTree = "<group>"; };
 		410124AC18C45AEC00C6D87C /* CaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaptureViewController.m; path = UI/CaptureViewController.m; sourceTree = "<group>"; };
 		410124AD18C45AEC00C6D87C /* CaptureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CaptureViewController.xib; path = UI/CaptureViewController.xib; sourceTree = "<group>"; };
+		411B956F18D68D2300AAD73A /* ProductItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductItem.h; path = Source/ProductItem.h; sourceTree = "<group>"; };
+		411B957018D68D2300AAD73A /* ProductItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductItem.m; path = Source/ProductItem.m; sourceTree = "<group>"; };
+		412371E518D297FA001DE23E /* RestCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestCheckViewController.h; path = UI/RestCheckViewController.h; sourceTree = "<group>"; };
+		412371E618D297FA001DE23E /* RestCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestCheckViewController.m; path = UI/RestCheckViewController.m; sourceTree = "<group>"; };
+		412371E718D297FB001DE23E /* RestCheckViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RestCheckViewController.xib; path = UI/RestCheckViewController.xib; sourceTree = "<group>"; };
+		412371EA18D2A1DF001DE23E /* CheckSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckSectionView.h; path = UI/CheckSectionView.h; sourceTree = "<group>"; };
+		412371EB18D2A1DF001DE23E /* CheckSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckSectionView.m; path = UI/CheckSectionView.m; sourceTree = "<group>"; };
+		412371EF18D2A287001DE23E /* CheckSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CheckSectionView.xib; path = UI/CheckSectionView.xib; sourceTree = "<group>"; };
+		412371F118D2A72E001DE23E /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductCell.h; path = UI/ProductCell.h; sourceTree = "<group>"; };
+		412371F218D2A72E001DE23E /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductCell.m; path = UI/ProductCell.m; sourceTree = "<group>"; };
+		412371F418D2A74D001DE23E /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductCell.xib; path = UI/ProductCell.xib; sourceTree = "<group>"; };
 		41287E8318CEE40A000F9F27 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInViewController.h; path = UI/SignInViewController.h; sourceTree = "<group>"; };
 		41287E8418CEE40A000F9F27 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInViewController.m; path = UI/SignInViewController.m; sourceTree = "<group>"; };
 		41287E8518CEE40A000F9F27 /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInViewController.xib; path = UI/SignInViewController.xib; sourceTree = "<group>"; };
@@ -219,6 +237,37 @@
 			path = UI/SCCam;
 			sourceTree = "<group>";
 		};
+		411B956D18D68BD000AAD73A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				41EA4F6018D15F7400915A52 /* LocationViewController.h */,
+				41EA4F6118D15F7400915A52 /* LocationViewController.m */,
+				41EA4F6218D15F7400915A52 /* LocationViewController.xib */,
+				41EA4F6718D1998200915A52 /* NearRestaurantCell.h */,
+				41EA4F6818D1998200915A52 /* NearRestaurantCell.m */,
+				41EA4F6A18D1999800915A52 /* NearRestaurantCell.xib */,
+				41EA4F6C18D1B7CB00915A52 /* RestaurantAnnotation.h */,
+				41EA4F6D18D1B7CB00915A52 /* RestaurantAnnotation.m */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		411B956E18D68BDE00AAD73A /* RestCheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				412371E518D297FA001DE23E /* RestCheckViewController.h */,
+				412371E618D297FA001DE23E /* RestCheckViewController.m */,
+				412371E718D297FB001DE23E /* RestCheckViewController.xib */,
+				412371EA18D2A1DF001DE23E /* CheckSectionView.h */,
+				412371EB18D2A1DF001DE23E /* CheckSectionView.m */,
+				412371EF18D2A287001DE23E /* CheckSectionView.xib */,
+				412371F118D2A72E001DE23E /* ProductCell.h */,
+				412371F218D2A72E001DE23E /* ProductCell.m */,
+				412371F418D2A74D001DE23E /* ProductCell.xib */,
+			);
+			name = RestCheckIn;
+			sourceTree = "<group>";
+		};
 		41287E8218CEE3E2000F9F27 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,14 +317,8 @@
 				41C46B2818BAE485006E2B80 /* DishesViewController.h */,
 				41C46B2918BAE485006E2B80 /* DishesViewController.m */,
 				41C46B2A18BAE485006E2B80 /* DishesViewController.xib */,
-				41EA4F6018D15F7400915A52 /* LocationViewController.h */,
-				41EA4F6118D15F7400915A52 /* LocationViewController.m */,
-				41EA4F6218D15F7400915A52 /* LocationViewController.xib */,
-				41EA4F6718D1998200915A52 /* NearRestaurantCell.h */,
-				41EA4F6818D1998200915A52 /* NearRestaurantCell.m */,
-				41EA4F6A18D1999800915A52 /* NearRestaurantCell.xib */,
-				41EA4F6C18D1B7CB00915A52 /* RestaurantAnnotation.h */,
-				41EA4F6D18D1B7CB00915A52 /* RestaurantAnnotation.m */,
+				411B956D18D68BD000AAD73A /* Location */,
+				411B956E18D68BDE00AAD73A /* RestCheckIn */,
 			);
 			name = Dishes;
 			sourceTree = "<group>";
@@ -291,6 +334,8 @@
 				412FBD4318BDCC21009EF882 /* RestaurantItem.m */,
 				41959EA018C5D62B009241FF /* TIContact.h */,
 				41959EA118C5D62B009241FF /* TIContact.m */,
+				411B956F18D68D2300AAD73A /* ProductItem.h */,
+				411B957018D68D2300AAD73A /* ProductItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -534,6 +579,7 @@
 				41287E8C18CEE42D000F9F27 /* SignUpViewController.xib in Resources */,
 				41C46B2C18BAE485006E2B80 /* DishesViewController.xib in Resources */,
 				41287E8718CEE40A000F9F27 /* SignInViewController.xib in Resources */,
+				412371F018D2A287001DE23E /* CheckSectionView.xib in Resources */,
 				41959E8B18C5C20A009241FF /* ContactViewController.xib in Resources */,
 				41EA4F6B18D1999800915A52 /* NearRestaurantCell.xib in Resources */,
 				41FB011A18BAF90B00E852B5 /* Localizable.strings in Resources */,
@@ -541,10 +587,12 @@
 				412FBD4118BD7F3B009EF882 /* CouponListViewController.xib in Resources */,
 				410124AF18C45AEC00C6D87C /* CaptureViewController.xib in Resources */,
 				41C46B2618BAE011006E2B80 /* MenuViewController.xib in Resources */,
+				412371F518D2A74D001DE23E /* ProductCell.xib in Resources */,
 				41B4546218B461C70054E406 /* InfoPlist.strings in Resources */,
 				41FB010E18BAF2C100E852B5 /* CouponViewController.xib in Resources */,
 				41EA4F6418D15F7400915A52 /* LocationViewController.xib in Resources */,
 				41C2BC7F18BB7EE700686CE8 /* DishesCell.xib in Resources */,
+				412371E918D297FB001DE23E /* RestCheckViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,8 +648,10 @@
 				41EA4F6318D15F7400915A52 /* LocationViewController.m in Sources */,
 				41959E9C18C5D18C009241FF /* ABStandin.m in Sources */,
 				41FB012818BB52F500E852B5 /* DishItem.m in Sources */,
+				411B957118D68D2300AAD73A /* ProductItem.m in Sources */,
 				41959E9F18C5D48E009241FF /* UIFunction.m in Sources */,
 				41C2BC7D18BB7E9200686CE8 /* DishesCell.m in Sources */,
+				412371EC18D2A1DF001DE23E /* CheckSectionView.m in Sources */,
 				412FBD4718BDEA14009EF882 /* WebAPI.m in Sources */,
 				41F6684618C6F7B300A0A260 /* ContactCell.m in Sources */,
 				41287E8618CEE40A000F9F27 /* SignInViewController.m in Sources */,
@@ -610,7 +660,9 @@
 				410124AE18C45AEC00C6D87C /* CaptureViewController.m in Sources */,
 				410124AA18C459E600C6D87C /* UIImage+Resize.m in Sources */,
 				41EA4F6918D1998200915A52 /* NearRestaurantCell.m in Sources */,
+				412371F318D2A72E001DE23E /* ProductCell.m in Sources */,
 				41B4546818B461C70054E406 /* AppDelegate.m in Sources */,
+				412371E818D297FB001DE23E /* RestCheckViewController.m in Sources */,
 				41959E8A18C5C20A009241FF /* ContactViewController.m in Sources */,
 				41FB010D18BAF2C100E852B5 /* CouponViewController.m in Sources */,
 				41FB012318BB323700E852B5 /* ProfileViewController.m in Sources */,

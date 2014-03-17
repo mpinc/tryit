@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gMS-gL-DjO" customClass="ProductCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gMS-gL-DjO" id="Exj-cu-jLW">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="209"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ebi-2b-B55">
+                        <rect key="frame" x="10" y="10" width="300" height="199"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bpw-pg-OeD">
+                        <rect key="frame" x="10" y="149" width="300" height="60"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Broccoli stir-fry beef fillet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYU-hW-8PJ">
+                                <rect key="frame" x="10" y="5" width="280" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="FCh-GB-xJ6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXp-dG-C9d">
+                                <rect key="frame" x="20" y="34" width="45" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="TFl-hx-td9"/>
+                                    <constraint firstAttribute="height" constant="20" id="a8C-Il-KfS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" red="0.10588236149999999" green="0.78039222959999999" blue="0.2470588386" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please come and taste" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Def-80-DcH">
+                                <rect key="frame" x="70" y="39" width="171" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="yWo-c0-JqJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="uYU-hW-8PJ" firstAttribute="top" secondItem="Bpw-pg-OeD" secondAttribute="top" constant="5" id="8O5-yV-2Po"/>
+                            <constraint firstItem="oXp-dG-C9d" firstAttribute="top" secondItem="uYU-hW-8PJ" secondAttribute="bottom" constant="5" id="9D3-Xu-7NJ"/>
+                            <constraint firstAttribute="height" constant="60" id="FNi-mh-zX6"/>
+                            <constraint firstItem="oXp-dG-C9d" firstAttribute="leading" secondItem="uYU-hW-8PJ" secondAttribute="leading" constant="10" id="HcS-oz-4k9"/>
+                            <constraint firstAttribute="trailing" secondItem="uYU-hW-8PJ" secondAttribute="trailing" constant="10" id="P3s-v6-CR0"/>
+                            <constraint firstAttribute="trailing" secondItem="Def-80-DcH" secondAttribute="trailing" constant="59" id="Pop-1y-rge"/>
+                            <constraint firstItem="uYU-hW-8PJ" firstAttribute="leading" secondItem="Bpw-pg-OeD" secondAttribute="leading" constant="10" id="SMV-FK-n9d"/>
+                            <constraint firstItem="Def-80-DcH" firstAttribute="leading" secondItem="oXp-dG-C9d" secondAttribute="trailing" constant="5" id="cuv-5V-Ple"/>
+                            <constraint firstItem="oXp-dG-C9d" firstAttribute="bottom" secondItem="Def-80-DcH" secondAttribute="bottom" id="rqy-5k-0sg"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uq4-dW-gbJ">
+                        <rect key="frame" x="250" y="10" width="60" height="54"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="54" id="7Lq-1o-3wR"/>
+                            <constraint firstAttribute="width" constant="60" id="anx-Og-zeP"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ebi-2b-B55" firstAttribute="trailing" secondItem="Uq4-dW-gbJ" secondAttribute="trailing" id="3Nb-H1-ZWv"/>
+                    <constraint firstAttribute="trailing" secondItem="Ebi-2b-B55" secondAttribute="trailing" constant="10" id="BBq-LS-zI0"/>
+                    <constraint firstItem="Ebi-2b-B55" firstAttribute="top" secondItem="Uq4-dW-gbJ" secondAttribute="top" id="IAa-Fs-1tE"/>
+                    <constraint firstItem="Bpw-pg-OeD" firstAttribute="leading" secondItem="Exj-cu-jLW" secondAttribute="leading" constant="10" id="Mwm-8e-Gq7"/>
+                    <constraint firstItem="Ebi-2b-B55" firstAttribute="leading" secondItem="Exj-cu-jLW" secondAttribute="leading" constant="10" id="P8Y-MS-BHv"/>
+                    <constraint firstAttribute="bottom" secondItem="Ebi-2b-B55" secondAttribute="bottom" id="RnW-lT-xgu"/>
+                    <constraint firstItem="Ebi-2b-B55" firstAttribute="top" secondItem="Exj-cu-jLW" secondAttribute="top" constant="10" id="TuP-Vw-qJH"/>
+                    <constraint firstAttribute="trailing" secondItem="Bpw-pg-OeD" secondAttribute="trailing" constant="10" id="e6a-I5-hRg"/>
+                    <constraint firstItem="Bpw-pg-OeD" firstAttribute="bottom" secondItem="Ebi-2b-B55" secondAttribute="bottom" id="wMX-G2-sbH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="couponsImageView" destination="Uq4-dW-gbJ" id="fDS-Vq-zZp"/>
+                <outlet property="descriptionLabel" destination="Def-80-DcH" id="Qm5-NV-2aT"/>
+                <outlet property="nameLabel" destination="uYU-hW-8PJ" id="ek1-kd-QoQ"/>
+                <outlet property="priceLabel" destination="oXp-dG-C9d" id="O2y-Am-cnB"/>
+                <outlet property="productImageView" destination="Ebi-2b-B55" id="SdR-jS-dZl"/>
+                <outlet property="productInfoView" destination="Bpw-pg-OeD" id="nTJ-WW-a18"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

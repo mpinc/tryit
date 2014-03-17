@@ -11,8 +11,8 @@
 @interface DishItem : NSObject
 
 @property (nonatomic, strong) NSString *userName;
-@property (nonatomic, strong) NSURL *headImageUrl;
 @property (nonatomic, strong) NSURL *dishImageUrl;
+@property (nonatomic, strong) NSString *itemId;
 
 - (id) initWithEx;
 

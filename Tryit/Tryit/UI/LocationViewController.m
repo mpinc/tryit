@@ -7,6 +7,7 @@
 //
 
 #import "LocationViewController.h"
+#import "RestCheckViewController.h"
 #import "NearRestaurantCell.h"
 #import <MapKit/MapKit.h>
 #import <MapKit/MKAnnotation.h>
@@ -38,6 +39,8 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
         self.filteredList = [[NSMutableArray alloc] initWithCapacity:0];
         self.hasLocation = NO;
         self.title = NSLocalizedString(@"TITEL_NEARBY_RESTAURANTS", nil);
+        self.searchDisplayController.delegate = self;
+        self.searchBar.delegate = self;
     }
     return self;
 }
@@ -90,13 +93,28 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
     return 50;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RestaurantItem *item = nil;
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
+        item = [self.filteredList objectAtIndex:indexPath.row];
+    }else{
+        item = [self.restaurantArray objectAtIndex:indexPath.row];
+    }
+
+    RestCheckViewController *restCheckViewController = [[RestCheckViewController alloc] initWithNibName:@"RestCheckViewController" bundle:nil];
+    restCheckViewController.restItem = item;
+    [self.navigationController pushViewController:restCheckViewController animated:YES];
+}
+
 #pragma mark -
 #pragma mark UISearchBarDelegate
 
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)_searchBar
-{
-	[self.searchDisplayController.searchBar setShowsCancelButton:NO];
-}
+//- (void)searchBarTextDidBeginEditing:(UISearchBar *)_searchBar
+//{
+//	[self.searchDisplayController.searchBar setShowsCancelButton:NO];
+//}
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)_searchBar
 {
@@ -127,7 +145,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 }
 
 #pragma mark -
-#pragma mark UISearchDisplayControllerDelegate
+#pragma mark UISearchDisplayDelegate
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
@@ -154,12 +172,12 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
     if (self.hasLocation != YES) {
         double distance = 2000.0;
         [mapView setRegion:MKCoordinateRegionMakeWithDistance(userLocation.coordinate, distance, distance*195.0/320.0) animated:YES];
-
+        WEAKSELF_SC
         [WebAPI getNearRestaurantWithCoordinate:userLocation.coordinate
                                         success:^(NSMutableArray *array) {
-                                            self.restaurantArray = array;
-                                            [self.tableView reloadData];
-                                            [self addAnnotations];
+                                            weakSelf_SC.restaurantArray = array;
+                                            [weakSelf_SC.tableView reloadData];
+                                            [weakSelf_SC addAnnotations];
                                         }
                                         failure:^{
 

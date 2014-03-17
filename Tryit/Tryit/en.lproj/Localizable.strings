@@ -21,5 +21,6 @@
 
 
 "PROMPT_CONTACTS_AUTHORITY" = "No contacts permission. Please return to the main screen, click Settings -> Privacy -> Contacts, open Try It permissions switch.";
+"PROMPT_LODING" = "Loding...";
 
 "FORMAT_TITEL_ADD_FRIENDS" = "Add Friends (%d)";
