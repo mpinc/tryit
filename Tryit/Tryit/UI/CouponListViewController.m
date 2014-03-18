@@ -50,9 +50,10 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
     self.tableView.tableHeaderView = imageView;
 
     [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
+    WEAKSELF_SC
     [WebAPI getpromoWithProduct:self.productItem success:^(NSMutableArray *array) {
-        self.couponArray = [NSMutableArray arrayWithArray:array];
-        [self.tableView reloadData];
+        weakSelf_SC.couponArray = [NSMutableArray arrayWithArray:array];
+        [weakSelf_SC.tableView reloadData];
         [UIFunction removeMaskView];
     } failure:^{
         [UIFunction removeMaskView];

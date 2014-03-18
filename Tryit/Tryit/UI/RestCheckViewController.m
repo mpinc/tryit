@@ -49,9 +49,10 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
     self.tableView.tableHeaderView = imageView;
 
     [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
+    WEAKSELF_SC
     [WebAPI getProductWithRestId:self.restItem.biz_id success:^(NSMutableArray *array) {
-        self.productArray = [NSMutableArray arrayWithArray:array];
-        [self.tableView reloadData];
+        weakSelf_SC.productArray = [NSMutableArray arrayWithArray:array];
+        [weakSelf_SC.tableView reloadData];
         [UIFunction removeMaskView];
     } failure:^{
         [UIFunction removeMaskView];

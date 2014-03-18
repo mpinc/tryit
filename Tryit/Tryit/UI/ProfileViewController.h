@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CenterViewController.h"
+#import "UserProfile.h"
 
-@interface ProfileViewController : CenterViewController
+@interface ProfileViewController : CenterViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

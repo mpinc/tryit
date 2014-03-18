@@ -7,8 +7,9 @@
 //
 
 #import "WebAPI.h"
+#import "UIFunction.h"
 
-#define BaseURL @"http://192.168.1.205:8080"
+#define BaseURL @"http://192.168.1.105:8080"
 
 @implementation WebAPI
 
@@ -67,6 +68,26 @@
         NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
         for (NSDictionary *restDict in responseObject) {
             CouponItem *item = [[CouponItem alloc] initWithDict:restDict];
+            [array addObject:item];
+        }
+        NSLog(@"array:%@", array);
+        success(array);
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        failure();
+    }];
+}
+
++ (void) getRestaurantsWithUserId:(NSString*) userId success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
+{
+    NSString *requestString = [NSString stringWithFormat:@"/cust/100001/biz"];
+    [[WebAPI getManager] GET:requestString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+        DLog(@"%@", operation);
+        NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
+        for (NSDictionary *restDict in responseObject) {
+            RestaurantItem *item = [[RestaurantItem alloc] initWithDict:restDict];
             [array addObject:item];
         }
         NSLog(@"array:%@", array);

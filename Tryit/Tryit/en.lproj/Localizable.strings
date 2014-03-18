@@ -24,3 +24,7 @@
 "PROMPT_LODING" = "Loding...";
 
 "FORMAT_TITEL_ADD_FRIENDS" = "Add Friends (%d)";
+"FORMAT_MY_POINTS" = "My Points: (%@)";
+"FORMAT_RESTURANT" = "Resturant(%@)";
+"FORMAT_COUPONS" = "Coupons(%@)";
+"FORMAT_POINTS" = "Points(%@)";

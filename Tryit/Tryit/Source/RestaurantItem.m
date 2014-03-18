@@ -26,6 +26,9 @@
 
         self.latitude = [dict[@"latitude"] floatValue];
         self.longitude = [dict[@"longitude"] floatValue];
+
+        self.point = dict[@"total_points_earned"];
+        self.distance = [dict[@"distance"] floatValue];
     }
     return self;
 }

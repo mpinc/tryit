@@ -77,6 +77,11 @@
 		41FB012318BB323700E852B5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FB012118BB323700E852B5 /* ProfileViewController.m */; };
 		41FB012418BB323700E852B5 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FB012218BB323700E852B5 /* ProfileViewController.xib */; };
 		41FB012818BB52F500E852B5 /* DishItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FB012718BB52F500E852B5 /* DishItem.m */; };
+		41FD5D0E18D7DF3700172DB9 /* ProfileInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD5D0D18D7DF3700172DB9 /* ProfileInfoView.m */; };
+		41FD5D1018D7DF9400172DB9 /* ProfileInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FD5D0F18D7DF9400172DB9 /* ProfileInfoView.xib */; };
+		41FD5D1318D7F1B600172DB9 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD5D1218D7F1B600172DB9 /* UserProfile.m */; };
+		41FD5D1618D7F9CC00172DB9 /* UserRestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD5D1518D7F9CC00172DB9 /* UserRestCell.m */; };
+		41FD5D1818D82A4200172DB9 /* UserRestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FD5D1718D82A4200172DB9 /* UserRestCell.xib */; };
 		FA770C91FC564E06B19B5368 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ADC66DCC014BB3BC4D9158 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -203,6 +208,14 @@
 		41FB012218BB323700E852B5 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = UI/ProfileViewController.xib; sourceTree = "<group>"; };
 		41FB012618BB52F500E852B5 /* DishItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DishItem.h; path = Source/DishItem.h; sourceTree = "<group>"; };
 		41FB012718BB52F500E852B5 /* DishItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DishItem.m; path = Source/DishItem.m; sourceTree = "<group>"; };
+		41FD5D0C18D7DF3700172DB9 /* ProfileInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileInfoView.h; path = UI/ProfileInfoView.h; sourceTree = "<group>"; };
+		41FD5D0D18D7DF3700172DB9 /* ProfileInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileInfoView.m; path = UI/ProfileInfoView.m; sourceTree = "<group>"; };
+		41FD5D0F18D7DF9400172DB9 /* ProfileInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileInfoView.xib; path = UI/ProfileInfoView.xib; sourceTree = "<group>"; };
+		41FD5D1118D7F1B600172DB9 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserProfile.h; path = Source/UserProfile.h; sourceTree = "<group>"; };
+		41FD5D1218D7F1B600172DB9 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserProfile.m; path = Source/UserProfile.m; sourceTree = "<group>"; };
+		41FD5D1418D7F9CC00172DB9 /* UserRestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserRestCell.h; path = UI/UserRestCell.h; sourceTree = "<group>"; };
+		41FD5D1518D7F9CC00172DB9 /* UserRestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserRestCell.m; path = UI/UserRestCell.m; sourceTree = "<group>"; };
+		41FD5D1718D82A4200172DB9 /* UserRestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserRestCell.xib; path = UI/UserRestCell.xib; sourceTree = "<group>"; };
 		A0EDB0FA7E6146E69ED79D4A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D7ADC66DCC014BB3BC4D9158 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -389,6 +402,8 @@
 				411B957018D68D2300AAD73A /* ProductItem.m */,
 				411B957918D6E44E00AAD73A /* CouponItem.h */,
 				411B957A18D6E44E00AAD73A /* CouponItem.m */,
+				41FD5D1118D7F1B600172DB9 /* UserProfile.h */,
+				41FD5D1218D7F1B600172DB9 /* UserProfile.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -411,6 +426,12 @@
 				41FB012018BB323700E852B5 /* ProfileViewController.h */,
 				41FB012118BB323700E852B5 /* ProfileViewController.m */,
 				41FB012218BB323700E852B5 /* ProfileViewController.xib */,
+				41FD5D0C18D7DF3700172DB9 /* ProfileInfoView.h */,
+				41FD5D0D18D7DF3700172DB9 /* ProfileInfoView.m */,
+				41FD5D0F18D7DF9400172DB9 /* ProfileInfoView.xib */,
+				41FD5D1418D7F9CC00172DB9 /* UserRestCell.h */,
+				41FD5D1518D7F9CC00172DB9 /* UserRestCell.m */,
+				41FD5D1718D82A4200172DB9 /* UserRestCell.xib */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -624,11 +645,13 @@
 				41287E8C18CEE42D000F9F27 /* SignUpViewController.xib in Resources */,
 				41C46B2C18BAE485006E2B80 /* DishesViewController.xib in Resources */,
 				41287E8718CEE40A000F9F27 /* SignInViewController.xib in Resources */,
+				41FD5D1818D82A4200172DB9 /* UserRestCell.xib in Resources */,
 				412371F018D2A287001DE23E /* CheckSectionView.xib in Resources */,
 				41959E8B18C5C20A009241FF /* ContactViewController.xib in Resources */,
 				411B958118D6ECD800AAD73A /* CouponCell.xib in Resources */,
 				41EA4F6B18D1999800915A52 /* NearRestaurantCell.xib in Resources */,
 				41FB011A18BAF90B00E852B5 /* Localizable.strings in Resources */,
+				41FD5D1018D7DF9400172DB9 /* ProfileInfoView.xib in Resources */,
 				411B957818D6E1B500AAD73A /* CouponListViewController.xib in Resources */,
 				41B4547018B461C70054E406 /* Images.xcassets in Resources */,
 				410124AF18C45AEC00C6D87C /* CaptureViewController.xib in Resources */,
@@ -691,6 +714,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41FD5D1618D7F9CC00172DB9 /* UserRestCell.m in Sources */,
 				41EA4F6318D15F7400915A52 /* LocationViewController.m in Sources */,
 				41959E9C18C5D18C009241FF /* ABStandin.m in Sources */,
 				41FB012818BB52F500E852B5 /* DishItem.m in Sources */,
@@ -715,9 +739,11 @@
 				41C46B2B18BAE485006E2B80 /* DishesViewController.m in Sources */,
 				41FB011118BAF65D00E852B5 /* MenuItem.m in Sources */,
 				41959E9918C5D18C009241FF /* ABContact.m in Sources */,
+				41FD5D1318D7F1B600172DB9 /* UserProfile.m in Sources */,
 				411B958418D6F2D400AAD73A /* CouponSectionView.m in Sources */,
 				41B4546418B461C70054E406 /* main.m in Sources */,
 				411B957718D6E1B500AAD73A /* CouponListViewController.m in Sources */,
+				41FD5D0E18D7DF3700172DB9 /* ProfileInfoView.m in Sources */,
 				410124A918C459E600C6D87C /* SCCommon.m in Sources */,
 				411B957F18D6E70100AAD73A /* CouponCell.m in Sources */,
 				41C46B2518BAE011006E2B80 /* MenuViewController.m in Sources */,
