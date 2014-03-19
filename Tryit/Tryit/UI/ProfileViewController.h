@@ -12,4 +12,6 @@
 
 @interface ProfileViewController : CenterViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) UserProfile *userProfile;
+
 @end

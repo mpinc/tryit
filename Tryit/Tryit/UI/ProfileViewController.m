@@ -12,6 +12,7 @@
 #import "ProfileInfoView.h"
 #import "UIFunction.h"
 #import "WebAPI.h"
+
 NSString *const UserRestCellIdentifier = @"UserRestCellIdentifier";
 
 @interface ProfileViewController ()
@@ -38,7 +39,10 @@ NSString *const UserRestCellIdentifier = @"UserRestCellIdentifier";
     // Do any additional setup after loading the view from its nib.
     [self.tableView registerNib:[UINib nibWithNibName:@"UserRestCell" bundle:nil] forCellReuseIdentifier:UserRestCellIdentifier];
 
+    self.userProfile = [[UserProfile alloc] initWithEx];
+
     ProfileInfoView *profileInfoView = (ProfileInfoView*)[[[NSBundle mainBundle] loadNibNamed:@"ProfileInfoView" owner:self options:nil] lastObject];
+    profileInfoView.userProfile = self.userProfile;
     self.tableView.tableHeaderView = profileInfoView;
 
     [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];

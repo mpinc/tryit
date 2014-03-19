@@ -82,6 +82,15 @@
 		41FD5D1318D7F1B600172DB9 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD5D1218D7F1B600172DB9 /* UserProfile.m */; };
 		41FD5D1618D7F9CC00172DB9 /* UserRestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD5D1518D7F9CC00172DB9 /* UserRestCell.m */; };
 		41FD5D1818D82A4200172DB9 /* UserRestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FD5D1718D82A4200172DB9 /* UserRestCell.xib */; };
+		41FD5D1D18D8561500172DB9 /* UserRestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD5D1B18D8561500172DB9 /* UserRestViewController.m */; };
+		41FD5D1E18D8561500172DB9 /* UserRestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FD5D1C18D8561500172DB9 /* UserRestViewController.xib */; };
+		41FD5D2318D8571800172DB9 /* UserRestInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD5D2218D8571800172DB9 /* UserRestInfoView.m */; };
+		41FD5D2518D8572E00172DB9 /* UserRestInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FD5D2418D8572E00172DB9 /* UserRestInfoView.xib */; };
+		41FD5D2818D8579500172DB9 /* UserCouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD5D2718D8579500172DB9 /* UserCouponCell.m */; };
+		41FD5D2A18D857A800172DB9 /* UserCouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FD5D2918D857A800172DB9 /* UserCouponCell.xib */; };
+		41FD5D2E18D857DF00172DB9 /* UserShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD5D2C18D857DF00172DB9 /* UserShareViewController.m */; };
+		41FD5D2F18D857DF00172DB9 /* UserShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FD5D2D18D857DF00172DB9 /* UserShareViewController.xib */; };
+		41FD5D3218D988CD00172DB9 /* ShareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD5D3118D988CD00172DB9 /* ShareItem.m */; };
 		FA770C91FC564E06B19B5368 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ADC66DCC014BB3BC4D9158 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -216,6 +225,20 @@
 		41FD5D1418D7F9CC00172DB9 /* UserRestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserRestCell.h; path = UI/UserRestCell.h; sourceTree = "<group>"; };
 		41FD5D1518D7F9CC00172DB9 /* UserRestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserRestCell.m; path = UI/UserRestCell.m; sourceTree = "<group>"; };
 		41FD5D1718D82A4200172DB9 /* UserRestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserRestCell.xib; path = UI/UserRestCell.xib; sourceTree = "<group>"; };
+		41FD5D1A18D8561500172DB9 /* UserRestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserRestViewController.h; path = UI/UserRestViewController.h; sourceTree = "<group>"; };
+		41FD5D1B18D8561500172DB9 /* UserRestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserRestViewController.m; path = UI/UserRestViewController.m; sourceTree = "<group>"; };
+		41FD5D1C18D8561500172DB9 /* UserRestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserRestViewController.xib; path = UI/UserRestViewController.xib; sourceTree = "<group>"; };
+		41FD5D2118D8571800172DB9 /* UserRestInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserRestInfoView.h; path = UI/UserRestInfoView.h; sourceTree = "<group>"; };
+		41FD5D2218D8571800172DB9 /* UserRestInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserRestInfoView.m; path = UI/UserRestInfoView.m; sourceTree = "<group>"; };
+		41FD5D2418D8572E00172DB9 /* UserRestInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserRestInfoView.xib; path = UI/UserRestInfoView.xib; sourceTree = "<group>"; };
+		41FD5D2618D8579500172DB9 /* UserCouponCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserCouponCell.h; path = UI/UserCouponCell.h; sourceTree = "<group>"; };
+		41FD5D2718D8579500172DB9 /* UserCouponCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserCouponCell.m; path = UI/UserCouponCell.m; sourceTree = "<group>"; };
+		41FD5D2918D857A800172DB9 /* UserCouponCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCouponCell.xib; path = UI/UserCouponCell.xib; sourceTree = "<group>"; };
+		41FD5D2B18D857DF00172DB9 /* UserShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserShareViewController.h; path = UI/UserShareViewController.h; sourceTree = "<group>"; };
+		41FD5D2C18D857DF00172DB9 /* UserShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserShareViewController.m; path = UI/UserShareViewController.m; sourceTree = "<group>"; };
+		41FD5D2D18D857DF00172DB9 /* UserShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserShareViewController.xib; path = UI/UserShareViewController.xib; sourceTree = "<group>"; };
+		41FD5D3018D988CD00172DB9 /* ShareItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareItem.h; path = Source/ShareItem.h; sourceTree = "<group>"; };
+		41FD5D3118D988CD00172DB9 /* ShareItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareItem.m; path = Source/ShareItem.m; sourceTree = "<group>"; };
 		A0EDB0FA7E6146E69ED79D4A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D7ADC66DCC014BB3BC4D9158 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -404,6 +427,8 @@
 				411B957A18D6E44E00AAD73A /* CouponItem.m */,
 				41FD5D1118D7F1B600172DB9 /* UserProfile.h */,
 				41FD5D1218D7F1B600172DB9 /* UserProfile.m */,
+				41FD5D3018D988CD00172DB9 /* ShareItem.h */,
+				41FD5D3118D988CD00172DB9 /* ShareItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -423,15 +448,9 @@
 		41AA8C6418BC7BAF0081EA29 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				41FB012018BB323700E852B5 /* ProfileViewController.h */,
-				41FB012118BB323700E852B5 /* ProfileViewController.m */,
-				41FB012218BB323700E852B5 /* ProfileViewController.xib */,
-				41FD5D0C18D7DF3700172DB9 /* ProfileInfoView.h */,
-				41FD5D0D18D7DF3700172DB9 /* ProfileInfoView.m */,
-				41FD5D0F18D7DF9400172DB9 /* ProfileInfoView.xib */,
-				41FD5D1418D7F9CC00172DB9 /* UserRestCell.h */,
-				41FD5D1518D7F9CC00172DB9 /* UserRestCell.m */,
-				41FD5D1718D82A4200172DB9 /* UserRestCell.xib */,
+				41FD5D1918D8555C00172DB9 /* Profile */,
+				41FD5D1F18D8566000172DB9 /* UserRest */,
+				41FD5D2018D8566B00172DB9 /* UserShare */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -562,6 +581,48 @@
 			name = Menu;
 			sourceTree = "<group>";
 		};
+		41FD5D1918D8555C00172DB9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				41FB012018BB323700E852B5 /* ProfileViewController.h */,
+				41FB012118BB323700E852B5 /* ProfileViewController.m */,
+				41FB012218BB323700E852B5 /* ProfileViewController.xib */,
+				41FD5D0C18D7DF3700172DB9 /* ProfileInfoView.h */,
+				41FD5D0D18D7DF3700172DB9 /* ProfileInfoView.m */,
+				41FD5D0F18D7DF9400172DB9 /* ProfileInfoView.xib */,
+				41FD5D1418D7F9CC00172DB9 /* UserRestCell.h */,
+				41FD5D1518D7F9CC00172DB9 /* UserRestCell.m */,
+				41FD5D1718D82A4200172DB9 /* UserRestCell.xib */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		41FD5D1F18D8566000172DB9 /* UserRest */ = {
+			isa = PBXGroup;
+			children = (
+				41FD5D1A18D8561500172DB9 /* UserRestViewController.h */,
+				41FD5D1B18D8561500172DB9 /* UserRestViewController.m */,
+				41FD5D1C18D8561500172DB9 /* UserRestViewController.xib */,
+				41FD5D2118D8571800172DB9 /* UserRestInfoView.h */,
+				41FD5D2218D8571800172DB9 /* UserRestInfoView.m */,
+				41FD5D2418D8572E00172DB9 /* UserRestInfoView.xib */,
+				41FD5D2618D8579500172DB9 /* UserCouponCell.h */,
+				41FD5D2718D8579500172DB9 /* UserCouponCell.m */,
+				41FD5D2918D857A800172DB9 /* UserCouponCell.xib */,
+			);
+			name = UserRest;
+			sourceTree = "<group>";
+		};
+		41FD5D2018D8566B00172DB9 /* UserShare */ = {
+			isa = PBXGroup;
+			children = (
+				41FD5D2B18D857DF00172DB9 /* UserShareViewController.h */,
+				41FD5D2C18D857DF00172DB9 /* UserShareViewController.m */,
+				41FD5D2D18D857DF00172DB9 /* UserShareViewController.xib */,
+			);
+			name = UserShare;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -640,6 +701,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41FD5D2F18D857DF00172DB9 /* UserShareViewController.xib in Resources */,
 				41F6684818C6F9D900A0A260 /* ContactCell.xib in Resources */,
 				41FB012418BB323700E852B5 /* ProfileViewController.xib in Resources */,
 				41287E8C18CEE42D000F9F27 /* SignUpViewController.xib in Resources */,
@@ -647,6 +709,7 @@
 				41287E8718CEE40A000F9F27 /* SignInViewController.xib in Resources */,
 				41FD5D1818D82A4200172DB9 /* UserRestCell.xib in Resources */,
 				412371F018D2A287001DE23E /* CheckSectionView.xib in Resources */,
+				41FD5D1E18D8561500172DB9 /* UserRestViewController.xib in Resources */,
 				41959E8B18C5C20A009241FF /* ContactViewController.xib in Resources */,
 				411B958118D6ECD800AAD73A /* CouponCell.xib in Resources */,
 				41EA4F6B18D1999800915A52 /* NearRestaurantCell.xib in Resources */,
@@ -658,8 +721,10 @@
 				41C46B2618BAE011006E2B80 /* MenuViewController.xib in Resources */,
 				412371F518D2A74D001DE23E /* ProductCell.xib in Resources */,
 				41B4546218B461C70054E406 /* InfoPlist.strings in Resources */,
+				41FD5D2518D8572E00172DB9 /* UserRestInfoView.xib in Resources */,
 				41FB010E18BAF2C100E852B5 /* CouponViewController.xib in Resources */,
 				41EA4F6418D15F7400915A52 /* LocationViewController.xib in Resources */,
+				41FD5D2A18D857A800172DB9 /* UserCouponCell.xib in Resources */,
 				41C2BC7F18BB7EE700686CE8 /* DishesCell.xib in Resources */,
 				411B958618D6F33200AAD73A /* CouponSectionView.xib in Resources */,
 				412371E918D297FB001DE23E /* RestCheckViewController.xib in Resources */,
@@ -715,11 +780,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				41FD5D1618D7F9CC00172DB9 /* UserRestCell.m in Sources */,
+				41FD5D2E18D857DF00172DB9 /* UserShareViewController.m in Sources */,
 				41EA4F6318D15F7400915A52 /* LocationViewController.m in Sources */,
 				41959E9C18C5D18C009241FF /* ABStandin.m in Sources */,
 				41FB012818BB52F500E852B5 /* DishItem.m in Sources */,
 				411B957118D68D2300AAD73A /* ProductItem.m in Sources */,
 				41959E9F18C5D48E009241FF /* UIFunction.m in Sources */,
+				41FD5D2318D8571800172DB9 /* UserRestInfoView.m in Sources */,
 				41C2BC7D18BB7E9200686CE8 /* DishesCell.m in Sources */,
 				412371EC18D2A1DF001DE23E /* CheckSectionView.m in Sources */,
 				412FBD4718BDEA14009EF882 /* WebAPI.m in Sources */,
@@ -735,6 +802,7 @@
 				412371E818D297FB001DE23E /* RestCheckViewController.m in Sources */,
 				41959E8A18C5C20A009241FF /* ContactViewController.m in Sources */,
 				41FB010D18BAF2C100E852B5 /* CouponViewController.m in Sources */,
+				41FD5D1D18D8561500172DB9 /* UserRestViewController.m in Sources */,
 				41FB012318BB323700E852B5 /* ProfileViewController.m in Sources */,
 				41C46B2B18BAE485006E2B80 /* DishesViewController.m in Sources */,
 				41FB011118BAF65D00E852B5 /* MenuItem.m in Sources */,
@@ -746,10 +814,12 @@
 				41FD5D0E18D7DF3700172DB9 /* ProfileInfoView.m in Sources */,
 				410124A918C459E600C6D87C /* SCCommon.m in Sources */,
 				411B957F18D6E70100AAD73A /* CouponCell.m in Sources */,
+				41FD5D2818D8579500172DB9 /* UserCouponCell.m in Sources */,
 				41C46B2518BAE011006E2B80 /* MenuViewController.m in Sources */,
 				410124A818C459E600C6D87C /* SCCaptureSessionManager.m in Sources */,
 				41959EA218C5D62B009241FF /* TIContact.m in Sources */,
 				41959E9B18C5D18C009241FF /* ABGroup.m in Sources */,
+				41FD5D3218D988CD00172DB9 /* ShareItem.m in Sources */,
 				412FBD4418BDCC21009EF882 /* RestaurantItem.m in Sources */,
 				41FB011F18BB322500E852B5 /* CenterViewController.m in Sources */,
 				41287E8B18CEE42D000F9F27 /* SignUpViewController.m in Sources */,

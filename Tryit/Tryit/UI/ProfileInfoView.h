@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserProfile.h"
 
 @interface ProfileInfoView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *restutantLabel;
-@property (weak, nonatomic) IBOutlet UILabel *couponLabel;
-@property (weak, nonatomic) IBOutlet UILabel *pointLabel;
-
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
+@property (strong, nonatomic) UserProfile *userProfile;
 @end
