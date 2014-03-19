@@ -7,7 +7,7 @@
 //
 
 #import "RestaurantItem.h"
-
+#import "ShareItem.h"
 @implementation RestaurantItem
 
 - (id) initWithDict:(NSDictionary *) dict
@@ -22,13 +22,17 @@
 
         if (dict[@"restaurantImageUrl"] != nil) {
             self.restaurantImageUrl = [NSURL URLWithString:dict[@"restaurantImageUrl"]];
+        }else {
+            self.restaurantImageUrl = [NSURL URLWithString:@"http://travel.tw.tranews.com/hotel/nantou/jihyuehtan/images/2.jpg"];
         }
 
         self.latitude = [dict[@"latitude"] floatValue];
         self.longitude = [dict[@"longitude"] floatValue];
 
-        self.point = dict[@"total_points_earned"];
+        self.point = [dict[@"total_points_earned"] stringValue];
         self.distance = [dict[@"distance"] floatValue];
+
+        self.couponArray = @[[[ShareItem alloc]initWithEx], [[ShareItem alloc]initWithEx], [[ShareItem alloc]initWithEx], [[ShareItem alloc]initWithEx]];
     }
     return self;
 }

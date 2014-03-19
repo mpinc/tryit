@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import "UserRestViewController.h"
 #import "RestaurantItem.h"
 #import "UserRestCell.h"
 #import "ProfileInfoView.h"
@@ -81,6 +82,14 @@ NSString *const UserRestCellIdentifier = @"UserRestCellIdentifier";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 90;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    RestaurantItem *item = [self.restArray objectAtIndex:indexPath.row];
+    UserRestViewController *userRestViewController = [[UserRestViewController alloc] initWithNibName:@"UserRestViewController" bundle:nil];
+    userRestViewController.restaurantItem = item;
+    [self.navigationController pushViewController:userRestViewController animated:YES];
 }
 
 @end

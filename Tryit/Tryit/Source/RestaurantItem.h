@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *phone_no;
 @property (nonatomic, strong) NSURL *restaurantImageUrl;
 @property (nonatomic, strong) NSString *point;
+@property (nonatomic, strong) NSArray *couponArray;
 @property (nonatomic) float distance;
 @property (nonatomic) float latitude;
 @property (nonatomic) float longitude;

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="xfK-2x-gfc" customClass="UserCouponCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xfK-2x-gfc" id="tOK-dC-JUR">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sMO-fg-Awr">
+                        <rect key="frame" x="10" y="10" width="90" height="70"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="Sni-Ls-y90"/>
+                            <constraint firstAttribute="height" constant="70" id="tud-oK-dWv"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beef And beer" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1h-wr-ZTR">
+                        <rect key="frame" x="108" y="10" width="192" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkQ-qU-6nS">
+                        <rect key="frame" x="108" y="48" width="192" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="On December 13,2013" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQb-9z-ap5">
+                        <rect key="frame" x="10" y="108" width="126" height="15"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="115" translatesAutoresizingMaskIntoConstraints="NO" id="eK9-RD-DQu">
+                        <rect key="frame" x="195" y="103" width="115" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Sent to ">
+                                <attributes>
+                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="10">
+                                <attributes>
+                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content=" friends">
+                                <attributes>
+                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sMO-fg-Awr" firstAttribute="leading" secondItem="tOK-dC-JUR" secondAttribute="leading" constant="10" id="93b-Yq-NdK"/>
+                    <constraint firstItem="sMO-fg-Awr" firstAttribute="top" secondItem="tOK-dC-JUR" secondAttribute="top" constant="10" id="a5O-Cc-HLB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="couponImageView" destination="sMO-fg-Awr" id="bwN-d6-YoR"/>
+                <outlet property="couponNameLabel" destination="bkQ-qU-6nS" id="soE-3m-MiX"/>
+                <outlet property="productNameLabel" destination="h1h-wr-ZTR" id="xd4-fG-ypc"/>
+                <outlet property="sendFriendsLabel" destination="eK9-RD-DQu" id="nMt-1Z-RFF"/>
+                <outlet property="shareDateLabel" destination="QQb-9z-ap5" id="nY3-cK-xfB"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
