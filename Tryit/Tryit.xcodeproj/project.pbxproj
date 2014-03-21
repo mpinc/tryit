@@ -30,6 +30,7 @@
 		41287E8718CEE40A000F9F27 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41287E8518CEE40A000F9F27 /* SignInViewController.xib */; };
 		41287E8B18CEE42D000F9F27 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41287E8918CEE42D000F9F27 /* SignUpViewController.m */; };
 		41287E8C18CEE42D000F9F27 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41287E8A18CEE42D000F9F27 /* SignUpViewController.xib */; };
+		412D410618DC4F04007E81F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412D410518DC4F04007E81F7 /* Images.xcassets */; };
 		412FBD4418BDCC21009EF882 /* RestaurantItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD4318BDCC21009EF882 /* RestaurantItem.m */; };
 		412FBD4718BDEA14009EF882 /* WebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD4618BDEA14009EF882 /* WebAPI.m */; };
 		412FBD4918BDEB64009EF882 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412FBD4818BDEB64009EF882 /* CoreLocation.framework */; };
@@ -49,7 +50,6 @@
 		41B4546218B461C70054E406 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41B4546018B461C70054E406 /* InfoPlist.strings */; };
 		41B4546418B461C70054E406 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B4546318B461C70054E406 /* main.m */; };
 		41B4546818B461C70054E406 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B4546718B461C70054E406 /* AppDelegate.m */; };
-		41B4547018B461C70054E406 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41B4546F18B461C70054E406 /* Images.xcassets */; };
 		41B4547718B461C70054E406 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4547618B461C70054E406 /* XCTest.framework */; };
 		41B4547818B461C70054E406 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545718B461C70054E406 /* Foundation.framework */; };
 		41B4547918B461C70054E406 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545B18B461C70054E406 /* UIKit.framework */; };
@@ -143,6 +143,7 @@
 		41287E8818CEE42D000F9F27 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = UI/SignUpViewController.h; sourceTree = "<group>"; };
 		41287E8918CEE42D000F9F27 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = UI/SignUpViewController.m; sourceTree = "<group>"; };
 		41287E8A18CEE42D000F9F27 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignUpViewController.xib; path = UI/SignUpViewController.xib; sourceTree = "<group>"; };
+		412D410518DC4F04007E81F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		412FBD4218BDCC21009EF882 /* RestaurantItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantItem.h; path = Source/RestaurantItem.h; sourceTree = "<group>"; };
 		412FBD4318BDCC21009EF882 /* RestaurantItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantItem.m; path = Source/RestaurantItem.m; sourceTree = "<group>"; };
 		412FBD4518BDEA14009EF882 /* WebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebAPI.h; path = Source/WebAPI.h; sourceTree = "<group>"; };
@@ -177,7 +178,6 @@
 		41B4546518B461C70054E406 /* Tryit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tryit-Prefix.pch"; sourceTree = "<group>"; };
 		41B4546618B461C70054E406 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		41B4546718B461C70054E406 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		41B4546F18B461C70054E406 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		41B4547518B461C70054E406 /* TryitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TryitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B4547618B461C70054E406 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		41B4547E18B461C70054E406 /* TryitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TryitTests-Info.plist"; sourceTree = "<group>"; };
@@ -495,7 +495,7 @@
 			children = (
 				41B4546618B461C70054E406 /* AppDelegate.h */,
 				41B4546718B461C70054E406 /* AppDelegate.m */,
-				41B4546F18B461C70054E406 /* Images.xcassets */,
+				412D410518DC4F04007E81F7 /* Images.xcassets */,
 				41B4545E18B461C70054E406 /* Supporting Files */,
 				41C46B2718BAE023006E2B80 /* UI */,
 				41FB011218BAF68400E852B5 /* Source */,
@@ -710,13 +710,13 @@
 				41FD5D1818D82A4200172DB9 /* UserRestCell.xib in Resources */,
 				412371F018D2A287001DE23E /* CheckSectionView.xib in Resources */,
 				41FD5D1E18D8561500172DB9 /* UserRestViewController.xib in Resources */,
+				412D410618DC4F04007E81F7 /* Images.xcassets in Resources */,
 				41959E8B18C5C20A009241FF /* ContactViewController.xib in Resources */,
 				411B958118D6ECD800AAD73A /* CouponCell.xib in Resources */,
 				41EA4F6B18D1999800915A52 /* NearRestaurantCell.xib in Resources */,
 				41FB011A18BAF90B00E852B5 /* Localizable.strings in Resources */,
 				41FD5D1018D7DF9400172DB9 /* ProfileInfoView.xib in Resources */,
 				411B957818D6E1B500AAD73A /* CouponListViewController.xib in Resources */,
-				41B4547018B461C70054E406 /* Images.xcassets in Resources */,
 				410124AF18C45AEC00C6D87C /* CaptureViewController.xib in Resources */,
 				41C46B2618BAE011006E2B80 /* MenuViewController.xib in Resources */,
 				412371F518D2A74D001DE23E /* ProductCell.xib in Resources */,
