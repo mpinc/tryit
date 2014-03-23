@@ -12,5 +12,8 @@
 @interface DishesViewController : CenterViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *dishesTable;
+@property (weak, nonatomic) IBOutlet UIToolbar *bottomBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *locationButton;
 
 @end

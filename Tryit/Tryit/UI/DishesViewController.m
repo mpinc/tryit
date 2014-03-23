@@ -44,6 +44,21 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
     // Do any additional setup after loading the view from its nib.
 
     [self.dishesTable registerNib:[UINib nibWithNibName:@"DishesCell" bundle:nil] forCellReuseIdentifier:DishesItemIdentifier];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.dishesTable.bounds];
+    [imageView setImage:[UIImage imageNamed:@"common_bg"]];
+    [self.dishesTable setBackgroundView:imageView];
+
+    [self.bottomBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forToolbarPosition:UIBarPositionBottom barMetrics:UIBarMetricsDefault];
+
+    UIButton *tempCameraButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 88, 44)];
+    [tempCameraButton setImage:[UIImage imageNamed:@"btn_camera"] forState:UIControlStateNormal];
+    [tempCameraButton addTarget:self action:@selector(touchCameraButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.cameraButton setCustomView:tempCameraButton];
+
+    UIButton *tempLocationButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [tempLocationButton setImage:[UIImage imageNamed:@"btn_location"] forState:UIControlStateNormal];
+    [tempLocationButton addTarget:self action:@selector(touchLocationButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.locationButton setCustomView:tempLocationButton];
 }
 
 - (void)didReceiveMemoryWarning

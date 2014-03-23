@@ -54,15 +54,9 @@ NSString *const ItemTableCellIdentifier  = @"ItemTableCellIdentifier";
 
         self.itemArray = @[exploerDishesItem, createCouponItem, myProfileItem];
 
-        if (IsIOS7) {
-            [dishesNavViewController.navigationBar setBarTintColor:UIColorFromRGB(0x487530)];
-            [couponNavViewController.navigationBar setBarTintColor:UIColorFromRGB(0x487530)];
-            [profileNavViewController.navigationBar setBarTintColor:UIColorFromRGB(0x487530)];
-        }else {
-            [dishesNavViewController.navigationBar setBackgroundColor:UIColorFromRGB(0x487530)];
-            [couponNavViewController.navigationBar setBackgroundColor:UIColorFromRGB(0x487530)];
-            [profileNavViewController.navigationBar setBackgroundColor:UIColorFromRGB(0x487530)];
-        }
+        [dishesNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
+        [couponNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
+        [profileNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
     }
     return self;
 }
@@ -116,6 +110,7 @@ NSString *const ItemTableCellIdentifier  = @"ItemTableCellIdentifier";
         [cell.textLabel setTextColor:[UIColor whiteColor]];
         [cell.textLabel setFont:[UIFont systemFontOfSize:17]];
         [cell.textLabel setHighlightedTextColor:UIColorFromRGB(0x92C958)];
+        [cell.textLabel setBackgroundColor:[UIColor clearColor]];
     }
 
     MenuItem *item = self.itemArray[indexPath.row];

@@ -37,15 +37,8 @@
 
     menuNavViewController.navigationBar.tintColor = UIColorFromRGB(0x757575);
     menuNavViewController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor lightGrayColor] forKey:UITextAttributeTextColor];
-    if (IsIOS7) {
-        [menuNavViewController.navigationBar setBarTintColor:UIColorFromRGB(0x2C2C2C)];
-
-    }else{
-        menuNavViewController.navigationBar.backgroundColor = UIColorFromRGB(0x2C2C2C);
-    }
+    [menuNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_black"] forBarMetrics:UIBarMetricsDefault];
         
-
-
     self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:[self.menuViewController getViewControllerWithIndex:0] leftDrawerViewController:menuNavViewController];
 
 
