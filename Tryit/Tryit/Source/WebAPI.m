@@ -32,11 +32,11 @@
             RestaurantItem * item = [[RestaurantItem alloc] initWithDict:restDict];
             [array addObject:item];
         }
-        NSLog(@"array:%@", array);
+        DLog(@"array:%@", array);
         success(array);
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
+        DLog(@"Error: %@", error);
         failure();
     }];
 }
@@ -51,11 +51,11 @@
             ProductItem *item = [[ProductItem alloc] initWithDict:restDict];
             [array addObject:item];
         }
-        NSLog(@"array:%@", array);
+        DLog(@"array:%@", array);
         success(array);
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
+        DLog(@"Error: %@", error);
         failure();
     }];
 }
@@ -70,11 +70,11 @@
             CouponItem *item = [[CouponItem alloc] initWithDict:restDict];
             [array addObject:item];
         }
-        NSLog(@"array:%@", array);
+        DLog(@"array:%@", array);
         success(array);
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
+        DLog(@"Error: %@", error);
         failure();
     }];
 }
@@ -90,11 +90,25 @@
             RestaurantItem *item = [[RestaurantItem alloc] initWithDict:restDict];
             [array addObject:item];
         }
-        NSLog(@"array:%@", array);
+        DLog(@"array:%@", array);
         success(array);
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
+        DLog(@"Error: %@", error);
+        failure();
+    }];
+}
+
++ (void) customerCheckIn:(NSString*) userId restId:(NSString *) restId success:(void (^)())success failure:(void (^)()) failure
+{
+    NSString *requestString = [NSString stringWithFormat:@"/cust/%@/biz/%@/checkin", userId, restId];
+    [[WebAPI getManager] POST:requestString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+        DLog(@"%@", operation);
+        success();
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DLog(@"Error: %@", error);
         failure();
     }];
 }

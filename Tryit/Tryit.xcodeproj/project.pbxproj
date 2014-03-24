@@ -61,6 +61,8 @@
 		41C46B2618BAE011006E2B80 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C46B2418BAE011006E2B80 /* MenuViewController.xib */; };
 		41C46B2B18BAE485006E2B80 /* DishesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C46B2918BAE485006E2B80 /* DishesViewController.m */; };
 		41C46B2C18BAE485006E2B80 /* DishesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C46B2A18BAE485006E2B80 /* DishesViewController.xib */; };
+		41D79AC418E01123001566A3 /* NSString+Utlity.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D79AC318E01123001566A3 /* NSString+Utlity.m */; };
+		41D79AC718E01324001566A3 /* UIButtonExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D79AC618E01324001566A3 /* UIButtonExt.m */; };
 		41EA4F6318D15F7400915A52 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EA4F6118D15F7400915A52 /* LocationViewController.m */; };
 		41EA4F6418D15F7400915A52 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41EA4F6218D15F7400915A52 /* LocationViewController.xib */; };
 		41EA4F6618D160DD00915A52 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EA4F6518D160DD00915A52 /* MapKit.framework */; };
@@ -192,6 +194,10 @@
 		41C46B2818BAE485006E2B80 /* DishesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DishesViewController.h; path = UI/DishesViewController.h; sourceTree = "<group>"; };
 		41C46B2918BAE485006E2B80 /* DishesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DishesViewController.m; path = UI/DishesViewController.m; sourceTree = "<group>"; };
 		41C46B2A18BAE485006E2B80 /* DishesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DishesViewController.xib; path = UI/DishesViewController.xib; sourceTree = "<group>"; };
+		41D79AC218E01123001566A3 /* NSString+Utlity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utlity.h"; sourceTree = "<group>"; };
+		41D79AC318E01123001566A3 /* NSString+Utlity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utlity.m"; sourceTree = "<group>"; };
+		41D79AC518E01324001566A3 /* UIButtonExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonExt.h; sourceTree = "<group>"; };
+		41D79AC618E01324001566A3 /* UIButtonExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonExt.m; sourceTree = "<group>"; };
 		41EA4F6018D15F7400915A52 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationViewController.h; path = UI/LocationViewController.h; sourceTree = "<group>"; };
 		41EA4F6118D15F7400915A52 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationViewController.m; path = UI/LocationViewController.m; sourceTree = "<group>"; };
 		41EA4F6218D15F7400915A52 /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationViewController.xib; path = UI/LocationViewController.xib; sourceTree = "<group>"; };
@@ -375,6 +381,10 @@
 		41959E8E18C5D18C009241FF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				41D79AC518E01324001566A3 /* UIButtonExt.h */,
+				41D79AC618E01324001566A3 /* UIButtonExt.m */,
+				41D79AC218E01123001566A3 /* NSString+Utlity.h */,
+				41D79AC318E01123001566A3 /* NSString+Utlity.m */,
 				41959E9D18C5D48E009241FF /* UIFunction.h */,
 				41959E9E18C5D48E009241FF /* UIFunction.m */,
 				41959E8F18C5D18C009241FF /* Address Book Wrappers */,
@@ -798,6 +808,7 @@
 				410124AA18C459E600C6D87C /* UIImage+Resize.m in Sources */,
 				41EA4F6918D1998200915A52 /* NearRestaurantCell.m in Sources */,
 				412371F318D2A72E001DE23E /* ProductCell.m in Sources */,
+				41D79AC718E01324001566A3 /* UIButtonExt.m in Sources */,
 				41B4546818B461C70054E406 /* AppDelegate.m in Sources */,
 				412371E818D297FB001DE23E /* RestCheckViewController.m in Sources */,
 				41959E8A18C5C20A009241FF /* ContactViewController.m in Sources */,
@@ -816,6 +827,7 @@
 				411B957F18D6E70100AAD73A /* CouponCell.m in Sources */,
 				41FD5D2818D8579500172DB9 /* UserCouponCell.m in Sources */,
 				41C46B2518BAE011006E2B80 /* MenuViewController.m in Sources */,
+				41D79AC418E01123001566A3 /* NSString+Utlity.m in Sources */,
 				410124A818C459E600C6D87C /* SCCaptureSessionManager.m in Sources */,
 				41959EA218C5D62B009241FF /* TIContact.m in Sources */,
 				41959E9B18C5D18C009241FF /* ABGroup.m in Sources */,

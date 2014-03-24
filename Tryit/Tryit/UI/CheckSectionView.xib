@@ -11,6 +11,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkSection_bg" translatesAutoresizingMaskIntoConstraints="NO" id="hZT-qj-pDO">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name of Shop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAV-uj-gLb">
                     <rect key="frame" x="20" y="9" width="165" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -27,11 +31,11 @@ Redwood Shores, CA 94065</string>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjN-wt-ljB">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjN-wt-ljB">
                     <rect key="frame" x="242" y="7" width="70" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.78431379795074463" green="0.458823561668396" blue="0.15686275064945221" alpha="1" colorSpace="deviceRGB"/>
-                    <state key="normal" title="Call">
+                    <state key="normal" title="Call" image="btn_call" backgroundImage="btn_bg_brown">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -43,7 +47,7 @@ Redwood Shores, CA 94065</string>
                     <rect key="frame" x="242" y="42" width="70" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.10588236153125763" green="0.78039222955703735" blue="0.24705883860588074" alpha="1" colorSpace="deviceRGB"/>
-                    <state key="normal" title="Check In">
+                    <state key="normal" title="Check In" backgroundImage="btn_bg_green">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -52,6 +56,12 @@ Redwood Shores, CA 94065</string>
                     </connections>
                 </button>
             </subviews>
+            <constraints>
+                <constraint firstItem="hZT-qj-pDO" firstAttribute="leading" secondItem="iTe-1I-Kyo" secondAttribute="leading" id="Bse-qc-AEE"/>
+                <constraint firstItem="hZT-qj-pDO" firstAttribute="top" secondItem="iTe-1I-Kyo" secondAttribute="top" id="ByF-MA-hV1"/>
+                <constraint firstAttribute="bottom" secondItem="hZT-qj-pDO" secondAttribute="bottom" id="gIn-A3-5j5"/>
+                <constraint firstAttribute="trailing" secondItem="hZT-qj-pDO" secondAttribute="trailing" id="wZZ-tf-uBl"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="addresslabel" destination="qjD-iH-5s7" id="h14-SU-d1F"/>
@@ -61,4 +71,10 @@ Redwood Shores, CA 94065</string>
             </connections>
         </view>
     </objects>
+    <resources>
+        <image name="btn_bg_brown" width="29" height="28"/>
+        <image name="btn_bg_green" width="29" height="28"/>
+        <image name="btn_call" width="19" height="13"/>
+        <image name="checkSection_bg" width="320" height="62"/>
+    </resources>
 </document>

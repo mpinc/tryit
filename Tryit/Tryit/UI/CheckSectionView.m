@@ -7,7 +7,10 @@
 //
 
 #import "CheckSectionView.h"
-
+#import "NSString+Utlity.h"
+#import "UIFunction.h"
+#import "UIButtonExt.h"
+#import "WebAPI.h"
 @implementation CheckSectionView
 
 - (id)initWithFrame:(CGRect)frame
@@ -38,14 +41,29 @@
         self.backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 80)];
         [self.backgroundView setBackgroundColor:[UIColor whiteColor]];
     }
+    [self.callButton.layer setCornerRadius:6];
+    [self.callButton.layer setMasksToBounds:YES];
+    [self.callButton leftImageAndRightTitle:6];
+
+    [self.checkInButton.layer setCornerRadius:6];
+    [self.checkInButton.layer setMasksToBounds:YES];
 
 }
 
-- (IBAction)touchCallButton:(id)sender {
-
+- (IBAction)touchCallButton:(id)sender
+{
+    if (![NSString isEmptyString:self.restaurantItem.phone_no WithPromptString:NSLocalizedString(@"PROMPT_PHONE_NO_NOT_BE_NIL", Nil)]) {
+        [self.restaurantItem.phone_no callPhoneNumber];
+    }
 }
-- (IBAction)touchCheckInButton:(id)sender {
 
+- (IBAction)touchCheckInButton:(id)sender
+{
+    [WebAPI customerCheckIn:@"100001" restId:self.restaurantItem.biz_id success:^{
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHECK_IN_SUCCESS", nil)];
+    } failure:^{
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHECK_IN_FAIL", nil)];
+    }];
 }
 
 @end

@@ -48,6 +48,10 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
     [imageView setImageWithURL:self.restItem.restaurantImageUrl];
     self.tableView.tableHeaderView = imageView;
 
+    UIView *tableBackView = [[UIView alloc] initWithFrame:self.tableView.frame];
+    [tableBackView setBackgroundColor:UIColorFromRGB(0xF8FAF3)];
+    [self.tableView setBackgroundView:tableBackView];
+
     [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
     WEAKSELF_SC
     [WebAPI getProductWithRestId:self.restItem.biz_id success:^(NSMutableArray *array) {
@@ -59,6 +63,7 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
     }];
 
     self.title = self.restItem.name;
+    [self customBackBarItem];
 }
 
 - (void)didReceiveMemoryWarning

@@ -21,7 +21,11 @@
 
 
 "PROMPT_CONTACTS_AUTHORITY" = "No contacts permission. Please return to the main screen, click Settings -> Privacy -> Contacts, open Try It permissions switch.";
+"PROMPT_PHONE_NO_NOT_BE_NIL" = "Phone numbers can not be empty.";
 "PROMPT_LODING" = "Loding...";
+"PROMPT_CHECK_IN_SUCCESS" = "Check In success!";
+"PROMPT_CHECK_IN_FAIL" = "Check in unsuccesfully!";
+
 
 "FORMAT_TITEL_ADD_FRIENDS" = "Add Friends (%d)";
 "FORMAT_MY_POINTS" = "My Points: (%@)";
