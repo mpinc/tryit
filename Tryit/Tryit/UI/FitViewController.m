@@ -42,4 +42,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Button Action
+- (void) touchBackbutton
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void) customBackBarItem
+{
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 44)];
+    [button addTarget:self action:@selector(touchBackbutton) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"navback"] forState:UIControlStateNormal];
+
+    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = leftButtonItem;
+}
+
 @end

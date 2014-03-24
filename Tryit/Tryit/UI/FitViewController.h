@@ -10,4 +10,6 @@
 
 @interface FitViewController : UIViewController
 
+- (void) customBackBarItem;
+
 @end

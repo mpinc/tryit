@@ -57,6 +57,11 @@ NSString *const ItemTableCellIdentifier  = @"ItemTableCellIdentifier";
         [dishesNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
         [couponNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
         [profileNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
+
+        dishesNavViewController.navigationBar.barStyle = UIBarStyleBlack;
+        couponNavViewController.navigationBar.barStyle = UIBarStyleBlack;
+        profileNavViewController.navigationBar.barStyle = UIBarStyleBlack;
+        
     }
     return self;
 }

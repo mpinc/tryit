@@ -39,8 +39,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
         self.filteredList = [[NSMutableArray alloc] initWithCapacity:0];
         self.hasLocation = NO;
         self.title = NSLocalizedString(@"TITEL_NEARBY_RESTAURANTS", nil);
-        self.searchDisplayController.delegate = self;
-        self.searchBar.delegate = self;
+
     }
     return self;
 }
@@ -53,6 +52,17 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
     [self.tableView registerNib:[UINib nibWithNibName:@"NearRestaurantCell" bundle:nil] forCellReuseIdentifier:NearRestaurantCellIdentifier];
     [self.searchDisplayController.searchResultsTableView registerNib:[UINib nibWithNibName:@"NearRestaurantCell" bundle:nil] forCellReuseIdentifier:NearRestaurantCellIdentifier];
     [self.mapView setShowsUserLocation:YES];
+
+    self.searchDisplayController.delegate = self;
+    self.searchBar.delegate = self;
+
+    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"bg_search"]];
+
+    [self customBackBarItem];
+
+    if (IsIOS7) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,6 +70,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
@@ -112,10 +123,25 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 #pragma mark -
 #pragma mark UISearchBarDelegate
 
-//- (void)searchBarTextDidBeginEditing:(UISearchBar *)_searchBar
-//{
-//	[self.searchDisplayController.searchBar setShowsCancelButton:NO];
-//}
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)m_searchBar
+{
+	[self.searchDisplayController.searchBar setShowsCancelButton:YES];
+    for (UIView *searchbuttons in self.searchBar.subviews)
+    {
+        if ([searchbuttons isKindOfClass:[UIButton class]])
+        {
+            UIButton *cancelButton = (UIButton*)searchbuttons;
+            cancelButton.enabled = YES;
+            [cancelButton setBackgroundImage:[UIImage imageNamed:@"bg_search"] forState:UIControlStateNormal];
+            [cancelButton setBackgroundImage:[UIImage imageNamed:@"bg_search"] forState:UIControlStateHighlighted];
+            break;
+        }
+    }
+
+    if (!m_searchBar.window.isKeyWindow){
+        [m_searchBar.window makeKeyAndVisible];
+    }
+}
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)_searchBar
 {
@@ -188,6 +214,17 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
     }
 }
 
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[RestaurantAnnotation class]]) {
+        MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"searchAnnotation"];
+        annotationView.image = [UIImage imageNamed:@"annotation"];
+        annotationView.canShowCallout=YES;
+        return annotationView;
+    }
+    return nil;
+}
+
 - (void) addAnnotations
 {
     NSArray *annotations = [self.mapView annotations];
@@ -199,7 +236,6 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
         RestaurantAnnotation *annnotation = [[RestaurantAnnotation alloc] initWithRestaurantItem:item];
         [self.mapView addAnnotation:annnotation];
     }
-
 }
 
 @end

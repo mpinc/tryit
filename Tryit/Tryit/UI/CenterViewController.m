@@ -34,7 +34,6 @@
 
 -(void)setupLeftMenuButton{
 
-//    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(leftDrawerButtonPress:)];
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     [button setBackgroundImage:[UIImage imageNamed:@"menu_icon"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(leftDrawerButtonPress:) forControlEvents:UIControlEventTouchUpInside];

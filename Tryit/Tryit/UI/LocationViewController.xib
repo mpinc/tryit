@@ -67,6 +67,7 @@
         <searchDisplayController id="QVm-PQ-blc">
             <connections>
                 <outlet property="delegate" destination="-1" id="JHw-gh-2C7"/>
+                <outlet property="searchBar" destination="xor-YT-86C" id="Y91-6v-OiT"/>
                 <outlet property="searchContentsController" destination="-1" id="pbv-63-ZgS"/>
                 <outlet property="searchResultsDataSource" destination="-1" id="iWs-Nn-IRa"/>
                 <outlet property="searchResultsDelegate" destination="-1" id="dgb-S8-twf"/>

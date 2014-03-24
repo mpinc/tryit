@@ -59,6 +59,11 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
     [tempLocationButton setImage:[UIImage imageNamed:@"btn_location"] forState:UIControlStateNormal];
     [tempLocationButton addTarget:self action:@selector(touchLocationButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.locationButton setCustomView:tempLocationButton];
+
+    if (IsIOS7) {
+        [self.dishesTable setSeparatorInset:UIEdgeInsetsZero];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning

@@ -31,6 +31,8 @@
 {
     if (restaurantItem.restaurantImageUrl != nil) {
         [self.restaurantImage setImageWithURL:restaurantItem.restaurantImageUrl];
+        [self.restaurantImage.layer setCornerRadius:8];
+        [self.restaurantImage.layer setMasksToBounds:YES];
     }
     self.nameLabel.text = restaurantItem.name;
     self.addressLabel.text = restaurantItem.address;

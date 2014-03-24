@@ -9,7 +9,7 @@
 #import "WebAPI.h"
 #import "UIFunction.h"
 
-#define BaseURL @"http://192.168.1.105:8080"
+#define BaseURL @"http://0.0.0.0:8080"
 
 @implementation WebAPI
 
