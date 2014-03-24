@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "FitViewController.h"
+#import "CouponViewController.h"
 @interface MenuViewController : FitViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) CouponViewController *cpViewController;
 
 @property (weak, nonatomic) IBOutlet UITableView *menuTable;
 

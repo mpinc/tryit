@@ -16,10 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="isf-pA-vrg">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="isf-pA-vrg">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="ORf-ww-Sz9"/>
                         <outlet property="delegate" destination="-1" id="vmE-Ul-Nvz"/>
@@ -27,6 +28,12 @@
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="isf-pA-vrg" secondAttribute="trailing" id="CSg-cJ-Kpu"/>
+                <constraint firstAttribute="bottom" secondItem="isf-pA-vrg" secondAttribute="bottom" id="PxV-Uh-Ep6"/>
+                <constraint firstItem="isf-pA-vrg" firstAttribute="top" secondItem="1" secondAttribute="top" id="bfT-4e-rI3"/>
+                <constraint firstItem="isf-pA-vrg" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="eua-G3-dhO"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>

@@ -12,6 +12,7 @@
 @interface CouponCell : UITableViewCell
 
 @property (strong, nonatomic) CouponItem *couItem;
+@property (weak, nonatomic) IBOutlet UILabel *couponLabel;
 
 - (void) setCouponItem:(CouponItem *) item;
 

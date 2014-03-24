@@ -8,13 +8,13 @@
 
 #import "CouponListViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "CouponViewController.h"
 #import "CouponItem.h"
-
 #import "CouponCell.h"
 #import "CouponSectionView.h"
-
 #import "WebAPI.h"
 #import "UIFunction.h"
+#import "AppDelegate.h"
 
 NSString *const CouponListHeadSectionIdentifier = @"CouponListHeadSectionIdentifier";
 NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
@@ -48,6 +48,10 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
     [imageView setImageWithURL:self.productItem.img_url];
     self.tableView.tableHeaderView = imageView;
+
+    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.tableView.bounds];
+    [bgImageView setImage:[UIImage imageNamed:@"food_bg"]];
+    [self.tableView setBackgroundView:bgImageView];
 
     [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
     WEAKSELF_SC
@@ -93,7 +97,7 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    return 50;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -108,5 +112,13 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
     return 80;
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+    CouponItem *item = [self.couponArray objectAtIndex:indexPath.row];
+    CouponViewController *couponViewController = (CouponViewController*)[appDelegate getCouponViewController];
+    [couponViewController setItem:item];
+    [appDelegate setCenterViewControllerWithIndex:1];
+}
 
 @end

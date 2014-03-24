@@ -28,7 +28,7 @@
 
 - (void) setCouponItem:(CouponItem *)item
 {
-    self.textLabel.text = item.name;
+    self.couponLabel.text = item.name;
 }
 
 @end

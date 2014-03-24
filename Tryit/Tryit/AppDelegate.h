@@ -20,6 +20,6 @@
 
 - (void) showSignInViewController;
 - (void) hiddeSignInViewController;
-
+- (id) getCouponViewController;
 
 @end

@@ -64,6 +64,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="6uk-6u-tTs" secondAttribute="bottom" id="0lw-Mv-IWQ"/>
                     <constraint firstItem="6uk-6u-tTs" firstAttribute="leading" secondItem="HRQ-mi-scz" secondAttribute="leading" constant="10" id="2BZ-lX-R0r"/>
@@ -74,6 +75,7 @@
                     <constraint firstItem="6uk-6u-tTs" firstAttribute="top" secondItem="HRQ-mi-scz" secondAttribute="top" constant="10" id="s9A-Um-WJ1"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="descriptionLabel" destination="zfs-rX-uYz" id="BXM-py-uLh"/>
                 <outlet property="descriptionView" destination="CXq-Ql-wtm" id="mDP-SL-vI3"/>

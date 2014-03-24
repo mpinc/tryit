@@ -9,7 +9,6 @@
 #import "MenuViewController.h"
 
 #import "DishesViewController.h"
-#import "CouponViewController.h"
 #import "ProfileViewController.h"
 
 #import "AppDelegate.h"
@@ -45,6 +44,7 @@ NSString *const ItemTableCellIdentifier  = @"ItemTableCellIdentifier";
         MenuItem *createCouponItem = [[MenuItem alloc] initWithName:NSLocalizedString(@"MENU_CREATE_COUPON", nil) Image:@"icon_02"];
         createCouponItem.viewController = couponNavViewController;
         couponViewController.title = NSLocalizedString(@"MENU_CREATE_COUPON", nil);
+        self.cpViewController = couponViewController;
 
         ProfileViewController *profileViewController = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController" bundle:nil];
         UINavigationController *profileNavViewController = [[UINavigationController alloc] initWithRootViewController:profileViewController];

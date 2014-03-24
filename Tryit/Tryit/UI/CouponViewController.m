@@ -88,4 +88,9 @@
     [self.navigationController pushViewController:contactViewController animated:YES];
 }
 
+- (void) configByCouponItem:(CouponItem*) couponItem
+{
+    self.item = couponItem;
+}
+
 @end

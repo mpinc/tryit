@@ -11,15 +11,19 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkSection_bg" translatesAutoresizingMaskIntoConstraints="NO" id="x7V-TG-5sD">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coffee" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHb-lB-lRX">
-                    <rect key="frame" x="20" y="6" width="165" height="25"/>
+                    <rect key="frame" x="15" y="6" width="165" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Black Coffee" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="180" translatesAutoresizingMaskIntoConstraints="NO" id="7rl-Xi-zKv">
-                    <rect key="frame" x="20" y="39" width="180" height="33"/>
+                    <rect key="frame" x="15" y="39" width="180" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -33,7 +37,12 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="x7V-TG-5sD" secondAttribute="trailing" id="UWl-KN-LqV"/>
+                <constraint firstAttribute="bottom" secondItem="x7V-TG-5sD" secondAttribute="bottom" id="f9s-WK-kBG"/>
+                <constraint firstItem="x7V-TG-5sD" firstAttribute="top" secondItem="z0a-5H-vHZ" secondAttribute="top" id="spK-mz-zzs"/>
+                <constraint firstItem="x7V-TG-5sD" firstAttribute="leading" secondItem="z0a-5H-vHZ" secondAttribute="leading" id="zYQ-zE-W4T"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="descriptionLabel" destination="7rl-Xi-zKv" id="kKL-YZ-HWa"/>
@@ -42,4 +51,7 @@
             </connections>
         </view>
     </objects>
+    <resources>
+        <image name="checkSection_bg" width="320" height="62"/>
+    </resources>
 </document>

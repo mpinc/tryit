@@ -109,8 +109,6 @@
     [self.drawerController closeDrawerAnimated:YES completion:nil];
 }
 
-
-
 - (void) showSignInViewController
 {
     if (self.signInNavViewController == nil) {
@@ -152,6 +150,11 @@
     [self.drawerController dismissViewControllerAnimated:YES completion:^{
 
     } ];
+}
+
+- (id) getCouponViewController
+{
+    return self.menuViewController.cpViewController;
 }
 
 @end

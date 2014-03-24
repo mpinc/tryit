@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CenterViewController.h"
+#import "CouponItem.h"
 
 @interface CouponViewController : CenterViewController <UITextViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -16,5 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *shareTextView;
 @property (weak, nonatomic) IBOutlet UIButton *addFriendsButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
+@property (strong, nonatomic) CouponItem *item;
+
+- (void) configByCouponItem:(CouponItem*) couponItem;
 
 @end
