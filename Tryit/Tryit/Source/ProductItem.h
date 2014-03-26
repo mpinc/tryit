@@ -14,9 +14,10 @@
 @property (nonatomic, strong) NSString *prod_id;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *price;
-@property (nonatomic, strong) NSString *dishDescription;
+@property (nonatomic, strong) NSString *bizName;
+@property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSURL *img_url;
-@property (nonatomic, strong) NSMutableArray *conpous;
 
 - (id) initWithDict:(NSDictionary *) dict;
 

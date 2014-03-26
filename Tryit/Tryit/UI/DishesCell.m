@@ -34,10 +34,18 @@
     
 }
 
-- (void) setDishItem:(DishItem *) dishItem
+- (void) setDishItem:(ProductItem *) dishItem
 {
-    [self.dishImageView setImageWithURL:dishItem.dishImageUrl];
-    self.restaurantLabel.text = @"KFC";
+    if (dishItem.img_url != nil) {
+        [self.dishImageView setImageWithURL:dishItem.img_url];
+    }else{
+        UIImage *image = [[UIImage imageNamed:@"default_any"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
+        [self.dishImageView setImage:image];
+    }
+
+    self.dishNameLabel.text = dishItem.name;
+    self.restaurantLabel.text = dishItem.bizName;
+    self.descriptionLabel.text = dishItem.type;
 }
 
 -(void)layoutSubviews

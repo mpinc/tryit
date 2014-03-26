@@ -9,11 +9,13 @@
 #import "DishesViewController.h"
 
 #import "DishesCell.h"
-#import "DishItem.h"
+#import "ProductItem.h"
 #import "AppDelegate.h"
 #import "WebAPI.h"
 
 NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
+
+#define TopX 10
 
 @interface DishesViewController ()
 
@@ -31,9 +33,7 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
     if (self) {
         // Custom initialization
 
-        NSArray *array = @[[[DishItem alloc] initWithEx], [[DishItem alloc] initWithEx], [[DishItem alloc] initWithEx], [[DishItem alloc] initWithEx]];
-        self.dishItemArray = [[NSMutableArray alloc] initWithArray:array];
-
+        self.dishItemArray = [[NSMutableArray alloc] initWithCapacity:0];
     }
     return self;
 }
@@ -64,6 +64,12 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
         [self.dishesTable setSeparatorInset:UIEdgeInsetsZero];
     }
 
+    [WebAPI getTopX:TopX success:^(NSMutableArray *array) {
+        self.dishItemArray = [NSMutableArray arrayWithArray:array];
+        [self.dishesTable reloadData];
+    } failure:^{
+
+    }];
 }
 
 - (void)didReceiveMemoryWarning

@@ -31,7 +31,7 @@
 - (void) setProductItem:(ProductItem *) item
 {
     self.nameLabel.text = item.name;
-    self.descriptionLabel.text = item.dishDescription;
+    self.descriptionLabel.text = item.description;
     self.priceLabel.text = [NSString stringWithFormat:@"$%@", item.price];
 }
 

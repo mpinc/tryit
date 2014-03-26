@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DishItem.h"
+#import "ProductItem.h"
 
 @interface DishesCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *dishImageView;
@@ -16,6 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *restaurantLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
-- (void) setDishItem:(DishItem *) dishItem;
+- (void) setDishItem:(ProductItem *) dishItem;
 
 @end

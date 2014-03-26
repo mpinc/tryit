@@ -9,7 +9,7 @@
 #import "WebAPI.h"
 #import "UIFunction.h"
 
-#define BaseURL @"http://0.0.0.0:8080"
+#define BaseURL @"http://192.168.1.115:8080"
 
 @implementation WebAPI
 
@@ -21,6 +21,25 @@
         manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:BaseURL]];
     });
     return manager;
+}
+
++ (void) getTopX:(NSInteger) topx success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
+{
+    NSString *requestString = [NSString stringWithFormat:@"/biz/%d/topDish", topx];
+    [[WebAPI getManager] GET:requestString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+        NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
+        for (NSDictionary *restDict in responseObject) {
+            ProductItem *item = [[ProductItem alloc] initWithDict:restDict];
+            [array addObject:item];
+        }
+        DLog(@"array:%@", array);
+        success(array);
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DLog(@"Error: %@", error);
+        failure();
+    }];
 }
 
 + (void) getNearRestaurantWithCoordinate:(CLLocationCoordinate2D) coordinate success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure

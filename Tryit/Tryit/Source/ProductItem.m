@@ -17,15 +17,15 @@
     {
         self.biz_id = dict[@"biz_id"];
         self.prod_id = dict[@"prod_id"];
-        self.name = dict[@"name"];
+        self.name = dict[@"productName"];
         self.price = dict[@"price"];
-        self.dishDescription = dict[@"dishDescription"];
+        self.bizName = dict[@"bizName"];
+        self.type = dict[@"type"];
+        self.description = dict[@"description"];
 
         if (dict[@"img_url"] != nil && ![dict[@"img_url"] isKindOfClass:[NSNull class]]) {
             self.img_url = [NSURL URLWithString:dict[@"img_url"]];
         }
-
-        self.conpous = [[NSMutableArray alloc] initWithCapacity:0];
     }
     return self;
 

@@ -34,7 +34,7 @@
     }
     self.nameLabel.text = item.name;
     self.priceLabel.text = [NSString stringWithFormat:@"$%@", item.price];
-    self.descriptionLabel.text = item.dishDescription;
+    self.descriptionLabel.text = item.description;
 }
 
 @end
