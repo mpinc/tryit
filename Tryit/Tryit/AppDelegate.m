@@ -60,7 +60,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window setHidden:NO];
     [self.window setRootViewController:self.drawerController];
-
+    [self.window makeKeyAndVisible];
+    
 //    [self showSignInViewController];
 
     return YES;

@@ -7,12 +7,14 @@
 //
 
 #import "CouponViewController.h"
-#import "CaptureViewController.h"
 #import "ContactViewController.h"
 
 @interface CouponViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
+@property (weak, nonatomic) IBOutlet UIImageView *textBgView;
+@property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeight;
 
 @end
 
@@ -31,6 +33,17 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    UIImage *couponImage = [[UIImage imageNamed:@"coupon_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)];
+    [self.couponButton setBackgroundImage:couponImage forState:UIControlStateNormal];
+    [self.addFriendsButton setBackgroundImage:couponImage forState:UIControlStateNormal];
+
+    [self.couponButton setTitle:NSLocalizedString(@"TITEL_CHOOSE_COUPON", nil) forState:UIControlStateNormal];
+    [self.addFriendsButton setTitle:NSLocalizedString(@"TITEL_ADD_YOUR_FRIENDS", nil) forState:UIControlStateNormal];
+
+    UIImage *photoImage = [[UIImage imageNamed:@"bg_photo"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)];
+    [self.pictureImageView setImage:photoImage];
+    UIImage *textImage = [[UIImage imageNamed:@"bg_text"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)];
+    [self.textBgView setImage:textImage];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,6 +63,14 @@
          self.bottomConstraint.constant = 216;
          [self.view layoutIfNeeded];
      }];
+    self.placeholderLabel.hidden = YES;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if (textView.text.length == 0) {
+        self.placeholderLabel.hidden = NO;
+    }
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
@@ -64,26 +85,47 @@
     return YES;
 }
 
+- (void)textViewDidChange:(UITextView *)textView
+{
+    if (textView.text.length > 0) {
+        self.placeholderLabel.hidden = YES;
+    }else {
+        self.placeholderLabel.hidden = NO;
+    }
+}
+
 #pragma mark - Button Action
 
 - (IBAction)touchPhotoButton:(id)sender {
 
-     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
 
-    CaptureViewController *captureViewController = [[CaptureViewController alloc] initWithNibName:@"CaptureViewController" bundle:nil];
+    }
 
-    WEAKSELF_SC
-    captureViewController.getImageBlock = ^(UIImage *takeImage) {
-        [weakSelf_SC.pictureImageView setImage:takeImage];
-        [weakSelf_SC.cameraButton setAlpha:0.6];
-    };
+    UIImagePickerController *imagePickerCintroller = [[UIImagePickerController alloc] init];
 
-    [self presentViewController:captureViewController animated:YES completion:^{
-        
+    imagePickerCintroller.sourceType = UIImagePickerControllerSourceTypeCamera;
+
+    // Displays a control that allows the user to choose picture or
+    // movie capture, if both are available:
+
+    imagePickerCintroller.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+    imagePickerCintroller.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+    imagePickerCintroller.allowsEditing = NO;
+    imagePickerCintroller.delegate = self;
+
+    [self presentViewController:imagePickerCintroller animated:YES completion:^{
+
     }];
 }
 
 - (IBAction)touchAddFriendsButton:(id)sender {
+
+    [self.shareTextView resignFirstResponder];
+    self.topConstraint.constant = 10;
+    self.bottomConstraint.constant = 10;
+    [self.view layoutIfNeeded];
+
     ContactViewController *contactViewController = [[ContactViewController alloc] initWithNibName:@"ContactViewController" bundle:nil];
     [self.navigationController pushViewController:contactViewController animated:YES];
 }
@@ -91,6 +133,22 @@
 - (void) configByCouponItem:(CouponItem*) couponItem
 {
     self.item = couponItem;
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
+{
+    DLog(@"%@", editingInfo);
+
+    CGSize size = image.size;
+
+    self.imageHeight.constant = size.height*(300.0/size.width);
+
+    [self.pictureImageView setImage:image];
+
+    [picker dismissViewControllerAnimated:YES completion:^{
+
+    }];
 }
 
 @end

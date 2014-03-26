@@ -38,9 +38,13 @@
 
     self.contactNameLabel.text = contact.contactName;
     self.emailAddressLabel.text = contact.email;
-    [self.headImageView setImage:contact.image];
-    [self.selectSwitch setOn:contact.isSelected];
+    if (contact.image != nil) {
+        [self.headImageView setImage:contact.image];
+    }else{
+        [self.headImageView setImage:[UIImage imageNamed:@"default-head"]];
+    }
 
+    [self.selectSwitch setOn:contact.isSelected];
 }
 
 - (IBAction)switchChange:(id)sender {

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ContactViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+#import "FitViewController.h"
+@interface ContactViewController : FitViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

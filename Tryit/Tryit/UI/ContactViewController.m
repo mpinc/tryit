@@ -22,6 +22,7 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
 @interface ContactViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *contactTableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (strong, nonatomic) NSMutableArray *contactList;
 @property (strong, nonatomic) NSMutableArray *filteredList;
@@ -49,10 +50,29 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
 
     [self.contactTableView registerNib:[UINib nibWithNibName:@"ContactCell" bundle:nil] forCellReuseIdentifier:ContactCellIdentifier];
     [self.searchDisplayController.searchResultsTableView registerNib:[UINib nibWithNibName:@"ContactCell" bundle:nil] forCellReuseIdentifier:ContactCellIdentifier];
+
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.contactTableView.bounds];
+    [imageView setImage:[UIImage imageNamed:@"common_bg"]];
+    [self.contactTableView setBackgroundView:imageView];
+
+    self.contactTableView.sectionIndexTrackingBackgroundColor = UIColorFromRGB(0xd4e19b);
+
+    if (IsIOS7) {
+        [self.contactTableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+
     // Do any additional setup after loading the view from its nib.
     [self initAddressBook];
 
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 28)];
+    [button setBackgroundColor:[UIColor clearColor]];
+    [button setTitle:NSLocalizedString(@"TITEL_SEND", nil) forState:UIControlStateNormal];
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = barItem;
 
+    [self customBackBarItem];
+
+    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"bg_search"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -169,39 +189,39 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
 }
 
 #pragma mark - index
-/*
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
-{
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return nil;
-    } else {
-        return [[NSArray arrayWithObject:UITableViewIndexSearch] arrayByAddingObjectsFromArray:
-                [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles]];
-    }
-}
- */
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
-{
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return 0;
-    } else {
-        if (title == UITableViewIndexSearch) {
-            [tableView scrollRectToVisible:self.searchDisplayController.searchBar.frame animated:NO];
-            return -1;
-        } else {
-            return [[UILocalizedIndexedCollation currentCollation] sectionForSectionIndexTitleAtIndex:index-1];
-        }
-    }
-}
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-	if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return nil;
-    } else {
-        return [[self.contactList objectAtIndex:section] count] ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
-    }
-}
+//- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+//{
+//    if (tableView == self.searchDisplayController.searchResultsTableView) {
+//        return nil;
+//    } else {
+//        return [[NSArray arrayWithObject:UITableViewIndexSearch] arrayByAddingObjectsFromArray:
+//                [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles]];
+//    }
+//}
+
+//- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+//{
+//    if (tableView == self.searchDisplayController.searchResultsTableView) {
+//        return 0;
+//    } else {
+//        if (title == UITableViewIndexSearch) {
+//            [tableView scrollRectToVisible:self.searchDisplayController.searchBar.frame animated:NO];
+//            return -1;
+//        } else {
+//            return [[UILocalizedIndexedCollation currentCollation] sectionForSectionIndexTitleAtIndex:index-1];
+//        }
+//    }
+//}
+//
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//	if (tableView == self.searchDisplayController.searchResultsTableView) {
+//        return nil;
+//    } else {
+//        return [[self.contactList objectAtIndex:section] count] ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
+//    }
+//}
 
 
 #pragma mark -

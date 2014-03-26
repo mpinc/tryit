@@ -14,10 +14,13 @@
 "MENU_TITLE" = "Menu";
 
 "TITEL_ADD_FRIENDS" = "Add Friends";
+"TITEL_CHOOSE_COUPON" = "Choose your coupon";
+"TITEL_ADD_YOUR_FRIENDS" = "Add your friends";
 
 "TITEL_SIGN_IN" = "Sign In";
 "TITEL_SIGN_UP" = "Sign Up";
 "TITEL_NEARBY_RESTAURANTS" = "Nearby Restaurants";
+"TITEL_SEND" = "Send";
 
 
 "PROMPT_CONTACTS_AUTHORITY" = "No contacts permission. Please return to the main screen, click Settings -> Privacy -> Contacts, open Try It permissions switch.";
