@@ -11,7 +11,7 @@
 
 @interface CouponViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
+
 @property (weak, nonatomic) IBOutlet UIImageView *textBgView;
 @property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeight;
@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    UIImage *couponImage = [[UIImage imageNamed:@"coupon_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)];
+    UIImage *couponImage = [[UIImage imageNamed:@"coupon_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 30, 20, 30)];
     [self.couponButton setBackgroundImage:couponImage forState:UIControlStateNormal];
     [self.addFriendsButton setBackgroundImage:couponImage forState:UIControlStateNormal];
 
@@ -44,6 +44,14 @@
     [self.pictureImageView setImage:photoImage];
     UIImage *textImage = [[UIImage imageNamed:@"bg_text"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)];
     [self.textBgView setImage:textImage];
+
+
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.scrollView setContentSize:CGSizeMake(320, 1000)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,7 +68,6 @@
      {
          int offsetY = (-textView.frame.origin.y + 20) > 0?0:(-textView.frame.origin.y + 20);
          self.topConstraint.constant = offsetY;
-         self.bottomConstraint.constant = 216;
          [self.view layoutIfNeeded];
      }];
     self.placeholderLabel.hidden = YES;
@@ -77,9 +84,12 @@
 {
     if ([text isEqualToString:@"\n"]) {
         [textView resignFirstResponder];
-        self.topConstraint.constant = 10;
-        self.bottomConstraint.constant = 10;
-        [self.view layoutIfNeeded];
+        [UIView animateWithDuration:0.25 animations:^
+         {
+             self.topConstraint.constant = 10;
+             [self.view layoutIfNeeded];
+         }];
+
         return NO;
     }
     return YES;
@@ -122,9 +132,12 @@
 - (IBAction)touchAddFriendsButton:(id)sender {
 
     [self.shareTextView resignFirstResponder];
-    self.topConstraint.constant = 10;
-    self.bottomConstraint.constant = 10;
-    [self.view layoutIfNeeded];
+    [UIView animateWithDuration:0.25 animations:^
+     {
+         self.topConstraint.constant = 10;
+         [self.view layoutIfNeeded];
+     }];
+
 
     ContactViewController *contactViewController = [[ContactViewController alloc] initWithNibName:@"ContactViewController" bundle:nil];
     [self.navigationController pushViewController:contactViewController animated:YES];

@@ -26,6 +26,7 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
 
 @property (strong, nonatomic) NSMutableArray *contactList;
 @property (strong, nonatomic) NSMutableArray *filteredList;
+@property (strong, nonatomic) NSMutableArray *selectArray;
 
 @end
 
@@ -40,6 +41,7 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
 
         self.contactList = [[NSMutableArray alloc] initWithCapacity:0];
         self.filteredList = [[NSMutableArray alloc] initWithCapacity:0];
+        self.selectArray = [[NSMutableArray alloc] initWithCapacity:0];
     }
     return self;
 }
@@ -54,6 +56,10 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.contactTableView.bounds];
     [imageView setImage:[UIImage imageNamed:@"common_bg"]];
     [self.contactTableView setBackgroundView:imageView];
+
+    UIImageView *imageView1 = [[UIImageView alloc] initWithFrame:self.contactTableView.bounds];
+    [imageView1 setImage:[UIImage imageNamed:@"common_bg"]];
+    [self.searchDisplayController.searchResultsTableView setBackgroundView:imageView1];
 
     self.contactTableView.sectionIndexTrackingBackgroundColor = UIColorFromRGB(0xd4e19b);
 
@@ -73,6 +79,7 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
     [self customBackBarItem];
 
     [self.searchBar setBackgroundImage:[UIImage imageNamed:@"bg_search"]];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -184,6 +191,23 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
     }
 
     [cell setContact:contact];
+
+    WEAKSELF_SC
+    ChangeContact changeContact = ^(TIContact *changeContact){
+        if (changeContact.isSelected && ![weakSelf_SC.selectArray containsObject:changeContact]) {
+            [weakSelf_SC.selectArray addObject:changeContact];
+        }else {
+            [weakSelf_SC.selectArray removeObject:changeContact];
+        }
+
+        if (weakSelf_SC.selectArray.count > 0) {
+            weakSelf_SC.title = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_TITEL_ADD_FRIENDS", nil), weakSelf_SC.selectArray.count];
+        }else {
+            weakSelf_SC.title = NSLocalizedString(@"TITEL_ADD_FRIENDS", nil);
+        }
+    };
+
+    cell.changeContact = changeContact;
 
     return cell;
 }

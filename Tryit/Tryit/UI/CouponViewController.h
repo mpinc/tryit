@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *shareTextView;
 @property (weak, nonatomic) IBOutlet UIButton *addFriendsButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) CouponItem *item;
 
 - (void) configByCouponItem:(CouponItem*) couponItem;

@@ -51,7 +51,7 @@
 
     UISwitch *switchButton = (UISwitch *) sender;
     [self.ticontact setIsSelected:switchButton.isOn];
-
+    self.changeContact(self.ticontact);
 }
 
 @end
