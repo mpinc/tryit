@@ -38,7 +38,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
         self.restaurantArray = [[NSMutableArray alloc] initWithCapacity:0];
         self.filteredList = [[NSMutableArray alloc] initWithCapacity:0];
         self.hasLocation = NO;
-        self.title = NSLocalizedString(@"TITEL_NEARBY_RESTAURANTS", nil);
+        self.title = NSLocalizedString(@"TITLE_NEARBY_RESTAURANTS", nil);
 
     }
     return self;
@@ -186,7 +186,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 {
     [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:
 	 [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
-
+    
     return YES;
 }
 
@@ -197,7 +197,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 {
 
     if (self.hasLocation != YES) {
-        double distance = 2000.0;
+        double distance = 5000.0;
         [mapView setRegion:MKCoordinateRegionMakeWithDistance(userLocation.coordinate, distance, distance*195.0/320.0) animated:YES];
         WEAKSELF_SC
         [WebAPI getNearRestaurantWithCoordinate:userLocation.coordinate

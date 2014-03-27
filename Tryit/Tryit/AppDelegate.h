@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "RestaurantItem.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *signInNavViewController;
 @property (strong, nonatomic) UINavigationController *signUpNavViewController;
+@property (strong, nonatomic) RestaurantItem *checkInItem;
 
 + (id) getAppdelegate;
 

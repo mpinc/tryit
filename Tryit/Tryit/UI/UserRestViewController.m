@@ -7,7 +7,6 @@
 //
 
 #import "UserRestViewController.h"
-#import "UserShareViewController.h"
 #import "UserRestInfoView.h"
 #import "UserCouponCell.h"
 #import "ShareItem.h"
@@ -71,14 +70,6 @@ NSString *const UserCouponCellIdentifier = @"UserCouponCellIdentifier";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 140;
-}
-
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ShareItem *item = [self.couponsArray objectAtIndex:indexPath.row];
-    UserShareViewController *userShareViewController = [[UserShareViewController alloc] initWithNibName:@"UserShareViewController" bundle:nil];
-    userShareViewController.shareItem = item;
-    [self.navigationController pushViewController:userShareViewController animated:YES];
 }
 
 @end

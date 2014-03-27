@@ -63,14 +63,24 @@
                             <constraint firstItem="aXu-vO-M47" firstAttribute="leading" secondItem="2br-QT-mdr" secondAttribute="leading" id="xWF-rh-fyz"/>
                         </constraints>
                     </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hasCoupon" translatesAutoresizingMaskIntoConstraints="NO" id="EGB-xP-WQ3">
+                        <rect key="frame" x="252" y="10" width="58" height="58"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="58" id="CsH-Kk-Gw4"/>
+                            <constraint firstAttribute="width" constant="58" id="sDs-mX-9PJ"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="6uk-6u-tTs" secondAttribute="bottom" id="0lw-Mv-IWQ"/>
                     <constraint firstItem="6uk-6u-tTs" firstAttribute="leading" secondItem="HRQ-mi-scz" secondAttribute="leading" constant="10" id="2BZ-lX-R0r"/>
                     <constraint firstItem="CXq-Ql-wtm" firstAttribute="bottom" secondItem="6uk-6u-tTs" secondAttribute="bottom" id="Pg2-qp-fl8"/>
+                    <constraint firstItem="6uk-6u-tTs" firstAttribute="top" secondItem="EGB-xP-WQ3" secondAttribute="top" id="SgU-5M-BoF"/>
                     <constraint firstItem="CXq-Ql-wtm" firstAttribute="leading" secondItem="6uk-6u-tTs" secondAttribute="leading" id="YHY-Dy-D2F"/>
                     <constraint firstAttribute="trailing" secondItem="6uk-6u-tTs" secondAttribute="trailing" constant="10" id="dKj-vm-bUK"/>
+                    <constraint firstItem="6uk-6u-tTs" firstAttribute="trailing" secondItem="EGB-xP-WQ3" secondAttribute="trailing" id="mSk-1x-XT8"/>
                     <constraint firstItem="CXq-Ql-wtm" firstAttribute="width" secondItem="6uk-6u-tTs" secondAttribute="width" id="oFf-fx-JSU"/>
                     <constraint firstItem="6uk-6u-tTs" firstAttribute="top" secondItem="HRQ-mi-scz" secondAttribute="top" constant="10" id="s9A-Um-WJ1"/>
                 </constraints>
@@ -81,8 +91,12 @@
                 <outlet property="descriptionView" destination="CXq-Ql-wtm" id="mDP-SL-vI3"/>
                 <outlet property="dishImageView" destination="6uk-6u-tTs" id="m0u-2g-OYk"/>
                 <outlet property="dishNameLabel" destination="2br-QT-mdr" id="5UV-SM-vXq"/>
+                <outlet property="hasCouponImage" destination="EGB-xP-WQ3" id="eoO-NI-6P6"/>
                 <outlet property="restaurantLabel" destination="aXu-vO-M47" id="nyj-dK-ck2"/>
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="hasCoupon" width="58" height="58"/>
+    </resources>
 </document>

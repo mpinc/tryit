@@ -8,6 +8,7 @@
 
 #import "RestaurantItem.h"
 #import "ShareItem.h"
+#import "NSString+Utlity.h"
 @implementation RestaurantItem
 
 - (id) initWithDict:(NSDictionary *) dict
@@ -15,15 +16,13 @@
     self = [super init];
     if(self)
     {
-        self.biz_id = dict[@"biz_id"];
-        self.name = dict[@"name"];
-        self.address = dict[@"address"];
-        self.phone_no = dict[@"phone_no"];
+        self.biz_id = [NSString ToString:dict[@"biz_id"]];
+        self.name = [NSString ToString:dict[@"name"]];
+        self.address = [NSString ToString:dict[@"address"]];
+        self.phone_no = [NSString ToString:dict[@"phone_no"]];
 
         if (dict[@"restaurantImageUrl"] != nil) {
             self.restaurantImageUrl = [NSURL URLWithString:dict[@"restaurantImageUrl"]];
-        }else {
-            self.restaurantImageUrl = [NSURL URLWithString:@"http://travel.tw.tranews.com/hotel/nantou/jihyuehtan/images/2.jpg"];
         }
 
         self.latitude = [dict[@"latitude"] floatValue];

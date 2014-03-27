@@ -57,6 +57,7 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
     [WebAPI getProductWithRestId:self.restItem.biz_id success:^(NSMutableArray *array) {
         weakSelf_SC.productArray = [NSMutableArray arrayWithArray:array];
         [weakSelf_SC.tableView reloadData];
+        self.restItem.productArray = weakSelf_SC.productArray;
         [UIFunction removeMaskView];
     } failure:^{
         [UIFunction removeMaskView];

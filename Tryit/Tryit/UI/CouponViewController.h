@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CenterViewController.h"
-#import "CouponItem.h"
+#import "ProductItem.h"
 
-@interface CouponViewController : CenterViewController <UITextViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface CouponViewController : CenterViewController <UITextViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *couponButton;
 @property (weak, nonatomic) IBOutlet UIImageView *pictureImageView;
@@ -18,8 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *addFriendsButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (strong, nonatomic) CouponItem *item;
+@property (strong, nonatomic) ProductItem *item;
 
-- (void) configByCouponItem:(CouponItem*) couponItem;
+- (void) configByProductItem:(ProductItem*) productItem;
 
 @end

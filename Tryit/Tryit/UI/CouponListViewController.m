@@ -57,6 +57,7 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
     WEAKSELF_SC
     [WebAPI getpromoWithProduct:self.productItem success:^(NSMutableArray *array) {
         weakSelf_SC.couponArray = [NSMutableArray arrayWithArray:array];
+        weakSelf_SC.productItem.couponArray = weakSelf_SC.couponArray;
         [weakSelf_SC.tableView reloadData];
         [UIFunction removeMaskView];
     } failure:^{
@@ -114,10 +115,12 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.navigationController popToRootViewControllerAnimated:NO];
     AppDelegate *appDelegate = [AppDelegate getAppdelegate];
     CouponItem *item = [self.couponArray objectAtIndex:indexPath.row];
+    self.productItem.selectCoupon = item;
     CouponViewController *couponViewController = (CouponViewController*)[appDelegate getCouponViewController];
-    [couponViewController setItem:item];
+    [couponViewController configByProductItem:self.productItem];
     [appDelegate setCenterViewControllerWithIndex:1];
 }
 

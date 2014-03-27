@@ -13,24 +13,27 @@
 "MENU_MY_PROFILE" = "My Profile";
 "MENU_TITLE" = "Menu";
 
-"TITEL_ADD_FRIENDS" = "Add Friends";
-"TITEL_CHOOSE_COUPON" = "Choose your coupon";
-"TITEL_ADD_YOUR_FRIENDS" = "Add your friends";
+"TITLE_ADD_FRIENDS" = "Add Friends";
+"TITLE_CHOOSE_COUPON" = "Choose your coupon";
+"TITLE_ADD_YOUR_FRIENDS" = "Add your friends";
 
-"TITEL_SIGN_IN" = "Sign In";
-"TITEL_SIGN_UP" = "Sign Up";
-"TITEL_NEARBY_RESTAURANTS" = "Nearby Restaurants";
-"TITEL_SEND" = "Send";
-
+"TITLE_SIGN_IN" = "Sign In";
+"TITLE_SIGN_UP" = "Sign Up";
+"TITLE_NEARBY_RESTAURANTS" = "Nearby Restaurants";
+"TITLE_SEND" = "Send";
+"TITLE_CANCEL" = "Cancel";
+"TITLE_TAKE_PHOTO" = "Take Photo";
+"TITLE_CHOOSE_PHOTO" = "Choose Photo";
 
 "PROMPT_CONTACTS_AUTHORITY" = "No contacts permission. Please return to the main screen, click Settings -> Privacy -> Contacts, open Try It permissions switch.";
 "PROMPT_PHONE_NO_NOT_BE_NIL" = "Phone numbers can not be empty.";
 "PROMPT_LODING" = "Loding...";
 "PROMPT_CHECK_IN_SUCCESS" = "Check In success!";
 "PROMPT_CHECK_IN_FAIL" = "Check in unsuccesfully!";
+"PROMPT_ACCESS_PHOTO_FAIL" = "Can't access your photo libary";
+"PROMPT_ACCESS_CAMERA_FAIL" = "Can't access your camera";
 
-
-"FORMAT_TITEL_ADD_FRIENDS" = "Add Friends (%d)";
+"FORMAT_TITLE_ADD_FRIENDS" = "Add Friends (%d)";
 "FORMAT_MY_POINTS" = "My Points: (%@)";
 "FORMAT_COUNT_REST" = "Resturant(%@) | Coupons(%@) | Points(%@)";
 "FORMAT_COUNT_PROD" = "Coupons(%d) | Points(%@)";

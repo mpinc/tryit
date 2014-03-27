@@ -12,7 +12,7 @@
 
 + (BOOL) isEmptyString:(NSString *)string
 {
-    return (string == nil || [string isEqualToString:@""]);
+    return (string == nil || [string isEqualToString:@""]|| [string isKindOfClass:[NSNull class]]);
 }
 
 + (BOOL) isEmptyString:(NSString *)string WithPromptString:(NSString*) promptString
@@ -128,14 +128,16 @@
     [[UIApplication sharedApplication] openURL:url];
 }
 
-+ (NSString *) turnToStringWithObejct:(id) object
++ (NSString *) ToString:(id) object
 {
     NSString *turnString = nil;
     if ([object respondsToSelector:@selector(stringValue)])
     {
         turnString = [object stringValue];
-    }else {
-        turnString = object;
+    }else if ([object isKindOfClass:[NSNull class]]) {
+        turnString = nil;
+    }else{
+        turnString = [NSString stringWithFormat:@"%@", object];
     }
     return turnString;
 }

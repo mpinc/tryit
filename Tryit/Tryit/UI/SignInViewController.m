@@ -19,7 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = NSLocalizedString(@"TITEL_SIGN_IN", nil);
+        self.title = NSLocalizedString(@"TITLE_SIGN_IN", nil);
     }
     return self;
 }
@@ -32,7 +32,7 @@
     UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(touchCancelButton:)];
     self.navigationItem.leftBarButtonItem = leftBarButton;
 
-    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"TITEL_SIGN_UP", nil) style:UIBarButtonItemStylePlain target:self action:@selector(touchSignUpButton:)];
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"TITLE_SIGN_UP", nil) style:UIBarButtonItemStylePlain target:self action:@selector(touchSignUpButton:)];
     self.navigationItem.rightBarButtonItem = rightBarButton;
 }
 

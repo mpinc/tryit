@@ -24,7 +24,7 @@
 
 - (void) callPhoneNumber;
 
-+ (NSString *) turnToStringWithObejct:(id) object;
++ (NSString *) ToString:(id) object;
 
 - (id)MD5;
 @end

@@ -84,8 +84,6 @@
 		41FD5D2518D8572E00172DB9 /* UserRestInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FD5D2418D8572E00172DB9 /* UserRestInfoView.xib */; };
 		41FD5D2818D8579500172DB9 /* UserCouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD5D2718D8579500172DB9 /* UserCouponCell.m */; };
 		41FD5D2A18D857A800172DB9 /* UserCouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FD5D2918D857A800172DB9 /* UserCouponCell.xib */; };
-		41FD5D2E18D857DF00172DB9 /* UserShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD5D2C18D857DF00172DB9 /* UserShareViewController.m */; };
-		41FD5D2F18D857DF00172DB9 /* UserShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FD5D2D18D857DF00172DB9 /* UserShareViewController.xib */; };
 		41FD5D3218D988CD00172DB9 /* ShareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD5D3118D988CD00172DB9 /* ShareItem.m */; };
 		FA770C91FC564E06B19B5368 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ADC66DCC014BB3BC4D9158 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -222,9 +220,6 @@
 		41FD5D2618D8579500172DB9 /* UserCouponCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserCouponCell.h; path = UI/UserCouponCell.h; sourceTree = "<group>"; };
 		41FD5D2718D8579500172DB9 /* UserCouponCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserCouponCell.m; path = UI/UserCouponCell.m; sourceTree = "<group>"; };
 		41FD5D2918D857A800172DB9 /* UserCouponCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCouponCell.xib; path = UI/UserCouponCell.xib; sourceTree = "<group>"; };
-		41FD5D2B18D857DF00172DB9 /* UserShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserShareViewController.h; path = UI/UserShareViewController.h; sourceTree = "<group>"; };
-		41FD5D2C18D857DF00172DB9 /* UserShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserShareViewController.m; path = UI/UserShareViewController.m; sourceTree = "<group>"; };
-		41FD5D2D18D857DF00172DB9 /* UserShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserShareViewController.xib; path = UI/UserShareViewController.xib; sourceTree = "<group>"; };
 		41FD5D3018D988CD00172DB9 /* ShareItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareItem.h; path = Source/ShareItem.h; sourceTree = "<group>"; };
 		41FD5D3118D988CD00172DB9 /* ShareItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareItem.m; path = Source/ShareItem.m; sourceTree = "<group>"; };
 		A0EDB0FA7E6146E69ED79D4A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -424,7 +419,6 @@
 			children = (
 				41FD5D1918D8555C00172DB9 /* Profile */,
 				41FD5D1F18D8566000172DB9 /* UserRest */,
-				41FD5D2018D8566B00172DB9 /* UserShare */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -576,16 +570,6 @@
 			name = UserRest;
 			sourceTree = "<group>";
 		};
-		41FD5D2018D8566B00172DB9 /* UserShare */ = {
-			isa = PBXGroup;
-			children = (
-				41FD5D2B18D857DF00172DB9 /* UserShareViewController.h */,
-				41FD5D2C18D857DF00172DB9 /* UserShareViewController.m */,
-				41FD5D2D18D857DF00172DB9 /* UserShareViewController.xib */,
-			);
-			name = UserShare;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -664,7 +648,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41FD5D2F18D857DF00172DB9 /* UserShareViewController.xib in Resources */,
 				41F6684818C6F9D900A0A260 /* ContactCell.xib in Resources */,
 				41FB012418BB323700E852B5 /* ProfileViewController.xib in Resources */,
 				41287E8C18CEE42D000F9F27 /* SignUpViewController.xib in Resources */,
@@ -742,7 +725,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				41FD5D1618D7F9CC00172DB9 /* UserRestCell.m in Sources */,
-				41FD5D2E18D857DF00172DB9 /* UserShareViewController.m in Sources */,
 				41EA4F6318D15F7400915A52 /* LocationViewController.m in Sources */,
 				41959E9C18C5D18C009241FF /* ABStandin.m in Sources */,
 				411B957118D68D2300AAD73A /* ProductItem.m in Sources */,

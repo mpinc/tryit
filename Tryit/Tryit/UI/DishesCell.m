@@ -8,6 +8,7 @@
 
 #import "DishesCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "NSString+Utlity.h"
 
 @implementation DishesCell
 
@@ -39,13 +40,15 @@
     if (dishItem.img_url != nil) {
         [self.dishImageView setImageWithURL:dishItem.img_url];
     }else{
-        UIImage *image = [[UIImage imageNamed:@"default_any"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
+        UIImage *image = [[UIImage imageNamed:@"default_image"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
         [self.dishImageView setImage:image];
     }
 
     self.dishNameLabel.text = dishItem.name;
     self.restaurantLabel.text = dishItem.bizName;
     self.descriptionLabel.text = dishItem.type;
+
+    self.hasCouponImage.hidden = [NSString isEmptyString:dishItem.promotion_id];
 }
 
 -(void)layoutSubviews

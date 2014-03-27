@@ -37,7 +37,7 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = NSLocalizedString(@"TITEL_ADD_FRIENDS", nil);
+        self.title = NSLocalizedString(@"TITLE_ADD_FRIENDS", nil);
 
         self.contactList = [[NSMutableArray alloc] initWithCapacity:0];
         self.filteredList = [[NSMutableArray alloc] initWithCapacity:0];
@@ -72,7 +72,7 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
 
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 28)];
     [button setBackgroundColor:[UIColor clearColor]];
-    [button setTitle:NSLocalizedString(@"TITEL_SEND", nil) forState:UIControlStateNormal];
+    [button setTitle:NSLocalizedString(@"TITLE_SEND", nil) forState:UIControlStateNormal];
     UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = barItem;
 
@@ -201,9 +201,9 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
         }
 
         if (weakSelf_SC.selectArray.count > 0) {
-            weakSelf_SC.title = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_TITEL_ADD_FRIENDS", nil), weakSelf_SC.selectArray.count];
+            weakSelf_SC.title = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_TITLE_ADD_FRIENDS", nil), weakSelf_SC.selectArray.count];
         }else {
-            weakSelf_SC.title = NSLocalizedString(@"TITEL_ADD_FRIENDS", nil);
+            weakSelf_SC.title = NSLocalizedString(@"TITLE_ADD_FRIENDS", nil);
         }
     };
 

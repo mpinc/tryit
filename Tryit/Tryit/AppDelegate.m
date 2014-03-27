@@ -64,6 +64,8 @@
     
 //    [self showSignInViewController];
 
+    self.checkInItem = nil;
+
     return YES;
 }
 							

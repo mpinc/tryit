@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CouponItem.h"
 
 @interface ProductItem : NSObject
 
@@ -18,6 +19,9 @@
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSURL *img_url;
+@property (nonatomic, strong) NSString *promotion_id;
+@property (nonatomic, strong) NSMutableArray *couponArray;
+@property (nonatomic, strong) CouponItem *selectCoupon;
 
 - (id) initWithDict:(NSDictionary *) dict;
 
