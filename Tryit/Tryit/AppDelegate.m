@@ -67,6 +67,8 @@
 
     [self readUserInfo];
 
+    [self showSignInViewController];
+
     self.checkInItem = nil;
     return YES;
 }
@@ -136,13 +138,13 @@
         SignInViewController *signInViewController = [[SignInViewController alloc] initWithNibName:@"SignInViewController" bundle:nil];
         signInViewController.flipBlock = flipInBlock;
         self.signInNavViewController = [[UINavigationController alloc] initWithRootViewController:signInViewController];
+        [self.signInNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
 
         SignUpViewController *signUpViewController = [[SignUpViewController alloc] initWithNibName:@"SignUpViewController" bundle:nil];
         signUpViewController.flipBlock = flipUpBlock;
         self.signUpNavViewController = [[UINavigationController alloc] initWithRootViewController:signUpViewController];
+        [self.signUpNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
     }
-
-
 
     [self.drawerController presentViewController:self.signInNavViewController animated:NO completion:^{
 

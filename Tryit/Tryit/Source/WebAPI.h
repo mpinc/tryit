@@ -16,7 +16,9 @@
 @interface WebAPI : NSObject
 + (AFHTTPRequestOperationManager *) getManager;
 
++ (void) signUpWithUserName:(NSString *) userName Password:(NSString *) password email:(NSString *) email success:(void (^)(id responseObject))success failure:(void (^)()) failure;
 + (void) loginWithUserName:(NSString *) userName Password:(NSString *) password success:(void (^)(id responseObject))success failure:(void (^)()) failure;
+
 + (void) getTopX:(NSInteger) topx success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
 + (void) getNearRestaurantWithCoordinate:(CLLocationCoordinate2D) coordinate success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
 + (void) getProductWithRestId:(NSString *) restId success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;

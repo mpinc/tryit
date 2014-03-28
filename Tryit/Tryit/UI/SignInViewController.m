@@ -37,10 +37,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(touchCancelButton:)];
+    UIButton *leftButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 28)];
+    [leftButton setBackgroundColor:[UIColor clearColor]];
+    [leftButton setTitle:NSLocalizedString(@"TITLE_CANCEL", nil) forState:UIControlStateNormal];
+    [leftButton addTarget:self action:@selector(touchCancelButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     self.navigationItem.leftBarButtonItem = leftBarButton;
 
-    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"TITLE_SIGN_UP", nil) style:UIBarButtonItemStylePlain target:self action:@selector(touchSignUpButton:)];
+    UIButton *rightButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 28)];
+    [rightButton setBackgroundColor:[UIColor clearColor]];
+    [rightButton setTitle:NSLocalizedString(@"TITLE_SIGN_UP", nil) forState:UIControlStateNormal];
+    [rightButton addTarget:self action:@selector(touchSignUpButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem = rightBarButton;
 
     self.userNameField.layer.borderColor = [UIColor whiteColor].CGColor;
