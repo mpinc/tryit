@@ -22,7 +22,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cRX-pX-yGU">
                     <rect key="frame" x="62" y="11" width="248" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.70980393890000004" green="0.79607850309999995" blue="0.40392160420000001" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="248" id="E5L-gn-lvo"/>
                         <constraint firstAttribute="height" constant="30" id="rsN-pc-0Re"/>
@@ -50,7 +50,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="c0d-Ag-thK" firstAttribute="leading" secondItem="cRX-pX-yGU" secondAttribute="leading" constant="4" id="2WZ-Zn-xf5"/>
                 <constraint firstItem="l5o-ij-PaH" firstAttribute="top" secondItem="cRX-pX-yGU" secondAttribute="bottom" constant="3" id="E9c-NE-hCL"/>
@@ -63,6 +63,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="countBgView" destination="cRX-pX-yGU" id="TKT-qm-DaA"/>
                 <outlet property="countLabel" destination="c0d-Ag-thK" id="FjR-bJ-o1n"/>
                 <outlet property="headImage" destination="fuo-dE-LPO" id="tdg-8Q-WNJ"/>
                 <outlet property="userNameLabel" destination="l5o-ij-PaH" id="l07-cQ-tYC"/>

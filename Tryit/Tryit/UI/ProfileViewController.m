@@ -46,6 +46,10 @@ NSString *const UserRestCellIdentifier = @"UserRestCellIdentifier";
     profileInfoView.userProfile = self.userProfile;
     self.tableView.tableHeaderView = profileInfoView;
 
+    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.tableView.bounds];
+    [bgImageView setImage:[UIImage imageNamed:@"food_bg"]];
+    [self.tableView setBackgroundView:bgImageView];
+
     [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
     WEAKSELF_SC
     [WebAPI getRestaurantsWithUserId:@"" success:^(NSMutableArray *array) {

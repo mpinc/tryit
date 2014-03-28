@@ -81,6 +81,7 @@
     if (needToken) {
         AppDelegate *appDelegate = [AppDelegate getAppdelegate];
         if ([appDelegate getAccessToken] == nil) {
+            [UIFunction removeMaskView];
             return;
         }else {
             [request addValue:[appDelegate getAccessToken] forHTTPHeaderField:accessToken];
@@ -101,7 +102,7 @@
 
 + (void) loginWithUserName:(NSString *) userName Password:(NSString *) password success:(void (^)(id responseObject))success failure:(void (^)()) failure
 {
-    NSString *requestString = @"/cust/to/doLogin";
+    NSString *requestString = @"/cust/do/login";
     NSDictionary *dict = @{@"user":userName,@"password":password};
     [WebAPI request:requestString parameters:dict Method:MPOST NeedToken:NO
             success:^(AFHTTPRequestOperation *operation) {

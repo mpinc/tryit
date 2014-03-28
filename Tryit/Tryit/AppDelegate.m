@@ -114,8 +114,12 @@
 
 - (void) setCenterViewControllerWithIndex:(int) index;
 {
-    [self.drawerController setCenterViewController:[self.menuViewController getViewControllerWithIndex:index]];
-    [self.drawerController closeDrawerAnimated:YES completion:nil];
+    if (self.token != nil) {
+        [self.drawerController setCenterViewController:[self.menuViewController getViewControllerWithIndex:index]];
+        [self.drawerController closeDrawerAnimated:YES completion:nil];
+    }else {
+        [self showSignInViewController];
+    }
 }
 
 - (void) showSignInViewController
