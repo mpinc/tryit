@@ -29,7 +29,7 @@
 
 + (id) getAppdelegate;
 
-- (void) setCenterViewControllerWithIndex:(int) index;
+- (void) setCenterViewControllerWithIndex:(NSInteger) index;
 
 - (void) showSignInViewController;
 - (void) hiddeSignInViewController;

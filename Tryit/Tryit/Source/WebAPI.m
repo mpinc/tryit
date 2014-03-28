@@ -128,7 +128,7 @@
 
 + (void) getTopX:(NSInteger) topx success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
 {
-    NSString *requestString = [NSString stringWithFormat:@"/biz/%d/topDish", topx];
+    NSString *requestString = [NSString stringWithFormat:@"/biz/%ld/topDish", (long)topx];
     [WebAPI request:requestString parameters:nil Method:MGET NeedToken:NO
             success:^(AFHTTPRequestOperation *operation) {
                 NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];

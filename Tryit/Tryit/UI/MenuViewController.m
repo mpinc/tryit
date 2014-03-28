@@ -85,7 +85,7 @@ NSString *const ItemTableCellIdentifier  = @"ItemTableCellIdentifier";
     // Dispose of any resources that can be recreated.
 }
 
-- (id) getViewControllerWithIndex:(int) index
+- (id) getViewControllerWithIndex:(NSInteger) index
 {
     if (self.itemArray.count > index) {
         MenuItem *menuItem = self.itemArray[index];

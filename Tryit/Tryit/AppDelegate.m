@@ -112,7 +112,7 @@
 	return app;
 }
 
-- (void) setCenterViewControllerWithIndex:(int) index;
+- (void) setCenterViewControllerWithIndex:(NSInteger) index;
 {
     if (self.token != nil) {
         [self.drawerController setCenterViewController:[self.menuViewController getViewControllerWithIndex:index]];

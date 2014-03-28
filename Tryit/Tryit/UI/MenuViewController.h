@@ -15,6 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *menuTable;
 
-- (id) getViewControllerWithIndex:(int) index;
+- (id) getViewControllerWithIndex:(NSInteger) index;
 
 @end

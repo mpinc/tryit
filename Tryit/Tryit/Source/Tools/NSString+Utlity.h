@@ -26,5 +26,5 @@
 
 + (NSString *) ToString:(id) object;
 
-- (id)MD5;
+//- (id)MD5;
 @end
