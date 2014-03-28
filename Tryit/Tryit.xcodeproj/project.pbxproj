@@ -39,6 +39,7 @@
 		41959E9F18C5D48E009241FF /* UIFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959E9E18C5D48E009241FF /* UIFunction.m */; };
 		41959EA218C5D62B009241FF /* TIContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959EA118C5D62B009241FF /* TIContact.m */; };
 		41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AA8C5F18BC3C830081EA29 /* FitViewController.m */; };
+		41B2682C18E5717F001A2257 /* ServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B2682B18E5717F001A2257 /* ServerViewController.m */; };
 		41B4545818B461C70054E406 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545718B461C70054E406 /* Foundation.framework */; };
 		41B4545A18B461C70054E406 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545918B461C70054E406 /* CoreGraphics.framework */; };
 		41B4545C18B461C70054E406 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545B18B461C70054E406 /* UIKit.framework */; };
@@ -152,6 +153,8 @@
 		41959EA118C5D62B009241FF /* TIContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIContact.m; path = Source/TIContact.m; sourceTree = "<group>"; };
 		41AA8C5E18BC3C830081EA29 /* FitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FitViewController.h; path = UI/FitViewController.h; sourceTree = "<group>"; };
 		41AA8C5F18BC3C830081EA29 /* FitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FitViewController.m; path = UI/FitViewController.m; sourceTree = "<group>"; };
+		41B2682A18E5717F001A2257 /* ServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerViewController.h; path = UI/ServerViewController.h; sourceTree = "<group>"; };
+		41B2682B18E5717F001A2257 /* ServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerViewController.m; path = UI/ServerViewController.m; sourceTree = "<group>"; };
 		41B4545418B461C70054E406 /* Tryit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tryit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B4545718B461C70054E406 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		41B4545918B461C70054E406 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -527,6 +530,8 @@
 		41FB012518BB325100E852B5 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				41B2682A18E5717F001A2257 /* ServerViewController.h */,
+				41B2682B18E5717F001A2257 /* ServerViewController.m */,
 				41FB011D18BB322500E852B5 /* CenterViewController.h */,
 				41FB011E18BB322500E852B5 /* CenterViewController.m */,
 				41C46B2218BAE011006E2B80 /* MenuViewController.h */,
@@ -727,6 +732,7 @@
 				41FD5D1618D7F9CC00172DB9 /* UserRestCell.m in Sources */,
 				41EA4F6318D15F7400915A52 /* LocationViewController.m in Sources */,
 				41959E9C18C5D18C009241FF /* ABStandin.m in Sources */,
+				41B2682C18E5717F001A2257 /* ServerViewController.m in Sources */,
 				411B957118D68D2300AAD73A /* ProductItem.m in Sources */,
 				41959E9F18C5D48E009241FF /* UIFunction.m in Sources */,
 				41FD5D2318D8571800172DB9 /* UserRestInfoView.m in Sources */,

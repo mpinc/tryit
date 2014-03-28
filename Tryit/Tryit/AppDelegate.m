@@ -16,6 +16,7 @@
 
 #import "SignInViewController.h"
 #import "SignUpViewController.h"
+#import "ServerViewController.h"
 
 #import "NSString+Utlity.h"
 #import "WebAPI.h"
@@ -67,9 +68,10 @@
 
     [self readUserInfo];
 
-    [self showSignInViewController];
-
+    [self readServerAddress];
+    [self SetServerViewController];
     self.checkInItem = nil;
+    
     return YES;
 }
 							
@@ -185,6 +187,17 @@
     self.userId = [userDefaults valueForKey:customerId];
 }
 
+- (void) readServerAddress
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *mainServerAddress = [userDefaults objectForKey:APPLICATION_SERVICE];
+    if (mainServerAddress == nil) {
+        self.baseAddress = APPLICATION_SERVICE;
+    }else {
+        self.baseAddress = mainServerAddress;
+    }
+}
+
 - (id) getAccessToken
 {
     if ([NSString isEmptyString:_token]) {
@@ -192,6 +205,23 @@
         return Nil;
     }
     return _token;
+}
+
+- (void) SetServerViewController
+{
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showServerViewController)];
+    [recognizer setNumberOfTouchesRequired:2];
+    [recognizer setNumberOfTapsRequired:2];
+    [self.window addGestureRecognizer:recognizer];
+}
+
+- (void) showServerViewController
+{
+    ServerViewController *serverViewController = [[ServerViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:serverViewController];
+    [self.drawerController presentViewController:navController animated:YES completion:^{
+
+    }];
 }
 
 @end

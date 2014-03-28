@@ -22,7 +22,9 @@
     static AFHTTPRequestOperationManager *manager = nil;
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
-        manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:BaseURL]];
+        AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+
+        manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:appDelegate.baseAddress]];
         AFJSONRequestSerializer *serializer = [AFJSONRequestSerializer serializer];
         [manager setRequestSerializer:serializer];
 

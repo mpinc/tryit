@@ -13,6 +13,8 @@
 #define accessToken @"accessToken"
 #define customerId @"customerId"
 
+#define APPLICATION_SERVICE @"APPLICATION_SERVICE"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -21,6 +23,9 @@
 @property (strong, nonatomic) RestaurantItem *checkInItem;
 @property (strong, nonatomic) NSString *token;
 @property (strong, nonatomic) NSString *userId;
+
+@property (nonatomic, strong) NSDictionary *serverAddress;
+@property (nonatomic, strong) NSString *baseAddress;
 
 + (id) getAppdelegate;
 
