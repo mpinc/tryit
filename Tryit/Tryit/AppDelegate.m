@@ -33,7 +33,13 @@
 
     // for menu
 
+    [self readUserInfo];
+
+    [self readServerAddress];
+    [self SetServerViewController];
+
     [WebAPI getManager];
+    self.checkInItem = nil;
 
     self.menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:Nil];
 
@@ -65,12 +71,6 @@
     [self.window setHidden:NO];
     [self.window setRootViewController:self.drawerController];
     [self.window makeKeyAndVisible];
-
-    [self readUserInfo];
-
-    [self readServerAddress];
-    [self SetServerViewController];
-    self.checkInItem = nil;
     
     return YES;
 }

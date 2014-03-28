@@ -144,78 +144,74 @@
 
 + (void) getNearRestaurantWithCoordinate:(CLLocationCoordinate2D) coordinate success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
 {
-    [[WebAPI getManager] GET:@"/biz" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-
-        NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
-        for (NSDictionary *restDict in responseObject) {
-            RestaurantItem * item = [[RestaurantItem alloc] initWithDict:restDict];
-            [array addObject:item];
-        }
-        DLog(@"array:%@", array);
-        success(array);
-
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        DLog(@"Error: %@", error);
-        failure();
-    }];
+    NSString *requestString = @"/biz";
+    NSDictionary *dict = @{@"latitude":[NSString stringWithFormat:@"%f",coordinate.latitude], @"longitude":[NSString stringWithFormat:@"%f",coordinate.longitude]};
+    [WebAPI request:requestString parameters:dict Method:MGET NeedToken:NO
+            success:^(AFHTTPRequestOperation *operation) {
+                NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
+                for (NSDictionary *restDict in operation.responseObject) {
+                    RestaurantItem * item = [[RestaurantItem alloc] initWithDict:restDict];
+                    [array addObject:item];
+                }
+                success(array);
+            }
+            failure:^(AFHTTPRequestOperation *operation) {
+                failure(operation);
+            }];
 }
 
 + (void) getProductWithRestId:(NSString *) restId success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
 {
     NSString *requestString = [NSString stringWithFormat:@"/biz/%@/prod", restId];
-    [[WebAPI getManager] GET:requestString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 
-        NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
-        for (NSDictionary *restDict in responseObject) {
-            ProductItem *item = [[ProductItem alloc] initWithDict:restDict];
-            [array addObject:item];
-        }
-        DLog(@"array:%@", array);
-        success(array);
-
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        DLog(@"Error: %@", error);
-        failure();
-    }];
+    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:NO
+            success:^(AFHTTPRequestOperation *operation) {
+                NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
+                for (NSDictionary *restDict in operation.responseObject) {
+                    ProductItem *item = [[ProductItem alloc] initWithDict:restDict];
+                    [array addObject:item];
+                }
+                success(array);
+            }
+            failure:^(AFHTTPRequestOperation *operation) {
+                failure(operation);
+            }];
 }
 
 + (void) getpromoWithProduct:(ProductItem*) item success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
 {
     NSString *requestString = [NSString stringWithFormat:@"/biz/%@/prod/%@/promo", item.biz_id, item.prod_id];
-    [[WebAPI getManager] GET:requestString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 
-        NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
-        for (NSDictionary *restDict in responseObject) {
-            CouponItem *item = [[CouponItem alloc] initWithDict:restDict];
-            [array addObject:item];
-        }
-        DLog(@"array:%@", array);
-        success(array);
-
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        DLog(@"Error: %@", error);
-        failure();
-    }];
+    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:NO
+            success:^(AFHTTPRequestOperation *operation) {
+                NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
+                for (NSDictionary *restDict in operation.responseObject) {
+                    CouponItem *item = [[CouponItem alloc] initWithDict:restDict];
+                    [array addObject:item];
+                }
+                success(array);
+            }
+            failure:^(AFHTTPRequestOperation *operation) {
+                failure(operation);
+            }];
 }
 
 + (void) getRestaurantsWithUserId:(NSString*) userId success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
 {
-    NSString *requestString = [NSString stringWithFormat:@"/cust/100001/biz"];
-    [[WebAPI getManager] GET:requestString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSString *requestString = [NSString stringWithFormat:@"/cust/%@/biz",userId];
 
-        DLog(@"%@", operation);
-        NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
-        for (NSDictionary *restDict in responseObject) {
-            RestaurantItem *item = [[RestaurantItem alloc] initWithDict:restDict];
-            [array addObject:item];
-        }
-        DLog(@"array:%@", array);
-        success(array);
-
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        DLog(@"Error: %@", error);
-        failure();
-    }];
+    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:YES
+            success:^(AFHTTPRequestOperation *operation) {
+                NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
+                for (NSDictionary *restDict in operation.responseObject) {
+                    RestaurantItem *item = [[RestaurantItem alloc] initWithDict:restDict];
+                    [array addObject:item];
+                }
+                success(array);
+            }
+            failure:^(AFHTTPRequestOperation *operation) {
+                failure(operation);
+            }];
 }
 
 + (void) customerCheckIn:(NSString*) userId restId:(NSString *) restId success:(void (^)())success failure:(void (^)()) failure

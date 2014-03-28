@@ -29,9 +29,7 @@
 
 - (void) setProduct:(ProductItem *) item
 {
-    if (item.img_url != nil) {
-        [self.productImageView setImageWithURL:item.img_url];
-    }
+    [self.productImageView setImageWithURL:item.img_url placeholderImage:[UIImage imageNamed:@"default_image"]];
     self.nameLabel.text = item.name;
     self.priceLabel.text = [NSString stringWithFormat:@"$%@", item.price];
     self.descriptionLabel.text = item.description;

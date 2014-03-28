@@ -45,7 +45,7 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
     [self.tableView registerNib:[UINib nibWithNibName:@"ProductCell" bundle:nil] forCellReuseIdentifier:ProductCellIdentifier];
 
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
-    [imageView setImageWithURL:self.restItem.restaurantImageUrl];
+    [imageView setImageWithURL:self.restItem.restaurantImageUrl placeholderImage:[UIImage imageNamed:@"default_image"]];
     self.tableView.tableHeaderView = imageView;
 
     UIView *tableBackView = [[UIView alloc] initWithFrame:self.tableView.frame];

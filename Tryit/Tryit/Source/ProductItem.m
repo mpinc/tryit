@@ -27,6 +27,10 @@
         if (dict[@"img_url"] != nil && ![dict[@"img_url"] isKindOfClass:[NSNull class]]) {
             self.img_url = [NSURL URLWithString:dict[@"img_url"]];
         }
+
+        if ([NSString isEmptyString:self.name]) {
+            self.name = [NSString ToString:dict[@"name"]];
+        }
     }
     return self;
 
