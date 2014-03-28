@@ -47,34 +47,6 @@
     return manager;
 }
 
-+ (BOOL) canAccessNetWork
-{
-    BOOL netWorkStatus = NO;
-    AFNetworkReachabilityStatus status = [WebAPI getManager].reachabilityManager.networkReachabilityStatus;
-    switch (status) {
-        case AFNetworkReachabilityStatusUnknown:
-        case AFNetworkReachabilityStatusNotReachable:
-        {
-            netWorkStatus = NO;
-            break;
-        }
-        case AFNetworkReachabilityStatusReachableViaWWAN:
-        case AFNetworkReachabilityStatusReachableViaWiFi:
-        {
-            netWorkStatus = YES;
-            break;
-        }
-        default:
-            break;
-    }
-
-    if (netWorkStatus == NO) {
-        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_NETWORK_NOT_ACCESS", nil)];
-    }
-
-    return netWorkStatus;
-}
-
 + (void) errorPrompt:(AFHTTPRequestOperation *)operation Error:(NSError *)error
 {
     DLog(@"Error: %@", operation.responseObject);
@@ -98,29 +70,31 @@
          success:(void (^)(AFHTTPRequestOperation *operation))success
          failure:(void (^)(AFHTTPRequestOperation *operation))failure
 {
-//    if ([WebAPI canAccessNetWork]) {
-        AFHTTPRequestOperationManager *manager = [WebAPI getManager];
+    AFHTTPRequestOperationManager *manager = [WebAPI getManager];
 
-        NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:method URLString:[[NSURL URLWithString:path relativeToURL:manager.baseURL] absoluteString] parameters:parameters error:nil];
-        [request setTimeoutInterval:TIMEOUT];
+    NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:method URLString:[[NSURL URLWithString:path relativeToURL:manager.baseURL] absoluteString] parameters:parameters error:nil];
+    [request setTimeoutInterval:TIMEOUT];
 
 
-        if (needToken) {
-            AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+    if (needToken) {
+        AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+        if ([appDelegate getAccessToken] == nil) {
+            return;
+        }else {
             [request addValue:[appDelegate getAccessToken] forHTTPHeaderField:accessToken];
         }
+    }
 
-        DLog(@"%@", request);
-        AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            DLog(@"%@", responseObject);
-            success(operation);
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            [WebAPI errorPrompt:operation Error:error];
-            failure(operation);
-        }];
+    DLog(@"%@", request);
+    AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        DLog(@"%@", responseObject);
+        success(operation);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [WebAPI errorPrompt:operation Error:error];
+        failure(operation);
+    }];
 
-        [manager.operationQueue addOperation:operation];
-//    }
+    [manager.operationQueue addOperation:operation];
 }
 
 + (void) loginWithUserName:(NSString *) userName Password:(NSString *) password success:(void (^)(id responseObject))success failure:(void (^)()) failure
@@ -129,7 +103,7 @@
     NSDictionary *dict = @{@"user":userName,@"password":password};
     [WebAPI request:requestString parameters:dict Method:MPOST NeedToken:NO
             success:^(AFHTTPRequestOperation *operation) {
-                success(operation);
+                success(operation.responseObject);
             }
             failure:^(AFHTTPRequestOperation *operation) {
                 failure(operation);
@@ -232,15 +206,15 @@
 + (void) customerCheckIn:(NSString*) userId restId:(NSString *) restId success:(void (^)())success failure:(void (^)()) failure
 {
     NSString *requestString = [NSString stringWithFormat:@"/cust/%@/biz/%@/checkin", userId, restId];
-    [[WebAPI getManager] POST:requestString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-
-        DLog(@"%@", operation);
-        success();
-
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        DLog(@"Error: %@", error);
-        failure();
-    }];
+    [WebAPI request:requestString
+         parameters:nil
+             Method:MPOST
+          NeedToken:YES
+            success:^(AFHTTPRequestOperation *operation) {
+                success();
+            } failure:^(AFHTTPRequestOperation *operation) {
+                failure();
+            }];
 }
 
 @end

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 - (IBAction)touchSignInButton:(id)sender;
 
 @end
@@ -102,12 +103,34 @@
 
     [WebAPI loginWithUserName:self.userNameField.text Password:self.passwordField.text success:^(id responseObject) {
         [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_LOGIN_SUCCESS", nil)];
+
         AppDelegate *appDelegate = [AppDelegate getAppdelegate];
 
-        
+        [appDelegate saveUserInfoWithDict:responseObject];
         [appDelegate hiddeSignInViewController];
     } failure:^{
 
     }];
+}
+
+#pragma mark - 
+
+- (void) textFieldDidBeginEditing:(UITextField *)textField
+{
+    [UIView animateWithDuration:0.25 animations:^
+     {
+         int offsetY = (-textField.frame.origin.y + 20) > 0?0:(-textField.frame.origin.y + 20);
+         self.topConstraint.constant = 110 + offsetY;
+         [self.view layoutIfNeeded];
+     }];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [UIView animateWithDuration:0.25 animations:^
+     {
+         self.topConstraint.constant = 110;
+         [self.view layoutIfNeeded];
+     }];
 }
 @end

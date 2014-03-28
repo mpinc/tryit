@@ -172,6 +172,8 @@
         [userDefaults setObject:dict[customerId] forKey:customerId];
     }
     [userDefaults synchronize];
+
+    [self readUserInfo];
 }
 
 - (void) readUserInfo

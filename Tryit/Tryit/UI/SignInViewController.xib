@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="passwordField" destination="KcK-nB-GDe" id="1TL-6j-otq"/>
                 <outlet property="signInButton" destination="O0L-wt-M9B" id="glN-5q-4d1"/>
+                <outlet property="topConstraint" destination="FTi-RW-6EL" id="XhS-oq-gs1"/>
                 <outlet property="userNameField" destination="RbI-n6-8fz" id="fNr-k0-2EV"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -101,6 +102,7 @@
                 <constraint firstItem="cMp-th-YbR" firstAttribute="centerY" secondItem="wFr-ub-cuM" secondAttribute="centerY" id="BLO-2R-Gwh"/>
                 <constraint firstItem="O0L-wt-M9B" firstAttribute="height" secondItem="KcK-nB-GDe" secondAttribute="height" id="Bnx-sG-LG2"/>
                 <constraint firstAttribute="trailing" secondItem="cMp-th-YbR" secondAttribute="trailing" constant="38" id="DPE-Ar-N5O"/>
+                <constraint firstItem="RbI-n6-8fz" firstAttribute="top" secondItem="z65-bq-bZ9" secondAttribute="top" constant="15" id="EJN-Fe-iED"/>
                 <constraint firstItem="z65-bq-bZ9" firstAttribute="top" secondItem="1" secondAttribute="top" constant="110" id="FTi-RW-6EL"/>
                 <constraint firstItem="EFh-3V-OCo" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="JhU-A0-Aif"/>
                 <constraint firstItem="wFr-ub-cuM" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="38" id="NdX-uM-eY3"/>
@@ -113,7 +115,6 @@
                 <constraint firstItem="EFh-3V-OCo" firstAttribute="top" secondItem="1" secondAttribute="top" id="fIZ-x9-AgU"/>
                 <constraint firstItem="KcK-nB-GDe" firstAttribute="height" secondItem="RbI-n6-8fz" secondAttribute="height" id="k3o-B9-7Ul"/>
                 <constraint firstAttribute="trailing" secondItem="z65-bq-bZ9" secondAttribute="trailing" id="rqe-6M-k5q"/>
-                <constraint firstItem="RbI-n6-8fz" firstAttribute="top" secondItem="1" secondAttribute="top" constant="125" id="tMn-Ab-E7C"/>
                 <constraint firstItem="O0L-wt-M9B" firstAttribute="top" secondItem="KcK-nB-GDe" secondAttribute="bottom" constant="29" id="thu-Lp-bnO"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

@@ -11,6 +11,7 @@
 #import "UIFunction.h"
 #import "UIButtonExt.h"
 #import "WebAPI.h"
+#import "AppDelegate.h"
 @implementation CheckSectionView
 
 - (id)initWithFrame:(CGRect)frame
@@ -59,7 +60,9 @@
 
 - (IBAction)touchCheckInButton:(id)sender
 {
-    [WebAPI customerCheckIn:@"100001" restId:self.restaurantItem.biz_id success:^{
+    AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+
+    [WebAPI customerCheckIn:appDelegate.userId restId:self.restaurantItem.biz_id success:^{
         [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHECK_IN_SUCCESS", nil)];
     } failure:^{
         [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHECK_IN_FAIL", nil)];
