@@ -229,4 +229,20 @@
             }];
 }
 
++ (void) createCoupon:(NSString*) userId restId:(NSString *) restId promo:(NSString*) promoId success:(void (^)())success failure:(void (^)()) failure
+{
+    NSString *requestString = [NSString stringWithFormat:@"/cust/%@/biz/%@/promo/%@/coupon", userId, restId,promoId];
+    [WebAPI request:requestString
+         parameters:nil
+             Method:MPOST
+          NeedToken:YES
+            success:^(AFHTTPRequestOperation *operation) {
+                success();
+            } failure:^(AFHTTPRequestOperation *operation) {
+                failure();
+            }];
+}
+
+
+
 @end

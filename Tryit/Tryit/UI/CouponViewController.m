@@ -43,7 +43,7 @@
     [self.couponButton setBackgroundImage:couponImage forState:UIControlStateNormal];
     [self.addFriendsButton setBackgroundImage:couponImage forState:UIControlStateNormal];
 
-    [self.couponButton setTitle:NSLocalizedString(@"TITLE_CHOOSE_COUPON", nil) forState:UIControlStateNormal];
+//    [self.couponButton setTitle:NSLocalizedString(@"TITLE_CHOOSE_COUPON", nil) forState:UIControlStateNormal];
     [self.addFriendsButton setTitle:NSLocalizedString(@"TITLE_ADD_YOUR_FRIENDS", nil) forState:UIControlStateNormal];
 
     UIImage *photoImage = [[UIImage imageNamed:@"bg_photo"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)];
@@ -51,6 +51,7 @@
     UIImage *textImage = [[UIImage imageNamed:@"bg_text"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)];
     [self.textBgView setImage:textImage];
 
+    [self configByProductItem];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -130,11 +131,13 @@
     [self.navigationController pushViewController:contactViewController animated:YES];
 }
 
-- (void) configByProductItem:(ProductItem*) productItem
+- (void) configByProductItem
 {
-    self.item = productItem;
-    NSString *buttonTitle = [NSString stringWithFormat:@"%@ %@", productItem.name, productItem.selectCoupon.name];
-    [self.couponButton setTitle:buttonTitle forState:UIControlStateNormal];
+    if (self.item != nil) {
+        NSString *buttonTitle = [NSString stringWithFormat:@"%@ %@", self.item.name, self.item.selectCoupon.name];
+        [self.couponButton setTitle:buttonTitle forState:UIControlStateNormal];
+    }
+
 }
 
 - (IBAction)touchCouponButton:(id)sender {

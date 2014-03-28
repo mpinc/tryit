@@ -120,8 +120,8 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
     CouponItem *item = [self.couponArray objectAtIndex:indexPath.row];
     self.productItem.selectCoupon = item;
     CouponViewController *couponViewController = (CouponViewController*)[appDelegate getCouponViewController];
-    [couponViewController configByProductItem:self.productItem];
     [appDelegate setCenterViewControllerWithIndex:1];
+    couponViewController.item  = self.productItem;
 }
 
 @end
