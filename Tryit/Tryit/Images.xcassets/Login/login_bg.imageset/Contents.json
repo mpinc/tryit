@@ -1,13 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x",
       "filename" : "login_bg@2x.png"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "login_bg-568@2x.png",
+      "subtype" : "retina4",
+      "scale" : "2x"
     }
   ],
   "info" : {

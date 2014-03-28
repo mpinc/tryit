@@ -17,8 +17,9 @@
 #import "SignInViewController.h"
 #import "SignUpViewController.h"
 
+#import "NSString+Utlity.h"
+#import "WebAPI.h"
 @interface AppDelegate ()
-
 @property (nonatomic, strong) MMDrawerController *drawerController;
 @property (nonatomic, strong) MenuViewController *menuViewController;
 @end
@@ -30,6 +31,8 @@
     // Override point for customization after application launch.
 
     // for menu
+
+    [WebAPI getManager];
 
     self.menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:Nil];
 
@@ -61,11 +64,10 @@
     [self.window setHidden:NO];
     [self.window setRootViewController:self.drawerController];
     [self.window makeKeyAndVisible];
-    
-//    [self showSignInViewController];
+
+    [self readUserInfo];
 
     self.checkInItem = nil;
-
     return YES;
 }
 							
@@ -158,6 +160,34 @@
 - (id) getCouponViewController
 {
     return self.menuViewController.cpViewController;
+}
+
+- (void) saveUserInfoWithDict:(NSDictionary *)dict
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (dict[accessToken]) {
+        [userDefaults setObject:dict[accessToken] forKey:accessToken];
+    }
+    if (dict[customerId]) {
+        [userDefaults setObject:dict[customerId] forKey:customerId];
+    }
+    [userDefaults synchronize];
+}
+
+- (void) readUserInfo
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.token = [userDefaults valueForKey:accessToken];
+    self.userId = [userDefaults valueForKey:customerId];
+}
+
+- (id) getAccessToken
+{
+    if ([NSString isEmptyString:_token]) {
+        [self showSignInViewController];
+        return Nil;
+    }
+    return _token;
 }
 
 @end

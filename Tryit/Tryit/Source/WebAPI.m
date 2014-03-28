@@ -8,8 +8,12 @@
 
 #import "WebAPI.h"
 #import "UIFunction.h"
+#import "AppDelegate.h"
 
-#define BaseURL @"http://192.168.1.115:8080"
+#define MPOST @"POST"
+#define MGET @"GET"
+
+#define TIMEOUT 15
 
 @implementation WebAPI
 
@@ -19,27 +23,134 @@
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
         manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:BaseURL]];
+        AFJSONRequestSerializer *serializer = [AFJSONRequestSerializer serializer];
+        [manager setRequestSerializer:serializer];
+
+        NSOperationQueue *operationQueue = manager.operationQueue;
+        [manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+            DLog(@"Made it here.");
+
+            switch (status) {
+                case AFNetworkReachabilityStatusReachableViaWWAN:
+                case AFNetworkReachabilityStatusReachableViaWiFi:
+                    [operationQueue setSuspended:NO];
+                    DLog(@"Reachable");
+                    break;
+                case AFNetworkReachabilityStatusNotReachable:
+                default:
+                    [operationQueue setSuspended:YES];
+                    DLog(@"Not Reachable");
+                    break;
+            }
+        }];
     });
     return manager;
+}
+
++ (BOOL) canAccessNetWork
+{
+    BOOL netWorkStatus = NO;
+    AFNetworkReachabilityStatus status = [WebAPI getManager].reachabilityManager.networkReachabilityStatus;
+    switch (status) {
+        case AFNetworkReachabilityStatusUnknown:
+        case AFNetworkReachabilityStatusNotReachable:
+        {
+            netWorkStatus = NO;
+            break;
+        }
+        case AFNetworkReachabilityStatusReachableViaWWAN:
+        case AFNetworkReachabilityStatusReachableViaWiFi:
+        {
+            netWorkStatus = YES;
+            break;
+        }
+        default:
+            break;
+    }
+
+    if (netWorkStatus == NO) {
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_NETWORK_NOT_ACCESS", nil)];
+    }
+
+    return netWorkStatus;
+}
+
++ (void) errorPrompt:(AFHTTPRequestOperation *)operation Error:(NSError *)error
+{
+    DLog(@"Error: %@", operation.responseObject);
+    NSDictionary *dict = (NSDictionary *) operation.responseObject;
+    if (dict[@"message"]) {
+        [UIFunction showAlertWithMessage:dict[@"message"]];
+    }
+    else if(error.code == -1001)
+    {
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_REQUEST_TIMEOUT", nil)];
+    }
+    else{
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_NOT_CONNECT_SERVER", nil)];
+    }
+}
+
++ (void) request:(NSString *) path
+      parameters:(NSDictionary *)parameters
+          Method:(NSString*) method
+       NeedToken:(BOOL) needToken
+         success:(void (^)(AFHTTPRequestOperation *operation))success
+         failure:(void (^)(AFHTTPRequestOperation *operation))failure
+{
+//    if ([WebAPI canAccessNetWork]) {
+        AFHTTPRequestOperationManager *manager = [WebAPI getManager];
+
+        NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:method URLString:[[NSURL URLWithString:path relativeToURL:manager.baseURL] absoluteString] parameters:parameters error:nil];
+        [request setTimeoutInterval:TIMEOUT];
+
+
+        if (needToken) {
+            AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+            [request addValue:[appDelegate getAccessToken] forHTTPHeaderField:accessToken];
+        }
+
+        DLog(@"%@", request);
+        AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            DLog(@"%@", responseObject);
+            success(operation);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [WebAPI errorPrompt:operation Error:error];
+            failure(operation);
+        }];
+
+        [manager.operationQueue addOperation:operation];
+//    }
+}
+
++ (void) loginWithUserName:(NSString *) userName Password:(NSString *) password success:(void (^)(id responseObject))success failure:(void (^)()) failure
+{
+    NSString *requestString = @"/cust/to/doLogin";
+    NSDictionary *dict = @{@"user":userName,@"password":password};
+    [WebAPI request:requestString parameters:dict Method:MPOST NeedToken:NO
+            success:^(AFHTTPRequestOperation *operation) {
+                success(operation);
+            }
+            failure:^(AFHTTPRequestOperation *operation) {
+                failure(operation);
+            }];
 }
 
 + (void) getTopX:(NSInteger) topx success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
 {
     NSString *requestString = [NSString stringWithFormat:@"/biz/%d/topDish", topx];
-    [[WebAPI getManager] GET:requestString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-
-        NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
-        for (NSDictionary *restDict in responseObject) {
-            ProductItem *item = [[ProductItem alloc] initWithDict:restDict];
-            [array addObject:item];
-        }
-        DLog(@"array:%@", array);
-        success(array);
-
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        DLog(@"Error: %@", error);
-        failure();
-    }];
+    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:NO
+            success:^(AFHTTPRequestOperation *operation) {
+                NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
+                for (NSDictionary *restDict in operation.responseObject) {
+                    ProductItem *item = [[ProductItem alloc] initWithDict:restDict];
+                    [array addObject:item];
+                }
+                success(array);
+            }
+            failure:^(AFHTTPRequestOperation *operation) {
+                failure(operation);
+            }];
 }
 
 + (void) getNearRestaurantWithCoordinate:(CLLocationCoordinate2D) coordinate success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure

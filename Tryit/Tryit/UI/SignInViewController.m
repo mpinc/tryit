@@ -8,7 +8,14 @@
 
 #import "SignInViewController.h"
 #import "AppDelegate.h"
+#import "WebAPI.h"
+#import "NSString+Utlity.h"
+#import "UIFunction.h"
 @interface SignInViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *userNameField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UIButton *signInButton;
+- (IBAction)touchSignInButton:(id)sender;
 
 @end
 
@@ -34,6 +41,21 @@
 
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"TITLE_SIGN_UP", nil) style:UIBarButtonItemStylePlain target:self action:@selector(touchSignUpButton:)];
     self.navigationItem.rightBarButtonItem = rightBarButton;
+
+    self.userNameField.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.userNameField.layer.borderWidth = 2.0;
+    self.userNameField.layer.cornerRadius = 5.0;
+
+    self.passwordField.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.passwordField.layer.borderWidth = 2;
+    self.passwordField.layer.cornerRadius = 5.0;
+
+    self.signInButton.layer.cornerRadius = 5.0;
+
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBroad)];
+    recognizer.numberOfTouchesRequired = 1;
+    recognizer.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:recognizer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,4 +75,39 @@
     self.flipBlock();
 }
 
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self hiddenKeyBroad];
+    return NO;
+}
+
+- (void) hiddenKeyBroad
+{
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+}
+
+- (IBAction)touchSignInButton:(id)sender {
+
+    if ([NSString isEmptyString:self.userNameField.text]) {
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHECK_USERNAME", nil)];
+        return;
+    }
+
+    if ([NSString isEmptyString:self.passwordField.text]) {
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHECK_PASSWORD", nil)];
+        return;
+    }
+
+    [WebAPI loginWithUserName:self.userNameField.text Password:self.passwordField.text success:^(id responseObject) {
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_LOGIN_SUCCESS", nil)];
+        AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+
+        
+        [appDelegate hiddeSignInViewController];
+    } failure:^{
+
+    }];
+}
 @end

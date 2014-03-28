@@ -32,9 +32,17 @@
 "PROMPT_CHECK_IN_FAIL" = "Check in unsuccesfully!";
 "PROMPT_ACCESS_PHOTO_FAIL" = "Can't access your photo libary";
 "PROMPT_ACCESS_CAMERA_FAIL" = "Can't access your camera";
+"PROMPT_CHECK_USERNAME" = "Please check your user name";
+"PROMPT_CHECK_PASSWORD" = "Please check your password";
+"PROMPT_LOGIN_SUCCESS" = "Sign in success";
+"PROMPT_NOT_CONNECT_SERVER" = "Could not connect to the server.";
+"PROMPT_REQUEST_FAIL" = "Request fail, please try later.";
 
 "FORMAT_TITLE_ADD_FRIENDS" = "Add Friends (%d)";
 "FORMAT_MY_POINTS" = "My Points: (%@)";
 "FORMAT_COUNT_REST" = "Resturant(%@) | Coupons(%@) | Points(%@)";
 "FORMAT_COUNT_PROD" = "Coupons(%d) | Points(%@)";
 "FORMAT_SEND_FRIENDS" = "Send to %d friends";
+
+
+
