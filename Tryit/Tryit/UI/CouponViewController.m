@@ -73,7 +73,8 @@
 {
     [UIView animateWithDuration:0.25 animations:^
      {
-         int offsetY = (-textView.frame.origin.y + 20) > 0?0:(-textView.frame.origin.y + 20);
+         int fixHeight = -textView.frame.origin.y + 55 + (iPhone5?88:0);
+         int offsetY = fixHeight > 0?0:fixHeight;
          self.topConstraint.constant = offsetY;
          [self.view layoutIfNeeded];
      }];
@@ -192,6 +193,8 @@
     [picker dismissViewControllerAnimated:YES completion:^{
 
     }];
+
+    [self.shareTextView resignFirstResponder];
 }
 
 #pragma mark - UIActionSheetDelegate

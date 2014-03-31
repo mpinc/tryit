@@ -167,7 +167,11 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
     if (self.selectArray.count > 0) {
         NSString *emailList = @"";
         for (TIContact *contact in self.selectArray) {
-           emailList = [emailList stringByAppendingFormat:@",%@", contact.email];
+            if ([emailList isEqualToString:@""]) {
+                emailList = [emailList stringByAppendingFormat:@"%@", contact.email];
+            }else{
+                emailList = [emailList stringByAppendingFormat:@",%@", contact.email];
+            }
         }
         self.ccItem.emailList = emailList;
         [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", Nil)];
