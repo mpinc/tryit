@@ -65,29 +65,24 @@
     }
 }
 
-+ (void) request:(NSString *) path
-      parameters:(NSDictionary *)parameters
-          Method:(NSString*) method
-       NeedToken:(BOOL) needToken
-         success:(void (^)(AFHTTPRequestOperation *operation))success
-         failure:(void (^)(AFHTTPRequestOperation *operation))failure
++ (void) sendRequest:(NSMutableURLRequest *) request
+           needToken:(BOOL) needToken
+             success:(void (^)(AFHTTPRequestOperation *operation))success
+             failure:(void (^)(AFHTTPRequestOperation *operation))failure
 {
-    AFHTTPRequestOperationManager *manager = [WebAPI getManager];
-
-    NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:method URLString:[[NSURL URLWithString:path relativeToURL:manager.baseURL] absoluteString] parameters:parameters error:nil];
-    [request setTimeoutInterval:TIMEOUT];
-
-
     if (needToken) {
         AppDelegate *appDelegate = [AppDelegate getAppdelegate];
         if ([appDelegate getAccessToken] == nil) {
             [UIFunction removeMaskView];
             return;
         }else {
-            [request addValue:[appDelegate getAccessToken] forHTTPHeaderField:accessToken];
+            [request addValue:[appDelegate getAccessToken] forHTTPHeaderField:authToken];
         }
     }
 
+    AFHTTPRequestOperationManager *manager = [WebAPI getManager];
+
+    [request setTimeoutInterval:TIMEOUT];
     DLog(@"%@", request);
     AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         DLog(@"%@", responseObject);
@@ -98,6 +93,34 @@
     }];
 
     [manager.operationQueue addOperation:operation];
+}
+
++ (void) request:(NSString *) path
+      parameters:(NSDictionary *)parameters
+          Method:(NSString*) method
+       NeedToken:(BOOL) needToken
+         success:(void (^)(AFHTTPRequestOperation *operation))success
+         failure:(void (^)(AFHTTPRequestOperation *operation))failure
+{
+    AFHTTPRequestOperationManager *manager = [WebAPI getManager];
+
+    NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:method URLString:[[NSURL URLWithString:path relativeToURL:manager.baseURL] absoluteString] parameters:parameters error:nil];
+
+    [WebAPI sendRequest:request needToken:needToken success:success failure:failure];
+}
+
++ (void) formRequest:(NSString *) path
+          parameters:(NSDictionary *)parameters
+           NeedToken:(BOOL) needToken
+constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
+             success:(void (^)(AFHTTPRequestOperation *operation))success
+             failure:(void (^)(AFHTTPRequestOperation *operation))failure
+{
+    AFHTTPRequestOperationManager *manager = [WebAPI getManager];
+
+    NSMutableURLRequest *request = [manager.requestSerializer multipartFormRequestWithMethod:MPOST URLString:[[NSURL URLWithString:path relativeToURL:manager.baseURL] absoluteString] parameters:parameters constructingBodyWithBlock:block error:nil];
+
+    [WebAPI sendRequest:request needToken:needToken success:success failure:failure];
 }
 
 + (void) loginWithUserName:(NSString *) userName Password:(NSString *) password success:(void (^)(id responseObject))success failure:(void (^)()) failure
@@ -128,8 +151,9 @@
 
 + (void) getTopX:(NSInteger) topx success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
 {
-    NSString *requestString = [NSString stringWithFormat:@"/biz/%ld/topDish", (long)topx];
-    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:NO
+    NSString *requestString = [NSString stringWithFormat:@"biz/get/topDish"];
+    NSDictionary *dict = @{@"size":[NSString stringWithFormat:@"%d",topx]};
+    [WebAPI request:requestString parameters:dict Method:MGET NeedToken:NO
             success:^(AFHTTPRequestOperation *operation) {
                 NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
                 for (NSDictionary *restDict in operation.responseObject) {
@@ -229,20 +253,19 @@
             }];
 }
 
-+ (void) createCoupon:(NSString*) userId restId:(NSString *) restId promo:(NSString*) promoId success:(void (^)())success failure:(void (^)()) failure
++ (void) createCouponWithCCItem:(CreateCouponItem*) ccItem success:(void (^)())success failure:(void (^)()) failure
 {
-    NSString *requestString = [NSString stringWithFormat:@"/cust/%@/biz/%@/promo/%@/coupon", userId, restId,promoId];
-    [WebAPI request:requestString
-         parameters:nil
-             Method:MPOST
-          NeedToken:YES
-            success:^(AFHTTPRequestOperation *operation) {
-                success();
-            } failure:^(AFHTTPRequestOperation *operation) {
-                failure();
-            }];
+    NSString *requestString = [NSString stringWithFormat:@"/cust/%@/biz/%@/promo/%@/coupon", ccItem.userId, ccItem.bizId,ccItem.promotionId];
+    NSDictionary *dict = @{@"personal_msg":ccItem.shareWord,@"to_email":ccItem.emailList};
+    [WebAPI formRequest:requestString parameters:dict NeedToken:YES
+constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
+    {
+        [formData appendPartWithFileData:UIImageJPEGRepresentation(ccItem.image, 0.5) name:@"image" fileName:@"coupon.png" mimeType:@"image/jpeg"];
+    } success:^(AFHTTPRequestOperation *operation) {
+        success();
+    } failure:^(AFHTTPRequestOperation *operation) {
+        failure();
+    }];
 }
-
-
 
 @end

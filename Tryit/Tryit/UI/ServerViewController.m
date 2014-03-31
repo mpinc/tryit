@@ -50,7 +50,7 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
 	// Do any additional setup after loading the view.
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *mainServerAddress = [userDefaults objectForKey:APPLICATION_SERVICE];
+    NSString *mainServerAddress = [userDefaults objectForKey:BaseURL];
     if (mainServerAddress == nil) {
         self.serverAddressTextView.text = BaseURL;
     }else {
@@ -74,14 +74,15 @@
 
 - (void) dismissSelf{
     [self.navigationController dismissViewControllerAnimated:YES completion:^{
-
+        AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+        [appDelegate setPopServerViewController:NO];
     }];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1) {
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        [userDefaults setObject:self.serverAddressTextView.text forKey:APPLICATION_SERVICE];
+        [userDefaults setObject:self.serverAddressTextView.text forKey:BaseURL];
         [userDefaults synchronize];
         AppDelegate *appDelegate = [AppDelegate getAppdelegate];
         appDelegate.baseAddress = self.serverAddressTextView.text;

@@ -41,13 +41,15 @@
 "PROMPT_REQUEST_FAIL" = "Request fail, please try later.";
 "PROMPT_CHECK_EMAIL" = "Please check your email";
 "PROMPT_CHECK_RETYPE_PASSWORD" = "Please check your retype password.";
+"PROMPT_IMAGE_NULL" = "Please take photo frist";
+"PROMPT_PRODUCT_NULL" = "Please select coupon first";
+"PROMPT_SHAREWORD_NULL" = "Please input share word first";
+"PROMPT_SHARE_FIREND_NULL" = "Please choose your friends first";
+"PROMPT_SHARE_SUCCESS" = "Share success";
 
 "FORMAT_TITLE_ADD_FRIENDS" = "Add Friends (%d)";
 "FORMAT_MY_POINTS" = "My Points: (%@)";
 "FORMAT_COUNT_REST" = "Resturant(%@) | Coupons(%@) | Points(%@)";
 "FORMAT_COUNT_PROD" = "Coupons(%d) | Points(%@)";
 "FORMAT_SEND_FRIENDS" = "Send to %d friends";
-
-
-
 

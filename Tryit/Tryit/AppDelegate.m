@@ -36,9 +36,9 @@
     [self readUserInfo];
 
     [self readServerAddress];
-    [self SetServerViewController];
 
     [WebAPI getManager];
+
     self.checkInItem = nil;
 
     self.menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:Nil];
@@ -71,7 +71,9 @@
     [self.window setHidden:NO];
     [self.window setRootViewController:self.drawerController];
     [self.window makeKeyAndVisible];
-    
+
+    [self SetServerViewController];
+
     return YES;
 }
 							
@@ -194,9 +196,9 @@
 - (void) readServerAddress
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *mainServerAddress = [userDefaults objectForKey:APPLICATION_SERVICE];
+    NSString *mainServerAddress = [userDefaults objectForKey:BaseURL];
     if (mainServerAddress == nil) {
-        self.baseAddress = APPLICATION_SERVICE;
+        self.baseAddress = BaseURL;
     }else {
         self.baseAddress = mainServerAddress;
     }
@@ -217,15 +219,19 @@
     [recognizer setNumberOfTouchesRequired:2];
     [recognizer setNumberOfTapsRequired:2];
     [self.window addGestureRecognizer:recognizer];
+    self.popServerViewController = NO;
 }
 
 - (void) showServerViewController
 {
-    ServerViewController *serverViewController = [[ServerViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:serverViewController];
-    [self.drawerController presentViewController:navController animated:YES completion:^{
-
-    }];
+    if (self.popServerViewController == NO) {
+        ServerViewController *serverViewController = [[ServerViewController alloc] init];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:serverViewController];
+        [navController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
+        [self.drawerController presentViewController:navController animated:YES completion:^{
+            self.popServerViewController = YES;
+        }];
+    }
 }
 
 @end

@@ -13,7 +13,8 @@
 #import "RestCheckViewController.h"
 #import "AppDelegate.h"
 #import "UIFunction.h"
-
+#import "NSString+Utlity.h"
+#import "CreateCouponItem.h"
 @interface CouponViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 
@@ -127,7 +128,32 @@
          [self.view layoutIfNeeded];
      }];
 
+    if (self.pictureImageView.image == nil) {
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_IMAGE_NULL", nil)];
+        return;
+    }
+
+    if (self.item == nil) {
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_PRODUCT_NULL", nil)];
+        return;
+    }
+
+    if ([NSString isEmptyString:self.shareTextView.text]) {
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_SHAREWORD_NULL", nil)];
+        return;
+    }
+
+    AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+
+    CreateCouponItem *ccItem = [[CreateCouponItem alloc] init];
+    ccItem.userId = appDelegate.userId;
+    ccItem.bizId = self.item.biz_id;
+    ccItem.promotionId = self.item.selectCoupon.promotion_id;
+    ccItem.image = self.pictureImageView.image;
+    ccItem.shareWord = self.shareTextView.text;
+
     ContactViewController *contactViewController = [[ContactViewController alloc] initWithNibName:@"ContactViewController" bundle:nil];
+    contactViewController.ccItem = ccItem;
     [self.navigationController pushViewController:contactViewController animated:YES];
 }
 
@@ -137,7 +163,6 @@
         NSString *buttonTitle = [NSString stringWithFormat:@"%@ %@", self.item.name, self.item.selectCoupon.name];
         [self.couponButton setTitle:buttonTitle forState:UIControlStateNormal];
     }
-
 }
 
 - (IBAction)touchCouponButton:(id)sender {

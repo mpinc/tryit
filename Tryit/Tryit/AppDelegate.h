@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "RestaurantItem.h"
 
-#define BaseURL @"http://192.168.1.103:8080"
+#define BaseURL @"http://192.168.1.115:8080"
+#define authToken @"auth-token"
 #define accessToken @"accessToken"
 #define customerId @"customerId"
-
-#define APPLICATION_SERVICE @"APPLICATION_SERVICE"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -26,6 +25,8 @@
 
 @property (nonatomic, strong) NSDictionary *serverAddress;
 @property (nonatomic, strong) NSString *baseAddress;
+@property (nonatomic) BOOL popServerViewController;
+
 
 + (id) getAppdelegate;
 

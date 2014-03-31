@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CreateCouponItem.h"
 #import "FitViewController.h"
 @interface ContactViewController : FitViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) CreateCouponItem *ccItem;
 
 @end

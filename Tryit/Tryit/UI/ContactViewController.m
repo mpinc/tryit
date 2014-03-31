@@ -16,6 +16,7 @@
 #import "TIContact.h"
 
 #import "ContactCell.h"
+#import "WebAPI.h"
 
 NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
 
@@ -73,6 +74,7 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 28)];
     [button setBackgroundColor:[UIColor clearColor]];
     [button setTitle:NSLocalizedString(@"TITLE_SEND", nil) forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(touchSendButton) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = barItem;
 
@@ -91,7 +93,7 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
 - (void) initAddressBook
 {
     WEAKSELF_SC
-    [UIFunction showWaitingAlertWithString:NSLocalizedString(@"DATA_LOADING", nil)];
+    [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
     [[NSNotificationCenter defaultCenter] addObserverForName:kAuthorizationUpdateNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note)
      {
          NSNumber *granted = note.object;
@@ -157,6 +159,29 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
     }
 }
 
+
+#pragma mark - Button Action
+
+-(void) touchSendButton
+{
+    if (self.selectArray.count > 0) {
+        NSString *emailList = @"";
+        for (TIContact *contact in self.selectArray) {
+           emailList = [emailList stringByAppendingFormat:@",%@", contact.email];
+        }
+        self.ccItem.emailList = emailList;
+        [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", Nil)];
+        [WebAPI createCouponWithCCItem:self.ccItem success:^{
+            [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_SHARE_SUCCESS", nil)];
+            [self.navigationController popViewControllerAnimated:YES];
+            [UIFunction removeMaskView];
+        } failure:^{
+            [UIFunction removeMaskView];
+        }];
+    }else {
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_SHARE_FIREND_NULL", nil)];
+    }
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -247,7 +272,6 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
 //    }
 //}
 
-
 #pragma mark -
 #pragma mark UISearchBarDelegate
 
@@ -277,9 +301,18 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
     for (NSArray *section in self.contactList) {
         for (TIContact *contact in section)
         {
-            NSComparisonResult result = [contact.contactName compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
-            if (result == NSOrderedSame)
+            BOOL needAdd = NO;
+            NSComparisonResult nameResult = [contact.contactName compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
+            if (nameResult == NSOrderedSame)
             {
+                needAdd = YES;
+            }
+            NSComparisonResult emailResult = [contact.email compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
+            if (emailResult == NSOrderedSame)
+            {
+                needAdd = YES;
+            }
+            if (needAdd == YES) {
                 [self.filteredList addObject:contact];
             }
         }

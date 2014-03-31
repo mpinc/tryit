@@ -38,6 +38,7 @@
 		41959E9C18C5D18C009241FF /* ABStandin.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959E9718C5D18C009241FF /* ABStandin.m */; };
 		41959E9F18C5D48E009241FF /* UIFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959E9E18C5D48E009241FF /* UIFunction.m */; };
 		41959EA218C5D62B009241FF /* TIContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959EA118C5D62B009241FF /* TIContact.m */; };
+		419985FC18E95420008A1B37 /* CreateCouponItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 419985FB18E95420008A1B37 /* CreateCouponItem.m */; };
 		41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AA8C5F18BC3C830081EA29 /* FitViewController.m */; };
 		41B2682C18E5717F001A2257 /* ServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B2682B18E5717F001A2257 /* ServerViewController.m */; };
 		41B4545818B461C70054E406 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545718B461C70054E406 /* Foundation.framework */; };
@@ -151,6 +152,8 @@
 		41959E9E18C5D48E009241FF /* UIFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFunction.m; sourceTree = "<group>"; };
 		41959EA018C5D62B009241FF /* TIContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TIContact.h; path = Source/TIContact.h; sourceTree = "<group>"; };
 		41959EA118C5D62B009241FF /* TIContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIContact.m; path = Source/TIContact.m; sourceTree = "<group>"; };
+		419985FA18E95420008A1B37 /* CreateCouponItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateCouponItem.h; path = Source/CreateCouponItem.h; sourceTree = "<group>"; };
+		419985FB18E95420008A1B37 /* CreateCouponItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateCouponItem.m; path = Source/CreateCouponItem.m; sourceTree = "<group>"; };
 		41AA8C5E18BC3C830081EA29 /* FitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FitViewController.h; path = UI/FitViewController.h; sourceTree = "<group>"; };
 		41AA8C5F18BC3C830081EA29 /* FitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FitViewController.m; path = UI/FitViewController.m; sourceTree = "<group>"; };
 		41B2682A18E5717F001A2257 /* ServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerViewController.h; path = UI/ServerViewController.h; sourceTree = "<group>"; };
@@ -402,6 +405,8 @@
 				41FD5D1218D7F1B600172DB9 /* UserProfile.m */,
 				41FD5D3018D988CD00172DB9 /* ShareItem.h */,
 				41FD5D3118D988CD00172DB9 /* ShareItem.m */,
+				419985FA18E95420008A1B37 /* CreateCouponItem.h */,
+				419985FB18E95420008A1B37 /* CreateCouponItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -737,6 +742,7 @@
 				41959E9F18C5D48E009241FF /* UIFunction.m in Sources */,
 				41FD5D2318D8571800172DB9 /* UserRestInfoView.m in Sources */,
 				41C2BC7D18BB7E9200686CE8 /* DishesCell.m in Sources */,
+				419985FC18E95420008A1B37 /* CreateCouponItem.m in Sources */,
 				412371EC18D2A1DF001DE23E /* CheckSectionView.m in Sources */,
 				412FBD4718BDEA14009EF882 /* WebAPI.m in Sources */,
 				41F6684618C6F7B300A0A260 /* ContactCell.m in Sources */,
