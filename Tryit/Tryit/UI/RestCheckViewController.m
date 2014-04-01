@@ -11,6 +11,7 @@
 #import "ProductItem.h"
 #import "ProductCell.h"
 #import "CheckSectionView.h"
+#import "RestCheckHeaderView.h"
 
 #import "UIFunction.h"
 #import "WebAPI.h"
@@ -44,10 +45,6 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
     [self.tableView registerNib:[UINib nibWithNibName:@"CheckSectionView" bundle:nil] forHeaderFooterViewReuseIdentifier:NearRestaurantHeadSectionIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:@"ProductCell" bundle:nil] forCellReuseIdentifier:ProductCellIdentifier];
 
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
-    [imageView setImageWithURL:self.restItem.restaurantImageUrl placeholderImage:[UIImage imageNamed:@"default_image"]];
-    self.tableView.tableHeaderView = imageView;
-
     UIView *tableBackView = [[UIView alloc] initWithFrame:self.tableView.frame];
     [tableBackView setBackgroundColor:UIColorFromRGB(0xF8FAF3)];
     [self.tableView setBackgroundView:tableBackView];
@@ -65,6 +62,10 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
 
     self.title = self.restItem.name;
     [self customBackBarItem];
+
+    RestCheckHeaderView *restCheckHeaderView = (RestCheckHeaderView*)[[[NSBundle mainBundle] loadNibNamed:@"RestCheckHeaderView" owner:self options:nil] lastObject];
+    [restCheckHeaderView configRestItem:self.restItem];
+    self.tableView.tableHeaderView = restCheckHeaderView;
 }
 
 - (void)didReceiveMemoryWarning

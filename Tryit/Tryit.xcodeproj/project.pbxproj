@@ -39,6 +39,8 @@
 		41959E9F18C5D48E009241FF /* UIFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959E9E18C5D48E009241FF /* UIFunction.m */; };
 		41959EA218C5D62B009241FF /* TIContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959EA118C5D62B009241FF /* TIContact.m */; };
 		419985FC18E95420008A1B37 /* CreateCouponItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 419985FB18E95420008A1B37 /* CreateCouponItem.m */; };
+		419985FF18EA8F7A008A1B37 /* RestCheckHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 419985FE18EA8F7A008A1B37 /* RestCheckHeaderView.m */; };
+		4199860118EA8FEB008A1B37 /* RestCheckHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4199860018EA8FEB008A1B37 /* RestCheckHeaderView.xib */; };
 		41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AA8C5F18BC3C830081EA29 /* FitViewController.m */; };
 		41B2682C18E5717F001A2257 /* ServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B2682B18E5717F001A2257 /* ServerViewController.m */; };
 		41B4545818B461C70054E406 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545718B461C70054E406 /* Foundation.framework */; };
@@ -154,6 +156,9 @@
 		41959EA118C5D62B009241FF /* TIContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TIContact.m; path = Source/TIContact.m; sourceTree = "<group>"; };
 		419985FA18E95420008A1B37 /* CreateCouponItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateCouponItem.h; path = Source/CreateCouponItem.h; sourceTree = "<group>"; };
 		419985FB18E95420008A1B37 /* CreateCouponItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateCouponItem.m; path = Source/CreateCouponItem.m; sourceTree = "<group>"; };
+		419985FD18EA8F7A008A1B37 /* RestCheckHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestCheckHeaderView.h; path = UI/RestCheckHeaderView.h; sourceTree = "<group>"; };
+		419985FE18EA8F7A008A1B37 /* RestCheckHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestCheckHeaderView.m; path = UI/RestCheckHeaderView.m; sourceTree = "<group>"; };
+		4199860018EA8FEB008A1B37 /* RestCheckHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RestCheckHeaderView.xib; path = UI/RestCheckHeaderView.xib; sourceTree = "<group>"; };
 		41AA8C5E18BC3C830081EA29 /* FitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FitViewController.h; path = UI/FitViewController.h; sourceTree = "<group>"; };
 		41AA8C5F18BC3C830081EA29 /* FitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FitViewController.m; path = UI/FitViewController.m; sourceTree = "<group>"; };
 		41B2682A18E5717F001A2257 /* ServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerViewController.h; path = UI/ServerViewController.h; sourceTree = "<group>"; };
@@ -287,6 +292,9 @@
 				412371F118D2A72E001DE23E /* ProductCell.h */,
 				412371F218D2A72E001DE23E /* ProductCell.m */,
 				412371F418D2A74D001DE23E /* ProductCell.xib */,
+				419985FD18EA8F7A008A1B37 /* RestCheckHeaderView.h */,
+				419985FE18EA8F7A008A1B37 /* RestCheckHeaderView.m */,
+				4199860018EA8FEB008A1B37 /* RestCheckHeaderView.xib */,
 			);
 			name = RestCheckIn;
 			sourceTree = "<group>";
@@ -670,6 +678,7 @@
 				41959E8B18C5C20A009241FF /* ContactViewController.xib in Resources */,
 				411B958118D6ECD800AAD73A /* CouponCell.xib in Resources */,
 				41EA4F6B18D1999800915A52 /* NearRestaurantCell.xib in Resources */,
+				4199860118EA8FEB008A1B37 /* RestCheckHeaderView.xib in Resources */,
 				41FB011A18BAF90B00E852B5 /* Localizable.strings in Resources */,
 				41FD5D1018D7DF9400172DB9 /* ProfileInfoView.xib in Resources */,
 				411B957818D6E1B500AAD73A /* CouponListViewController.xib in Resources */,
@@ -764,6 +773,7 @@
 				41FD5D1318D7F1B600172DB9 /* UserProfile.m in Sources */,
 				411B958418D6F2D400AAD73A /* CouponSectionView.m in Sources */,
 				41B4546418B461C70054E406 /* main.m in Sources */,
+				419985FF18EA8F7A008A1B37 /* RestCheckHeaderView.m in Sources */,
 				411B957718D6E1B500AAD73A /* CouponListViewController.m in Sources */,
 				41FD5D0E18D7DF3700172DB9 /* ProfileInfoView.m in Sources */,
 				411B957F18D6E70100AAD73A /* CouponCell.m in Sources */,

@@ -122,7 +122,7 @@
 - (void) callPhoneNumber
 {
     NSString *phoneNumber = self;
-    NSString *telUrl = [NSString stringWithFormat:@"tel:%@",phoneNumber];
+    NSString *telUrl = [NSString stringWithFormat:@"telprompt:%@",phoneNumber];
     NSString *trimTelUrl = [telUrl stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSURL *url = [[NSURL alloc] initWithString:trimTelUrl];
     [[UIApplication sharedApplication] openURL:url];
