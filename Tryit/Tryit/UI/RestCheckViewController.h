@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "RestaurantItem.h"
 #import "FitViewController.h"
+#import "FilterViewController.h"
 
-
-@interface RestCheckViewController : FitViewController
+@interface RestCheckViewController : FitViewController <FilterViewControllerDelegate>
 
 @property (nonatomic, strong) RestaurantItem *restItem;
+@property (strong, nonatomic) NSMutableArray *productArray;
 
 @end

@@ -17,13 +17,14 @@
 #import "WebAPI.h"
 #import "UIImageView+AFNetworking.h"
 
+#import "MMDrawerBarButtonItem.h"
+#import "UIViewController+MMDrawerController.h"
+
 NSString *const NearRestaurantHeadSectionIdentifier = @"NearRestaurantHeadSectionIdentifier";
 NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
 @interface RestCheckViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-@property (strong, nonatomic) NSMutableArray *productArray;
-
+@property (nonatomic) NSInteger selectIndex;
 @end
 
 @implementation RestCheckViewController
@@ -49,23 +50,18 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
     [tableBackView setBackgroundColor:UIColorFromRGB(0xF8FAF3)];
     [self.tableView setBackgroundView:tableBackView];
 
-    [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
-    WEAKSELF_SC
-    [WebAPI getProductWithRestId:self.restItem.biz_id success:^(NSMutableArray *array) {
-        weakSelf_SC.productArray = [NSMutableArray arrayWithArray:array];
-        [weakSelf_SC.tableView reloadData];
-        self.restItem.productArray = weakSelf_SC.productArray;
-        [UIFunction removeMaskView];
-    } failure:^{
-        [UIFunction removeMaskView];
-    }];
-
     self.title = self.restItem.name;
     [self customBackBarItem];
 
     RestCheckHeaderView *restCheckHeaderView = (RestCheckHeaderView*)[[[NSBundle mainBundle] loadNibNamed:@"RestCheckHeaderView" owner:self options:nil] lastObject];
     [restCheckHeaderView configRestItem:self.restItem];
     self.tableView.tableHeaderView = restCheckHeaderView;
+
+    WEAKSELF_SC
+    restCheckHeaderView.block = ^(){
+        [weakSelf_SC showFilterView];
+    };
+    self.selectIndex = 0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,19 +74,31 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    if (self.selectIndex != 0) {
+        return 1;
+    }
+    return self.productArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.productArray.count;
+    NSInteger numberOfRows = 0;
+    if (self.selectIndex == 0) {
+        NSMutableArray *array = self.productArray[section];
+        numberOfRows = array.count;
+    }else {
+        NSMutableArray *array = self.productArray[self.selectIndex];
+        numberOfRows = array.count;
+    }
+
+    return numberOfRows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ProductCell *cell =  [tableView dequeueReusableCellWithIdentifier:ProductCellIdentifier];
 
-    ProductItem *item = [self.productArray objectAtIndex:indexPath.row];
+    ProductItem *item = self.productArray[indexPath.section][indexPath.row];
 
     [cell setProduct:item];
 
@@ -104,14 +112,19 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    CheckSectionView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NearRestaurantHeadSectionIdentifier];
-    [headerView setRestItem:self.restItem];
-    return headerView;
+    if (self.selectIndex != 0) {
+        section = self.selectIndex;
+    }
+
+    ProductItem *proItem = self.productArray[section][0];
+    CheckSectionView *checkSectionView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NearRestaurantHeadSectionIdentifier];
+    checkSectionView.nameLabel.text = proItem.type;
+    return checkSectionView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 80;
+    return 35;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -120,6 +133,18 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
     ProductItem *item = [self.productArray objectAtIndex:indexPath.row];
     couponListViewController.productItem = item;
     [self.navigationController pushViewController:couponListViewController animated:YES];
+}
+
+#pragma mark - Filter Functions 
+- (void) showFilterView
+{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
+}
+
+- (void) selectFilterIndex:(NSInteger) index
+{
+    self.selectIndex = index;
+    [self.tableView reloadData];
 }
 
 @end

@@ -12,13 +12,4 @@
 
 @interface CheckSectionView : UITableViewHeaderFooterView
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *addresslabel;
-@property (weak, nonatomic) IBOutlet UIButton *callButton;
-@property (weak, nonatomic) IBOutlet UIButton *checkInButton;
-@property (strong, nonatomic) RestaurantItem *restaurantItem;
-
-- (void) setRestItem:(RestaurantItem *) item;
-- (IBAction)touchCallButton:(id)sender;
-
-
 @end

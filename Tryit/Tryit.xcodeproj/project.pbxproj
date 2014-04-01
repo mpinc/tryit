@@ -41,6 +41,8 @@
 		419985FC18E95420008A1B37 /* CreateCouponItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 419985FB18E95420008A1B37 /* CreateCouponItem.m */; };
 		419985FF18EA8F7A008A1B37 /* RestCheckHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 419985FE18EA8F7A008A1B37 /* RestCheckHeaderView.m */; };
 		4199860118EA8FEB008A1B37 /* RestCheckHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4199860018EA8FEB008A1B37 /* RestCheckHeaderView.xib */; };
+		4199860518EAC2BE008A1B37 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4199860318EAC2BE008A1B37 /* FilterViewController.m */; };
+		4199860818EAC2E9008A1B37 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4199860718EAC2E9008A1B37 /* FilterViewController.xib */; };
 		41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AA8C5F18BC3C830081EA29 /* FitViewController.m */; };
 		41B2682C18E5717F001A2257 /* ServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B2682B18E5717F001A2257 /* ServerViewController.m */; };
 		41B4545818B461C70054E406 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545718B461C70054E406 /* Foundation.framework */; };
@@ -159,6 +161,9 @@
 		419985FD18EA8F7A008A1B37 /* RestCheckHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestCheckHeaderView.h; path = UI/RestCheckHeaderView.h; sourceTree = "<group>"; };
 		419985FE18EA8F7A008A1B37 /* RestCheckHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestCheckHeaderView.m; path = UI/RestCheckHeaderView.m; sourceTree = "<group>"; };
 		4199860018EA8FEB008A1B37 /* RestCheckHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RestCheckHeaderView.xib; path = UI/RestCheckHeaderView.xib; sourceTree = "<group>"; };
+		4199860218EAC2BE008A1B37 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilterViewController.h; path = UI/FilterViewController.h; sourceTree = "<group>"; };
+		4199860318EAC2BE008A1B37 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilterViewController.m; path = UI/FilterViewController.m; sourceTree = "<group>"; };
+		4199860718EAC2E9008A1B37 /* FilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FilterViewController.xib; path = UI/FilterViewController.xib; sourceTree = "<group>"; };
 		41AA8C5E18BC3C830081EA29 /* FitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FitViewController.h; path = UI/FitViewController.h; sourceTree = "<group>"; };
 		41AA8C5F18BC3C830081EA29 /* FitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FitViewController.m; path = UI/FitViewController.m; sourceTree = "<group>"; };
 		41B2682A18E5717F001A2257 /* ServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerViewController.h; path = UI/ServerViewController.h; sourceTree = "<group>"; };
@@ -295,6 +300,9 @@
 				419985FD18EA8F7A008A1B37 /* RestCheckHeaderView.h */,
 				419985FE18EA8F7A008A1B37 /* RestCheckHeaderView.m */,
 				4199860018EA8FEB008A1B37 /* RestCheckHeaderView.xib */,
+				4199860218EAC2BE008A1B37 /* FilterViewController.h */,
+				4199860318EAC2BE008A1B37 /* FilterViewController.m */,
+				4199860718EAC2E9008A1B37 /* FilterViewController.xib */,
 			);
 			name = RestCheckIn;
 			sourceTree = "<group>";
@@ -682,6 +690,7 @@
 				41FB011A18BAF90B00E852B5 /* Localizable.strings in Resources */,
 				41FD5D1018D7DF9400172DB9 /* ProfileInfoView.xib in Resources */,
 				411B957818D6E1B500AAD73A /* CouponListViewController.xib in Resources */,
+				4199860818EAC2E9008A1B37 /* FilterViewController.xib in Resources */,
 				41C46B2618BAE011006E2B80 /* MenuViewController.xib in Resources */,
 				412371F518D2A74D001DE23E /* ProductCell.xib in Resources */,
 				41B4546218B461C70054E406 /* InfoPlist.strings in Resources */,
@@ -787,6 +796,7 @@
 				41FB011F18BB322500E852B5 /* CenterViewController.m in Sources */,
 				41287E8B18CEE42D000F9F27 /* SignUpViewController.m in Sources */,
 				411B957B18D6E44E00AAD73A /* CouponItem.m in Sources */,
+				4199860518EAC2BE008A1B37 /* FilterViewController.m in Sources */,
 				41959E9A18C5D18C009241FF /* ABContactsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

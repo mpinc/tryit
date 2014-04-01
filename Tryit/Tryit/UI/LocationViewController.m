@@ -13,6 +13,10 @@
 #import <MapKit/MKAnnotation.h>
 #import "WebAPI.h"
 #import "RestaurantAnnotation.h"
+#import "MMDrawerController.h"
+#import "MMDrawerVisualState.h"
+#import "FilterViewController.h"
+#import "UIFunction.h"
 
 NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 
@@ -115,9 +119,15 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
         item = [self.restaurantArray objectAtIndex:indexPath.row];
     }
 
-    RestCheckViewController *restCheckViewController = [[RestCheckViewController alloc] initWithNibName:@"RestCheckViewController" bundle:nil];
-    restCheckViewController.restItem = item;
-    [self.navigationController pushViewController:restCheckViewController animated:YES];
+    [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
+    [WebAPI getProductWithRestId:item.biz_id success:^(NSMutableArray *array) {
+        [self perparRestCheckVC:item WithArray:array];
+        [UIFunction removeMaskView];
+    } failure:^{
+        [UIFunction removeMaskView];
+    }];
+
+
 }
 
 #pragma mark -
@@ -236,6 +246,59 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
         RestaurantAnnotation *annnotation = [[RestaurantAnnotation alloc] initWithRestaurantItem:item];
         [self.mapView addAnnotation:annnotation];
     }
+}
+
+#pragma mark - prepar rest check view controller 
+
+- (void) perparRestCheckVC:(RestaurantItem*) item WithArray:(NSArray*) array;
+{
+
+    NSMutableArray *productsArray = [[NSMutableArray alloc] initWithCapacity:0]; // save section array
+    NSMutableArray *filterArray = [[NSMutableArray alloc] initWithCapacity:0];
+    NSMutableDictionary *filterDict = [[NSMutableDictionary alloc] initWithCapacity:0];
+    for (ProductItem *proItem in array) {
+        NSString *type = proItem.type;
+        NSMutableArray *productArray = [filterDict objectForKey:type];
+        if (productArray == Nil) {
+            productArray = [[NSMutableArray alloc] initWithCapacity:0];
+            [productsArray addObject:productArray];
+            [filterArray addObject:proItem.type];
+            [filterDict setObject:productArray forKey:type];
+        }
+        [productArray addObject:proItem];
+    }
+
+    RestCheckViewController *restCheckViewController = [[RestCheckViewController alloc] initWithNibName:@"RestCheckViewController" bundle:nil];
+    restCheckViewController.restItem = item;
+    restCheckViewController.productArray = productsArray;
+
+    FilterViewController *filterViewController = [[FilterViewController alloc] initWithNibName:@"RestCheckViewController" bundle:nil];
+    [filterArray insertObject:@"ALL" atIndex:0];
+    filterViewController.filterArray = filterArray;
+    filterViewController.delegate = restCheckViewController;
+
+    MMDrawerController *mmDrawerController = [[MMDrawerController alloc] initWithCenterViewController:restCheckViewController rightDrawerViewController:filterViewController];
+    [mmDrawerController setRestorationIdentifier:@"MMDrawer"];
+    [mmDrawerController setMaximumRightDrawerWidth:150.0];
+    [mmDrawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
+    [mmDrawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+
+    mmDrawerController.title = item.name;
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 44)];
+    [button addTarget:self action:@selector(touchBackbutton) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"navback"] forState:UIControlStateNormal];
+
+    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    mmDrawerController.navigationItem.leftBarButtonItem = leftButtonItem;
+
+    [self.navigationController pushViewController:mmDrawerController animated:YES];
+
+    item.productArray = restCheckViewController.productArray;
+}
+
+- (void) touchBackbutton
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

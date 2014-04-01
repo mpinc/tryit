@@ -32,41 +32,4 @@
 }
 */
 
-- (void) setRestItem:(RestaurantItem *) item
-{
-    self.restaurantItem = item;
-    self.nameLabel.text = item.name;
-    self.addresslabel.text = item.address;
-
-    if (self.backgroundView == nil) {
-        self.backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 80)];
-        [self.backgroundView setBackgroundColor:[UIColor whiteColor]];
-    }
-    [self.callButton.layer setCornerRadius:6];
-    [self.callButton.layer setMasksToBounds:YES];
-    [self.callButton leftImageAndRightTitle:6];
-
-    [self.checkInButton.layer setCornerRadius:6];
-    [self.checkInButton.layer setMasksToBounds:YES];
-
-}
-
-- (IBAction)touchCallButton:(id)sender
-{
-    if (![NSString isEmptyString:self.restaurantItem.phone_no WithPromptString:NSLocalizedString(@"PROMPT_PHONE_NO_NOT_BE_NIL", Nil)]) {
-        [self.restaurantItem.phone_no callPhoneNumber];
-    }
-}
-
-- (IBAction)touchCheckInButton:(id)sender
-{
-    AppDelegate *appDelegate = [AppDelegate getAppdelegate];
-
-    [WebAPI customerCheckIn:appDelegate.userId restId:self.restaurantItem.biz_id success:^{
-        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHECK_IN_SUCCESS", nil)];
-    } failure:^{
-        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHECK_IN_FAIL", nil)];
-    }];
-}
-
 @end

@@ -109,6 +109,8 @@
 }
 
 - (IBAction)touchChangeButton:(id)sender {
+
+    self.block();
 }
 
 @end
