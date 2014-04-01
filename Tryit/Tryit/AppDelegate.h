@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RestaurantItem.h"
 
-#define BaseURL @"http://192.168.1.115:8080"
+#define BaseURL @"http://192.168.1.111:8080"
 #define authToken @"auth-token"
 #define accessToken @"accessToken"
 #define customerId @"customerId"

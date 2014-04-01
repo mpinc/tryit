@@ -13,6 +13,7 @@
 #import "ProductItem.h"
 #import "CouponItem.h"
 #import "CreateCouponItem.h"
+#import "UserProfile.h"
 
 @interface WebAPI : NSObject
 + (AFHTTPRequestOperationManager *) getManager;
@@ -24,8 +25,8 @@
 + (void) getNearRestaurantWithCoordinate:(CLLocationCoordinate2D) coordinate success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
 + (void) getProductWithRestId:(NSString *) restId success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
 + (void) getpromoWithProduct:(ProductItem*) item success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
-
-+ (void) getRestaurantsWithUserId:(NSString*) userId success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
++ (void) getRestaurantsSuccess:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
++ (void) getUserPorfileSuccess:(void (^)(UserProfile *userProfile))success failure:(void (^)()) failure;
 + (void) customerCheckIn:(NSString*) userId restId:(NSString *) restId success:(void (^)())success failure:(void (^)()) failure;
 
 + (void) createCouponWithCCItem:(CreateCouponItem*) ccItem success:(void (^)())success failure:(void (^)()) failure;

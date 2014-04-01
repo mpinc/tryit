@@ -46,6 +46,7 @@
 "PROMPT_SHAREWORD_NULL" = "Please input share word first";
 "PROMPT_SHARE_FIREND_NULL" = "Please choose your friends first";
 "PROMPT_SHARE_SUCCESS" = "Share success";
+"PROMPT_REQUEST_TIMEOUT" = "Request time out";
 
 "FORMAT_TITLE_ADD_FRIENDS" = "Add Friends (%d)";
 "FORMAT_MY_POINTS" = "My Points: (%@)";

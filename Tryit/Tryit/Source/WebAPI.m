@@ -123,6 +123,8 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
     [WebAPI sendRequest:request needToken:needToken success:success failure:failure];
 }
 
+#pragma mark - API Functions
+
 + (void) loginWithUserName:(NSString *) userName Password:(NSString *) password success:(void (^)(id responseObject))success failure:(void (^)()) failure
 {
     NSString *requestString = @"/cust/do/login";
@@ -221,9 +223,10 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
             }];
 }
 
-+ (void) getRestaurantsWithUserId:(NSString*) userId success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
++ (void) getRestaurantsSuccess:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
 {
-    NSString *requestString = [NSString stringWithFormat:@"/cust/%@/biz",userId];
+    AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+    NSString *requestString = [NSString stringWithFormat:@"/cust/%@/biz",appDelegate.userId];
 
     [WebAPI request:requestString parameters:nil Method:MGET NeedToken:YES
             success:^(AFHTTPRequestOperation *operation) {
@@ -233,6 +236,19 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
                     [array addObject:item];
                 }
                 success(array);
+            }
+            failure:^(AFHTTPRequestOperation *operation) {
+                failure(operation);
+            }];
+}
+
++ (void) getUserPorfileSuccess:(void (^)(UserProfile *userProfile))success failure:(void (^)()) failure
+{
+    NSString *requestString = @"/customerInfo";
+    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:YES
+            success:^(AFHTTPRequestOperation *operation) {
+                UserProfile *userProfile = [[UserProfile alloc] initWithDict:operation.responseObject];
+                success(userProfile);
             }
             failure:^(AFHTTPRequestOperation *operation) {
                 failure(operation);

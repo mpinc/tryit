@@ -17,6 +17,6 @@
 @property (strong, nonatomic) NSString *points;
 @property (strong, nonatomic) NSURL *headImageURL;
 
-- (id) initWithEx;
+- (id) initWithDict:(NSDictionary *) dict;
 
 @end

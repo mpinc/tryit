@@ -39,20 +39,25 @@ NSString *const UserRestCellIdentifier = @"UserRestCellIdentifier";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.tableView registerNib:[UINib nibWithNibName:@"UserRestCell" bundle:nil] forCellReuseIdentifier:UserRestCellIdentifier];
+    WEAKSELF_SC
+    [WebAPI getUserPorfileSuccess:^(UserProfile *up) {
 
-    self.userProfile = [[UserProfile alloc] initWithEx];
-
-    ProfileInfoView *profileInfoView = (ProfileInfoView*)[[[NSBundle mainBundle] loadNibNamed:@"ProfileInfoView" owner:self options:nil] lastObject];
-    profileInfoView.userProfile = self.userProfile;
-    self.tableView.tableHeaderView = profileInfoView;
+        self.userProfile = up;
+        ProfileInfoView *profileInfoView = (ProfileInfoView*)[[[NSBundle mainBundle] loadNibNamed:@"ProfileInfoView" owner:self options:nil] lastObject];
+        profileInfoView.userProfile = self.userProfile;
+        self.tableView.tableHeaderView = profileInfoView;
+        [UIFunction removeMaskView];
+    } failure:^{
+        [UIFunction removeMaskView];
+    }];
 
     UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.tableView.bounds];
     [bgImageView setImage:[UIImage imageNamed:@"food_bg"]];
     [self.tableView setBackgroundView:bgImageView];
 
     [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
-    WEAKSELF_SC
-    [WebAPI getRestaurantsWithUserId:@"" success:^(NSMutableArray *array) {
+    
+    [WebAPI getRestaurantsSuccess:^(NSMutableArray *array) {
         weakSelf_SC.restArray = [NSMutableArray arrayWithArray:array];
         [weakSelf_SC.tableView reloadData];
         [UIFunction removeMaskView];
