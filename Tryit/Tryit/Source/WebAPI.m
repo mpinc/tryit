@@ -255,6 +255,24 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
             }];
 }
 
++ (void) getUserShareRestaurantID:(NSString*) bizId WithSuccess:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
+{
+    AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+    NSString *requestString = [NSString stringWithFormat:@"/cust/from/%@/coupon?bizId=%@", appDelegate.userId, bizId];
+    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:YES
+            success:^(AFHTTPRequestOperation *operation) {
+                NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
+                for (NSDictionary *dict in operation.responseObject) {
+                    ShareItem *item = [[ShareItem alloc] initWithDict:dict];
+                    [array addObject:item];
+                }
+                success(array);
+            }
+            failure:^(AFHTTPRequestOperation *operation) {
+                failure(operation);
+            }];
+}
+
 + (void) customerCheckIn:(NSString*) userId restId:(NSString *) restId success:(void (^)())success failure:(void (^)()) failure
 {
     NSString *requestString = [NSString stringWithFormat:@"/cust/%@/biz/%@/checkin", userId, restId];

@@ -35,7 +35,7 @@
 
     /*@property (weak, nonatomic) IBOutlet UIImageView *restImageView;
      @property (weak, nonatomic) IBOutlet UILabel *countLabel;*/
-    [self.restImageView setImageWithURL:item.restaurantImageUrl];
+    [self.restImageView setImageWithURL:item.restaurantImageUrl placeholderImage:[UIImage imageNamed:@"default_image"]];
     self.countLabel.text = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_COUNT_PROD", nil), item.couponArray.count, item.point];
 }
 

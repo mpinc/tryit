@@ -12,7 +12,7 @@
 
 + (BOOL) isEmptyString:(NSString *)string
 {
-    return (string == nil || [string isEqualToString:@""]||[string isKindOfClass:[NSNull class]]||[string isEqualToString:@"(null)"]);
+    return (string == nil ||[string isKindOfClass:[NSNull class]]||[string isEqualToString:@""]||[string isEqualToString:@"(null)"]);
 }
 
 + (BOOL) isEmptyString:(NSString *)string WithPromptString:(NSString*) promptString

@@ -30,7 +30,7 @@
 - (void) setShareItem:(ShareItem *) item
 {
 
-    [self.couponImageView setImageWithURL:item.couponPhotoURL];
+    [self.couponImageView setImageWithURL:item.couponPhotoURL placeholderImage:[UIImage imageNamed:@"default_any"]];
     self.productNameLabel.text = item.productName;
     self.couponNameLabel.text = item.couponName;
     self.shareDateLabel.text = [NSDateFormatter localizedStringFromDate:item.createDate dateStyle:NSDateFormatterMediumStyle timeStyle:kCFDateFormatterNoStyle];

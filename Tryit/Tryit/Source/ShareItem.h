@@ -20,5 +20,5 @@
 @property (strong, nonatomic) NSArray *shareList;
 
 - (id) initWithEx;
-
+- (id) initWithDict:(NSDictionary*) dict;
 @end

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "RestaurantItem.h"
+#import "FitViewController.h"
 
-@interface UserRestViewController : UIViewController
+@interface UserRestViewController : FitViewController
 
 @property (strong, nonatomic) RestaurantItem *restaurantItem;
 

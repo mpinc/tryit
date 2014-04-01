@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wbi-2T-JtT">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wbi-2T-JtT">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,6 +27,12 @@
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Wbi-2T-JtT" firstAttribute="top" secondItem="1" secondAttribute="top" id="HLC-nV-s29"/>
+                <constraint firstAttribute="bottom" secondItem="Wbi-2T-JtT" secondAttribute="bottom" id="Ste-fs-iv0"/>
+                <constraint firstAttribute="trailing" secondItem="Wbi-2T-JtT" secondAttribute="trailing" id="dd9-PI-K9f"/>
+                <constraint firstItem="Wbi-2T-JtT" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="igO-EK-cjS"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>

@@ -31,7 +31,7 @@
         self.point = [dict[@"total_points_earned"] stringValue];
         self.distance = [dict[@"distance"] floatValue];
 
-        self.couponArray = @[[[ShareItem alloc]initWithEx], [[ShareItem alloc]initWithEx], [[ShareItem alloc]initWithEx], [[ShareItem alloc]initWithEx]];
+        self.couponArray = [[NSMutableArray alloc] initWithCapacity:0];
     }
     return self;
 }

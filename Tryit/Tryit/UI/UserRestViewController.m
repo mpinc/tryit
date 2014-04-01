@@ -10,13 +10,13 @@
 #import "UserRestInfoView.h"
 #import "UserCouponCell.h"
 #import "ShareItem.h"
+#import "WebAPI.h"
+#import "UIFunction.h"
 
 NSString *const UserCouponCellIdentifier = @"UserCouponCellIdentifier";
 
 @interface UserRestViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-@property (strong, nonatomic) NSArray *couponsArray;
 
 @end
 
@@ -36,13 +36,22 @@ NSString *const UserCouponCellIdentifier = @"UserCouponCellIdentifier";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.tableView registerNib:[UINib nibWithNibName:@"UserCouponCell" bundle:nil] forCellReuseIdentifier:UserCouponCellIdentifier];
-
+    [self customBackBarItem];
 
     UserRestInfoView *userRestInfoView = (UserRestInfoView*)[[[NSBundle mainBundle] loadNibNamed:@"UserRestInfoView" owner:self options:nil] lastObject];
     userRestInfoView.restaurantItem = self.restaurantItem;
     self.tableView.tableHeaderView = userRestInfoView;
 
-    self.couponsArray = self.restaurantItem.couponArray;
+    self.title = self.restaurantItem.name;
+
+    WEAKSELF_SC
+    [WebAPI getUserShareRestaurantID:self.restaurantItem.biz_id WithSuccess:^(NSMutableArray *array) {
+        weakSelf_SC.restaurantItem.couponArray = [NSMutableArray arrayWithArray:array];
+        [weakSelf_SC.tableView reloadData];
+        [UIFunction removeMaskView];
+    } failure:^{
+        [UIFunction removeMaskView];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,14 +62,14 @@ NSString *const UserCouponCellIdentifier = @"UserCouponCellIdentifier";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.couponsArray.count;
+    return self.restaurantItem.couponArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UserCouponCell *cell =  [tableView dequeueReusableCellWithIdentifier:UserCouponCellIdentifier];
 
-    ShareItem *item = [self.couponsArray objectAtIndex:indexPath.row];
+    ShareItem *item = [self.restaurantItem.couponArray objectAtIndex:indexPath.row];
 
     [cell setShareItem:item];
 

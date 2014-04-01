@@ -14,6 +14,7 @@
 #import "CouponItem.h"
 #import "CreateCouponItem.h"
 #import "UserProfile.h"
+#import "ShareItem.h"
 
 @interface WebAPI : NSObject
 + (AFHTTPRequestOperationManager *) getManager;
@@ -27,6 +28,7 @@
 + (void) getpromoWithProduct:(ProductItem*) item success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
 + (void) getRestaurantsSuccess:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
 + (void) getUserPorfileSuccess:(void (^)(UserProfile *userProfile))success failure:(void (^)()) failure;
++ (void) getUserShareRestaurantID:(NSString*) bizId WithSuccess:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
 + (void) customerCheckIn:(NSString*) userId restId:(NSString *) restId success:(void (^)())success failure:(void (^)()) failure;
 
 + (void) createCouponWithCCItem:(CreateCouponItem*) ccItem success:(void (^)())success failure:(void (^)()) failure;
