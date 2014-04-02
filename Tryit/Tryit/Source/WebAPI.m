@@ -154,7 +154,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 + (void) getTopX:(NSInteger) topx success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
 {
     NSString *requestString = [NSString stringWithFormat:@"biz/get/topDish"];
-    NSDictionary *dict = @{@"size":[NSString stringWithFormat:@"%d",topx]};
+    NSDictionary *dict = @{@"size":[NSString stringWithFormat:@"%ld",(long)topx]};
     [WebAPI request:requestString parameters:dict Method:MGET NeedToken:NO
             success:^(AFHTTPRequestOperation *operation) {
                 NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
