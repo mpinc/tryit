@@ -31,27 +31,41 @@
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wub-E2-Ppo">
-                        <rect key="frame" x="61" y="29" width="251" height="16"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="179" translatesAutoresizingMaskIntoConstraints="NO" id="Wub-E2-Ppo">
+                        <rect key="frame" x="61" y="29" width="179" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6498.0km" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUN-QR-TEO">
+                        <rect key="frame" x="245" y="29" width="68" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="68" id="DQF-ZV-5gZ"/>
+                            <constraint firstAttribute="height" constant="16" id="O4i-u6-3ao"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Wub-E2-Ppo" secondAttribute="trailing" constant="8" id="CT4-Rm-OkK"/>
+                    <constraint firstItem="tUN-QR-TEO" firstAttribute="top" secondItem="6kj-Gu-S9w" secondAttribute="bottom" constant="3" id="5bg-fM-VDX"/>
+                    <constraint firstAttribute="trailing" secondItem="Wub-E2-Ppo" secondAttribute="trailing" constant="80" id="CT4-Rm-OkK"/>
                     <constraint firstItem="6kj-Gu-S9w" firstAttribute="top" secondItem="zka-65-v9w" secondAttribute="top" constant="6" id="G8K-mQ-4zH"/>
+                    <constraint firstItem="tUN-QR-TEO" firstAttribute="leading" secondItem="Wub-E2-Ppo" secondAttribute="trailing" constant="5" id="SMb-zq-wKw"/>
                     <constraint firstItem="Wub-E2-Ppo" firstAttribute="leading" secondItem="Pqm-se-J8D" secondAttribute="trailing" constant="8" id="XBR-sJ-ibp"/>
                     <constraint firstItem="Wub-E2-Ppo" firstAttribute="top" secondItem="6kj-Gu-S9w" secondAttribute="bottom" constant="3" id="acT-hm-2qs"/>
                     <constraint firstItem="Pqm-se-J8D" firstAttribute="leading" secondItem="zka-65-v9w" secondAttribute="leading" constant="9" id="erZ-m5-XyY"/>
-                    <constraint firstAttribute="centerY" secondItem="Pqm-se-J8D" secondAttribute="centerY" constant="-0.5" id="kRU-yc-gox"/>
+                    <constraint firstAttribute="centerY" secondItem="Pqm-se-J8D" secondAttribute="centerY" id="kRU-yc-gox"/>
                     <constraint firstItem="6kj-Gu-S9w" firstAttribute="leading" secondItem="Pqm-se-J8D" secondAttribute="trailing" constant="8" id="wg7-Y1-aGo"/>
                     <constraint firstAttribute="trailing" secondItem="6kj-Gu-S9w" secondAttribute="trailing" constant="8" id="xuQ-y3-kdf"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="addressLabel" destination="Wub-E2-Ppo" id="Rye-1A-Vmi"/>
+                <outlet property="distanceLabel" destination="tUN-QR-TEO" id="CjE-uT-OVF"/>
                 <outlet property="nameLabel" destination="6kj-Gu-S9w" id="hlE-OP-8hl"/>
                 <outlet property="restaurantImage" destination="Pqm-se-J8D" id="EeU-kW-pHv"/>
             </connections>

@@ -37,6 +37,8 @@
     self.nameLabel.text = restaurantItem.name;
     self.addressLabel.text = restaurantItem.address;
 
+    NSString *distanceString = [NSString stringWithFormat:@"%.1fkm",restaurantItem.distance];
+    self.distanceLabel.text = distanceString;
     [self.restaurantImage.layer setCornerRadius:8];
     [self.restaurantImage.layer setMasksToBounds:YES];
 }
