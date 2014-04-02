@@ -36,7 +36,7 @@
     _userProfile = profile;
 
     [self.headImage setImageWithURL:profile.headImageURL placeholderImage:[UIImage imageNamed:@"default-head"]];
-    self.userNameLabel.text = profile.userName;
+    self.userNameLabel.text = profile.email;
     self.countLabel.text = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_COUNT_REST", nil), profile.vipRest, profile.coupons, profile.points];
     UIImage *image = [[UIImage imageNamed:@"line_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 40, 7, 40)];
     [self.countBgView setImage:image];

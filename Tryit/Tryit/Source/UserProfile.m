@@ -16,6 +16,7 @@
     if(self != Nil)
     {
         self.userName = dict[@"username"];
+        self.email = dict[@"email"];
         self.vipRest = @"12";
         self.coupons = @"39";
         self.points = dict[@"total_points_earned"];

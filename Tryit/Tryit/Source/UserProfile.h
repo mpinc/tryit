@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSString *coupons;
 @property (strong, nonatomic) NSString *points;
 @property (strong, nonatomic) NSURL *headImageURL;
+@property (strong, nonatomic) NSString *email;
 
 - (id) initWithDict:(NSDictionary *) dict;
 
