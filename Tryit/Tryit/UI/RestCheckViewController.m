@@ -25,6 +25,8 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
 @interface RestCheckViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSInteger selectIndex;
+@property (weak, nonatomic) UILabel *filterLabel;
+
 @end
 
 @implementation RestCheckViewController
@@ -56,6 +58,7 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
     RestCheckHeaderView *restCheckHeaderView = (RestCheckHeaderView*)[[[NSBundle mainBundle] loadNibNamed:@"RestCheckHeaderView" owner:self options:nil] lastObject];
     [restCheckHeaderView configRestItem:self.restItem];
     self.tableView.tableHeaderView = restCheckHeaderView;
+    self.filterLabel = restCheckHeaderView.filterLeabl;
 
     WEAKSELF_SC
     restCheckHeaderView.block = ^(){
@@ -87,7 +90,7 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
         NSMutableArray *array = self.productArray[section];
         numberOfRows = array.count;
     }else {
-        NSMutableArray *array = self.productArray[self.selectIndex];
+        NSMutableArray *array = self.productArray[self.selectIndex-1];
         numberOfRows = array.count;
     }
 
@@ -113,7 +116,7 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (self.selectIndex != 0) {
-        section = self.selectIndex;
+        section = self.selectIndex-1;
     }
 
     ProductItem *proItem = self.productArray[section][0];
@@ -150,6 +153,12 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
 {
     self.selectIndex = index;
     [self.tableView reloadData];
+    if (index != 0) {
+        ProductItem *item = self.productArray[index-1][0];
+        self.filterLabel.text = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_FILTERBY", nil), item.type];
+    }else {
+        self.filterLabel.text = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_FILTERBY", nil), @"All"];
+    }
 }
 
 @end

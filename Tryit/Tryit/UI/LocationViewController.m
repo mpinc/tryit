@@ -273,7 +273,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
     restCheckViewController.productArray = productsArray;
 
     FilterViewController *filterViewController = [[FilterViewController alloc] initWithNibName:@"RestCheckViewController" bundle:nil];
-    [filterArray insertObject:@"ALL" atIndex:0];
+    [filterArray insertObject:@"All" atIndex:0];
     filterViewController.filterArray = filterArray;
     filterViewController.delegate = restCheckViewController;
 

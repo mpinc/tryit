@@ -53,4 +53,5 @@
 "FORMAT_COUNT_REST" = "Resturant(%@) | Coupons(%@) | Points(%@)";
 "FORMAT_COUNT_PROD" = "Coupons(%d) | Points(%@)";
 "FORMAT_SEND_FRIENDS" = "Send to %d friends";
+"FORMAT_FILTERBY" = "FILTER:%@";
 

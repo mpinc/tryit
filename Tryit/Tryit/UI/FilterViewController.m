@@ -90,11 +90,7 @@
         }
     }
 
-    if (indexPath.row != 0) {
-        [self.delegate selectFilterIndex:indexPath.row-1];
-    }else{
-        [self.delegate selectFilterIndex:indexPath.row];
-    }
+    [self.delegate selectFilterIndex:indexPath.row];
     [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
 }
 
