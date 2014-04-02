@@ -122,6 +122,7 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
     CouponViewController *couponViewController = (CouponViewController*)[appDelegate getCouponViewController];
     [appDelegate setCenterViewControllerWithIndex:1];
     couponViewController.item  = self.productItem;
+    [couponViewController configByProductItem];
 }
 
 @end

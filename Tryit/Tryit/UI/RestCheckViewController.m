@@ -130,7 +130,12 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CouponListViewController *couponListViewController = [[CouponListViewController alloc] initWithNibName:@"CouponListViewController" bundle:Nil];
-    ProductItem *item = [self.productArray objectAtIndex:indexPath.row];
+    ProductItem *item = Nil;
+    if (self.selectIndex != 0) {
+         item = self.productArray[0][indexPath.row];
+    }else {
+        item = self.productArray[indexPath.section][indexPath.row];
+    }
     couponListViewController.productItem = item;
     [self.navigationController pushViewController:couponListViewController animated:YES];
 }

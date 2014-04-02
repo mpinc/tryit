@@ -20,4 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) ProductItem *item;
 
+- (void) configByProductItem;
+
 @end
