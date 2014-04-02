@@ -121,13 +121,14 @@
     }];
 }
 
-#pragma mark - 
+#pragma mark - UITextFieldDelegate
 
 - (void) textFieldDidBeginEditing:(UITextField *)textField
 {
     [UIView animateWithDuration:0.25 animations:^
      {
-         int offsetY = (-textField.frame.origin.y + 20) > 0?0:(-textField.frame.origin.y + 20);
+         int fixHeight = -textField.frame.origin.y + 64 + (iPhone5?88:0);
+         int offsetY = fixHeight > 0?0:fixHeight;
          self.topConstraint.constant = 110 + offsetY;
          [self.view layoutIfNeeded];
      }];

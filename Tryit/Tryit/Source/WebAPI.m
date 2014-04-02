@@ -138,10 +138,10 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
             }];
 }
 
-+ (void) signUpWithUserName:(NSString *) userName Password:(NSString *) password email:(NSString *) email success:(void (^)(id responseObject))success failure:(void (^)()) failure
++ (void) signUpWithPassword:(NSString *) password email:(NSString *) email success:(void (^)(id responseObject))success failure:(void (^)()) failure
 {
     NSString *requestString = @"/cust/";
-    NSDictionary *dict = @{@"user":userName, @"email":email, @"password":password, @"active":@"1"};
+    NSDictionary *dict = @{@"email":email, @"password":password, @"active":@"1"};
     [WebAPI request:requestString parameters:dict Method:MPOST NeedToken:NO
             success:^(AFHTTPRequestOperation *operation) {
                 success(operation.responseObject);
