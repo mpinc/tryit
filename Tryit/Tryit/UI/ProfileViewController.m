@@ -13,7 +13,7 @@
 #import "ProfileInfoView.h"
 #import "UIFunction.h"
 #import "WebAPI.h"
-
+#import "AppDelegate.h"
 NSString *const UserRestCellIdentifier = @"UserRestCellIdentifier";
 
 @interface ProfileViewController ()
@@ -39,6 +39,14 @@ NSString *const UserRestCellIdentifier = @"UserRestCellIdentifier";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.tableView registerNib:[UINib nibWithNibName:@"UserRestCell" bundle:nil] forCellReuseIdentifier:UserRestCellIdentifier];
+
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 28)];
+    [button setBackgroundColor:[UIColor clearColor]];
+    [button setTitle:NSLocalizedString(@"TITLE_LOGOUT", nil) forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(touchLogOutButton) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = barItem;
+
     WEAKSELF_SC
     [WebAPI getUserPorfileSuccess:^(UserProfile *up) {
 
@@ -72,6 +80,8 @@ NSString *const UserRestCellIdentifier = @"UserRestCellIdentifier";
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UITableViewDataSource & UITableViewDelegate
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.restArray.count;
@@ -99,6 +109,15 @@ NSString *const UserRestCellIdentifier = @"UserRestCellIdentifier";
     UserRestViewController *userRestViewController = [[UserRestViewController alloc] initWithNibName:@"UserRestViewController" bundle:nil];
     userRestViewController.restaurantItem = item;
     [self.navigationController pushViewController:userRestViewController animated:YES];
+}
+
+#pragma mark - Button Action
+
+- (void) touchLogOutButton
+{
+    AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+    [appDelegate removeUserInfo];
+    [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_LOGOUT_SUCCESS", nil)];
 }
 
 @end

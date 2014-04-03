@@ -114,15 +114,23 @@
 	return app;
 }
 
+#pragma mark - Center view controller And Sign View controller
+
 - (void) setCenterViewControllerWithIndex:(NSInteger) index;
 {
-    if (self.token != nil) {
+    if (self.token == nil&&index == 2) {
+        [self showSignInViewController];
+    }else{
         [self.drawerController setCenterViewController:[self.menuViewController getViewControllerWithIndex:index]];
         [self.drawerController closeDrawerAnimated:YES completion:nil];
-    }else {
-        [self showSignInViewController];
     }
 }
+
+- (id) getCouponViewController
+{
+    return self.menuViewController.cpViewController;
+}
+
 
 - (void) showSignInViewController
 {
@@ -167,10 +175,7 @@
     } ];
 }
 
-- (id) getCouponViewController
-{
-    return self.menuViewController.cpViewController;
-}
+#pragma mark - AccessToken
 
 - (void) saveUserInfoWithDict:(NSDictionary *)dict
 {
@@ -193,6 +198,15 @@
     self.userId = [userDefaults valueForKey:customerId];
 }
 
+- (void) removeUserInfo
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults removeObjectForKey:accessToken];
+    [userDefaults removeObjectForKey:customerId];
+    [userDefaults synchronize];
+    self.token = nil;
+}
+
 - (void) readServerAddress
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -212,6 +226,8 @@
     }
     return _token;
 }
+
+#pragma mark - Server view controller
 
 - (void) SetServerViewController
 {
