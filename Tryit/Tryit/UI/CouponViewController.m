@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *textBgView;
 @property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeight;
+@property (weak, nonatomic) UIImage *selectImage;
 - (IBAction)touchCouponButton:(id)sender;
 
 @end
@@ -44,7 +45,6 @@
     [self.couponButton setBackgroundImage:couponImage forState:UIControlStateNormal];
     [self.addFriendsButton setBackgroundImage:couponImage forState:UIControlStateNormal];
 
-//    [self.couponButton setTitle:NSLocalizedString(@"TITLE_CHOOSE_COUPON", nil) forState:UIControlStateNormal];
     [self.addFriendsButton setTitle:NSLocalizedString(@"TITLE_ADD_YOUR_FRIENDS", nil) forState:UIControlStateNormal];
 
     UIImage *photoImage = [[UIImage imageNamed:@"bg_photo"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)];
@@ -58,12 +58,17 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.scrollView setContentSize:CGSizeMake(320, 568)];
+    if (self.selectImage == Nil) {
+        [self.scrollView setContentSize:CGSizeMake(320, 504)];
+    }
 }
 
 - (void) viewWillDisappear:(BOOL)animated
 {
      [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+    self.topConstraint.constant = 10;
+    [self.view layoutIfNeeded];
+    [self.scrollView setContentOffset:CGPointZero];
 }
 
 - (void)didReceiveMemoryWarning
@@ -134,7 +139,7 @@
          [self.view layoutIfNeeded];
      }];
 
-    if (self.pictureImageView.image == nil) {
+    if (self.selectImage == nil) {
         [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_IMAGE_NULL", nil)];
         return;
     }
@@ -194,9 +199,9 @@
     self.imageHeight.constant = size.height*(300.0/size.width);
 
     [self.pictureImageView setImage:image];
-
+    self.selectImage = image;
     [picker dismissViewControllerAnimated:YES completion:^{
-
+        self.height = self.scrollView.contentSize.height;
     }];
 
     [self.shareTextView resignFirstResponder];
