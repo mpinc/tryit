@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSString *menuName;
 @property (nonatomic, strong) UIImage *menuImage;
-@property (nonatomic, strong) UIViewController *viewController;
+@property (nonatomic, strong) UINavigationController *viewController;
 - (id) initWithName:(NSString *) name Image:(NSString *) imageName;
 
 @end

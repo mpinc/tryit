@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "RestaurantItem.h"
+#import "MenuViewController.h"
 
-#define BaseURL @"http://54.186.250.135:8080/"
+#define BaseURL @"http://192.168.1.118:8080/"
 #define authToken @"auth-token"
 #define accessToken @"accessToken"
 #define customerId @"customerId"
@@ -19,6 +20,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *signInNavViewController;
 @property (strong, nonatomic) UINavigationController *signUpNavViewController;
+@property (nonatomic, strong) MenuViewController *menuViewController;
 @property (strong, nonatomic) RestaurantItem *checkInItem;
 @property (strong, nonatomic) NSString *token;
 @property (strong, nonatomic) NSString *userId;

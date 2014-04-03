@@ -17,7 +17,7 @@
 
 #import "ContactCell.h"
 #import "WebAPI.h"
-
+#import "AppDelegate.h"
 NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
 
 @interface ContactViewController ()
@@ -178,6 +178,11 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
         [WebAPI createCouponWithCCItem:self.ccItem success:^{
             [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_SHARE_SUCCESS", nil)];
             [self.navigationController popViewControllerAnimated:YES];
+
+            AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+            [appDelegate.menuViewController resetCouponViewController];
+            [appDelegate setCenterViewControllerWithIndex:0];
+            
             [UIFunction removeMaskView];
         } failure:^{
             [UIFunction removeMaskView];

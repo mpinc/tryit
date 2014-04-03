@@ -58,7 +58,12 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.scrollView setContentSize:CGSizeMake(320, 1000)];
+    [self.scrollView setContentSize:CGSizeMake(320, 568)];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
 }
 
 - (void)didReceiveMemoryWarning

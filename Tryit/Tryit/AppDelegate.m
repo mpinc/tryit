@@ -11,7 +11,7 @@
 #import "MMDrawerController.h"
 #import "MMDrawerVisualState.h"
 
-#import "MenuViewController.h"
+
 #import "DishesViewController.h"
 
 #import "SignInViewController.h"
@@ -22,7 +22,7 @@
 #import "WebAPI.h"
 @interface AppDelegate ()
 @property (nonatomic, strong) MMDrawerController *drawerController;
-@property (nonatomic, strong) MenuViewController *menuViewController;
+
 @end
 
 @implementation AppDelegate
@@ -187,6 +187,8 @@
         [userDefaults setObject:dict[customerId] forKey:customerId];
     }
     [userDefaults synchronize];
+    
+    [self.drawerController closeDrawerAnimated:YES completion:nil];
 
     [self readUserInfo];
 }
@@ -205,6 +207,9 @@
     [userDefaults removeObjectForKey:customerId];
     [userDefaults synchronize];
     self.token = nil;
+    [self setCenterViewControllerWithIndex:0];
+    [self.menuViewController resetCouponViewController];
+    [self.menuViewController resetProfileViewController];
 }
 
 - (void) readServerAddress

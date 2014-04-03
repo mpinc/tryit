@@ -47,6 +47,13 @@ NSString *const UserRestCellIdentifier = @"UserRestCellIdentifier";
     UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = barItem;
 
+    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.tableView.bounds];
+    [bgImageView setImage:[UIImage imageNamed:@"food_bg"]];
+    [self.tableView setBackgroundView:bgImageView];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
     WEAKSELF_SC
     [WebAPI getUserPorfileSuccess:^(UserProfile *up) {
 
@@ -59,14 +66,12 @@ NSString *const UserRestCellIdentifier = @"UserRestCellIdentifier";
         [UIFunction removeMaskView];
     }];
 
-    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.tableView.bounds];
-    [bgImageView setImage:[UIImage imageNamed:@"food_bg"]];
-    [self.tableView setBackgroundView:bgImageView];
-
     [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
-    
     [WebAPI getRestaurantsSuccess:^(NSMutableArray *array) {
         weakSelf_SC.restArray = [NSMutableArray arrayWithArray:array];
+        self.userProfile.vipRest = [NSString stringWithFormat:@"%d", array.count];
+        ProfileInfoView *profileView = (ProfileInfoView*)self.tableView.tableHeaderView;
+        profileView.userProfile = self.userProfile;
         [weakSelf_SC.tableView reloadData];
         [UIFunction removeMaskView];
     } failure:^{

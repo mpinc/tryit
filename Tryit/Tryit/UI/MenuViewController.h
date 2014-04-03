@@ -17,4 +17,7 @@
 
 - (id) getViewControllerWithIndex:(NSInteger) index;
 
+- (void) resetCouponViewController;
+- (void) resetProfileViewController;
+
 @end
