@@ -101,7 +101,13 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
 {
     ProductCell *cell =  [tableView dequeueReusableCellWithIdentifier:ProductCellIdentifier];
 
-    ProductItem *item = self.productArray[indexPath.section][indexPath.row];
+    ProductItem *item = nil;
+
+    if (self.selectIndex == 0) {
+        item = self.productArray[indexPath.section][indexPath.row];
+    }else {
+        item = self.productArray[self.selectIndex-1][indexPath.row];
+    }
 
     [cell setProduct:item];
 
