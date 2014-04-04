@@ -30,9 +30,9 @@
 - (void) setRestaurantItem:(RestaurantItem *) restaurantItem
 {
     if (restaurantItem.restaurantImageUrl != nil) {
-        [self.restaurantImage setImageWithURL:restaurantItem.restaurantImageUrl];
-    }else {
-        [self.restaurantImage setImage:[UIImage imageNamed:@"default_any"]];
+        [self.restaurantImage setImageWithURL:restaurantItem.restaurantImageUrl
+                       placeholderImage:[UIImage imageNamed:@"default_any"]
+         ];
     }
     self.nameLabel.text = restaurantItem.name;
     self.addressLabel.text = restaurantItem.address;

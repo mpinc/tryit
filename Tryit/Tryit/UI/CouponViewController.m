@@ -201,7 +201,6 @@
     [self.pictureImageView setImage:image];
     self.selectImage = image;
     [picker dismissViewControllerAnimated:YES completion:^{
-        self.height = self.scrollView.contentSize.height;
     }];
 
     [self.shareTextView resignFirstResponder];

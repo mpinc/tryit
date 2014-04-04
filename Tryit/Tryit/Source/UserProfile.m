@@ -17,8 +17,8 @@
     {
         self.userName = dict[@"username"];
         self.email = dict[@"email"];
-        self.vipRest = @"12";
-        self.coupons = @"39";
+        self.vipRest = dict[@"bizCount"];
+        self.coupons = dict[@"couponCount"];
         self.points = dict[@"total_points_earned"];
         self.headImageURL = nil;
     }

@@ -32,4 +32,6 @@
 + (void) customerCheckIn:(NSString*) userId restId:(NSString *) restId success:(void (^)())success failure:(void (^)()) failure;
 
 + (void) createCouponWithCCItem:(CreateCouponItem*) ccItem success:(void (^)())success failure:(void (^)()) failure;
+
++ (NSURL*) getImageURL:(NSString*) imageString;
 @end

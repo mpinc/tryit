@@ -9,6 +9,7 @@
 #import "RestaurantItem.h"
 #import "ShareItem.h"
 #import "NSString+Utlity.h"
+#import "WebAPI.h"
 @implementation RestaurantItem
 
 - (id) initWithDict:(NSDictionary *) dict
@@ -21,8 +22,9 @@
         self.address = [NSString ToString:dict[@"address"]];
         self.phone_no = [NSString ToString:dict[@"phone_no"]];
 
-        if (dict[@"restaurantImageUrl"] != nil) {
-            self.restaurantImageUrl = [NSURL URLWithString:dict[@"restaurantImageUrl"]];
+        if (dict[@"img_url"] != nil) {
+
+            self.restaurantImageUrl = [WebAPI getImageURL:dict[@"img_url"]];
         }
 
         self.latitude = [dict[@"latitude"] floatValue];

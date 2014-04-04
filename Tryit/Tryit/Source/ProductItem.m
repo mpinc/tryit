@@ -8,6 +8,7 @@
 
 #import "ProductItem.h"
 #import "NSString+Utlity.h"
+#import "WebAPI.h"
 @implementation ProductItem
 
 - (id) initWithDict:(NSDictionary *) dict
@@ -25,7 +26,7 @@
         self.promotion_id = [NSString ToString:dict[@"promotion_id"]];
 
         if (dict[@"img_url"] != nil && ![dict[@"img_url"] isKindOfClass:[NSNull class]]) {
-            self.img_url = [NSURL URLWithString:dict[@"img_url"]];
+            self.img_url = [WebAPI getImageURL:dict[@"img_url"]];
         }
 
         if ([NSString isEmptyString:self.name]) {
