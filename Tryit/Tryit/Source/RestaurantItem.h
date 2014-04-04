@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *point;
 @property (nonatomic, strong) NSMutableArray *productArray;
 @property (nonatomic, strong) NSArray *couponArray;
+@property (nonatomic) BOOL isOpen;
 @property (nonatomic) float distance;
 @property (nonatomic) float latitude;
 @property (nonatomic) float longitude;

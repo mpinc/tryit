@@ -48,12 +48,15 @@
 "PROMPT_SHARE_FIREND_NULL" = "Please choose your friends first";
 "PROMPT_SHARE_SUCCESS" = "Share success";
 "PROMPT_REQUEST_TIMEOUT" = "Request time out";
+"PROMPT_LOGOUT_SUCCESS" = "Log out Success!";
+"PROMPT_OPEN_STATUS" = "OPEN";
+"PROMPT_CLOSE_STATUS" = "CLOSE";
 
 "FORMAT_TITLE_ADD_FRIENDS" = "Add Friends (%d)";
 "FORMAT_MY_POINTS" = "My Points: (%@)";
 "FORMAT_COUNT_REST" = "Resturant(%@) | Coupons(%@) | Points(%@)";
 "FORMAT_COUNT_PROD" = "Coupons(%d) | Points(%@)";
 "FORMAT_SEND_FRIENDS" = "Send to %d friends";
-"FORMAT_FILTERBY" = "FILTER:%@";
+"FORMAT_FILTERBY" = "Filter by :%@";
 
-"PROMPT_LOGOUT_SUCCESS" = "Log out Success!";
+

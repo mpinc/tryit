@@ -34,6 +34,7 @@
         self.distance = [dict[@"distance"] floatValue];
 
         self.couponArray = [[NSMutableArray alloc] initWithCapacity:0];
+        self.isOpen = [dict[@"open"] boolValue];
     }
     return self;
 }

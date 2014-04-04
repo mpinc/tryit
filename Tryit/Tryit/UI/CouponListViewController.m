@@ -65,6 +65,7 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
     }];
 
     self.title = self.productItem.name;
+    [self customBackBarItem];
 }
 
 - (void)didReceiveMemoryWarning

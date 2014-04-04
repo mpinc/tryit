@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ProductItem.h"
-@interface CouponListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+#import "FitViewController.h"
+@interface CouponListViewController : FitViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) ProductItem *productItem;
 

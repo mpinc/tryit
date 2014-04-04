@@ -67,6 +67,12 @@
 
     self.statusLabel.layer.cornerRadius = 5.0;
     self.checkInButton.layer.cornerRadius = 5.0;
+
+    if (item.isOpen) {
+        self.statusLabel.text = NSLocalizedString(@"PROMPT_OPEN_STATUS", nil);
+    }else{
+        self.statusLabel.text = NSLocalizedString(@"PROMPT_CLOSE_STATUS", nil);
+    }
 }
 
 - (IBAction)touchCheckInButton:(id)sender {
