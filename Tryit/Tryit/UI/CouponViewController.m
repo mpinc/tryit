@@ -162,6 +162,8 @@
     ccItem.promotionId = self.item.selectCoupon.promotion_id;
     ccItem.image = self.pictureImageView.image;
     ccItem.shareWord = self.shareTextView.text;
+    ccItem.couponName = self.item.selectCoupon.name;
+    ccItem.productName = self.item.name;
 
     ContactViewController *contactViewController = [[ContactViewController alloc] initWithNibName:@"ContactViewController" bundle:nil];
     contactViewController.ccItem = ccItem;

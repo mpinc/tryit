@@ -58,5 +58,6 @@
 "FORMAT_COUNT_PROD" = "Coupons(%d) | Points(%@)";
 "FORMAT_SEND_FRIENDS" = "Send to %d friends";
 "FORMAT_FILTERBY" = "Filter by :%@";
+"FORMAT_SHARE_SUCCESS" = "Congratulations! You have success send coupon %@ for %@ to %@!";
 
 

@@ -16,5 +16,7 @@
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSString *shareWord;
 @property (nonatomic, strong) NSString *emailList;
+@property (nonatomic, strong) NSString *couponName;
+@property (nonatomic, strong) NSString *productName;
 
 @end
