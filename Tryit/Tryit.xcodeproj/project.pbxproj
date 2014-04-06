@@ -29,6 +29,7 @@
 		412FBD4418BDCC21009EF882 /* RestaurantItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD4318BDCC21009EF882 /* RestaurantItem.m */; };
 		412FBD4718BDEA14009EF882 /* WebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD4618BDEA14009EF882 /* WebAPI.m */; };
 		412FBD4918BDEB64009EF882 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412FBD4818BDEB64009EF882 /* CoreLocation.framework */; };
+		415F9B2518F0FD2500E801D4 /* UIImageView+DownLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 415F9B2418F0FD2500E801D4 /* UIImageView+DownLoad.m */; };
 		41959E8A18C5C20A009241FF /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959E8818C5C20A009241FF /* ContactViewController.m */; };
 		41959E8B18C5C20A009241FF /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41959E8918C5C20A009241FF /* ContactViewController.xib */; };
 		41959E8D18C5CF28009241FF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41959E8C18C5CF28009241FF /* AddressBook.framework */; };
@@ -139,6 +140,8 @@
 		412FBD4518BDEA14009EF882 /* WebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebAPI.h; path = Source/WebAPI.h; sourceTree = "<group>"; };
 		412FBD4618BDEA14009EF882 /* WebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebAPI.m; path = Source/WebAPI.m; sourceTree = "<group>"; };
 		412FBD4818BDEB64009EF882 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		415F9B2318F0FD2500E801D4 /* UIImageView+DownLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+DownLoad.h"; sourceTree = "<group>"; };
+		415F9B2418F0FD2500E801D4 /* UIImageView+DownLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+DownLoad.m"; sourceTree = "<group>"; };
 		41959E8718C5C20A009241FF /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactViewController.h; path = UI/ContactViewController.h; sourceTree = "<group>"; };
 		41959E8818C5C20A009241FF /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactViewController.m; path = UI/ContactViewController.m; sourceTree = "<group>"; };
 		41959E8918C5C20A009241FF /* ContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactViewController.xib; path = UI/ContactViewController.xib; sourceTree = "<group>"; };
@@ -372,6 +375,8 @@
 				41959E9D18C5D48E009241FF /* UIFunction.h */,
 				41959E9E18C5D48E009241FF /* UIFunction.m */,
 				41959E8F18C5D18C009241FF /* Address Book Wrappers */,
+				415F9B2318F0FD2500E801D4 /* UIImageView+DownLoad.h */,
+				415F9B2418F0FD2500E801D4 /* UIImageView+DownLoad.m */,
 			);
 			name = Tools;
 			path = Source/Tools;
@@ -790,6 +795,7 @@
 				41C46B2518BAE011006E2B80 /* MenuViewController.m in Sources */,
 				41D79AC418E01123001566A3 /* NSString+Utlity.m in Sources */,
 				41959EA218C5D62B009241FF /* TIContact.m in Sources */,
+				415F9B2518F0FD2500E801D4 /* UIImageView+DownLoad.m in Sources */,
 				41959E9B18C5D18C009241FF /* ABGroup.m in Sources */,
 				41FD5D3218D988CD00172DB9 /* ShareItem.m in Sources */,
 				412FBD4418BDCC21009EF882 /* RestaurantItem.m in Sources */,

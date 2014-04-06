@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pqm-se-J8D">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_any" translatesAutoresizingMaskIntoConstraints="NO" id="Pqm-se-J8D">
                         <rect key="frame" x="9" y="3" width="44" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <constraints>
@@ -71,4 +71,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="default_any" width="90" height="73"/>
+    </resources>
 </document>

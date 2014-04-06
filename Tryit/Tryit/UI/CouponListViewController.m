@@ -7,7 +7,7 @@
 //
 
 #import "CouponListViewController.h"
-#import "UIImageView+AFNetworking.h"
+#import "UIImageView+DownLoad.h"
 #import "CouponViewController.h"
 #import "CouponItem.h"
 #import "CouponCell.h"
@@ -46,7 +46,7 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
     [self.tableView registerNib:[UINib nibWithNibName:@"CouponCell" bundle:nil] forCellReuseIdentifier:CouponCellIdentifier];
 
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
-    [imageView setImageWithURL:self.productItem.img_url placeholderImage:[UIImage imageNamed:@"default_image"]];
+    [imageView fixSetImageWithURL:self.productItem.img_url placeholderImage:[UIImage imageNamed:@"default_image"]];
     self.tableView.tableHeaderView = imageView;
 
     UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.tableView.bounds];

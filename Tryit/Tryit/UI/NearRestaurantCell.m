@@ -7,7 +7,7 @@
 //
 
 #import "NearRestaurantCell.h"
-#import "UIImageView+AFNetworking.h"
+#import "UIImageView+DownLoad.h"
 
 @implementation NearRestaurantCell
 
@@ -30,9 +30,8 @@
 - (void) setRestaurantItem:(RestaurantItem *) restaurantItem
 {
     if (restaurantItem.restaurantImageUrl != nil) {
-        [self.restaurantImage setImageWithURL:restaurantItem.restaurantImageUrl
-                       placeholderImage:[UIImage imageNamed:@"default_any"]
-         ];
+        [self.restaurantImage fixSetImageWithURL:restaurantItem.restaurantImageUrl
+                       placeholderImage:[UIImage imageNamed:@"default_any"]];
     }
     self.nameLabel.text = restaurantItem.name;
     self.addressLabel.text = restaurantItem.address;

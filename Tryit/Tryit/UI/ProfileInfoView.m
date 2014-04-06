@@ -9,8 +9,7 @@
 #import "ProfileInfoView.h"
 #import "UserProfile.h"
 
-#import "UIImageView+AFNetworking.h"
-
+#import "UIImageView+DownLoad.h"
 @implementation ProfileInfoView
 
 - (id)initWithFrame:(CGRect)frame
@@ -35,7 +34,7 @@
 {
     _userProfile = profile;
 
-    [self.headImage setImageWithURL:profile.headImageURL placeholderImage:[UIImage imageNamed:@"default-head"]];
+    [self.headImage fixSetImageWithURL:profile.headImageURL placeholderImage:[UIImage imageNamed:@"default-head"]];
     self.userNameLabel.text = profile.email;
     self.countLabel.text = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_COUNT_REST", nil), profile.vipRest, profile.coupons, profile.points];
     UIImage *image = [[UIImage imageNamed:@"line_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 40, 7, 40)];

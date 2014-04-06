@@ -7,7 +7,7 @@
 //
 
 #import "RestCheckHeaderView.h"
-#import "UIImageView+AFNetworking.h"
+#import "UIImageView+DownLoad.h"
 #import "UIButtonExt.h"
 #import "AppDelegate.h"
 #import "WebAPI.h"
@@ -51,7 +51,7 @@
      */
     self.restItem = item;
     if (item.restaurantImageUrl != nil) {
-        [self.restImageView setImageWithURL:item.restaurantImageUrl placeholderImage:[UIImage imageNamed:@"default_image"]];
+        [self.restImageView fixSetImageWithURL:item.restaurantImageUrl placeholderImage:[UIImage imageNamed:@"default_image"]];
     }
 
     self.restNameLabel.text = item.name;

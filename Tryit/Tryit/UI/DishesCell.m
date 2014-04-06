@@ -7,7 +7,7 @@
 //
 
 #import "DishesCell.h"
-#import "UIImageView+AFNetworking.h"
+#import "UIImageView+DownLoad.h"
 #import "NSString+Utlity.h"
 
 @implementation DishesCell
@@ -38,7 +38,8 @@
 - (void) setDishItem:(ProductItem *) dishItem
 {
     if (dishItem.img_url != nil) {
-        [self.dishImageView setImageWithURL:dishItem.img_url];
+        [self.dishImageView fixSetImageWithURL:dishItem.img_url
+                              placeholderImage:[UIImage imageNamed:@"default_any"]];
     }else{
         UIImage *image = [[UIImage imageNamed:@"default_image"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
         [self.dishImageView setImage:image];

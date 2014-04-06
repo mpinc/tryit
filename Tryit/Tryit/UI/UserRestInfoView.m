@@ -7,8 +7,7 @@
 //
 
 #import "UserRestInfoView.h"
-#import "UIImageView+AFNetworking.h"
-
+#import "UIImageView+DownLoad.h"
 @implementation UserRestInfoView
 
 - (id)initWithFrame:(CGRect)frame
@@ -35,7 +34,7 @@
 
     /*@property (weak, nonatomic) IBOutlet UIImageView *restImageView;
      @property (weak, nonatomic) IBOutlet UILabel *countLabel;*/
-    [self.restImageView setImageWithURL:item.restaurantImageUrl placeholderImage:[UIImage imageNamed:@"default_image"]];
+    [self.restImageView fixSetImageWithURL:item.restaurantImageUrl placeholderImage:[UIImage imageNamed:@"default_image"]];
     self.countLabel.text = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_COUNT_PROD", nil), item.couponArray.count, item.point];
 }
 

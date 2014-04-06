@@ -7,8 +7,7 @@
 //
 
 #import "UserCouponCell.h"
-#import "UIImageView+AFNetworking.h"
-
+#import "UIImageView+DownLoad.h"
 @implementation UserCouponCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -30,7 +29,7 @@
 - (void) setShareItem:(ShareItem *) item
 {
 
-    [self.couponImageView setImageWithURL:item.couponPhotoURL placeholderImage:[UIImage imageNamed:@"default_any"]];
+    [self.couponImageView fixSetImageWithURL:item.couponPhotoURL placeholderImage:[UIImage imageNamed:@"default_any"]];
     self.productNameLabel.text = item.productName;
     self.couponNameLabel.text = item.couponName;
     self.shareDateLabel.text = [NSDateFormatter localizedStringFromDate:item.createDate dateStyle:NSDateFormatterMediumStyle timeStyle:kCFDateFormatterNoStyle];

@@ -10,7 +10,7 @@
 #import "RestaurantItem.h"
 #import "MenuViewController.h"
 
-//#define BaseURL @"http://192.168.1.114:8080/" 
+//#define BaseURL @"http://192.168.1.104:8080/" 
 #define BaseURL @"http://54.186.250.135:8080/"
 #define authToken @"auth-token"
 #define accessToken @"accessToken"

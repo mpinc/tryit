@@ -8,7 +8,7 @@
 
 #import "UserRestCell.h"
 
-#import "UIImageView+AFNetworking.h"
+#import "UIImageView+DownLoad.h"
 @implementation UserRestCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -29,7 +29,7 @@
 
 - (void) setRestaurantItem:(RestaurantItem *) item
 {
-    [self.restImageView setImageWithURL:item.restaurantImageUrl placeholderImage:[UIImage imageNamed:@"default_image"]];
+    [self.restImageView fixSetImageWithURL:item.restaurantImageUrl placeholderImage:[UIImage imageNamed:@"default_image"]];
     self.restNameLabel.text = item.name;
     self.pointLabel.text = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_MY_POINTS", nil), item.point];
     self.addressLabel.text = item.address;
