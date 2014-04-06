@@ -51,6 +51,7 @@
 "PROMPT_LOGOUT_SUCCESS" = "Log out Success!";
 "PROMPT_OPEN_STATUS" = "OPEN";
 "PROMPT_CLOSE_STATUS" = "CLOSE";
+"PROMPT_404" = "Such resources is not found.";
 
 "FORMAT_TITLE_ADD_FRIENDS" = "Add Friends (%d)";
 "FORMAT_MY_POINTS" = "My Points: (%@)";
