@@ -212,7 +212,20 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
         WEAKSELF_SC
         [WebAPI getNearRestaurantWithCoordinate:userLocation.coordinate
                                         success:^(NSMutableArray *array) {
-                                            weakSelf_SC.restaurantArray = array;
+
+                                            NSArray *sortArray = [array sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                                                NSComparisonResult result = NSOrderedSame;
+                                                RestaurantItem *item1 = (RestaurantItem*) obj1;
+                                                RestaurantItem *item2 = (RestaurantItem*) obj2;
+                                                if (item1.distance < item2.distance) {
+                                                    result = NSOrderedAscending;
+                                                }else {
+                                                    result= NSOrderedDescending;
+                                                }
+                                                return result;
+                                            }];
+
+                                            weakSelf_SC.restaurantArray = [NSMutableArray arrayWithArray:sortArray];
                                             [weakSelf_SC.tableView reloadData];
                                             [weakSelf_SC addAnnotations];
                                         }
