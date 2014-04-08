@@ -42,10 +42,10 @@
 "PROMPT_REQUEST_FAIL" = "Request fail, please try later.";
 "PROMPT_CHECK_EMAIL" = "Please check your email";
 "PROMPT_CHECK_RETYPE_PASSWORD" = "Please check your retype password.";
-"PROMPT_IMAGE_NULL" = "Please take photo frist";
-"PROMPT_PRODUCT_NULL" = "Please select coupon first";
-"PROMPT_SHAREWORD_NULL" = "Please input share word first";
-"PROMPT_SHARE_FIREND_NULL" = "Please choose your friends first";
+"PROMPT_IMAGE_NULL" = "Wait... Please take ot choose a photo";
+"PROMPT_PRODUCT_NULL" = "Wait... Please select a coupon";
+"PROMPT_SHAREWORD_NULL" = "Wait...Please type a personal message to your friend";
+"PROMPT_SHARE_FIREND_NULL" = "Wait...Please selcet people you want share";
 "PROMPT_SHARE_SUCCESS" = "Share success";
 "PROMPT_REQUEST_TIMEOUT" = "Request time out";
 "PROMPT_LOGOUT_SUCCESS" = "You have signed out.";
