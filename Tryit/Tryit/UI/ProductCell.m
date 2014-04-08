@@ -8,6 +8,7 @@
 
 #import "ProductCell.h"
 #import "UIImageView+DownLoad.h"
+#import "NSString+Utlity.h"
 @implementation ProductCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -32,6 +33,8 @@
     self.nameLabel.text = item.name;
     self.priceLabel.text = [NSString stringWithFormat:@"$%@", item.price];
     self.descriptionLabel.text = item.description;
+
+    self.couponsImageView.hidden = [NSString isEmptyString:item.promotion_id];
 }
 
 @end
