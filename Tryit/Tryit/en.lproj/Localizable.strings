@@ -6,7 +6,7 @@
   Copyright (c) 2014 Sktlab. All rights reserved.
 */
 
-"MAIN_TITLE" = "Try It";
+"MAIN_TITLE" = "True Menu";
 
 "MENU_EXPLOER_DISHES" = "Explore Dishes";
 "MENU_CREATE_COUPON" = "Create Coupon";
@@ -36,8 +36,8 @@
 "PROMPT_CHECK_USERNAME" = "Please check your user name";
 "PROMPT_CHECK_PASSWORD" = "Please check your password";
 "PROMPT_PASSWORD_NOT_SAME" = "Two passwords are not same";
-"PROMPT_LOGIN_SUCCESS" = "Sign in success";
-"PROMPT_SIGN_UP_SUCCESS" = "Sign up success";
+"PROMPT_LOGIN_SUCCESS" = "Welcome . You are now signed in!";
+"PROMPT_SIGN_UP_SUCCESS" = "Welcome . You are now signed in!";
 "PROMPT_NOT_CONNECT_SERVER" = "Could not connect to the server.";
 "PROMPT_REQUEST_FAIL" = "Request fail, please try later.";
 "PROMPT_CHECK_EMAIL" = "Please check your email";
@@ -48,7 +48,7 @@
 "PROMPT_SHARE_FIREND_NULL" = "Please choose your friends first";
 "PROMPT_SHARE_SUCCESS" = "Share success";
 "PROMPT_REQUEST_TIMEOUT" = "Request time out";
-"PROMPT_LOGOUT_SUCCESS" = "Log out Success!";
+"PROMPT_LOGOUT_SUCCESS" = "You have signed out.";
 "PROMPT_OPEN_STATUS" = "OPEN";
 "PROMPT_CLOSE_STATUS" = "CLOSE";
 "PROMPT_404" = "Such resources is not found.";
@@ -59,6 +59,6 @@
 "FORMAT_COUNT_PROD" = "Coupons(%d) | Points(%@)";
 "FORMAT_SEND_FRIENDS" = "Send to %d friends";
 "FORMAT_FILTERBY" = "Filter by :%@";
-"FORMAT_SHARE_SUCCESS" = "Congratulations! You have success send coupon %@ for %@ to %@!";
+"FORMAT_SHARE_SUCCESS" = "Congratulations! You have success sent coupon %@ for %@ to %@!";
 
 

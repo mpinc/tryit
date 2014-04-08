@@ -178,7 +178,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 + (void) getNearRestaurantWithCoordinate:(CLLocationCoordinate2D) coordinate success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
 {
     NSString *requestString = @"/biz";
-    NSDictionary *dict = @{@"latitude":[NSString stringWithFormat:@"%f",coordinate.latitude], @"longitude":[NSString stringWithFormat:@"%f",coordinate.longitude]};
+    NSDictionary *dict = @{@"latitude":[NSString stringWithFormat:@"%f",coordinate.latitude], @"longitude":[NSString stringWithFormat:@"%f",coordinate.longitude], @"distance":@"15"};
     [WebAPI request:requestString parameters:dict Method:MGET NeedToken:NO
             success:^(AFHTTPRequestOperation *operation) {
                 NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];

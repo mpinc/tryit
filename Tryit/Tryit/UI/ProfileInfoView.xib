@@ -28,12 +28,12 @@
                         <constraint firstAttribute="height" constant="30" id="rsN-pc-0Re"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5o-ij-PaH">
-                    <rect key="frame" x="62" y="44" width="240" height="20"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5o-ij-PaH">
+                    <rect key="frame" x="62" y="44" width="250" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="76U-5x-Kte"/>
-                        <constraint firstAttribute="width" constant="240" id="I0C-Oc-1GM"/>
+                        <constraint firstAttribute="width" constant="250" id="I0C-Oc-1GM"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="highlightedColor"/>
@@ -57,8 +57,8 @@
                 <constraint firstItem="fuo-dE-LPO" firstAttribute="top" secondItem="gjL-cT-ECp" secondAttribute="top" constant="10" id="Kbw-tf-aJO"/>
                 <constraint firstItem="c0d-Ag-thK" firstAttribute="top" secondItem="cRX-pX-yGU" secondAttribute="top" constant="4" id="TXe-jO-gKh"/>
                 <constraint firstItem="cRX-pX-yGU" firstAttribute="top" secondItem="gjL-cT-ECp" secondAttribute="top" constant="11" id="VNy-oI-QwH"/>
-                <constraint firstAttribute="trailing" secondItem="l5o-ij-PaH" secondAttribute="trailing" constant="18" id="iEF-hv-5cr"/>
                 <constraint firstItem="fuo-dE-LPO" firstAttribute="leading" secondItem="gjL-cT-ECp" secondAttribute="leading" constant="10" id="o7M-fG-6NA"/>
+                <constraint firstItem="l5o-ij-PaH" firstAttribute="leading" secondItem="cRX-pX-yGU" secondAttribute="leading" id="oyD-3Z-JIG"/>
                 <constraint firstAttribute="trailing" secondItem="cRX-pX-yGU" secondAttribute="trailing" constant="10" id="yQr-Ar-0Ek"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
