@@ -45,7 +45,7 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
     [self.tableView registerNib:[UINib nibWithNibName:@"CouponSectionView" bundle:nil] forHeaderFooterViewReuseIdentifier:CouponListHeadSectionIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:@"CouponCell" bundle:nil] forCellReuseIdentifier:CouponCellIdentifier];
 
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 213)];
     [imageView fixSetImageWithURL:self.productItem.img_url placeholderImage:[UIImage imageNamed:@"default_image"]];
     self.tableView.tableHeaderView = imageView;
 
