@@ -178,8 +178,8 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 	[self.filteredList removeAllObjects];
 
     for (RestaurantItem *item in self.restaurantArray) {
-        NSComparisonResult result = [item.name compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
-        if (result == NSOrderedSame)
+        NSRange range = [item.name rangeOfString:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch)];
+        if (range.length != NSOrderedSame)
         {
             [self.filteredList addObject:item];
         }
