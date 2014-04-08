@@ -28,6 +28,8 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 @property (strong, nonatomic) NSMutableArray *restaurantArray;
 @property (strong, nonatomic) NSMutableArray *filteredList;
 
+@property (strong, nonatomic) RestaurantItem *selectItem;
+
 @property (nonatomic) BOOL hasLocation;
 
 @end
@@ -118,7 +120,11 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
     }else{
         item = [self.restaurantArray objectAtIndex:indexPath.row];
     }
+    [self loadRestCheckVCWithItem:item];
+}
 
+- (void) loadRestCheckVCWithItem:(RestaurantItem*) item
+{
     [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
     [WebAPI getProductWithRestId:item.biz_id success:^(NSMutableArray *array) {
         [self perparRestCheckVC:item WithArray:array];
@@ -127,8 +133,6 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
         [self perparRestCheckVC:item WithArray:nil];
         [UIFunction removeMaskView];
     }];
-
-
 }
 
 #pragma mark -
@@ -243,10 +247,36 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
     if ([annotation isKindOfClass:[RestaurantAnnotation class]]) {
         MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"searchAnnotation"];
         annotationView.image = [UIImage imageNamed:@"annotation"];
-        annotationView.canShowCallout=YES;
+        annotationView.canShowCallout = YES;
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        annotationView.rightCalloutAccessoryView = button;
+        [button addTarget:self action:@selector(touchInfoButton:) forControlEvents:UIControlEventTouchUpInside];
         return annotationView;
     }
     return nil;
+}
+
+- (void)touchInfoButton:(id) sender
+{
+    if (self.selectItem != nil) {
+        [self loadRestCheckVCWithItem:self.selectItem];
+    }
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    RestaurantAnnotation *annotation = (RestaurantAnnotation*) view.annotation;
+    RestaurantItem *item = annotation.restItem;
+
+    NSIndexPath *indexpath = [NSIndexPath indexPathForRow:[self.restaurantArray indexOfObject:item] inSection:0];
+    [self.tableView scrollToRowAtIndexPath:indexpath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+
+    self.selectItem = item;
+}
+
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
+{
+    self.selectItem = nil;
 }
 
 - (void) addAnnotations
