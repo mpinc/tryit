@@ -56,12 +56,20 @@
 
     self.restNameLabel.text = item.name;
 
-    [self.locationButton setTitle:item.address forState:UIControlStateNormal];
-    self.locationButton.titleLabel.numberOfLines = 0;
-    [self.locationButton leftImageAndRightTitle:5];
+    if (![NSString isEmptyString:item.address]) {
+        [self.locationButton setTitle:item.address forState:UIControlStateNormal];
+        self.locationButton.titleLabel.numberOfLines = 0;
+        [self.locationButton leftImageAndRightTitle:5];
+    }else {
+        self.locationButton.hidden = YES;
+    }
 
-    [self.phoneButton setTitle:item.phone_no forState:UIControlStateNormal];
-    [self.phoneButton leftImageAndRightTitle:5];
+    if (![NSString isEmptyString:item.phone_no]) {
+        [self.phoneButton setTitle:item.phone_no forState:UIControlStateNormal];
+        [self.phoneButton leftImageAndRightTitle:5];
+    }else {
+        self.phoneButton.hidden = YES;
+    }
     
     [self.changeButton rightImageAndLeftTitle:10];
 

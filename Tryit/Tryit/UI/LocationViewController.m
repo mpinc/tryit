@@ -124,6 +124,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
         [self perparRestCheckVC:item WithArray:array];
         [UIFunction removeMaskView];
     } failure:^{
+        [self perparRestCheckVC:item WithArray:nil];
         [UIFunction removeMaskView];
     }];
 
@@ -207,7 +208,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 {
 
     if (self.hasLocation != YES) {
-        double distance = 5000.0;
+        double distance = 10000.0;
         [mapView setRegion:MKCoordinateRegionMakeWithDistance(userLocation.coordinate, distance, distance*195.0/320.0) animated:YES];
         WEAKSELF_SC
         [WebAPI getNearRestaurantWithCoordinate:userLocation.coordinate
@@ -265,30 +266,32 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 
 - (void) perparRestCheckVC:(RestaurantItem*) item WithArray:(NSArray*) array;
 {
-
-    NSMutableArray *productsArray = [[NSMutableArray alloc] initWithCapacity:0]; // save section array
-    NSMutableArray *filterArray = [[NSMutableArray alloc] initWithCapacity:0];
-    NSMutableDictionary *filterDict = [[NSMutableDictionary alloc] initWithCapacity:0];
-    for (ProductItem *proItem in array) {
-        NSString *type = proItem.type;
-        NSMutableArray *productArray = [filterDict objectForKey:type];
-        if (productArray == Nil) {
-            productArray = [[NSMutableArray alloc] initWithCapacity:0];
-            [productsArray addObject:productArray];
-            [filterArray addObject:proItem.type];
-            [filterDict setObject:productArray forKey:type];
-        }
-        [productArray addObject:proItem];
-    }
-
     RestCheckViewController *restCheckViewController = [[RestCheckViewController alloc] initWithNibName:@"RestCheckViewController" bundle:nil];
-    restCheckViewController.restItem = item;
-    restCheckViewController.productArray = productsArray;
-
     FilterViewController *filterViewController = [[FilterViewController alloc] initWithNibName:@"RestCheckViewController" bundle:nil];
-    [filterArray insertObject:@"All" atIndex:0];
-    filterViewController.filterArray = filterArray;
+    restCheckViewController.restItem = item;
     filterViewController.delegate = restCheckViewController;
+
+    if (array != nil) {
+        NSMutableArray *productsArray = [[NSMutableArray alloc] initWithCapacity:0]; // save section array
+        NSMutableArray *filterArray = [[NSMutableArray alloc] initWithCapacity:0];
+        NSMutableDictionary *filterDict = [[NSMutableDictionary alloc] initWithCapacity:0];
+        for (ProductItem *proItem in array) {
+            NSString *type = proItem.type;
+            NSMutableArray *productArray = [filterDict objectForKey:type];
+            if (productArray == Nil) {
+                productArray = [[NSMutableArray alloc] initWithCapacity:0];
+                [productsArray addObject:productArray];
+                [filterArray addObject:proItem.type];
+                [filterDict setObject:productArray forKey:type];
+            }
+            [productArray addObject:proItem];
+        }
+
+        restCheckViewController.productArray = productsArray;
+
+        [filterArray insertObject:@"All" atIndex:0];
+        filterViewController.filterArray = filterArray;
+    }
 
     MMDrawerController *mmDrawerController = [[MMDrawerController alloc] initWithCenterViewController:restCheckViewController rightDrawerViewController:filterViewController];
     [mmDrawerController setRestorationIdentifier:@"MMDrawer"];

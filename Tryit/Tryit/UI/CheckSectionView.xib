@@ -36,6 +36,6 @@
         </view>
     </objects>
     <resources>
-        <image name="checkSection_bg" width="320" height="62"/>
+        <image name="checkSection_bg" width="320" height="31"/>
     </resources>
 </document>

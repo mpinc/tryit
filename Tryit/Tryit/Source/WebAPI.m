@@ -51,7 +51,7 @@
 
 + (void) errorPrompt:(AFHTTPRequestOperation *)operation Error:(NSError *)error
 {
-    DLog(@"Error: %d", operation.response.statusCode);
+    DLog(@"Error: %ld", (long)operation.response.statusCode);
 
     if (operation.response.statusCode == 404) {
         [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_404", nil)];
