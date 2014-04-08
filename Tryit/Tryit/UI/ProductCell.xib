@@ -68,21 +68,26 @@
                             <constraint firstItem="oXp-dG-C9d" firstAttribute="bottom" secondItem="Def-80-DcH" secondAttribute="bottom" id="rqy-5k-0sg"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hasCoupon" translatesAutoresizingMaskIntoConstraints="NO" id="Uq4-dW-gbJ">
-                        <rect key="frame" x="252" y="5" width="58" height="58"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hj-YT-CIg">
+                        <rect key="frame" x="242" y="-9" width="82" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="58" id="7Lq-1o-3wR"/>
-                            <constraint firstAttribute="width" constant="58" id="anx-Og-zeP"/>
+                            <constraint firstAttribute="height" constant="20" id="Wt1-CT-DVn"/>
+                            <constraint firstAttribute="width" constant="82" id="mTC-6b-ce6"/>
                         </constraints>
-                    </imageView>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                        <state key="normal" title="10% Off" backgroundImage="discount_bg">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="Ebi-2b-B55" firstAttribute="trailing" secondItem="Uq4-dW-gbJ" secondAttribute="trailing" id="3Nb-H1-ZWv"/>
                     <constraint firstAttribute="trailing" secondItem="Ebi-2b-B55" secondAttribute="trailing" constant="10" id="BBq-LS-zI0"/>
-                    <constraint firstItem="Ebi-2b-B55" firstAttribute="top" secondItem="Uq4-dW-gbJ" secondAttribute="top" id="IAa-Fs-1tE"/>
+                    <constraint firstAttribute="trailing" secondItem="8hj-YT-CIg" secondAttribute="trailing" constant="-4" id="CxW-zg-4fd"/>
                     <constraint firstItem="Bpw-pg-OeD" firstAttribute="leading" secondItem="Exj-cu-jLW" secondAttribute="leading" constant="10" id="Mwm-8e-Gq7"/>
+                    <constraint firstItem="8hj-YT-CIg" firstAttribute="top" secondItem="Exj-cu-jLW" secondAttribute="top" constant="-9" id="OBu-4C-Quu"/>
                     <constraint firstItem="Ebi-2b-B55" firstAttribute="leading" secondItem="Exj-cu-jLW" secondAttribute="leading" constant="10" id="P8Y-MS-BHv"/>
                     <constraint firstAttribute="bottom" secondItem="Ebi-2b-B55" secondAttribute="bottom" constant="5" id="RnW-lT-xgu"/>
                     <constraint firstItem="Ebi-2b-B55" firstAttribute="top" secondItem="Exj-cu-jLW" secondAttribute="top" constant="5" id="TuP-Vw-qJH"/>
@@ -92,8 +97,8 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="couponsImageView" destination="Uq4-dW-gbJ" id="fDS-Vq-zZp"/>
                 <outlet property="descriptionLabel" destination="Def-80-DcH" id="Qm5-NV-2aT"/>
+                <outlet property="discountButton" destination="8hj-YT-CIg" id="rwY-Zd-EhL"/>
                 <outlet property="nameLabel" destination="uYU-hW-8PJ" id="ek1-kd-QoQ"/>
                 <outlet property="priceLabel" destination="oXp-dG-C9d" id="O2y-Am-cnB"/>
                 <outlet property="productImageView" destination="Ebi-2b-B55" id="SdR-jS-dZl"/>
@@ -102,6 +107,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="hasCoupon" width="58" height="58"/>
+        <image name="discount_bg" width="82" height="20"/>
     </resources>
 </document>

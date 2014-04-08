@@ -15,8 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *couponsImageView;
-
+@property (weak, nonatomic) IBOutlet UIButton *discountButton;
 
 - (void) setProduct:(ProductItem *) item;
 

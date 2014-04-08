@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dishNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *restaurantLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *hasCouponImage;
+@property (weak, nonatomic) IBOutlet UIButton *discountButton;
 
 - (void) setDishItem:(ProductItem *) dishItem;
 

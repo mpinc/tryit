@@ -34,7 +34,12 @@
     self.priceLabel.text = [NSString stringWithFormat:@"$%@", item.price];
     self.descriptionLabel.text = item.description;
 
-    self.couponsImageView.hidden = [NSString isEmptyString:item.promotion_id];
+    self.discountButton.hidden = [NSString isEmptyString:item.promotion_id];
+    if (self.discountButton.hidden == NO) {
+        self.discountButton.layer.anchorPoint = CGPointMake(0.5, 0.5);
+        self.discountButton.transform = CGAffineTransformMakeRotation(M_PI_4);
+        [self.discountButton setTitle:item.promotionName forState:UIControlStateNormal];
+    }
 }
 
 @end

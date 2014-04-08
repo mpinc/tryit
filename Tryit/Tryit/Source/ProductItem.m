@@ -24,6 +24,7 @@
         self.type = [NSString ToString:dict[@"type"]];
         self.description = [NSString ToString:dict[@"description"]];
         self.promotion_id = [NSString ToString:dict[@"promotion_id"]];
+        self.promotionName = [NSString ToString:dict[@"promotionName"]];
 
         if (dict[@"img_url"] != nil && ![dict[@"img_url"] isKindOfClass:[NSNull class]]) {
             self.img_url = [WebAPI getImageURL:dict[@"img_url"]];

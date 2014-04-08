@@ -49,7 +49,12 @@
     self.restaurantLabel.text = dishItem.bizName;
     self.descriptionLabel.text = dishItem.type;
 
-    self.hasCouponImage.hidden = [NSString isEmptyString:dishItem.promotion_id];
+    self.discountButton.hidden = [NSString isEmptyString:dishItem.promotion_id];
+    if (self.discountButton.hidden == NO) {
+        self.discountButton.layer.anchorPoint = CGPointMake(0.5, 0.5);
+        self.discountButton.transform = CGAffineTransformMakeRotation(M_PI_4);
+        [self.discountButton setTitle:dishItem.promotionName forState:UIControlStateNormal];
+    }
 }
 
 -(void)layoutSubviews
