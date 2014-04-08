@@ -65,6 +65,8 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
         [weakSelf_SC showFilterView];
     };
     self.selectIndex = 0;
+
+    [self perShowProduct];
 }
 
 - (void)didReceiveMemoryWarning
@@ -150,6 +152,24 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
 }
 
 #pragma mark - Filter Functions 
+
+- (void) perShowProduct
+{
+    if (self.perShowProductItem != nil) {
+        for (int i = 0; i < self.productArray.count; i++) {
+            NSMutableArray *array = self.productArray[i];
+            for (int j = 0; j < array.count; j++) {
+                ProductItem *item = array[j];
+                if ([self.perShowProductItem.prod_id isEqualToString:item.prod_id]) {
+                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:j inSection:i];
+                    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+                    break;
+                }
+            }
+        }
+    }
+}
+
 - (void) showFilterView
 {
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];

@@ -7,6 +7,11 @@
 //
 #import "LocationViewController.h"
 #import "DishesViewController.h"
+#import "UIFunction.h"
+#import "RestCheckViewController.h"
+#import "FilterViewController.h"
+#import "MMDrawerController.h"
+#import "MMDrawerVisualState.h"
 
 #import "DishesCell.h"
 #import "ProductItem.h"
@@ -63,10 +68,10 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
     if (IsIOS7) {
         [self.dishesTable setSeparatorInset:UIEdgeInsetsZero];
     }
-
+    WEAKSELF_SC
     [WebAPI getTopX:TopX success:^(NSMutableArray *array) {
-        self.dishItemArray = [NSMutableArray arrayWithArray:array];
-        [self.dishesTable reloadData];
+        weakSelf_SC.dishItemArray = [NSMutableArray arrayWithArray:array];
+        [weakSelf_SC.dishesTable reloadData];
     } failure:^{
 
     }];
@@ -98,6 +103,87 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 210;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ProductItem *item = self.dishItemArray[indexPath.row];
+    [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
+    WEAKSELF_SC
+    [WebAPI getRestaurantWithBizId:item.biz_id success:^(RestaurantItem *restItem) {
+        [weakSelf_SC loadRestCheckVCWithItem:restItem PerShowItem:item];
+    } failure:^{
+        
+    }];
+}
+
+#pragma mark - prepar rest check view controller
+
+- (void) loadRestCheckVCWithItem:(RestaurantItem*) item PerShowItem:(ProductItem*) perShowItem
+{
+    WEAKSELF_SC
+    [WebAPI getProductWithRestId:item.biz_id success:^(NSMutableArray *array) {
+        [weakSelf_SC perparRestCheckVC:item WithArray:array PerShowItem:perShowItem];
+        [UIFunction removeMaskView];
+    } failure:^{
+        [weakSelf_SC perparRestCheckVC:item WithArray:nil PerShowItem:perShowItem];
+        [UIFunction removeMaskView];
+    }];
+}
+
+- (void) perparRestCheckVC:(RestaurantItem*) item WithArray:(NSArray*) array PerShowItem:(ProductItem*) perShowItem
+{
+    RestCheckViewController *restCheckViewController = [[RestCheckViewController alloc] initWithNibName:@"RestCheckViewController" bundle:nil];
+    restCheckViewController.perShowProductItem = perShowItem;
+    
+    FilterViewController *filterViewController = [[FilterViewController alloc] initWithNibName:@"RestCheckViewController" bundle:nil];
+    restCheckViewController.restItem = item;
+    filterViewController.delegate = restCheckViewController;
+
+    if (array != nil) {
+        NSMutableArray *productsArray = [[NSMutableArray alloc] initWithCapacity:0]; // save section array
+        NSMutableArray *filterArray = [[NSMutableArray alloc] initWithCapacity:0];
+        NSMutableDictionary *filterDict = [[NSMutableDictionary alloc] initWithCapacity:0];
+        for (ProductItem *proItem in array) {
+            NSString *type = proItem.type;
+            NSMutableArray *productArray = [filterDict objectForKey:type];
+            if (productArray == Nil) {
+                productArray = [[NSMutableArray alloc] initWithCapacity:0];
+                [productsArray addObject:productArray];
+                [filterArray addObject:proItem.type];
+                [filterDict setObject:productArray forKey:type];
+            }
+            [productArray addObject:proItem];
+        }
+
+        restCheckViewController.productArray = productsArray;
+
+        [filterArray insertObject:@"All" atIndex:0];
+        filterViewController.filterArray = filterArray;
+    }
+
+    MMDrawerController *mmDrawerController = [[MMDrawerController alloc] initWithCenterViewController:restCheckViewController rightDrawerViewController:filterViewController];
+    [mmDrawerController setRestorationIdentifier:@"MMDrawer"];
+    [mmDrawerController setMaximumRightDrawerWidth:150.0];
+    [mmDrawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
+    [mmDrawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+
+    mmDrawerController.title = item.name;
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 44)];
+    [button addTarget:self action:@selector(touchBackbutton) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"navback"] forState:UIControlStateNormal];
+
+    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    mmDrawerController.navigationItem.leftBarButtonItem = leftButtonItem;
+
+    [self.navigationController pushViewController:mmDrawerController animated:YES];
+
+    item.productArray = restCheckViewController.productArray;
+}
+
+- (void) touchBackbutton
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Button Action 

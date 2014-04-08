@@ -10,10 +10,12 @@
 #import "RestaurantItem.h"
 #import "FitViewController.h"
 #import "FilterViewController.h"
+#import "ProductItem.h"
 
 @interface RestCheckViewController : FitViewController <FilterViewControllerDelegate>
 
 @property (nonatomic, strong) RestaurantItem *restItem;
 @property (strong, nonatomic) NSMutableArray *productArray;
+@property (strong, nonatomic) ProductItem *perShowProductItem;
 
 @end

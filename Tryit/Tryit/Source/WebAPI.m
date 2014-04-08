@@ -175,6 +175,19 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
             }];
 }
 
++ (void) getRestaurantWithBizId:(NSString*) bizId success:(void (^)(RestaurantItem *item))success failure:(void (^)()) failure
+{
+    NSString *requestString = [NSString stringWithFormat:@"/biz/%@",bizId];
+    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:NO
+            success:^(AFHTTPRequestOperation *operation) {
+                RestaurantItem * item = [[RestaurantItem alloc] initWithDict:operation.responseObject];
+                success(item);
+            }
+            failure:^(AFHTTPRequestOperation *operation) {
+                failure(operation);
+            }];
+}
+
 + (void) getNearRestaurantWithCoordinate:(CLLocationCoordinate2D) coordinate success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
 {
     NSString *requestString = @"/biz";

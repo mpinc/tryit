@@ -269,7 +269,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
     RestaurantItem *item = annotation.restItem;
 
     NSIndexPath *indexpath = [NSIndexPath indexPathForRow:[self.restaurantArray indexOfObject:item] inSection:0];
-    [self.tableView scrollToRowAtIndexPath:indexpath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    [self.tableView scrollToRowAtIndexPath:indexpath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 
     self.selectItem = item;
 }
