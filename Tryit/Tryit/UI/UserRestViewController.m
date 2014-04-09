@@ -47,6 +47,11 @@ NSString *const UserCouponCellIdentifier = @"UserCouponCellIdentifier";
     WEAKSELF_SC
     [WebAPI getUserShareRestaurantID:self.restaurantItem.biz_id WithSuccess:^(NSMutableArray *array) {
         weakSelf_SC.restaurantItem.couponArray = [NSMutableArray arrayWithArray:array];
+
+        UserRestInfoView *userRestInfoView = (UserRestInfoView*)[[[NSBundle mainBundle] loadNibNamed:@"UserRestInfoView" owner:weakSelf_SC options:nil] lastObject];
+        userRestInfoView.restaurantItem = weakSelf_SC.restaurantItem;
+        weakSelf_SC.tableView.tableHeaderView = userRestInfoView;
+
         [weakSelf_SC.tableView reloadData];
         [UIFunction removeMaskView];
     } failure:^{

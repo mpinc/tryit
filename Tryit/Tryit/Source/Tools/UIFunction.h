@@ -24,4 +24,6 @@
 
 + (id)loadTableCellFromNib:(NSString*)nib;
 
++ (UIImage *) resizeImageWithImage:(UIImage *) flagImage;
+
 @end

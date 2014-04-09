@@ -348,4 +348,22 @@ dispatch_source_t CreateDispatchTimer(uint64_t interval,
     isShowAlertView = NO;
 }
 
++ (UIImage *) resizeImageWithImage:(UIImage *) flagImage{
+    CGRect resizeRect;
+
+    resizeRect.size = flagImage.size;
+    CGSize maxSize = CGSizeMake(960, 640);
+    if (resizeRect.size.width > maxSize.width)
+        resizeRect.size = CGSizeMake(maxSize.width, resizeRect.size.height / resizeRect.size.width * maxSize.width);
+    if (resizeRect.size.height > maxSize.height)
+        resizeRect.size = CGSizeMake(resizeRect.size.width / resizeRect.size.height * maxSize.height, maxSize.height);
+
+    resizeRect.origin = (CGPoint){0.0f, 0.0f};
+    UIGraphicsBeginImageContext(resizeRect.size);
+    [flagImage drawInRect:resizeRect];
+    UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return resizedImage;
+}
+
 @end

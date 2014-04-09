@@ -196,12 +196,16 @@
 {
     DLog(@"%@", editingInfo);
 
-    CGSize size = image.size;
+    int imageLenght = [UIImageJPEGRepresentation(image, 0.5) length];
 
+    UIImage *resizeImage = [UIFunction resizeImageWithImage:image];
+    int reSizeimageLenght = [UIImageJPEGRepresentation(resizeImage, 0.5) length];
+    CGSize size = resizeImage.size;
+    DLog(@"%d, %d", imageLenght, reSizeimageLenght);
     self.imageHeight.constant = size.height*(300.0/size.width);
 
-    [self.pictureImageView setImage:image];
-    self.selectImage = image;
+    [self.pictureImageView setImage:resizeImage];
+    self.selectImage = resizeImage;
     [picker dismissViewControllerAnimated:YES completion:^{
     }];
 
