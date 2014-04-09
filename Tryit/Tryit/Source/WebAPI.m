@@ -76,6 +76,7 @@
              success:(void (^)(AFHTTPRequestOperation *operation))success
              failure:(void (^)(AFHTTPRequestOperation *operation))failure
 {
+    // set token
     if (needToken) {
         AppDelegate *appDelegate = [AppDelegate getAppdelegate];
         if ([appDelegate getAccessToken] == nil) {
@@ -90,6 +91,7 @@
 
     [request setTimeoutInterval:TIMEOUT];
     DLog(@"%@", request);
+    // send request 
     AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         DLog(@"%@", responseObject);
         success(operation);

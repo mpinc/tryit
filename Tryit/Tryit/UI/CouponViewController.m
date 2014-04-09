@@ -195,13 +195,8 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
     DLog(@"%@", editingInfo);
-
-    int imageLenght = [UIImageJPEGRepresentation(image, 0.5) length];
-
     UIImage *resizeImage = [UIFunction resizeImageWithImage:image];
-    int reSizeimageLenght = [UIImageJPEGRepresentation(resizeImage, 0.5) length];
     CGSize size = resizeImage.size;
-    DLog(@"%d, %d", imageLenght, reSizeimageLenght);
     self.imageHeight.constant = size.height*(300.0/size.width);
 
     [self.pictureImageView setImage:resizeImage];

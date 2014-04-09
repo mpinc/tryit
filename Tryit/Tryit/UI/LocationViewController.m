@@ -69,6 +69,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
     if (IsIOS7) {
         [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     }
+    [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -212,6 +213,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 {
 
     if (self.hasLocation != YES) {
+        [UIFunction removeMaskView];
         double distance = 10000.0;
         [mapView setRegion:MKCoordinateRegionMakeWithDistance(userLocation.coordinate, distance, distance*195.0/320.0) animated:YES];
         WEAKSELF_SC
