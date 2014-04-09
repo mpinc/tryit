@@ -28,11 +28,11 @@
                         <constraint firstAttribute="height" constant="30" id="rsN-pc-0Re"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5o-ij-PaH">
-                    <rect key="frame" x="62" y="44" width="250" height="20"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="l5o-ij-PaH">
+                    <rect key="frame" x="62" y="44" width="250" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="20" id="76U-5x-Kte"/>
+                        <constraint firstAttribute="height" constant="29" id="76U-5x-Kte"/>
                         <constraint firstAttribute="width" constant="250" id="I0C-Oc-1GM"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
