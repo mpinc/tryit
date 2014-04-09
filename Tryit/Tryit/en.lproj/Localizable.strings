@@ -42,7 +42,7 @@
 "PROMPT_REQUEST_FAIL" = "Request fail, please try later.";
 "PROMPT_CHECK_EMAIL" = "Please check your email";
 "PROMPT_CHECK_RETYPE_PASSWORD" = "Please check your retype password.";
-"PROMPT_IMAGE_NULL" = "Wait... Please take ot choose a photo";
+"PROMPT_IMAGE_NULL" = "Wait... Please take or choose a photo";
 "PROMPT_PRODUCT_NULL" = "Wait... Please select a coupon";
 "PROMPT_SHAREWORD_NULL" = "Wait...Please type a personal message to your friend";
 "PROMPT_SHARE_FIREND_NULL" = "Wait...Please selcet people you want share";
@@ -51,7 +51,7 @@
 "PROMPT_LOGOUT_SUCCESS" = "You have signed out.";
 "PROMPT_OPEN_STATUS" = "OPEN";
 "PROMPT_CLOSE_STATUS" = "CLOSE";
-"PROMPT_404" = "Same resources is not found.";
+"PROMPT_404" = "Some resources is not found.";
 
 "FORMAT_TITLE_ADD_FRIENDS" = "Add Friends (%d)";
 "FORMAT_MY_POINTS" = "My Points: (%@)";

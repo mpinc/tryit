@@ -10,7 +10,6 @@
 
 @interface CreateCouponItem : NSObject
 
-@property (nonatomic, strong) NSString *userId;
 @property (nonatomic, strong) NSString *bizId;
 @property (nonatomic, strong) NSString *promotionId;
 @property (nonatomic, strong) UIImage *image;

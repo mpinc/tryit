@@ -311,7 +311,8 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 
 + (void) createCouponWithCCItem:(CreateCouponItem*) ccItem success:(void (^)())success failure:(void (^)()) failure
 {
-    NSString *requestString = [NSString stringWithFormat:@"/cust/%@/biz/%@/promo/%@/coupon", ccItem.userId, ccItem.bizId,ccItem.promotionId];
+    AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+    NSString *requestString = [NSString stringWithFormat:@"/cust/%@/biz/%@/promo/%@/coupon", appDelegate.userId, ccItem.bizId,ccItem.promotionId];
     NSDictionary *dict = @{@"personal_msg":ccItem.shareWord,@"to_email":ccItem.emailList};
     [WebAPI formRequest:requestString parameters:dict NeedToken:YES
 constructingBodyWithBlock:^(id<AFMultipartFormData> formData)

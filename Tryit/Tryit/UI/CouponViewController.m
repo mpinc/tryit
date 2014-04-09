@@ -154,10 +154,7 @@
         return;
     }
 
-    AppDelegate *appDelegate = [AppDelegate getAppdelegate];
-
     CreateCouponItem *ccItem = [[CreateCouponItem alloc] init];
-    ccItem.userId = appDelegate.userId;
     ccItem.bizId = self.item.biz_id;
     ccItem.promotionId = self.item.selectCoupon.promotion_id;
     ccItem.image = self.pictureImageView.image;
