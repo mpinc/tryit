@@ -267,13 +267,15 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    RestaurantAnnotation *annotation = (RestaurantAnnotation*) view.annotation;
-    RestaurantItem *item = annotation.restItem;
+    if ([view.annotation isKindOfClass:[RestaurantAnnotation class]]) {
+        RestaurantAnnotation *annotation = (RestaurantAnnotation*) view.annotation;
+        RestaurantItem *item = annotation.restItem;
 
-    NSIndexPath *indexpath = [NSIndexPath indexPathForRow:[self.restaurantArray indexOfObject:item] inSection:0];
-    [self.tableView scrollToRowAtIndexPath:indexpath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+        NSIndexPath *indexpath = [NSIndexPath indexPathForRow:[self.restaurantArray indexOfObject:item] inSection:0];
+        [self.tableView scrollToRowAtIndexPath:indexpath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 
-    self.selectItem = item;
+        self.selectItem = item;
+    }
 }
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
