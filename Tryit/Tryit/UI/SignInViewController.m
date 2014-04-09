@@ -109,9 +109,12 @@
         return;
     }
 
+    WEAKSELF_SC
     [WebAPI loginWithUserName:self.userNameField.text Password:self.passwordField.text success:^(id responseObject) {
         [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_LOGIN_SUCCESS", nil)];
 
+        weakSelf_SC.passwordField.text = nil;
+        weakSelf_SC.userNameField.text = nil;
         AppDelegate *appDelegate = [AppDelegate getAppdelegate];
 
         [appDelegate saveUserInfoWithDict:responseObject];

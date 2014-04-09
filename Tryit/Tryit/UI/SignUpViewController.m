@@ -113,10 +113,13 @@ void setViewStyle(UIView *configView)
         [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_PASSWORD_NOT_SAME", nil)];
         return;
     }
-
+    WEAKSELF_SC
     [WebAPI signUpWithPassword:self.passwordField.text email:self.emailField.text success:^(id responseObject) {
         [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_SIGN_UP_SUCCESS", nil)];
 
+        weakSelf_SC.emailField.text = nil;
+        weakSelf_SC.passwordField.text = nil;
+        weakSelf_SC.confrimField.text = nil;
         AppDelegate *appDelegate = [AppDelegate getAppdelegate];
 
         [appDelegate saveUserInfoWithDict:responseObject];
