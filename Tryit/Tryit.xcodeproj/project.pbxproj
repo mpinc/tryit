@@ -29,6 +29,8 @@
 		412FBD4418BDCC21009EF882 /* RestaurantItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD4318BDCC21009EF882 /* RestaurantItem.m */; };
 		412FBD4718BDEA14009EF882 /* WebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FBD4618BDEA14009EF882 /* WebAPI.m */; };
 		412FBD4918BDEB64009EF882 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412FBD4818BDEB64009EF882 /* CoreLocation.framework */; };
+		4144CD8618F6858D0037726C /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 4144CD8318F6858D0037726C /* UIScrollView+SVInfiniteScrolling.m */; };
+		4144CD8718F6858D0037726C /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4144CD8518F6858D0037726C /* UIScrollView+SVPullToRefresh.m */; };
 		415F9B2518F0FD2500E801D4 /* UIImageView+DownLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 415F9B2418F0FD2500E801D4 /* UIImageView+DownLoad.m */; };
 		41959E8A18C5C20A009241FF /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41959E8818C5C20A009241FF /* ContactViewController.m */; };
 		41959E8B18C5C20A009241FF /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41959E8918C5C20A009241FF /* ContactViewController.xib */; };
@@ -140,6 +142,11 @@
 		412FBD4518BDEA14009EF882 /* WebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebAPI.h; path = Source/WebAPI.h; sourceTree = "<group>"; };
 		412FBD4618BDEA14009EF882 /* WebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebAPI.m; path = Source/WebAPI.m; sourceTree = "<group>"; };
 		412FBD4818BDEB64009EF882 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4144CD8118F6858D0037726C /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		4144CD8218F6858D0037726C /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		4144CD8318F6858D0037726C /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		4144CD8418F6858D0037726C /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		4144CD8518F6858D0037726C /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		415F9B2318F0FD2500E801D4 /* UIImageView+DownLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+DownLoad.h"; sourceTree = "<group>"; };
 		415F9B2418F0FD2500E801D4 /* UIImageView+DownLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+DownLoad.m"; sourceTree = "<group>"; };
 		41959E8718C5C20A009241FF /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactViewController.h; path = UI/ContactViewController.h; sourceTree = "<group>"; };
@@ -365,9 +372,22 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		4144CD8018F6858D0037726C /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				4144CD8118F6858D0037726C /* SVPullToRefresh.h */,
+				4144CD8218F6858D0037726C /* UIScrollView+SVInfiniteScrolling.h */,
+				4144CD8318F6858D0037726C /* UIScrollView+SVInfiniteScrolling.m */,
+				4144CD8418F6858D0037726C /* UIScrollView+SVPullToRefresh.h */,
+				4144CD8518F6858D0037726C /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
 		41959E8E18C5D18C009241FF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4144CD8018F6858D0037726C /* SVPullToRefresh */,
 				41D79AC518E01324001566A3 /* UIButtonExt.h */,
 				41D79AC618E01324001566A3 /* UIButtonExt.m */,
 				41D79AC218E01123001566A3 /* NSString+Utlity.h */,
@@ -781,6 +801,7 @@
 				41FB010D18BAF2C100E852B5 /* CouponViewController.m in Sources */,
 				41FD5D1D18D8561500172DB9 /* UserRestViewController.m in Sources */,
 				41FB012318BB323700E852B5 /* ProfileViewController.m in Sources */,
+				4144CD8718F6858D0037726C /* UIScrollView+SVPullToRefresh.m in Sources */,
 				41C46B2B18BAE485006E2B80 /* DishesViewController.m in Sources */,
 				41FB011118BAF65D00E852B5 /* MenuItem.m in Sources */,
 				41959E9918C5D18C009241FF /* ABContact.m in Sources */,
@@ -801,6 +822,7 @@
 				412FBD4418BDCC21009EF882 /* RestaurantItem.m in Sources */,
 				41FB011F18BB322500E852B5 /* CenterViewController.m in Sources */,
 				41287E8B18CEE42D000F9F27 /* SignUpViewController.m in Sources */,
+				4144CD8618F6858D0037726C /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				411B957B18D6E44E00AAD73A /* CouponItem.m in Sources */,
 				4199860518EAC2BE008A1B37 /* FilterViewController.m in Sources */,
 				41959E9A18C5D18C009241FF /* ABContactsHelper.m in Sources */,

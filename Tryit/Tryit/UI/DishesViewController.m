@@ -17,6 +17,7 @@
 #import "ProductItem.h"
 #import "AppDelegate.h"
 #import "WebAPI.h"
+#import "SVPullToRefresh.h"
 
 NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
 
@@ -68,12 +69,11 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
     if (IsIOS7) {
         [self.dishesTable setSeparatorInset:UIEdgeInsetsZero];
     }
-    WEAKSELF_SC
-    [WebAPI getTopX:TopX success:^(NSMutableArray *array) {
-        weakSelf_SC.dishItemArray = [NSMutableArray arrayWithArray:array];
-        [weakSelf_SC.dishesTable reloadData];
-    } failure:^{
 
+    [self getTopXDishes];
+
+    [self.dishesTable addPullToRefreshWithActionHandler:^{
+        [self getTopXDishes];
     }];
 }
 
@@ -198,6 +198,18 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
 - (IBAction)touchLocationButton:(id)sender {
     LocationViewController *locationViewController = [[LocationViewController alloc] initWithNibName:@"LocationViewController" bundle:nil];
     [self.navigationController pushViewController:locationViewController animated:YES];
+}
+
+- (void) getTopXDishes
+{
+    WEAKSELF_SC
+    [WebAPI getTopX:TopX success:^(NSMutableArray *array) {
+        weakSelf_SC.dishItemArray = [NSMutableArray arrayWithArray:array];
+        [weakSelf_SC.dishesTable reloadData];
+        [weakSelf_SC.dishesTable.pullToRefreshView stopAnimating];
+    } failure:^{
+        [weakSelf_SC.dishesTable.pullToRefreshView stopAnimating];
+    }];
 }
 
 @end
