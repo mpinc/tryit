@@ -29,6 +29,15 @@
 - (void) setCouponItem:(CouponItem *)item
 {
     self.couponLabel.text = item.name;
+    self.descriptionLabel.text = item.couPonDescription;
+
+
+    if (item.endDate != nil) {
+        NSString *endDate = [NSDateFormatter localizedStringFromDate:item.endDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
+        self.dateLabel.text = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_VALID_UNTIL", nil), endDate];
+    }else {
+        self.dateLabel.text = @"No time limit";
+    }
 }
 
 @end

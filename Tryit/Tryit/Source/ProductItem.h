@@ -19,10 +19,12 @@
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSURL *img_url;
-@property (nonatomic, strong) NSString *promotion_id;
-@property (nonatomic, strong) NSString *promotionName;
+
 @property (nonatomic, strong) NSMutableArray *couponArray;
 @property (nonatomic, strong) CouponItem *selectCoupon;
+
+@property (nonatomic, strong) NSString *promotion_id;
+@property (nonatomic, strong) NSString *promotionName;
 
 - (id) initWithDict:(NSDictionary *) dict;
 

@@ -60,5 +60,5 @@
 "FORMAT_SEND_FRIENDS" = "Send to %d friends";
 "FORMAT_FILTERBY" = "Filter by :%@";
 "FORMAT_SHARE_SUCCESS" = "Congratulations! You have success sent coupon %@ for %@ to %@!";
-
+"FORMAT_VALID_UNTIL" = "valid until %@";
 

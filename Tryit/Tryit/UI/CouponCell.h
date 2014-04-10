@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) CouponItem *couItem;
 @property (weak, nonatomic) IBOutlet UILabel *couponLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 - (void) setCouponItem:(CouponItem *) item;
 

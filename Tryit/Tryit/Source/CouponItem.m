@@ -17,23 +17,6 @@ static NSDateFormatter *dateFormatter = nil;
     self = [super init];
     if(self)
     {
-
-        /*
-         {
-         "name": "10% off",
-         "promotion_id": 100001,
-         "biz_id": 100001,
-         "prod_id": 100001,
-         "description": "We offer 10% for regular coffee",
-         "discount_pct": 10,
-         "start_date": "2014-01-31T16:00:00.000Z",
-         "end_date": null,
-         "active": 1,
-         "created_on": "2014-03-17T02:01:09.000Z",
-         "updated_on": "2014-03-17T02:01:09.000Z"
-         }
-         */
-
         if(dateFormatter == nil)
         {
             // 2014-03-27T06:23:59.000Z
