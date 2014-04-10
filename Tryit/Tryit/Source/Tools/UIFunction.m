@@ -40,14 +40,14 @@ static UIFunction *shareUIFunction = nil;
 - (void) showAlertWithTitle:(NSString *) title WithMessage:(NSString *)message
 {
 
-//    if (!isShowAlertView) {
+    if (!isShowAlertView) {
         dispatch_async(dispatch_get_main_queue(), ^
         {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
-//            isShowAlertView = YES;
+            isShowAlertView = YES;
             [alert show];
         });
-//    }
+    }
 }
 
 /*
