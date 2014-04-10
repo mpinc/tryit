@@ -39,10 +39,7 @@
 {
     if (dishItem.img_url != nil) {
         [self.dishImageView fixSetImageWithURL:dishItem.img_url
-                              placeholderImage:[UIImage imageNamed:@"default_any"]];
-    }else{
-        UIImage *image = [[UIImage imageNamed:@"default_image"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
-        [self.dishImageView setImage:image];
+                              placeholderImage:[UIImage imageNamed:@"default_image"]];
     }
 
     self.dishNameLabel.text = dishItem.name;

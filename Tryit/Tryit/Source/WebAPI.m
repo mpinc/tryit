@@ -73,6 +73,7 @@
 
 + (void) sendRequest:(NSMutableURLRequest *) request
            needToken:(BOOL) needToken
+          NeedPrompt:(BOOL) needPrompt
              success:(void (^)(AFHTTPRequestOperation *operation))success
              failure:(void (^)(AFHTTPRequestOperation *operation))failure
 {
@@ -96,7 +97,9 @@
         DLog(@"%@", responseObject);
         success(operation);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [WebAPI errorPrompt:operation Error:error];
+        if (needPrompt) {
+            [WebAPI errorPrompt:operation Error:error];
+        }
         failure(operation);
     }];
 
@@ -107,6 +110,7 @@
       parameters:(NSDictionary *)parameters
           Method:(NSString*) method
        NeedToken:(BOOL) needToken
+      NeedPrompt:(BOOL) needPrompt
          success:(void (^)(AFHTTPRequestOperation *operation))success
          failure:(void (^)(AFHTTPRequestOperation *operation))failure
 {
@@ -114,7 +118,7 @@
 
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:method URLString:[[NSURL URLWithString:path relativeToURL:manager.baseURL] absoluteString] parameters:parameters error:nil];
 
-    [WebAPI sendRequest:request needToken:needToken success:success failure:failure];
+    [WebAPI sendRequest:request needToken:needToken NeedPrompt:needPrompt success:success failure:failure];
 }
 
 + (void) formRequest:(NSString *) path
@@ -128,7 +132,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 
     NSMutableURLRequest *request = [manager.requestSerializer multipartFormRequestWithMethod:MPOST URLString:[[NSURL URLWithString:path relativeToURL:manager.baseURL] absoluteString] parameters:parameters constructingBodyWithBlock:block error:nil];
 
-    [WebAPI sendRequest:request needToken:needToken success:success failure:failure];
+    [WebAPI sendRequest:request needToken:needToken NeedPrompt:YES success:success failure:failure];
 }
 
 #pragma mark - API Functions
@@ -137,7 +141,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 {
     NSString *requestString = @"/cust/do/login";
     NSDictionary *dict = @{@"user":userName,@"password":password};
-    [WebAPI request:requestString parameters:dict Method:MPOST NeedToken:NO
+    [WebAPI request:requestString parameters:dict Method:MPOST NeedToken:NO NeedPrompt:YES
             success:^(AFHTTPRequestOperation *operation) {
                 success(operation.responseObject);
             }
@@ -150,7 +154,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 {
     NSString *requestString = @"/cust/";
     NSDictionary *dict = @{@"email":email, @"password":password, @"active":@"1"};
-    [WebAPI request:requestString parameters:dict Method:MPOST NeedToken:NO
+    [WebAPI request:requestString parameters:dict Method:MPOST NeedToken:NO NeedPrompt:YES
             success:^(AFHTTPRequestOperation *operation) {
                 success(operation.responseObject);
             }
@@ -163,7 +167,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 {
     NSString *requestString = [NSString stringWithFormat:@"biz/get/topDish"];
     NSDictionary *dict = @{@"size":[NSString stringWithFormat:@"%ld",(long)topx]};
-    [WebAPI request:requestString parameters:dict Method:MGET NeedToken:NO
+    [WebAPI request:requestString parameters:dict Method:MGET NeedToken:NO NeedPrompt:YES
             success:^(AFHTTPRequestOperation *operation) {
                 NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
                 for (NSDictionary *restDict in operation.responseObject) {
@@ -180,7 +184,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 + (void) getRestaurantWithBizId:(NSString*) bizId success:(void (^)(RestaurantItem *item))success failure:(void (^)()) failure
 {
     NSString *requestString = [NSString stringWithFormat:@"/biz/%@",bizId];
-    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:NO
+    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:NO NeedPrompt:YES
             success:^(AFHTTPRequestOperation *operation) {
                 RestaurantItem * item = [[RestaurantItem alloc] initWithDict:operation.responseObject];
                 success(item);
@@ -195,7 +199,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
     NSString *requestString = @"/biz";
     NSDictionary *dict = @{@"latitude":[NSString stringWithFormat:@"%f",coordinate.latitude], @"longitude":[NSString stringWithFormat:@"%f",coordinate.longitude], @"distance":@"15"};
 //    NSDictionary *dict = @{@"latitude":[NSString stringWithFormat:@"%f",coordinate.latitude], @"longitude":[NSString stringWithFormat:@"%f",coordinate.longitude]};
-    [WebAPI request:requestString parameters:dict Method:MGET NeedToken:NO
+    [WebAPI request:requestString parameters:dict Method:MGET NeedToken:NO NeedPrompt:YES
             success:^(AFHTTPRequestOperation *operation) {
                 NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
                 for (NSDictionary *restDict in operation.responseObject) {
@@ -213,7 +217,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 {
     NSString *requestString = [NSString stringWithFormat:@"/biz/%@/prod", restId];
 
-    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:NO
+    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:NO NeedPrompt:NO
             success:^(AFHTTPRequestOperation *operation) {
                 NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
                 for (NSDictionary *restDict in operation.responseObject) {
@@ -231,7 +235,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 {
     NSString *requestString = [NSString stringWithFormat:@"/biz/%@/prod/%@/promo", item.biz_id, item.prod_id];
 
-    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:NO
+    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:NO NeedPrompt:NO
             success:^(AFHTTPRequestOperation *operation) {
                 NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
                 for (NSDictionary *restDict in operation.responseObject) {
@@ -250,7 +254,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
     AppDelegate *appDelegate = [AppDelegate getAppdelegate];
     NSString *requestString = [NSString stringWithFormat:@"/cust/%@/biz",appDelegate.userId];
 
-    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:YES
+    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:YES NeedPrompt:YES
             success:^(AFHTTPRequestOperation *operation) {
                 NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
                 for (NSDictionary *restDict in operation.responseObject) {
@@ -267,7 +271,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 + (void) getUserPorfileSuccess:(void (^)(UserProfile *userProfile))success failure:(void (^)()) failure
 {
     NSString *requestString = @"/customerInfo";
-    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:YES
+    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:YES NeedPrompt:YES
             success:^(AFHTTPRequestOperation *operation) {
                 UserProfile *userProfile = [[UserProfile alloc] initWithDict:operation.responseObject];
                 success(userProfile);
@@ -281,7 +285,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 {
     AppDelegate *appDelegate = [AppDelegate getAppdelegate];
     NSString *requestString = [NSString stringWithFormat:@"/cust/from/%@/coupon?bizId=%@", appDelegate.userId, bizId];
-    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:YES
+    [WebAPI request:requestString parameters:nil Method:MGET NeedToken:YES NeedPrompt:YES
             success:^(AFHTTPRequestOperation *operation) {
                 NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
                 for (NSDictionary *dict in operation.responseObject) {
@@ -301,7 +305,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
     [WebAPI request:requestString
          parameters:nil
              Method:MPOST
-          NeedToken:YES
+          NeedToken:YES NeedPrompt:YES
             success:^(AFHTTPRequestOperation *operation) {
                 success();
             } failure:^(AFHTTPRequestOperation *operation) {

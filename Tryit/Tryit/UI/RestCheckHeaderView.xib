@@ -107,8 +107,8 @@
                         <action selector="touchCheckInButton:" destination="64w-xu-M8L" eventType="touchUpInside" id="2IJ-Vc-kL4"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="85Z-wG-NB3">
-                    <rect key="frame" x="15" y="14" width="132" height="87"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_any" translatesAutoresizingMaskIntoConstraints="NO" id="85Z-wG-NB3">
+                    <rect key="frame" x="17" y="14" width="128" height="84"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPEN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xzh-US-R8u">
@@ -167,6 +167,7 @@
         <image name="btn_address" width="22" height="22"/>
         <image name="btn_call" width="22" height="22"/>
         <image name="btn_list" width="22" height="22"/>
+        <image name="default_any" width="90" height="73"/>
         <image name="restImage" width="142" height="101"/>
         <image name="rest_bg" width="320" height="90"/>
     </resources>

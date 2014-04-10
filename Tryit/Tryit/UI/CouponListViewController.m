@@ -22,7 +22,7 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
 @interface CouponListViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (strong, nonatomic) NSArray *itemArray;
+@property (strong, nonatomic) NSMutableArray *itemArray;
 
 @end
 
@@ -42,7 +42,7 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-    self.itemArray = @[ProductInfoCellIdentifier, CouponCellIdentifier];
+    self.itemArray = [NSMutableArray arrayWithObjects:ProductInfoCellIdentifier, nil];
 
     [self.tableView registerNib:[UINib nibWithNibName:@"ProductInfoCell" bundle:nil] forCellReuseIdentifier:ProductInfoCellIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:@"CouponCell" bundle:nil] forCellReuseIdentifier:CouponCellIdentifier];
@@ -59,7 +59,8 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
     WEAKSELF_SC
     [WebAPI getpromoWithProduct:self.productItem success:^(NSMutableArray *array) {
         CouponItem *couponItem = (CouponItem*)[array lastObject];
-        self.productItem.selectCoupon = couponItem;
+        weakSelf_SC.productItem.selectCoupon = couponItem;
+        [weakSelf_SC.itemArray addObject:CouponCellIdentifier];
         [weakSelf_SC.tableView reloadData];
         [UIFunction removeMaskView];
     } failure:^{
