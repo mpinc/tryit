@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSString *prod_id;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *couPonDescription;
+@property (strong, nonatomic) NSDate *endDate;
 
 - (id) initWithDict:(NSDictionary *) dict;
 

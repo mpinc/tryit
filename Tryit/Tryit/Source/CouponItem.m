@@ -7,6 +7,8 @@
 //
 
 #import "CouponItem.h"
+#import "NSString+Utlity.h"
+static NSDateFormatter *dateFormatter = nil;
 
 @implementation CouponItem
 
@@ -31,14 +33,24 @@
          "updated_on": "2014-03-17T02:01:09.000Z"
          }
          */
+
+        if(dateFormatter == nil)
+        {
+            // 2014-03-27T06:23:59.000Z
+            dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+        }
+        
         self.biz_id = dict[@"biz_id"];
         self.prod_id = dict[@"prod_id"];
         self.promotion_id = dict[@"promotion_id"];
         self.name = dict[@"name"];
         self.couPonDescription = dict[@"description"];
+        if (![NSString isEmptyString:dict[@"end_date"]]) {
+            self.endDate = [dateFormatter dateFromString:dict[@"end_date"]];
+        }
     }
     return self;
-    
 }
 
 @end
