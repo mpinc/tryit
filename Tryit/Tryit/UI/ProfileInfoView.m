@@ -37,6 +37,8 @@
     [self.headImage fixSetImageWithURL:profile.headImageURL placeholderImage:[UIImage imageNamed:@"default-head"]];
     self.userNameLabel.adjustsFontSizeToFitWidth = YES;
     self.userNameLabel.minimumScaleFactor = 0.5;
+    self.userNameLabel.numberOfLines = 0;
+    self.userNameLabel.lineBreakMode = NSLineBreakByClipping;
     self.userNameLabel.text = profile.email;
 
     self.countLabel.text = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_COUNT_REST", nil), profile.vipRest, profile.coupons, profile.points];
