@@ -41,6 +41,11 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="descriptionLabel" destination="Xed-Fm-gW6" id="OM2-Cx-xB8"/>
+                <outlet property="nameLabel" destination="rju-cF-L0X" id="ZZ7-va-fYb"/>
+                <outlet property="priceLabel" destination="vt2-Us-mxA" id="4Ve-Li-znp"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>
