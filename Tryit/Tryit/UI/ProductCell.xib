@@ -45,7 +45,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please come and taste" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Def-80-DcH">
-                                <rect key="frame" x="75" y="34" width="166" height="20"/>
+                                <rect key="frame" x="75" y="34" width="215" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="yWo-c0-JqJ"/>
@@ -62,7 +62,7 @@
                             <constraint firstAttribute="height" constant="60" id="FNi-mh-zX6"/>
                             <constraint firstItem="oXp-dG-C9d" firstAttribute="leading" secondItem="uYU-hW-8PJ" secondAttribute="leading" id="HcS-oz-4k9"/>
                             <constraint firstAttribute="trailing" secondItem="uYU-hW-8PJ" secondAttribute="trailing" constant="10" id="P3s-v6-CR0"/>
-                            <constraint firstAttribute="trailing" secondItem="Def-80-DcH" secondAttribute="trailing" constant="59" id="Pop-1y-rge"/>
+                            <constraint firstAttribute="trailing" secondItem="Def-80-DcH" secondAttribute="trailing" constant="10" id="Pop-1y-rge"/>
                             <constraint firstItem="uYU-hW-8PJ" firstAttribute="leading" secondItem="Bpw-pg-OeD" secondAttribute="leading" constant="10" id="SMV-FK-n9d"/>
                             <constraint firstItem="Def-80-DcH" firstAttribute="leading" secondItem="oXp-dG-C9d" secondAttribute="trailing" constant="5" id="cuv-5V-Ple"/>
                             <constraint firstItem="oXp-dG-C9d" firstAttribute="bottom" secondItem="Def-80-DcH" secondAttribute="bottom" id="rqy-5k-0sg"/>
