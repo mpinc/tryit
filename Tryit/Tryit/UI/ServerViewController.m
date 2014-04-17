@@ -87,6 +87,7 @@
         AppDelegate *appDelegate = [AppDelegate getAppdelegate];
         appDelegate.baseAddress = self.serverAddressTextView.text;
         appDelegate.serverAddress = nil;
+        [appDelegate removeUserInfo];
         [self dismissSelf];
     }
 }

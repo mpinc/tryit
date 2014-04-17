@@ -9,6 +9,7 @@
 #import "WebAPI.h"
 #import "UIFunction.h"
 #import "AppDelegate.h"
+#import "NSString+Utlity.h"
 
 #define MPOST @"POST"
 #define MGET @"GET"
@@ -273,8 +274,13 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
     NSString *requestString = @"/customerInfo";
     [WebAPI request:requestString parameters:nil Method:MGET NeedToken:YES NeedPrompt:YES
             success:^(AFHTTPRequestOperation *operation) {
-                UserProfile *userProfile = [[UserProfile alloc] initWithDict:operation.responseObject];
-                success(userProfile);
+                NSDictionary *dict = operation.responseObject;
+                if (![NSString isEmptyString:dict[@"customer_id"]]) {
+                    UserProfile *userProfile = [[UserProfile alloc] initWithDict:operation.responseObject];
+                    success(userProfile);
+                }else {
+                    failure(operation);
+                }
             }
             failure:^(AFHTTPRequestOperation *operation) {
                 failure(operation);

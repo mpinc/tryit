@@ -51,12 +51,12 @@
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem = rightBarButton;
 
-    self.userNameField.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.userNameField.layer.borderWidth = 2.0;
+    self.userNameField.layer.borderColor = UIColorFromRGB(0x9dc393).CGColor;
+    self.userNameField.layer.borderWidth = 1.0;
     self.userNameField.layer.cornerRadius = 5.0;
 
-    self.passwordField.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.passwordField.layer.borderWidth = 2;
+    self.passwordField.layer.borderColor = UIColorFromRGB(0x9dc393).CGColor;
+    self.passwordField.layer.borderWidth = 1.0;
     self.passwordField.layer.cornerRadius = 5.0;
 
     self.signInButton.layer.cornerRadius = 5.0;
