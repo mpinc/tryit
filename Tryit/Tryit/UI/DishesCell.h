@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *restaurantLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *discountButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bgHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameHeightConstraint;
 
 - (void) setDishItem:(ProductItem *) dishItem;
 

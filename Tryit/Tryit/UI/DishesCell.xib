@@ -28,7 +28,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="kRS-vR-Nwb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -39,12 +39,12 @@
                                     <constraint firstAttribute="width" constant="100" id="MYf-ih-nNU"/>
                                     <constraint firstAttribute="height" constant="20" id="U2Q-Nh-ib8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfs-rX-uYz">
-                                <rect key="frame" x="116" y="40" width="63" height="15"/>
+                                <rect key="frame" x="116" y="40" width="174" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -80,6 +80,7 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="6uk-6u-tTs" secondAttribute="bottom" id="0lw-Mv-IWQ"/>
+                    <constraint firstItem="zfs-rX-uYz" firstAttribute="trailing" secondItem="6uk-6u-tTs" secondAttribute="trailing" constant="-10" id="1dN-OJ-4ba"/>
                     <constraint firstItem="6uk-6u-tTs" firstAttribute="leading" secondItem="HRQ-mi-scz" secondAttribute="leading" constant="10" id="2BZ-lX-R0r"/>
                     <constraint firstItem="CXq-Ql-wtm" firstAttribute="bottom" secondItem="6uk-6u-tTs" secondAttribute="bottom" id="Pg2-qp-fl8"/>
                     <constraint firstAttribute="trailing" secondItem="gH0-9i-dBw" secondAttribute="trailing" constant="-4" id="VuI-11-lei"/>
@@ -92,11 +93,13 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="bgHeightConstraint" destination="UbF-TL-gpO" id="XFj-nj-vgV"/>
                 <outlet property="descriptionLabel" destination="zfs-rX-uYz" id="yhB-5O-MTK"/>
                 <outlet property="descriptionView" destination="CXq-Ql-wtm" id="mDP-SL-vI3"/>
                 <outlet property="discountButton" destination="gH0-9i-dBw" id="uyr-pp-y7i"/>
                 <outlet property="dishImageView" destination="6uk-6u-tTs" id="m0u-2g-OYk"/>
                 <outlet property="dishNameLabel" destination="2br-QT-mdr" id="5UV-SM-vXq"/>
+                <outlet property="nameHeightConstraint" destination="kRS-vR-Nwb" id="Gnb-m5-7Wh"/>
                 <outlet property="restaurantLabel" destination="aXu-vO-M47" id="nyj-dK-ck2"/>
             </connections>
         </tableViewCell>

@@ -58,10 +58,23 @@
 {
     [super layoutSubviews];
 
-    CGSize size = [self.restaurantLabel.text sizeWithFont:self.restaurantLabel.font constrainedToSize:CGSizeMake(200.0f, 200.0f) lineBreakMode:NSLineBreakByWordWrapping];
+    // fix restaurant Constraint
+    CGSize restaurantSize = [self.restaurantLabel.text sizeWithFont:self.restaurantLabel.font constrainedToSize:CGSizeMake(200.0f, 200.0f) lineBreakMode:NSLineBreakByWordWrapping];
 
     NSLayoutConstraint *restaurantWidthConstraint = self.restaurantLabel.constraints[0];
-    restaurantWidthConstraint.constant = size.width + 10;
+    restaurantWidthConstraint.constant = restaurantSize.width + 10;
+
+    // fix dishName Constraint
+    CGSize nameSize = [self.dishNameLabel.text sizeWithFont:self.dishNameLabel.font constrainedToSize:CGSizeMake(285.0f, 52.0f) lineBreakMode:NSLineBreakByWordWrapping];
+
+    int fixedValue = nameSize.height - 26;
+    if (fixedValue > 0) {
+        self.bgHeightConstraint.constant = 86;
+        self.nameHeightConstraint.constant = 52;
+    }else {
+        self.bgHeightConstraint.constant = 60;
+        self.nameHeightConstraint.constant = 26;
+    }
 
     [super layoutSubviews];
 }
