@@ -14,4 +14,6 @@ typedef void (^FlipToSignIn)();
 @interface SignInViewController : FitViewController <UITextFieldDelegate>
 @property (copy, nonatomic) FlipToSignIn flipBlock;
 
+-(void) configUserName:(NSString*) userName Password:(NSString *) password;
+
 @end

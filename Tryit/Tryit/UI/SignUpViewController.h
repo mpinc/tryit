@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FitViewController.h"
 
-typedef void (^FlipToSignUp)();
+typedef void (^FlipToSignUp)(NSString *userName, NSString *password);
 
 @interface SignUpViewController : FitViewController
 

@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIView *emailBgV;
 @property (weak, nonatomic) IBOutlet UIView *passwordBgV;
 @property (weak, nonatomic) IBOutlet UIView *confrimBgV;
+@property (strong, nonatomic) NSString *userName;
+@property (strong, nonatomic) NSString *password;
 
 @end
 
@@ -90,7 +92,7 @@ void setViewStyle(UIView *configView)
 
 - (void) touchSignInButton:(id) sender
 {
-    self.flipBlock();
+    self.flipBlock(nil, nil);
 }
 
 - (IBAction)touchSingUpButton:(id)sender {
@@ -115,15 +117,15 @@ void setViewStyle(UIView *configView)
     }
     WEAKSELF_SC
     [WebAPI signUpWithPassword:self.passwordField.text email:self.emailField.text success:^(id responseObject) {
-        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_SIGN_UP_SUCCESS", nil)];
-
+        
+        weakSelf_SC.userName = weakSelf_SC.emailField.text;
+        weakSelf_SC.password = weakSelf_SC.passwordField.text;
         weakSelf_SC.emailField.text = nil;
         weakSelf_SC.passwordField.text = nil;
         weakSelf_SC.confrimField.text = nil;
-        AppDelegate *appDelegate = [AppDelegate getAppdelegate];
 
-        [appDelegate saveUserInfoWithDict:responseObject];
-        [appDelegate hiddeSignInViewController];
+        UIAlertView *alterView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"MAIN_TITLE", nil) message:NSLocalizedString(@"PROMPT_SIGN_UP_SUCCESS", nil) delegate:self cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"PROMPT_HAVE_ACITVE", nil), nil];
+        [alterView show];
     } failure:^{
         
     }];
@@ -155,4 +157,10 @@ void setViewStyle(UIView *configView)
 {
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
 }
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    self.flipBlock(self.userName, self.password);
+}
+
 @end

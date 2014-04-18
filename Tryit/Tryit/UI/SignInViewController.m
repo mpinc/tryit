@@ -145,4 +145,14 @@
          [self.view layoutIfNeeded];
      }];
 }
+
+-(void) configUserName:(NSString*) userName Password:(NSString *) password
+{
+    if (![NSString isEmptyString:userName]) {
+        self.userNameField.text = userName;
+    }
+    if (![NSString isEmptyString:password]) {
+        self.passwordField.text = password;
+    }
+}
 @end

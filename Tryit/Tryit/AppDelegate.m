@@ -104,6 +104,11 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return YES;
+}
+
 /**
   get current AppDelete
  @returns current AppDelete
@@ -131,7 +136,6 @@
     return self.menuViewController.cpViewController;
 }
 
-
 - (void) showSignInViewController
 {
     if (self.signInNavViewController == nil) {
@@ -144,10 +148,11 @@
             }];
         };
 
-        FlipToSignUp flipUpBlock = ^(){
+        FlipToSignUp flipUpBlock = ^(NSString *userName, NSString *password){
             weakSelf_SC.signUpNavViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
             [weakSelf_SC.signInNavViewController dismissViewControllerAnimated:YES completion:^{
-                
+                SignInViewController *siViewController = (SignInViewController*)weakSelf_SC.signInNavViewController.visibleViewController;
+                [siViewController configUserName:userName Password:password];
             }];
         };
 
