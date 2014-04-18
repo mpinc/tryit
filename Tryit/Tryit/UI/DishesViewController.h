@@ -16,4 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *locationButton;
 
+- (void) showFilterView;
+
 @end

@@ -53,6 +53,7 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
     [self.tableView setBackgroundView:tableBackView];
 
     self.title = self.restItem.name;
+
     [self customBackBarItem];
 
     RestCheckHeaderView *restCheckHeaderView = (RestCheckHeaderView*)[[[NSBundle mainBundle] loadNibNamed:@"RestCheckHeaderView" owner:self options:nil] lastObject];
@@ -173,6 +174,11 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
 - (void) showFilterView
 {
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
+}
+
+- (void) backToTop
+{
+    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 320, 1) animated:YES];
 }
 
 - (void) selectFilterIndex:(NSInteger) index

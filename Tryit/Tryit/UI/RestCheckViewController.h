@@ -18,4 +18,6 @@
 @property (strong, nonatomic) NSMutableArray *productArray;
 @property (strong, nonatomic) ProductItem *perShowProductItem;
 
+- (void) backToTop;
+
 @end

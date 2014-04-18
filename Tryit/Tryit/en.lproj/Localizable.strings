@@ -25,6 +25,7 @@
 "TITLE_CANCEL" = "Cancel";
 "TITLE_TAKE_PHOTO" = "Take Photo";
 "TITLE_CHOOSE_PHOTO" = "Choose Photo";
+"TITLE_TOP" = "Top";
 
 "PROMPT_CONTACTS_AUTHORITY" = "No contacts permission. Please return to the main screen, click Settings -> Privacy -> Contacts, open Try It permissions switch.";
 "PROMPT_PHONE_NO_NOT_BE_NIL" = "Phone numbers can not be empty.";

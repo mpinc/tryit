@@ -176,6 +176,14 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
     UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     mmDrawerController.navigationItem.leftBarButtonItem = leftButtonItem;
 
+    button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 28)];
+    [button setBackgroundColor:[UIColor clearColor]];
+    [button setTitle:NSLocalizedString(@"TITLE_TOP", nil) forState:UIControlStateNormal];
+    [button addTarget:restCheckViewController action:@selector(backToTop) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *rigthBarButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    mmDrawerController.navigationItem.rightBarButtonItem = rigthBarButton;
+
     [self.navigationController pushViewController:mmDrawerController animated:YES];
 
     item.productArray = restCheckViewController.productArray;
