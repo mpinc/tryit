@@ -7,7 +7,7 @@
 //
 
 #import "UserProfile.h"
-
+#import "NSString+Utlity.h"
 @implementation UserProfile
 
 - (id) initWithDict:(NSDictionary*) dict
@@ -15,6 +15,9 @@
     self = [super init];
     if(self != Nil)
     {
+        if ([NSString isEmptyString:dict[@"email"]]) {
+            return nil;
+        }
         self.userName = dict[@"username"];
         self.email = dict[@"email"];
         self.vipRest = dict[@"bizCount"];

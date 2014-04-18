@@ -180,7 +180,7 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
     [button setBackgroundColor:[UIColor clearColor]];
     [button setTitle:NSLocalizedString(@"TITLE_TOP", nil) forState:UIControlStateNormal];
     [button addTarget:restCheckViewController action:@selector(backToTop) forControlEvents:UIControlEventTouchUpInside];
-    
+
     UIBarButtonItem *rigthBarButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     mmDrawerController.navigationItem.rightBarButtonItem = rigthBarButton;
 

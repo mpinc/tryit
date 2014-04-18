@@ -56,11 +56,12 @@ NSString *const UserRestCellIdentifier = @"UserRestCellIdentifier";
 {
     WEAKSELF_SC
     [WebAPI getUserPorfileSuccess:^(UserProfile *up) {
-
-        self.userProfile = up;
-        ProfileInfoView *profileInfoView = (ProfileInfoView*)[[[NSBundle mainBundle] loadNibNamed:@"ProfileInfoView" owner:self options:nil] lastObject];
-        profileInfoView.userProfile = self.userProfile;
-        self.tableView.tableHeaderView = profileInfoView;
+        if (up != nil) {
+            self.userProfile = up;
+            ProfileInfoView *profileInfoView = (ProfileInfoView*)[[[NSBundle mainBundle] loadNibNamed:@"ProfileInfoView" owner:self options:nil] lastObject];
+            profileInfoView.userProfile = self.userProfile;
+            self.tableView.tableHeaderView = profileInfoView;
+        }
         [UIFunction removeMaskView];
     } failure:^{
         [UIFunction removeMaskView];
