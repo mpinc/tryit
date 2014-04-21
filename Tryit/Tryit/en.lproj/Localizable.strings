@@ -6,7 +6,7 @@
   Copyright (c) 2014 Sktlab. All rights reserved.
 */
 
-"MAIN_TITLE" = "True Menu";
+"MAIN_TITLE" = "TruMenu";
 
 "MENU_EXPLOER_DISHES" = "Explore Dishes";
 "MENU_CREATE_COUPON" = "Create Coupon";
