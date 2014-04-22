@@ -38,7 +38,7 @@
 "PROMPT_CHECK_PASSWORD" = "Please check your password";
 "PROMPT_PASSWORD_NOT_SAME" = "Two passwords are not same";
 "PROMPT_LOGIN_SUCCESS" = "Welcome . You are now signed in!";
-"PROMPT_SIGN_UP_SUCCESS" = "Welcome . You are now signed up! You can active your account by click the active email!";
+"PROMPT_SIGN_UP_SUCCESS" = "Welcome . You are now signed up! Please active your account by click the active email!";
 "PROMPT_NOT_CONNECT_SERVER" = "Could not connect to the server.";
 "PROMPT_REQUEST_FAIL" = "Request fail, please try later.";
 "PROMPT_CHECK_EMAIL" = "Please check your email";

@@ -29,7 +29,7 @@
 			<string>com.sktlab.tryit</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>truemenu</string>
+				<string>trumenu</string>
 			</array>
 		</dict>
 	</array>
