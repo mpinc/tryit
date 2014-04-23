@@ -15,5 +15,6 @@ typedef void (^FlipToSignIn)();
 @property (copy, nonatomic) FlipToSignIn flipBlock;
 
 -(void) configUserName:(NSString*) userName Password:(NSString *) password;
+- (IBAction)touchRestPasswordButton:(id)sender;
 
 @end

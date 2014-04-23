@@ -133,22 +133,42 @@ void setViewStyle(UIView *configView)
 
 #pragma mark - UITextFieldDelegate
 
+- (NSLayoutConstraint *) getTopConstraint
+{
+    NSLayoutConstraint *editConstraint = nil;
+
+    for(NSLayoutConstraint *constraint in self.view.constraints)
+    {
+        if(constraint.firstAttribute == NSLayoutAttributeTop&&
+           constraint.firstItem == self.view )
+        {
+            editConstraint = constraint;
+            break;
+        }
+    }
+    return editConstraint;
+}
+
 - (void) textFieldDidBeginEditing:(UITextField *)textField
 {
+
+    NSLayoutConstraint *topConstraint = [self getTopConstraint];
+
     [UIView animateWithDuration:0.25 animations:^
      {
          int fixHeight = -textField.frame.origin.y + 64 + (iPhone5?88:0);
          int offsetY = fixHeight > 0?0:fixHeight;
-         self.topConstraint.constant = 30 + offsetY;
+         topConstraint.constant = 30 + offsetY;
          [self.view layoutIfNeeded];
      }];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    NSLayoutConstraint *topConstraint = [self getTopConstraint];
     [UIView animateWithDuration:0.25 animations:^
      {
-         self.topConstraint.constant = 30;
+         topConstraint.constant = 30;
          [self.view layoutIfNeeded];
      }];
 }

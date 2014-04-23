@@ -16,7 +16,6 @@
 #import "NSString+Utlity.h"
 #import "CreateCouponItem.h"
 @interface CouponViewController ()
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 
 @property (weak, nonatomic) IBOutlet UIImageView *textBgView;
 @property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
@@ -65,8 +64,9 @@
 
 - (void) viewWillDisappear:(BOOL)animated
 {
-     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
-    self.topConstraint.constant = 10;
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+    NSLayoutConstraint *topConstraint = [self getTopConstraint];
+    topConstraint.constant = 10;
     [self.view layoutIfNeeded];
     [self.scrollView setContentOffset:CGPointZero];
 }
@@ -79,13 +79,30 @@
 
 #pragma mark - UITextViewDelegate
 
+- (NSLayoutConstraint *) getTopConstraint
+{
+    NSLayoutConstraint *editConstraint = nil;
+
+    for(NSLayoutConstraint *constraint in self.view.constraints)
+    {
+        if(constraint.firstAttribute == NSLayoutAttributeTop&&
+           constraint.firstItem == self.scrollView )
+        {
+            editConstraint = constraint;
+            break;
+        }
+    }
+    return editConstraint;
+}
+
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
+    NSLayoutConstraint *topConstraint = [self getTopConstraint];
     [UIView animateWithDuration:0.25 animations:^
      {
          int fixHeight = -textView.frame.origin.y + 55 + (iPhone5?88:0);
          int offsetY = fixHeight > 0?0:fixHeight;
-         self.topConstraint.constant = offsetY;
+         topConstraint.constant = offsetY;
          [self.view layoutIfNeeded];
      }];
     self.placeholderLabel.hidden = YES;
@@ -102,9 +119,10 @@
 {
     if ([text isEqualToString:@"\n"]) {
         [textView resignFirstResponder];
+        NSLayoutConstraint *topConstraint = [self getTopConstraint];
         [UIView animateWithDuration:0.25 animations:^
          {
-             self.topConstraint.constant = 10;
+             topConstraint.constant = 10;
              [self.view layoutIfNeeded];
          }];
 
@@ -133,9 +151,10 @@
 - (IBAction)touchAddFriendsButton:(id)sender {
 
     [self.shareTextView resignFirstResponder];
+    NSLayoutConstraint *topConstraint = [self getTopConstraint];
     [UIView animateWithDuration:0.25 animations:^
      {
-         self.topConstraint.constant = 10;
+         topConstraint.constant = 10;
          [self.view layoutIfNeeded];
      }];
 

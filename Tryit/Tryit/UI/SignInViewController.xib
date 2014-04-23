@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController">
             <connections>
                 <outlet property="passwordField" destination="KcK-nB-GDe" id="1TL-6j-otq"/>
+                <outlet property="restPasswordButton" destination="cMp-th-YbR" id="JlT-9f-O7X"/>
                 <outlet property="signInButton" destination="O0L-wt-M9B" id="glN-5q-4d1"/>
                 <outlet property="userNameField" destination="RbI-n6-8fz" id="fNr-k0-2EV"/>
                 <outlet property="view" destination="1" id="3"/>
@@ -80,6 +81,9 @@
                         <color key="titleColor" red="0.12585997288584971" green="0.47454958545918369" blue="0.13587668034493472" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="touchRestPasswordButton:" destination="-1" eventType="touchUpInside" id="VRE-k4-0eT"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="DOR-if-q6H">
                     <rect key="frame" x="58" y="40" width="205" height="68"/>

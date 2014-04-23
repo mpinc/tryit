@@ -16,7 +16,6 @@
                 <outlet property="scrollView" destination="IGk-pd-Izx" id="PCg-sG-cmE"/>
                 <outlet property="shareTextView" destination="PKq-r0-3hL" id="676-gJ-gaR"/>
                 <outlet property="textBgView" destination="cnt-VA-A6z" id="GbI-ZT-Wbw"/>
-                <outlet property="topConstraint" destination="CUi-QM-TQd" id="OLi-hE-gEt"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -139,6 +138,9 @@
                         <constraint firstItem="PKq-r0-3hL" firstAttribute="centerX" secondItem="cnt-VA-A6z" secondAttribute="centerX" id="tY5-12-pOa"/>
                         <constraint firstAttribute="bottom" secondItem="xz6-yW-CcQ" secondAttribute="bottom" constant="15" id="u1P-o1-7Lw"/>
                     </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="AbE-2P-XSB"/>
+                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

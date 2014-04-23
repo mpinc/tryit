@@ -13,7 +13,6 @@ typedef void (^FlipToSignUp)(NSString *userName, NSString *password);
 
 @interface SignUpViewController : FitViewController
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 @property (copy, nonatomic) FlipToSignUp flipBlock;
 
 @end

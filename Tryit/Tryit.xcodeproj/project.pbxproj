@@ -47,6 +47,8 @@
 		4199860518EAC2BE008A1B37 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4199860318EAC2BE008A1B37 /* FilterViewController.m */; };
 		4199860818EAC2E9008A1B37 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4199860718EAC2E9008A1B37 /* FilterViewController.xib */; };
 		41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AA8C5F18BC3C830081EA29 /* FitViewController.m */; };
+		41AE9E8A19067B100087AA68 /* RestPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AE9E8819067B100087AA68 /* RestPassViewController.m */; };
+		41AE9E8B19067B100087AA68 /* RestPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41AE9E8919067B100087AA68 /* RestPassViewController.xib */; };
 		41B2682C18E5717F001A2257 /* ServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B2682B18E5717F001A2257 /* ServerViewController.m */; };
 		41B4545818B461C70054E406 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545718B461C70054E406 /* Foundation.framework */; };
 		41B4545A18B461C70054E406 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B4545918B461C70054E406 /* CoreGraphics.framework */; };
@@ -176,6 +178,9 @@
 		4199860718EAC2E9008A1B37 /* FilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FilterViewController.xib; path = UI/FilterViewController.xib; sourceTree = "<group>"; };
 		41AA8C5E18BC3C830081EA29 /* FitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FitViewController.h; path = UI/FitViewController.h; sourceTree = "<group>"; };
 		41AA8C5F18BC3C830081EA29 /* FitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FitViewController.m; path = UI/FitViewController.m; sourceTree = "<group>"; };
+		41AE9E8719067B100087AA68 /* RestPassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestPassViewController.h; path = UI/RestPassViewController.h; sourceTree = "<group>"; };
+		41AE9E8819067B100087AA68 /* RestPassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestPassViewController.m; path = UI/RestPassViewController.m; sourceTree = "<group>"; };
+		41AE9E8919067B100087AA68 /* RestPassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RestPassViewController.xib; path = UI/RestPassViewController.xib; sourceTree = "<group>"; };
 		41B2682A18E5717F001A2257 /* ServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerViewController.h; path = UI/ServerViewController.h; sourceTree = "<group>"; };
 		41B2682B18E5717F001A2257 /* ServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerViewController.m; path = UI/ServerViewController.m; sourceTree = "<group>"; };
 		41B4545418B461C70054E406 /* Tryit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tryit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -368,6 +373,9 @@
 				41287E8818CEE42D000F9F27 /* SignUpViewController.h */,
 				41287E8918CEE42D000F9F27 /* SignUpViewController.m */,
 				41287E8A18CEE42D000F9F27 /* SignUpViewController.xib */,
+				41AE9E8719067B100087AA68 /* RestPassViewController.h */,
+				41AE9E8819067B100087AA68 /* RestPassViewController.m */,
+				41AE9E8919067B100087AA68 /* RestPassViewController.xib */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -722,6 +730,7 @@
 				41B4546218B461C70054E406 /* InfoPlist.strings in Resources */,
 				41FD5D2518D8572E00172DB9 /* UserRestInfoView.xib in Resources */,
 				41FB010E18BAF2C100E852B5 /* CouponViewController.xib in Resources */,
+				41AE9E8B19067B100087AA68 /* RestPassViewController.xib in Resources */,
 				41EA4F6418D15F7400915A52 /* LocationViewController.xib in Resources */,
 				41FD5D2A18D857A800172DB9 /* UserCouponCell.xib in Resources */,
 				41C2BC7F18BB7EE700686CE8 /* DishesCell.xib in Resources */,
@@ -778,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41FD5D1618D7F9CC00172DB9 /* UserRestCell.m in Sources */,
+				41AE9E8A19067B100087AA68 /* RestPassViewController.m in Sources */,
 				41EA4F6318D15F7400915A52 /* LocationViewController.m in Sources */,
 				41959E9C18C5D18C009241FF /* ABStandin.m in Sources */,
 				41B2682C18E5717F001A2257 /* ServerViewController.m in Sources */,

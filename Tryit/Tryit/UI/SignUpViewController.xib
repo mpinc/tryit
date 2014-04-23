@@ -14,7 +14,6 @@
                 <outlet property="passwordBgV" destination="1Di-3l-Dvc" id="kUP-hk-Yky"/>
                 <outlet property="passwordField" destination="kX9-0N-rgp" id="WE5-U9-mZ6"/>
                 <outlet property="signUpButton" destination="Ga1-ce-EoO" id="EFc-Am-5Bj"/>
-                <outlet property="topConstraint" destination="7mc-gy-XiC" id="4As-dJ-VHf"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>

@@ -11,12 +11,14 @@
 #import "WebAPI.h"
 #import "NSString+Utlity.h"
 #import "UIFunction.h"
+#import "RestPassViewController.h"
 @interface SignInViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
+@property (weak, nonatomic) IBOutlet UIButton *restPasswordButton;
 - (IBAction)touchSignInButton:(id)sender;
+
 
 @end
 
@@ -65,6 +67,7 @@
     recognizer.numberOfTouchesRequired = 1;
     recognizer.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:recognizer];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,6 +84,7 @@
 
 - (void) touchSignUpButton:(id) sender
 {
+    [self hiddenKeyBroad];
     self.flipBlock();
 }
 
@@ -98,6 +102,8 @@
 }
 
 - (IBAction)touchSignInButton:(id)sender {
+
+    [self hiddenKeyBroad];
 
     if ([NSString isEmptyString:self.userNameField.text]) {
         [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHECK_USERNAME", nil)];
@@ -126,23 +132,46 @@
 
 #pragma mark - UITextFieldDelegate
 
+- (NSLayoutConstraint *) getTopConstraint
+{
+    NSLayoutConstraint *editConstraint = nil;
+
+    for(NSLayoutConstraint *constraint in self.view.constraints)
+    {
+        if(constraint.firstAttribute == NSLayoutAttributeTop&&
+           constraint.secondItem == self.view )
+        {
+            editConstraint = constraint;
+            break;
+        }
+    }
+    return editConstraint;
+}
+
 - (void) textFieldDidBeginEditing:(UITextField *)textField
 {
+
+    NSLayoutConstraint *topConstraint = [self getTopConstraint];
+    WEAKSELF_SC
     [UIView animateWithDuration:0.25 animations:^
      {
          int fixHeight = -textField.frame.origin.y + 64 + (iPhone5?88:0);
          int offsetY = fixHeight > 0?0:fixHeight;
-         self.topConstraint.constant = 110 + offsetY;
-         [self.view layoutIfNeeded];
+         if (topConstraint != nil) {
+             topConstraint.constant = 40 + offsetY;
+         }
+         [weakSelf_SC.view layoutIfNeeded];
      }];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    NSLayoutConstraint *topConstraint = [self getTopConstraint];
+    WEAKSELF_SC
     [UIView animateWithDuration:0.25 animations:^
      {
-         self.topConstraint.constant = 110;
-         [self.view layoutIfNeeded];
+         topConstraint.constant = 40;
+         [weakSelf_SC.view layoutIfNeeded];
      }];
 }
 
@@ -154,5 +183,11 @@
     if (![NSString isEmptyString:password]) {
         self.passwordField.text = password;
     }
+}
+
+- (IBAction)touchRestPasswordButton:(id)sender {
+
+    RestPassViewController *restPassViewController = [[RestPassViewController alloc] initWithNibName:@"RestPassViewController" bundle:nil];
+    [self.navigationController pushViewController:restPassViewController animated:YES];
 }
 @end
