@@ -26,6 +26,7 @@
 "TITLE_TAKE_PHOTO" = "Take Photo";
 "TITLE_CHOOSE_PHOTO" = "Choose Photo";
 "TITLE_TOP" = "Top";
+"TITLE_REST_PASSWORD" = "Rest Password";
 
 "PROMPT_CONTACTS_AUTHORITY" = "No contacts permission. Please return to the main screen, click Settings -> Privacy -> Contacts, open Try It permissions switch.";
 "PROMPT_PHONE_NO_NOT_BE_NIL" = "Phone numbers can not be empty.";
@@ -34,7 +35,7 @@
 "PROMPT_CHECK_IN_FAIL" = "Check in unsuccesfully!";
 "PROMPT_ACCESS_PHOTO_FAIL" = "Can't access your photo libary";
 "PROMPT_ACCESS_CAMERA_FAIL" = "Can't access your camera";
-"PROMPT_CHECK_USERNAME" = "Please check your user name";
+"PROMPT_CHECK_USERNAME" = "Please check your email";
 "PROMPT_CHECK_PASSWORD" = "Please check your password";
 "PROMPT_PASSWORD_NOT_SAME" = "Two passwords are not same";
 "PROMPT_LOGIN_SUCCESS" = "Welcome . You are now signed in!";
@@ -55,6 +56,8 @@
 "PROMPT_404" = "Some resources is not found.";
 "PROMPT_GOTO_MAIL" = "Active by email";
 "PROMPT_HAVE_ACITVE" = "Actived";
+"PROMPT_REST_PASSWORD" = "Type your active emial address and click \"Rest Password\" to get rest passwrd email.";
+"PROMPT_REST_PASSWORD_SUCCESS" = "Rest success! You can check your email to rest your password.";
 
 "FORMAT_TITLE_ADD_FRIENDS" = "Add Friends (%d)";
 "FORMAT_MY_POINTS" = "My Points: (%@)";

@@ -164,6 +164,19 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
             }];
 }
 
++ (void) restPasswrodWithEmail:(NSString *) email success:(void (^)(id responseObject))success failure:(void (^)()) failure
+{
+    NSString *requestString = @"/cust/send/passwordMail";
+    NSDictionary *dict = @{@"email":email};
+    [WebAPI request:requestString parameters:dict Method:MPOST NeedToken:NO NeedPrompt:YES
+            success:^(AFHTTPRequestOperation *operation) {
+                success(operation.responseObject);
+            }
+            failure:^(AFHTTPRequestOperation *operation) {
+                failure(operation);
+            }];
+}
+
 + (void) getTopX:(NSInteger) topx success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
 {
     NSString *requestString = [NSString stringWithFormat:@"biz/get/topDish"];
