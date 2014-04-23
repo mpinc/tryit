@@ -179,10 +179,6 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
             NSString *string = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_SHARE_SUCCESS", nil), self.ccItem.couponName, self.ccItem.productName, self.ccItem.emailList];
             [UIFunction showAlertWithMessage:string];
             [self.navigationController popViewControllerAnimated:YES];
-
-            AppDelegate *appDelegate = [AppDelegate getAppdelegate];
-            [appDelegate.menuViewController resetCouponViewController];
-            [appDelegate setCenterViewControllerWithIndex:0];
             
             [UIFunction removeMaskView];
         } failure:^{

@@ -69,7 +69,6 @@
 
     for(NSLayoutConstraint *constraint in self.view.constraints)
     {
-        DLog(@"%@",constraint);
         if(constraint.firstAttribute == NSLayoutAttributeTop&&
            constraint.secondItem == self.view )
         {
@@ -82,7 +81,6 @@
 
 - (void) textFieldDidBeginEditing:(UITextField *)textField
 {
-
     NSLayoutConstraint *topConstraint = [self getTopConstraint];
     [UIView animateWithDuration:0.25 animations:^
      {

@@ -53,6 +53,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="pRP-qq-bHb"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type your active emial address and click &quot;Rest Password&quot; to get rest passwrd email." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="250" translatesAutoresizingMaskIntoConstraints="NO" id="Scu-3k-Uue">
                     <rect key="frame" x="35" y="140" width="250" height="60"/>

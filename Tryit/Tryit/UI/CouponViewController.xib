@@ -24,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_bg" translatesAutoresizingMaskIntoConstraints="NO" id="nDD-aU-yFx">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food_bg" translatesAutoresizingMaskIntoConstraints="NO" id="nDD-aU-yFx">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -160,6 +160,6 @@
     </objects>
     <resources>
         <image name="btn_camera_big" width="68" height="68"/>
-        <image name="common_bg" width="320" height="20"/>
+        <image name="food_bg" width="320" height="568"/>
     </resources>
 </document>

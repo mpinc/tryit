@@ -10,7 +10,7 @@
 #import "CenterViewController.h"
 #import "ProductItem.h"
 
-@interface CouponViewController : CenterViewController <UITextViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
+@interface CouponViewController : FitViewController <UITextViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *couponButton;
 @property (weak, nonatomic) IBOutlet UIImageView *pictureImageView;

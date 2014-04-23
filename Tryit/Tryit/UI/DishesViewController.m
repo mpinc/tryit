@@ -54,17 +54,18 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
     [imageView setImage:[UIImage imageNamed:@"common_bg"]];
     [self.dishesTable setBackgroundView:imageView];
 
-    [self.bottomBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forToolbarPosition:UIBarPositionBottom barMetrics:UIBarMetricsDefault];
-
-    UIButton *tempCameraButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 88, 44)];
-    [tempCameraButton setImage:[UIImage imageNamed:@"btn_camera"] forState:UIControlStateNormal];
-    [tempCameraButton addTarget:self action:@selector(touchCameraButton:) forControlEvents:UIControlEventTouchUpInside];
-    [self.cameraButton setCustomView:tempCameraButton];
+//    [self.bottomBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forToolbarPosition:UIBarPositionBottom barMetrics:UIBarMetricsDefault];
+//
+//    UIButton *tempCameraButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 88, 44)];
+//    [tempCameraButton setImage:[UIImage imageNamed:@"btn_camera"] forState:UIControlStateNormal];
+//    [tempCameraButton addTarget:self action:@selector(touchCameraButton:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.cameraButton setCustomView:tempCameraButton];
 
     UIButton *tempLocationButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     [tempLocationButton setImage:[UIImage imageNamed:@"btn_location"] forState:UIControlStateNormal];
     [tempLocationButton addTarget:self action:@selector(touchLocationButton:) forControlEvents:UIControlEventTouchUpInside];
-    [self.locationButton setCustomView:tempLocationButton];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:tempLocationButton];
+//    [self.locationButton setCustomView:tempLocationButton];
 
     if (IsIOS7) {
         [self.dishesTable setSeparatorInset:UIEdgeInsetsZero];

@@ -31,7 +31,6 @@ NSString *const ItemTableCellIdentifier  = @"ItemTableCellIdentifier";
 
         self.title = NSLocalizedString(@"MENU_TITLE", nil);
 
-
         // Custom initialization
         DishesViewController *dishedViewController = [[DishesViewController alloc] initWithNibName:@"DishesViewController" bundle:nil];
         UINavigationController *dishesNavViewController = [[UINavigationController alloc] initWithRootViewController:dishedViewController];
@@ -39,27 +38,18 @@ NSString *const ItemTableCellIdentifier  = @"ItemTableCellIdentifier";
         exploerDishesItem.viewController = dishesNavViewController;
         dishedViewController.title = NSLocalizedString(@"MENU_EXPLOER_DISHES", nil);
 
-        CouponViewController *couponViewController = [[CouponViewController alloc] initWithNibName:@"CouponViewController" bundle:nil];
-        UINavigationController *couponNavViewController = [[UINavigationController alloc] initWithRootViewController:couponViewController];
-        MenuItem *createCouponItem = [[MenuItem alloc] initWithName:NSLocalizedString(@"MENU_CREATE_COUPON", nil) Image:@"icon_02"];
-        createCouponItem.viewController = couponNavViewController;
-        couponViewController.title = NSLocalizedString(@"MENU_CREATE_COUPON", nil);
-        self.cpViewController = couponViewController;
-
         ProfileViewController *profileViewController = [[ProfileViewController alloc] initWithNibName:@"ProfileViewController" bundle:nil];
         UINavigationController *profileNavViewController = [[UINavigationController alloc] initWithRootViewController:profileViewController];
         MenuItem *myProfileItem = [[MenuItem alloc] initWithName:NSLocalizedString(@"MENU_MY_PROFILE", nil) Image:@"icon_03"];
         myProfileItem.viewController = profileNavViewController;
         profileViewController.title = NSLocalizedString(@"MENU_MY_PROFILE", nil);
 
-        self.itemArray = @[exploerDishesItem, createCouponItem, myProfileItem];
+        self.itemArray = @[exploerDishesItem, myProfileItem];
 
         [dishesNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
-        [couponNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
         [profileNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
 
         dishesNavViewController.navigationBar.barStyle = UIBarStyleBlack;
-        couponNavViewController.navigationBar.barStyle = UIBarStyleBlack;
         profileNavViewController.navigationBar.barStyle = UIBarStyleBlack;
         
     }
@@ -140,21 +130,6 @@ NSString *const ItemTableCellIdentifier  = @"ItemTableCellIdentifier";
             [cell.textLabel setHighlighted:YES];
         }
     }
-}
-
-- (void) resetCouponViewController
-{
-    CouponViewController *couponViewController = [[CouponViewController alloc] initWithNibName:@"CouponViewController" bundle:nil];
-    UINavigationController *couponNavViewController = [[UINavigationController alloc] initWithRootViewController:couponViewController];
-    MenuItem *createCouponItem = [[MenuItem alloc] initWithName:NSLocalizedString(@"MENU_CREATE_COUPON", nil) Image:@"icon_02"];
-    createCouponItem.viewController = couponNavViewController;
-    couponViewController.title = NSLocalizedString(@"MENU_CREATE_COUPON", nil);
-    self.cpViewController = couponViewController;
-    [couponNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
-    couponNavViewController.navigationBar.barStyle = UIBarStyleBlack;
-
-    MenuItem *item = self.itemArray[1];
-    item.viewController = couponNavViewController;
 }
 
 - (void) resetProfileViewController

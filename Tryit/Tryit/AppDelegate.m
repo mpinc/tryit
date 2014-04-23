@@ -123,7 +123,7 @@
 
 - (void) setCenterViewControllerWithIndex:(NSInteger) index;
 {
-    if (self.token == nil&&index == 2) {
+    if (self.token == nil&&index == 1) {
         [self showSignInViewController];
     }else{
         [self.drawerController setCenterViewController:[self.menuViewController getViewControllerWithIndex:index]];
@@ -167,7 +167,7 @@
         [self.signUpNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
     }
 
-    [self.drawerController presentViewController:self.signInNavViewController animated:NO completion:^{
+    [self.drawerController presentViewController:self.signUpNavViewController animated:NO completion:^{
 
     }];
 }
@@ -213,7 +213,6 @@
     [userDefaults synchronize];
     self.token = nil;
     [self setCenterViewControllerWithIndex:0];
-    [self.menuViewController resetCouponViewController];
     [self.menuViewController resetProfileViewController];
 }
 

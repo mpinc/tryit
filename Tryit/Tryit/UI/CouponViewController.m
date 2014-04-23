@@ -40,6 +40,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.title = NSLocalizedString(@"MENU_CREATE_COUPON", nil);
+
     UIImage *couponImage = [[UIImage imageNamed:@"coupon_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 30, 20, 30)];
     [self.couponButton setBackgroundImage:couponImage forState:UIControlStateNormal];
     [self.addFriendsButton setBackgroundImage:couponImage forState:UIControlStateNormal];
@@ -52,6 +54,7 @@
     [self.textBgView setImage:textImage];
 
     [self configByProductItem];
+    [self customBackBarItem];
 }
 
 - (void)viewDidAppear:(BOOL)animated
