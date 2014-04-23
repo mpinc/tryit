@@ -199,15 +199,7 @@
 
 - (IBAction)touchCouponButton:(id)sender {
 
-    AppDelegate *appDelegate = [AppDelegate getAppdelegate];
-    if (appDelegate.checkInItem == nil) {
-        LocationViewController *locationViewController = [[LocationViewController alloc] initWithNibName:@"LocationViewController" bundle:nil];
-        [self.navigationController pushViewController:locationViewController animated:YES];
-    }else {
-        RestCheckViewController *restCheckViewController = [[RestCheckViewController alloc] initWithNibName:@"RestCheckViewController" bundle:nil];
-        restCheckViewController.restItem = appDelegate.checkInItem;
-        [self.navigationController pushViewController:restCheckViewController animated:YES];
-    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
