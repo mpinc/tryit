@@ -212,6 +212,10 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
 
+    if (userLocation.coordinate.latitude == 0.0f || userLocation.coordinate.longitude == 0.0f) {
+        return;
+    }
+
     if (self.hasLocation != YES) {
         [UIFunction removeMaskView];
         double distance = 10000.0;
@@ -340,6 +344,14 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 
     UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     mmDrawerController.navigationItem.leftBarButtonItem = leftButtonItem;
+
+    button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 28)];
+    [button setBackgroundColor:[UIColor clearColor]];
+    [button setTitle:NSLocalizedString(@"TITLE_TOP", nil) forState:UIControlStateNormal];
+    [button addTarget:restCheckViewController action:@selector(backToTop) forControlEvents:UIControlEventTouchUpInside];
+
+    UIBarButtonItem *rigthBarButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    mmDrawerController.navigationItem.rightBarButtonItem = rigthBarButton;
 
     [self.navigationController pushViewController:mmDrawerController animated:YES];
 
