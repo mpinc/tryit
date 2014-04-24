@@ -103,10 +103,25 @@
         return;
     }
 
+    if ([NSString isEmptyString:self.replacePasswordField.text]) {
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHECK_PASSWORD", Nil)];
+        return;
+    }
+
+    if ([NSString isEmptyString:self.retypePasswordField.text]) {
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHECK_RETYPE_PASSWORD", Nil)];
+        return;
+    }
+
+    if (![self.replacePasswordField.text isEqualToString:self.retypePasswordField.text]) {
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_PASSWORD_NOT_SAME", Nil)];
+        return;
+    }
+
     [WebAPI changePasswrodWithOldPassword:self.oldPasswordField.text replacePassword:self.replacePasswordField.text success:^(id responseObject) {
         [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHANGE_PASSWORD_SUCCESS", nil)];
         AppDelegate *appDelegate = [AppDelegate getAppdelegate];
-        [appDelegate setCenterViewControllerWithIndex:1];
+        [appDelegate setCenterViewControllerWithIndex:0];
     } failure:^{
         
     }];

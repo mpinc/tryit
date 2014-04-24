@@ -686,6 +686,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Sktlab;
 				TargetAttributes = {
+					41B4545318B461C70054E406 = {
+						DevelopmentTeam = SVJB755T4F;
+					};
 					41B4547418B461C70054E406 = {
 						TestTargetID = 41B4545318B461C70054E406;
 					};
@@ -973,6 +976,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tryit/Tryit-Prefix.pch";
 				INFOPLIST_FILE = "Tryit/Tryit-Info.plist";
@@ -989,6 +993,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tryit/Tryit-Prefix.pch";
 				INFOPLIST_FILE = "Tryit/Tryit-Info.plist";

@@ -38,6 +38,7 @@
 "PROMPT_ACCESS_CAMERA_FAIL" = "Can't access your camera";
 "PROMPT_CHECK_USERNAME" = "Please check your email";
 "PROMPT_CHECK_PASSWORD" = "Please check your password";
+"PROMPT_CHECK_RETYPE_PASSWORD" = "Please check your retype password";
 "PROMPT_PASSWORD_NOT_SAME" = "Two passwords are not same";
 "PROMPT_LOGIN_SUCCESS" = "Welcome . You are now signed in!";
 "PROMPT_SIGN_UP_SUCCESS" = "Welcome . You are now signed up! Please active your account by click the active email!";

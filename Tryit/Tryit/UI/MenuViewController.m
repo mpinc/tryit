@@ -151,7 +151,7 @@ NSString *const ItemTableCellIdentifier  = @"ItemTableCellIdentifier";
     [profileNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
     profileNavViewController.navigationBar.barStyle = UIBarStyleBlack;
 
-    MenuItem *item = self.itemArray[2];
+    MenuItem *item = self.itemArray[1];
     item.viewController = profileNavViewController;
 }
 
