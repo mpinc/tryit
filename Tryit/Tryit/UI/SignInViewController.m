@@ -52,14 +52,9 @@
     [rightButton addTarget:self action:@selector(touchSignUpButton:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem = rightBarButton;
-
-    self.userNameField.layer.borderColor = UIColorFromRGB(0x9dc393).CGColor;
-    self.userNameField.layer.borderWidth = 1.0;
-    self.userNameField.layer.cornerRadius = 5.0;
-
-    self.passwordField.layer.borderColor = UIColorFromRGB(0x9dc393).CGColor;
-    self.passwordField.layer.borderWidth = 1.0;
-    self.passwordField.layer.cornerRadius = 5.0;
+    
+    setViewStyle(self.userNameField);
+    setViewStyle(self.passwordField);
 
     self.signInButton.layer.cornerRadius = 5.0;
 

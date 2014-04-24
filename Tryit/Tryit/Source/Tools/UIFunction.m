@@ -366,4 +366,12 @@ dispatch_source_t CreateDispatchTimer(uint64_t interval,
     return resizedImage;
 }
 
+void setViewStyle(UIView *configView)
+{
+    CGColorRef borderColor = UIColorFromRGB(0x9dc393).CGColor;
+    configView.layer.borderColor = borderColor;
+    configView.layer.borderWidth = 1.0;
+    configView.layer.cornerRadius = 5.0;
+}
+
 @end

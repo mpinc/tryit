@@ -10,7 +10,7 @@
 
 #import "DishesViewController.h"
 #import "ProfileViewController.h"
-
+#import "ChangePassViewController.h"
 #import "AppDelegate.h"
 
 #import "MenuItem.h"
@@ -44,13 +44,22 @@ NSString *const ItemTableCellIdentifier  = @"ItemTableCellIdentifier";
         myProfileItem.viewController = profileNavViewController;
         profileViewController.title = NSLocalizedString(@"MENU_MY_PROFILE", nil);
 
-        self.itemArray = @[exploerDishesItem, myProfileItem];
+        ChangePassViewController *changePassViewController = [[ChangePassViewController alloc] initWithNibName:@"ChangePassViewController" bundle:nil];
+        UINavigationController *changeNavViewController = [[UINavigationController alloc] initWithRootViewController:changePassViewController];
+        MenuItem *changeItem = [[MenuItem alloc] initWithName:NSLocalizedString(@"TITLE_CHANGE_PASSWORD", nil) Image:@"icon_03"];
+        changeItem.viewController = changeNavViewController;
+        changeNavViewController.title = NSLocalizedString(@"TITLE_CHANGE_PASSWORD", nil);
+
+
+        self.itemArray = @[exploerDishesItem, myProfileItem, changeItem];
 
         [dishesNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
         [profileNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
+        [changeNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
 
         dishesNavViewController.navigationBar.barStyle = UIBarStyleBlack;
         profileNavViewController.navigationBar.barStyle = UIBarStyleBlack;
+        changeNavViewController.navigationBar.barStyle = UIBarStyleBlack;
         
     }
     return self;

@@ -26,4 +26,6 @@
 
 + (UIImage *) resizeImageWithImage:(UIImage *) flagImage;
 
+void setViewStyle(UIView *configView);
+
 @end

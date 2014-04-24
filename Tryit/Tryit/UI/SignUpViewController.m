@@ -69,14 +69,6 @@
     [self.view addGestureRecognizer:recognizer];
 }
 
-void setViewStyle(UIView *configView)
-{
-    CGColorRef borderColor = UIColorFromRGB(0x9dc393).CGColor;
-    configView.layer.borderColor = borderColor;
-    configView.layer.borderWidth = 1.0;
-    configView.layer.cornerRadius = 5.0;
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -22,6 +22,7 @@
 + (void) signUpWithPassword:(NSString *) password email:(NSString *) email success:(void (^)(id responseObject))success failure:(void (^)()) failure;
 + (void) loginWithUserName:(NSString *) userName Password:(NSString *) password success:(void (^)(id responseObject))success failure:(void (^)()) failure;
 + (void) restPasswrodWithEmail:(NSString *) email success:(void (^)(id responseObject))success failure:(void (^)()) failure;
++ (void) changePasswrodWithOldPassword:(NSString *) oldPassword replacePassword:(NSString *) replacePassword success:(void (^)(id responseObject))success failure:(void (^)()) failure;
 
 + (void) getTopX:(NSInteger) topx success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
 + (void) getNearRestaurantWithCoordinate:(CLLocationCoordinate2D) coordinate success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;

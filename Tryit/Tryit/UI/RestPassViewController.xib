@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cav-HY-maH">
-                    <rect key="frame" x="20" y="297" width="270" height="44"/>
+                    <rect key="frame" x="25" y="297" width="270" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.2941176593" green="0.52549022440000004" blue="0.19215688110000001" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
@@ -44,7 +44,7 @@
                     </constraints>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pa8-v3-2zB">
-                    <rect key="frame" x="20" y="218" width="270" height="44"/>
+                    <rect key="frame" x="25" y="218" width="270" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -72,9 +72,9 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="vSG-c7-RYZ" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="58" id="0y2-R0-JDu"/>
-                <constraint firstAttribute="centerX" secondItem="pa8-v3-2zB" secondAttribute="centerX" constant="5" id="8sv-gC-hMQ"/>
+                <constraint firstAttribute="centerX" secondItem="pa8-v3-2zB" secondAttribute="centerX" id="8sv-gC-hMQ"/>
                 <constraint firstAttribute="centerX" secondItem="Scu-3k-Uue" secondAttribute="centerX" id="VYq-uT-T61"/>
-                <constraint firstAttribute="centerX" secondItem="cav-HY-maH" secondAttribute="centerX" constant="5" id="WE7-Rz-xPb"/>
+                <constraint firstAttribute="centerX" secondItem="cav-HY-maH" secondAttribute="centerX" id="WE7-Rz-xPb"/>
                 <constraint firstItem="Scu-3k-Uue" firstAttribute="top" secondItem="vSG-c7-RYZ" secondAttribute="bottom" constant="22" id="bBu-vl-qri"/>
                 <constraint firstItem="pa8-v3-2zB" firstAttribute="top" secondItem="Scu-3k-Uue" secondAttribute="bottom" constant="18" id="cf6-Yl-Xln"/>
                 <constraint firstItem="vSG-c7-RYZ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="50" id="z2a-oP-e0J"/>

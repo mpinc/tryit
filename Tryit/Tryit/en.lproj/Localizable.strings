@@ -26,7 +26,8 @@
 "TITLE_TAKE_PHOTO" = "Take Photo";
 "TITLE_CHOOSE_PHOTO" = "Choose Photo";
 "TITLE_TOP" = "Top";
-"TITLE_REST_PASSWORD" = "Rest Password";
+"TITLE_RESET_PASSWORD" = "Reset Password";
+"TITLE_CHANGE_PASSWORD" = "Change Password";
 
 "PROMPT_CONTACTS_AUTHORITY" = "No contacts permission. Please return to the main screen, click Settings -> Privacy -> Contacts, open Try It permissions switch.";
 "PROMPT_PHONE_NO_NOT_BE_NIL" = "Phone numbers can not be empty.";
@@ -56,8 +57,9 @@
 "PROMPT_404" = "Some resources is not found.";
 "PROMPT_GOTO_MAIL" = "Active by email";
 "PROMPT_HAVE_ACITVE" = "Actived";
-"PROMPT_REST_PASSWORD" = "Type your active emial address and click \"Rest Password\" to get rest passwrd email.";
-"PROMPT_REST_PASSWORD_SUCCESS" = "Rest success! You can check your email to rest your password.";
+"PROMPT_RESET_PASSWORD" = "Type your active emial address and click \"Rest Password\" to get rest passwrd email.";
+"PROMPT_RESET_PASSWORD_SUCCESS" = "Reset Success! You can check your email to rest your password.";
+"PROMPT_CHANGE_PASSWORD_SUCCESS" = "Change Password Success!";
 
 "FORMAT_TITLE_ADD_FRIENDS" = "Add Friends (%d)";
 "FORMAT_MY_POINTS" = "My Points: (%@)";

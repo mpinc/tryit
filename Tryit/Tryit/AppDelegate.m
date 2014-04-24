@@ -167,7 +167,7 @@
         [self.signUpNavViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbg_green"] forBarMetrics:UIBarMetricsDefault];
     }
 
-    [self.drawerController presentViewController:self.signUpNavViewController animated:NO completion:^{
+    [self.drawerController presentViewController:self.signInNavViewController animated:NO completion:^{
 
     }];
 }

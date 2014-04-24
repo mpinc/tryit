@@ -1,22 +1,21 @@
 //
-//  RestPassViewController.m
+//  ChangePassViewController.m
 //  Tryit
 //
-//  Created by Mars on 4/22/14.
+//  Created by Mars on 4/24/14.
 //  Copyright (c) 2014 Sktlab. All rights reserved.
 //
 
-#import "RestPassViewController.h"
+#import "ChangePassViewController.h"
 #import "WebAPI.h"
 #import "NSString+Utlity.h"
 #import "UIFunction.h"
-
-@interface RestPassViewController ()
-- (IBAction)touchRestPasswordButton:(id)sender;
+#import "AppDelegate.h"
+@interface ChangePassViewController ()
 
 @end
 
-@implementation RestPassViewController
+@implementation ChangePassViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,23 +30,19 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = NSLocalizedString(@"TITLE_RESET_PASSWORD", nil);
-
-    self.emailTextField.layer.borderColor = UIColorFromRGB(0x9dc393).CGColor;
-    self.emailTextField.layer.borderWidth = 1.0;
-    self.emailTextField.layer.cornerRadius = 5.0;
+    self.title = NSLocalizedString(@"TITLE_CHANGE_PASSWORD", nil);
 
     self.restPasswordButton.layer.cornerRadius = 5.0;
-    [self.restPasswordButton setTitle:NSLocalizedString(@"TITLE_RESET_PASSWORD", nil) forState:UIControlStateNormal];
+    [self.restPasswordButton setTitle:NSLocalizedString(@"TITLE_CHANGE_PASSWORD", nil) forState:UIControlStateNormal];
 
     UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBroad)];
     recognizer.numberOfTouchesRequired = 1;
     recognizer.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:recognizer];
-    [self customBackBarItem];
 
-    self.promptLabel.text = NSLocalizedString(@"PROMPT_RESET_PASSWORD", nil);
-    
+    setViewStyle(self.oldPasswordField);
+    setViewStyle(self.replacePasswordField);
+    setViewStyle(self.retypePasswordField);
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,18 +98,18 @@
 
 - (IBAction)touchRestPasswordButton:(id)sender {
 
-    if ([NSString isEmptyString:self.emailTextField.text]) {
+    if ([NSString isEmptyString:self.oldPasswordField.text]) {
         [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHECK_USERNAME", nil)];
         return;
     }
-    if (![NSString isValidateMail:self.emailTextField.text]) {
-        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHECK_USERNAME", nil)];
-        return;
-    }
-    [WebAPI restPasswrodWithEmail:self.emailTextField.text success:^(id responseObject) {
-        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_RESET_PASSWORD_SUCCESS", nil)];
-    } failure:^{
 
+    [WebAPI changePasswrodWithOldPassword:self.oldPasswordField.text replacePassword:self.replacePasswordField.text success:^(id responseObject) {
+        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHANGE_PASSWORD_SUCCESS", nil)];
+        AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+        [appDelegate setCenterViewControllerWithIndex:1];
+    } failure:^{
+        
     }];
 }
+
 @end
