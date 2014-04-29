@@ -192,10 +192,10 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
             }];
 }
 
-+ (void) getTopX:(NSInteger) topx success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
++ (void) getTopXWithCoordinate:(CLLocationCoordinate2D) coordinate success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure
 {
     NSString *requestString = [NSString stringWithFormat:@"biz/get/topDish"];
-    NSDictionary *dict = @{@"size":[NSString stringWithFormat:@"%ld",(long)topx]};
+    NSDictionary *dict = @{@"size":[NSString stringWithFormat:@"%ld",(long) TopX]};
     [WebAPI request:requestString parameters:dict Method:MGET NeedToken:NO NeedPrompt:YES
             success:^(AFHTTPRequestOperation *operation) {
                 NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
@@ -227,7 +227,6 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 {
     NSString *requestString = @"/biz";
     NSDictionary *dict = @{@"latitude":[NSString stringWithFormat:@"%f",coordinate.latitude], @"longitude":[NSString stringWithFormat:@"%f",coordinate.longitude], @"distance":@"15"};
-//    NSDictionary *dict = @{@"latitude":[NSString stringWithFormat:@"%f",coordinate.latitude], @"longitude":[NSString stringWithFormat:@"%f",coordinate.longitude]};
     [WebAPI request:requestString parameters:dict Method:MGET NeedToken:NO NeedPrompt:YES
             success:^(AFHTTPRequestOperation *operation) {
                 NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];

@@ -21,11 +21,11 @@
 
 NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
 
-#define TopX 10
-
 @interface DishesViewController ()
 
 @property (nonatomic, strong) NSMutableArray *dishItemArray;
+@property (nonatomic) BOOL hasLocation;
+
 - (IBAction)touchCameraButton:(id)sender;
 - (IBAction)touchLocationButton:(id)sender;
 
@@ -63,11 +63,11 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
         [self.dishesTable setSeparatorInset:UIEdgeInsetsZero];
     }
 
-    [self getTopXDishes];
+    self.hasLocation = NO;
 
-    [self.dishesTable addPullToRefreshWithActionHandler:^{
-        [self getTopXDishes];
-    }];
+    self.manager = [[CLLocationManager alloc] init];
+    self.manager.delegate = self;
+    [self.manager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -204,13 +204,35 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
 - (void) getTopXDishes
 {
     WEAKSELF_SC
-    [WebAPI getTopX:TopX success:^(NSMutableArray *array) {
+    [WebAPI getTopXWithCoordinate:self.manager.location.coordinate success:^(NSMutableArray *array) {
         weakSelf_SC.dishItemArray = [NSMutableArray arrayWithArray:array];
         [weakSelf_SC.dishesTable reloadData];
         [weakSelf_SC.dishesTable.pullToRefreshView stopAnimating];
     } failure:^{
         [weakSelf_SC.dishesTable.pullToRefreshView stopAnimating];
     }];
+}
+
+#pragma mark - CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager
+	 didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *location = [locations firstObject];
+    if (location != nil) {
+        if (location.coordinate.latitude == 0.0f || location.coordinate.longitude == 0.0f) {
+            return;
+        }
+        [manager stopUpdatingLocation];
+        
+        if (self.hasLocation == NO) {
+            [self getTopXDishes];
+
+            [self.dishesTable addPullToRefreshWithActionHandler:^{
+                [self getTopXDishes];
+            }];
+            self.hasLocation = YES;
+        }
+    }
 }
 
 @end

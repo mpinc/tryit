@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "CenterViewController.h"
-
-@interface DishesViewController : CenterViewController <UITableViewDataSource, UITableViewDelegate>
+#import <CoreLocation/CoreLocation.h>
+@interface DishesViewController : CenterViewController <UITableViewDataSource, UITableViewDelegate,CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *dishesTable;
 @property (weak, nonatomic) IBOutlet UIToolbar *bottomBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *locationButton;
+@property (nonatomic, strong) CLLocationManager *manager;
 
 @end

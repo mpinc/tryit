@@ -24,7 +24,7 @@
 + (void) restPasswrodWithEmail:(NSString *) email success:(void (^)(id responseObject))success failure:(void (^)()) failure;
 + (void) changePasswrodWithOldPassword:(NSString *) oldPassword replacePassword:(NSString *) replacePassword success:(void (^)(id responseObject))success failure:(void (^)()) failure;
 
-+ (void) getTopX:(NSInteger) topx success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
++ (void) getTopXWithCoordinate:(CLLocationCoordinate2D) coordinate success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
 + (void) getNearRestaurantWithCoordinate:(CLLocationCoordinate2D) coordinate success:(void (^)(NSMutableArray *array))success failure:(void (^)()) failure;
 + (void) getRestaurantWithBizId:(NSString*) bizId success:(void (^)(RestaurantItem *item))success failure:(void (^)()) failure;
 
