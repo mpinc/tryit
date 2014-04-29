@@ -32,7 +32,7 @@
     [self.couponImageView fixSetImageWithURL:item.couponPhotoURL placeholderImage:[UIImage imageNamed:@"default_any"]];
     self.productNameLabel.text = item.productName;
     self.couponNameLabel.text = item.couponName;
-    self.shareDateLabel.text = [NSDateFormatter localizedStringFromDate:item.createDate dateStyle:NSDateFormatterMediumStyle timeStyle:kCFDateFormatterNoStyle];
+    self.shareDateLabel.text = [NSDateFormatter localizedStringFromDate:item.createDate dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
     self.sendFriendsLabel.text = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_SEND_FRIENDS", Nil), item.shareList.count];
 }
 
