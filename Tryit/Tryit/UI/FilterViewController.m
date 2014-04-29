@@ -64,15 +64,20 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
-        [cell.contentView setBackgroundColor:UIColorFromRGB(0x403F3F)];
-
         [cell.textLabel setTextColor:[UIColor whiteColor]];
-        [cell.textLabel setFont:[UIFont systemFontOfSize:17]];
+        [cell.textLabel setFont:[UIFont systemFontOfSize:14]];
         [cell.textLabel setHighlightedTextColor:UIColorFromRGB(0x92C958)];
         [cell.textLabel setBackgroundColor:[UIColor clearColor]];
+        [cell.textLabel setNumberOfLines:0];
     }
     
     cell.textLabel.text = [self.filterArray objectAtIndex:indexPath.row];
+
+    if (indexPath.row%2) {
+        [cell.contentView setBackgroundColor:UIColorFromRGB(0x403F3F)];
+    }else {
+        [cell.contentView setBackgroundColor:[UIColor darkGrayColor]];
+    }
     
     return cell;
 }

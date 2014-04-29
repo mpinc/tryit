@@ -126,10 +126,11 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 
 - (void) loadRestCheckVCWithItem:(RestaurantItem*) item
 {
+    WEAKSELF_SC
     [WebAPI getProductWithRestId:item.biz_id success:^(NSMutableArray *array) {
-        [self perparRestCheckVC:item WithArray:array];
+        [LocationViewController perparRestCheckVC:item products:array WithViewController:weakSelf_SC PerShowItem:nil];
     } failure:^{
-        [self perparRestCheckVC:item WithArray:nil];
+        [LocationViewController perparRestCheckVC:item products:nil WithViewController:weakSelf_SC PerShowItem:nil];
     }];
 }
 
@@ -299,9 +300,12 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 
 #pragma mark - prepar rest check view controller 
 
-- (void) perparRestCheckVC:(RestaurantItem*) item WithArray:(NSArray*) array;
++ (void) perparRestCheckVC:(RestaurantItem*) item products:(NSArray*) array WithViewController:(UIViewController*) viewController PerShowItem:(ProductItem*) perShowItem
 {
     RestCheckViewController *restCheckViewController = [[RestCheckViewController alloc] initWithNibName:@"RestCheckViewController" bundle:nil];
+    if (perShowItem != nil) {
+        restCheckViewController.perShowProductItem = perShowItem;
+    }
     FilterViewController *filterViewController = [[FilterViewController alloc] initWithNibName:@"RestCheckViewController" bundle:nil];
     restCheckViewController.restItem = item;
     filterViewController.delegate = restCheckViewController;
@@ -310,6 +314,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
         NSMutableArray *productsArray = [[NSMutableArray alloc] initWithCapacity:0]; // save section array
         NSMutableArray *filterArray = [[NSMutableArray alloc] initWithCapacity:0];
         NSMutableDictionary *filterDict = [[NSMutableDictionary alloc] initWithCapacity:0];
+        // Grouping products
         for (ProductItem *proItem in array) {
             NSString *type = proItem.type;
             NSMutableArray *productArray = [filterDict objectForKey:type];
@@ -322,21 +327,29 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
             [productArray addObject:proItem];
         }
 
+        // count products in group
+        for (int i = 0; i < filterArray.count; i++) {
+            NSString *type = filterArray[i];
+            NSMutableArray *itemArray = [filterDict objectForKey:type];
+            type = [NSString stringWithFormat:@"%@ (%d)", type, itemArray.count];
+            [filterArray replaceObjectAtIndex:i withObject:type];
+        }
+
         restCheckViewController.productArray = productsArray;
 
-        [filterArray insertObject:@"All" atIndex:0];
+        [filterArray insertObject:[NSString stringWithFormat:@"ALL (%d)", array.count] atIndex:0];
         filterViewController.filterArray = filterArray;
     }
 
     MMDrawerController *mmDrawerController = [[MMDrawerController alloc] initWithCenterViewController:restCheckViewController rightDrawerViewController:filterViewController];
     [mmDrawerController setRestorationIdentifier:@"MMDrawer"];
-    [mmDrawerController setMaximumRightDrawerWidth:150.0];
+    [mmDrawerController setMaximumRightDrawerWidth:160.0];
     [mmDrawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
     [mmDrawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
 
     mmDrawerController.title = item.name;
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 44)];
-    [button addTarget:self action:@selector(touchBackbutton) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:viewController action:@selector(touchBackbutton) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"navback"] forState:UIControlStateNormal];
 
     UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -350,7 +363,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
     UIBarButtonItem *rigthBarButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     mmDrawerController.navigationItem.rightBarButtonItem = rigthBarButton;
 
-    [self.navigationController pushViewController:mmDrawerController animated:YES];
+    [viewController.navigationController pushViewController:mmDrawerController animated:YES];
 
     item.productArray = restCheckViewController.productArray;
 }
