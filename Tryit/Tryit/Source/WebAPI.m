@@ -60,7 +60,10 @@
     }
 
     NSDictionary *dict = (NSDictionary *) operation.responseObject;
-    if (dict[@"message"]) {
+    if (dict[@"outMsg"]) {
+        [UIFunction showAlertWithMessage:dict[@"message"]];
+    }
+    else if (dict[@"message"]) {
         [UIFunction showAlertWithMessage:dict[@"message"]];
     }
     else if(error.code == -1001)
