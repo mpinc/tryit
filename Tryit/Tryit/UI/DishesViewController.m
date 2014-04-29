@@ -101,7 +101,6 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ProductItem *item = self.dishItemArray[indexPath.row];
-    [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
     WEAKSELF_SC
     [WebAPI getRestaurantWithBizId:item.biz_id success:^(RestaurantItem *restItem) {
         [weakSelf_SC loadRestCheckVCWithItem:restItem PerShowItem:item];

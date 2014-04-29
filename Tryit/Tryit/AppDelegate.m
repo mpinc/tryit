@@ -123,7 +123,7 @@
 
 - (void) setCenterViewControllerWithIndex:(NSInteger) index;
 {
-    if (self.token == nil&&index == 1) {
+    if ([NSString isEmptyString:self.token]&&index == 1) {
         [self showSignInViewController];
     }else{
         [self.drawerController setCenterViewController:[self.menuViewController getViewControllerWithIndex:index]];

@@ -93,11 +93,15 @@
 
     [request setTimeoutInterval:TIMEOUT];
     DLog(@"%@", request);
-    // send request 
+    // send request
+    [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
     AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         DLog(@"%@", responseObject);
+        [UIFunction removeMaskView];
         success(operation);
+
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [UIFunction removeMaskView];
         if (needPrompt) {
             [WebAPI errorPrompt:operation Error:error];
         }
@@ -167,6 +171,20 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
 + (void) restPasswrodWithEmail:(NSString *) email success:(void (^)(id responseObject))success failure:(void (^)()) failure
 {
     NSString *requestString = @"/cust/send/passwordMail";
+    NSDictionary *dict = @{@"email":email};
+    [WebAPI request:requestString parameters:dict Method:MPOST NeedToken:NO NeedPrompt:YES
+            success:^(AFHTTPRequestOperation *operation) {
+                success(operation.responseObject);
+            }
+            failure:^(AFHTTPRequestOperation *operation) {
+                failure(operation);
+            }];
+}
+
++ (void) activeAccountWithEmail:(NSString *) email success:(void (^)(id responseObject))success failure:(void (^)()) failure
+{
+    // POST /cust/send/activeMail
+    NSString *requestString = @"/cust/send/activeMail";
     NSDictionary *dict = @{@"email":email};
     [WebAPI request:requestString parameters:dict Method:MPOST NeedToken:NO NeedPrompt:YES
             success:^(AFHTTPRequestOperation *operation) {

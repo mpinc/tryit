@@ -126,13 +126,10 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 
 - (void) loadRestCheckVCWithItem:(RestaurantItem*) item
 {
-    [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
     [WebAPI getProductWithRestId:item.biz_id success:^(NSMutableArray *array) {
         [self perparRestCheckVC:item WithArray:array];
-        [UIFunction removeMaskView];
     } failure:^{
         [self perparRestCheckVC:item WithArray:nil];
-        [UIFunction removeMaskView];
     }];
 }
 

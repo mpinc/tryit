@@ -15,6 +15,7 @@
 #define authToken @"auth-token"
 #define accessToken @"accessToken"
 #define customerId @"customerId"
+#define activeValue @"active" 
 
 #define TopX 10
 

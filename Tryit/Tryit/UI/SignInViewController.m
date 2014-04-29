@@ -112,14 +112,22 @@
 
     WEAKSELF_SC
     [WebAPI loginWithUserName:self.userNameField.text Password:self.passwordField.text success:^(id responseObject) {
-        [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_LOGIN_SUCCESS", nil)];
 
-        weakSelf_SC.passwordField.text = nil;
-        weakSelf_SC.userNameField.text = nil;
-        AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+        BOOL hasActived = [responseObject[activeValue] boolValue];
+        if (hasActived) {
+            [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_LOGIN_SUCCESS", nil)];
 
-        [appDelegate saveUserInfoWithDict:responseObject];
-        [appDelegate hiddeSignInViewController];
+            weakSelf_SC.passwordField.text = nil;
+            weakSelf_SC.userNameField.text = nil;
+            AppDelegate *appDelegate = [AppDelegate getAppdelegate];
+
+            [appDelegate saveUserInfoWithDict:responseObject];
+            [appDelegate hiddeSignInViewController];
+        }else {
+            UIAlertView *alterView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"MAIN_TITLE", nil) message:NSLocalizedString(@"PROMPT_ACTIVE_EMAIL", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"TITLE_CANCEL", nil) otherButtonTitles:NSLocalizedString(@"PROMPT_ACTIVE", nil), nil];
+            [alterView show];
+        }
+
     } failure:^{
 
     }];
@@ -185,4 +193,26 @@
     RestPassViewController *restPassViewController = [[RestPassViewController alloc] initWithNibName:@"RestPassViewController" bundle:nil];
     [self.navigationController pushViewController:restPassViewController animated:YES];
 }
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+
+            break;
+        case 1:{
+            [WebAPI activeAccountWithEmail:self.userNameField.text success:^(id responseObject) {
+                [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHECK_EMAIL_ACTIVE", nil)];
+            } failure:^{
+                
+            }];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 @end

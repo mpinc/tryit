@@ -58,9 +58,12 @@
 "PROMPT_404" = "Some resources is not found.";
 "PROMPT_GOTO_MAIL" = "Active by email";
 "PROMPT_HAVE_ACITVE" = "Actived";
+"PROMPT_ACTIVE" = "Active";
 "PROMPT_RESET_PASSWORD" = "Type your active emial address and click \"Rest Password\" to get rest passwrd email.";
 "PROMPT_RESET_PASSWORD_SUCCESS" = "Reset Success! You can check your email to rest your password.";
 "PROMPT_CHANGE_PASSWORD_SUCCESS" = "Change Password Success!";
+"PROMPT_ACTIVE_EMAIL" = "You have not active your account. You can press [Active] button to get active mail.";
+"PROMPT_CHECK_EMAIL_ACTIVE" = "Request success! You can active your account by active mail. Please check your email box";
 
 "FORMAT_TITLE_ADD_FRIENDS" = "Add Friends (%d)";
 "FORMAT_MY_POINTS" = "My Points: (%@)";

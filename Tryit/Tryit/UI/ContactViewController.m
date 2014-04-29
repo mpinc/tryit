@@ -174,15 +174,11 @@ NSString *const ContactCellIdentifier = @"ContactCellIdentifier";
             }
         }
         self.ccItem.emailList = emailList;
-        [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", Nil)];
         [WebAPI createCouponWithCCItem:self.ccItem success:^{
             NSString *string = [NSString stringWithFormat:NSLocalizedString(@"FORMAT_SHARE_SUCCESS", nil), self.ccItem.couponName, self.ccItem.productName, self.ccItem.emailList];
             [UIFunction showAlertWithMessage:string];
             [self.navigationController popViewControllerAnimated:YES];
-            
-            [UIFunction removeMaskView];
         } failure:^{
-            [UIFunction removeMaskView];
         }];
     }else {
         [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_SHARE_FIREND_NULL", nil)];

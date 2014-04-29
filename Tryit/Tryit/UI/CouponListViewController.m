@@ -55,16 +55,13 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
     [bgImageView setImage:[UIImage imageNamed:@"food_bg"]];
     [self.tableView setBackgroundView:bgImageView];
 
-    [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
     WEAKSELF_SC
     [WebAPI getpromoWithProduct:self.productItem success:^(NSMutableArray *array) {
         CouponItem *couponItem = (CouponItem*)[array lastObject];
         weakSelf_SC.productItem.selectCoupon = couponItem;
         [weakSelf_SC.itemArray addObject:CouponCellIdentifier];
         [weakSelf_SC.tableView reloadData];
-        [UIFunction removeMaskView];
     } failure:^{
-        [UIFunction removeMaskView];
     }];
 
     self.title = self.productItem.name;

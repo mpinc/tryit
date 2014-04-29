@@ -67,16 +67,13 @@ NSString *const UserRestCellIdentifier = @"UserRestCellIdentifier";
         [UIFunction removeMaskView];
     }];
 
-    [UIFunction showWaitingAlertWithString:NSLocalizedString(@"PROMPT_LODING", nil)];
     [WebAPI getRestaurantsSuccess:^(NSMutableArray *array) {
         weakSelf_SC.restArray = [NSMutableArray arrayWithArray:array];
         self.userProfile.vipRest = [NSString stringWithFormat:@"%lu", (unsigned long)array.count];
         ProfileInfoView *profileView = (ProfileInfoView*)self.tableView.tableHeaderView;
         profileView.userProfile = self.userProfile;
         [weakSelf_SC.tableView reloadData];
-        [UIFunction removeMaskView];
     } failure:^{
-        [UIFunction removeMaskView];
     }];
 }
 
