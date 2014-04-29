@@ -331,13 +331,13 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
         for (int i = 0; i < filterArray.count; i++) {
             NSString *type = filterArray[i];
             NSMutableArray *itemArray = [filterDict objectForKey:type];
-            type = [NSString stringWithFormat:@"%@ (%d)", type, itemArray.count];
+            type = [NSString stringWithFormat:@"%@ (%lu)", type, (unsigned long)itemArray.count];
             [filterArray replaceObjectAtIndex:i withObject:type];
         }
 
         restCheckViewController.productArray = productsArray;
 
-        [filterArray insertObject:[NSString stringWithFormat:@"ALL (%d)", array.count] atIndex:0];
+        [filterArray insertObject:[NSString stringWithFormat:@"ALL (%lu)", (unsigned long)array.count] atIndex:0];
         filterViewController.filterArray = filterArray;
     }
 
