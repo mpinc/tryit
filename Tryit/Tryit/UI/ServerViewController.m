@@ -36,10 +36,12 @@
         [leftButton setBackgroundImage:rightButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
         self.navigationItem.leftBarButtonItem = leftButton;
 
-//        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, 320, 400)];
-//        self.tableView.delegate = self;
-//        self.tableView.dataSource = self;
-//        [self.view addSubview:self.tableView];
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, 320, 400)];
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
+        [self.view addSubview:self.tableView];
+
+        self.serverArray = @[@"http://54.186.250.135:8080/"];
     }
     return self;
 }
@@ -91,33 +93,33 @@
         [self dismissSelf];
     }
 }
-//
-//#pragma mark - UITableViewDelegate,UITableViewDataSource 
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return [self.serverArray count];
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    static NSString *CellIdentifier = @"SettingViewTableCell";
-//	UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//        cell.accessoryType = UITableViewCellAccessoryNone;
-//        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-//	}
-//    cell.textLabel.numberOfLines = 0;
-//    cell.textLabel.text = [self.serverArray objectAtIndex:indexPath.row];
-//
-//	return cell;
-//}
-//
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSString *serverAddress = [self.serverArray objectAtIndex:indexPath.row];
-//    if (serverAddress != nil) {
-//        self.serverAddressTextView.text = serverAddress;
-//        [self changeServerAddress];
-//    }
-//}
+
+#pragma mark - UITableViewDelegate,UITableViewDataSource 
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [self.serverArray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *CellIdentifier = @"SettingViewTableCell";
+	UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+	}
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.text = [self.serverArray objectAtIndex:indexPath.row];
+
+	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *serverAddress = [self.serverArray objectAtIndex:indexPath.row];
+    if (serverAddress != nil) {
+        self.serverAddressTextView.text = serverAddress;
+        [self changeServerAddress];
+    }
+}
 
 @end

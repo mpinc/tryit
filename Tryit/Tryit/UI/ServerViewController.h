@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FitViewController.h"
-@interface ServerViewController : FitViewController <UITextViewDelegate, UIAlertViewDelegate/* ,UITableViewDataSource, UITableViewDelegate*/>
+@interface ServerViewController : FitViewController <UITextViewDelegate, UIAlertViewDelegate,UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITextView *serverAddressTextView;
 @property (nonatomic, strong) UITableView *tableView;
