@@ -137,10 +137,12 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CouponViewController *couponViewController = [[CouponViewController alloc] initWithNibName:@"CouponViewController" bundle:nil];
-    couponViewController.item  = self.productItem;
-    [couponViewController configByProductItem];
-    [self.navigationController pushViewController:couponViewController animated:YES];
+    if (indexPath.row == 1) {
+        CouponViewController *couponViewController = [[CouponViewController alloc] initWithNibName:@"CouponViewController" bundle:nil];
+        couponViewController.item  = self.productItem;
+        [couponViewController configByProductItem];
+        [self.navigationController pushViewController:couponViewController animated:YES];
+    }
 }
 
 @end
