@@ -20,6 +20,10 @@
         self.prod_id = [NSString ToString:dict[@"prod_id"]];
         self.name = [NSString ToString:dict[@"productName"]];
         self.price = [NSString ToString:dict[@"price"]];
+        if ([self.price respondsToSelector:@selector(floatValue)]) {
+            self.price = [NSString stringWithFormat:@"%.2f",[self.price floatValue]];
+        }
+
         self.bizName = [NSString ToString:dict[@"bizName"]];
         self.type = [NSString ToString:dict[@"type"]];
         self.description = [NSString ToString:dict[@"description"]];
