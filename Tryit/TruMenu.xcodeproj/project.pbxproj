@@ -258,7 +258,6 @@
 		41FD5D2918D857A800172DB9 /* UserCouponCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCouponCell.xib; path = UI/UserCouponCell.xib; sourceTree = "<group>"; };
 		41FD5D3018D988CD00172DB9 /* ShareItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareItem.h; path = Source/ShareItem.h; sourceTree = "<group>"; };
 		41FD5D3118D988CD00172DB9 /* ShareItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareItem.m; path = Source/ShareItem.m; sourceTree = "<group>"; };
-		A0EDB0FA7E6146E69ED79D4A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D7ADC66DCC014BB3BC4D9158 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -495,7 +494,6 @@
 				41B4547C18B461C70054E406 /* TryitTests */,
 				41B4545618B461C70054E406 /* Frameworks */,
 				41B4545518B461C70054E406 /* Products */,
-				A0EDB0FA7E6146E69ED79D4A /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -972,7 +970,6 @@
 		};
 		41B4548718B461C70054E406 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0EDB0FA7E6146E69ED79D4A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -989,7 +986,6 @@
 		};
 		41B4548818B461C70054E406 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0EDB0FA7E6146E69ED79D4A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
