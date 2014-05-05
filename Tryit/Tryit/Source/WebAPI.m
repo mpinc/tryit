@@ -53,7 +53,7 @@
 + (void) errorPrompt:(AFHTTPRequestOperation *)operation Error:(NSError *)error
 {
     DLog(@"Error: %ld", (long)operation.response.statusCode);
-
+    DLog(@"Back Data:%@", operation.responseObject);
     if (operation.response.statusCode == 404) {
         [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_404", nil)];
         return;
