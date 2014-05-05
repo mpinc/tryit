@@ -15,6 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *bottomBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *locationButton;
-@property (nonatomic, strong) CLLocationManager *manager;
+
 
 @end

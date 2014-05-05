@@ -25,6 +25,7 @@ NSString *const DishesItemIdentifier = @"DishesItemIdentifier";
 
 @property (nonatomic, strong) NSMutableArray *dishItemArray;
 @property (nonatomic) BOOL hasLocation;
+@property (nonatomic, strong) CLLocationManager *manager;
 
 - (IBAction)touchCameraButton:(id)sender;
 - (IBAction)touchLocationButton:(id)sender;

@@ -144,7 +144,7 @@ NSString *const ProductCellIdentifier = @"ProductCellIdentifier";
     CouponListViewController *couponListViewController = [[CouponListViewController alloc] initWithNibName:@"CouponListViewController" bundle:Nil];
     ProductItem *item = Nil;
     if (self.selectIndex != 0) {
-         item = self.productArray[0][indexPath.row];
+         item = self.productArray[self.selectIndex-1][indexPath.row];
     }else {
         item = self.productArray[indexPath.section][indexPath.row];
     }
