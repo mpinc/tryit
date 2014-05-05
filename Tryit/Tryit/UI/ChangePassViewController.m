@@ -119,6 +119,11 @@
     }
 
     [WebAPI changePasswrodWithOldPassword:self.oldPasswordField.text replacePassword:self.replacePasswordField.text success:^(id responseObject) {
+        // clear password after change success
+        self.oldPasswordField.text = nil;
+        self.replacePasswordField.text = nil;
+        self.retypePasswordField.text = nil;
+
         [UIFunction showAlertWithMessage:NSLocalizedString(@"PROMPT_CHANGE_PASSWORD_SUCCESS", nil)];
         AppDelegate *appDelegate = [AppDelegate getAppdelegate];
         [appDelegate setCenterViewControllerWithIndex:0];
