@@ -41,7 +41,7 @@
         self.tableView.dataSource = self;
         [self.view addSubview:self.tableView];
 
-        self.serverArray = @[@"http://54.186.250.135:8080/"];
+        self.serverDict = @{@"EC2":@"http://54.186.250.135:8080/",@"US":@"http://192.168.1.7:8080/", @"XI'AN":@"http://192.168.1.206:8080/"};
     }
     return self;
 }
@@ -52,12 +52,13 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
 	// Do any additional setup after loading the view.
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *mainServerAddress = [userDefaults objectForKey:BaseURL];
+    NSString *mainServerAddress = [userDefaults objectForKey:BaseAddress];
     if (mainServerAddress == nil) {
         self.serverAddressTextView.text = BaseURL;
     }else {
         self.serverAddressTextView.text = mainServerAddress;
     }
+    [UIFunction removeMaskView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,7 +85,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1) {
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        [userDefaults setObject:self.serverAddressTextView.text forKey:BaseURL];
+        [userDefaults setObject:self.serverAddressTextView.text forKey:BaseAddress];
         [userDefaults synchronize];
         AppDelegate *appDelegate = [AppDelegate getAppdelegate];
         appDelegate.baseAddress = self.serverAddressTextView.text;
@@ -97,25 +98,34 @@
 #pragma mark - UITableViewDelegate,UITableViewDataSource 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.serverArray count];
+    return [self.serverDict count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"SettingViewTableCell";
 	UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 	}
     cell.textLabel.numberOfLines = 0;
-    cell.textLabel.text = [self.serverArray objectAtIndex:indexPath.row];
+
+    NSArray *serverLabels = [self.serverDict allKeys];
+
+    cell.textLabel.text = [serverLabels objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [self.serverDict objectForKey:cell.textLabel.text];
 
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *serverAddress = [self.serverArray objectAtIndex:indexPath.row];
+
+    NSArray *serverLabels = [self.serverDict allKeys];
+
+    NSString *labelString = [serverLabels objectAtIndex:indexPath.row];
+    
+    NSString *serverAddress = [self.serverDict objectForKey:labelString];
     if (serverAddress != nil) {
         self.serverAddressTextView.text = serverAddress;
         [self changeServerAddress];

@@ -13,6 +13,6 @@
 @property (nonatomic, strong) UITextView *serverAddressTextView;
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, strong) NSArray *serverArray;
+@property (nonatomic, strong) NSDictionary *serverDict;
 
 @end

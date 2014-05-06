@@ -385,7 +385,8 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
 
 + (NSURL*) getImageURL:(NSString*) imageString
 {
-    NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@image/%@/m", BaseURL, imageString]];
+    AppDelegate *appDeleagte = [AppDelegate getAppdelegate];
+    NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@image/%@/m", appDeleagte.baseAddress, imageString]];
     return imageURL;
 }
 

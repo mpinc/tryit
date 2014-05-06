@@ -343,7 +343,7 @@ NSString *const NearRestaurantCellIdentifier = @"NearRestaurantCellIdentifier";
 
     MMDrawerController *mmDrawerController = [[MMDrawerController alloc] initWithCenterViewController:restCheckViewController rightDrawerViewController:filterViewController];
     [mmDrawerController setRestorationIdentifier:@"MMDrawer"];
-    [mmDrawerController setMaximumRightDrawerWidth:160.0];
+    [mmDrawerController setMaximumRightDrawerWidth:220.0];
     [mmDrawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
     [mmDrawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
 

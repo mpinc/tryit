@@ -219,7 +219,7 @@
 - (void) readServerAddress
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *mainServerAddress = [userDefaults objectForKey:BaseURL];
+    NSString *mainServerAddress = [userDefaults objectForKey:BaseAddress];
     if (mainServerAddress == nil) {
         self.baseAddress = BaseURL;
     }else {

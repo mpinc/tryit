@@ -67,12 +67,12 @@
                         <action selector="touchPhoneButton:" destination="64w-xu-M8L" eventType="touchUpInside" id="fUf-Mc-NKw"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter By: All" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5d-ze-muQ">
-                    <rect key="frame" x="10" y="164" width="148" height="30"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter By: All" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="178" translatesAutoresizingMaskIntoConstraints="NO" id="d5d-ze-muQ">
+                    <rect key="frame" x="10" y="162" width="178" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="KjY-Rt-TiO"/>
-                        <constraint firstAttribute="width" constant="148" id="WwT-dd-Ziw"/>
+                        <constraint firstAttribute="width" constant="178" id="WwT-dd-Ziw"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -134,7 +134,7 @@
                 <constraint firstItem="GMn-2w-UwM" firstAttribute="top" secondItem="urf-cm-2MY" secondAttribute="bottom" constant="6" id="NbT-L6-B0l"/>
                 <constraint firstAttribute="trailing" secondItem="urf-cm-2MY" secondAttribute="trailing" id="PBr-90-6za"/>
                 <constraint firstItem="82k-GB-d89" firstAttribute="leading" secondItem="64w-xu-M8L" secondAttribute="leading" id="QTm-ka-wfc"/>
-                <constraint firstItem="GMn-2w-UwM" firstAttribute="leading" secondItem="d5d-ze-muQ" secondAttribute="trailing" constant="50" id="RxL-bl-qGA"/>
+                <constraint firstItem="GMn-2w-UwM" firstAttribute="leading" secondItem="d5d-ze-muQ" secondAttribute="trailing" constant="20" id="RxL-bl-qGA"/>
                 <constraint firstItem="GVS-iy-fRy" firstAttribute="top" secondItem="64w-xu-M8L" secondAttribute="top" constant="62" id="SrA-bH-kbo"/>
                 <constraint firstAttribute="trailing" secondItem="j7e-VE-Hyp" secondAttribute="trailing" constant="10" id="TfC-AL-7zu"/>
                 <constraint firstAttribute="bottom" secondItem="GMn-2w-UwM" secondAttribute="bottom" constant="8" id="Ub9-h8-1q1"/>
@@ -142,7 +142,7 @@
                 <constraint firstItem="urf-cm-2MY" firstAttribute="top" secondItem="64w-xu-M8L" secondAttribute="top" constant="110" id="XIB-Od-ro8"/>
                 <constraint firstItem="Xzh-US-R8u" firstAttribute="top" secondItem="64w-xu-M8L" secondAttribute="top" constant="77" id="XL7-gF-ApX"/>
                 <constraint firstItem="KuP-Lp-aHD" firstAttribute="top" secondItem="64w-xu-M8L" secondAttribute="top" constant="6" id="Yhy-93-oAO"/>
-                <constraint firstItem="d5d-ze-muQ" firstAttribute="top" secondItem="82k-GB-d89" secondAttribute="bottom" constant="8" id="Zg9-We-yB3"/>
+                <constraint firstItem="d5d-ze-muQ" firstAttribute="top" secondItem="82k-GB-d89" secondAttribute="bottom" constant="6" id="Zg9-We-yB3"/>
                 <constraint firstItem="KuP-Lp-aHD" firstAttribute="leading" secondItem="64w-xu-M8L" secondAttribute="leading" constant="10" id="bYf-TF-qdJ"/>
                 <constraint firstAttribute="bottom" secondItem="V0w-eb-ajR" secondAttribute="bottom" id="hE7-ig-yEn"/>
                 <constraint firstAttribute="trailing" secondItem="GVS-iy-fRy" secondAttribute="trailing" constant="10" id="tyx-fI-KDN"/>

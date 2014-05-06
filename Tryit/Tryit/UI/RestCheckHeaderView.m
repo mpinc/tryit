@@ -34,21 +34,17 @@
 }
 */
 
+- (void) awakeFromNib
+{
+    [self.changeButton rightImageAndLeftTitle:10];
+
+    self.statusLabel.layer.cornerRadius = 5.0;
+    self.checkInButton.layer.cornerRadius = 5.0;
+    self.filterLeabl.adjustsFontSizeToFitWidth = YES;
+}
+
 - (void) configRestItem:(RestaurantItem*) item
 {
-    /*
-     @property (nonatomic, strong) NSString *biz_id;
-     @property (nonatomic, strong) NSString *name;
-     @property (nonatomic, strong) NSString *address;
-     @property (nonatomic, strong) NSString *phone_no;
-     @property (nonatomic, strong) NSURL *restaurantImageUrl;
-     @property (nonatomic, strong) NSString *point;
-     @property (nonatomic, strong) NSMutableArray *productArray;
-     @property (nonatomic, strong) NSArray *couponArray;
-     @property (nonatomic) float distance;
-     @property (nonatomic) float latitude;
-     @property (nonatomic) float longitude;
-     */
     self.restItem = item;
     if (item.restaurantImageUrl != nil) {
         [self.restImageView fixSetImageWithURL:item.restaurantImageUrl placeholderImage:[UIImage imageNamed:@"default_image"]];
@@ -70,11 +66,6 @@
     }else {
         self.phoneButton.hidden = YES;
     }
-    
-    [self.changeButton rightImageAndLeftTitle:10];
-
-    self.statusLabel.layer.cornerRadius = 5.0;
-    self.checkInButton.layer.cornerRadius = 5.0;
 
     if (item.isOpen) {
         self.statusLabel.text = NSLocalizedString(@"PROMPT_OPEN_STATUS", nil);
