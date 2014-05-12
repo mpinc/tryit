@@ -15,7 +15,7 @@
     if (string == nil ||[string isKindOfClass:[NSNull class]]) {
         return YES;
     }else if([string respondsToSelector:@selector(isEqualToString:)]&&
-             ([string isEqualToString:@""]||[string isEqualToString:@"(null)"])){
+             ([string isEqualToString:@""]||[string isEqualToString:@"<null>"])){
         return YES;
     }
     return NO;

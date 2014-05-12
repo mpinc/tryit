@@ -12,12 +12,17 @@
 #import "CouponItem.h"
 #import "CouponCell.h"
 #import "ProductInfoCell.h"
+#import "IngredientInfoCell.h"
+#import "SingleInfoCell.h"
 #import "WebAPI.h"
 #import "UIFunction.h"
 #import "AppDelegate.h"
+#import "NSString+Utlity.h"
 
 NSString *const ProductInfoCellIdentifier = @"ProductInfoCellIdentifier";
 NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
+NSString *const IngredientInfoCellIdentifier = @"IngredientInfoCellIdentifier";
+NSString *const SingleInfoCellIdentifier = @"SingleInfoCellIdentifier";
 
 @interface CouponListViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -42,25 +47,40 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
+    // product cell
     self.itemArray = [NSMutableArray arrayWithObjects:ProductInfoCellIdentifier, nil];
+    // Ingredient cell
+    if (![NSString isEmptyString:self.productItem.ingredients]) {
+        [self.itemArray addObject:IngredientInfoCellIdentifier];
+    }
+    // calaries cell
+    if (self.productItem.calaries > 0) {
+        [self.itemArray addObject:SingleInfoCellIdentifier];
+    }
+    // spiciness scale cell
+    [self.itemArray addObject:SingleInfoCellIdentifier];
 
     [self.tableView registerNib:[UINib nibWithNibName:@"ProductInfoCell" bundle:nil] forCellReuseIdentifier:ProductInfoCellIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:@"CouponCell" bundle:nil] forCellReuseIdentifier:CouponCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"IngredientInfoCell" bundle:nil] forCellReuseIdentifier:IngredientInfoCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"SingleInfoCell" bundle:nil] forCellReuseIdentifier:SingleInfoCellIdentifier];
 
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 213)];
     [imageView fixSetImageWithURL:self.productItem.img_url placeholderImage:[UIImage imageNamed:@"default_image"]];
     self.tableView.tableHeaderView = imageView;
 
-    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.tableView.bounds];
-    [bgImageView setImage:[UIImage imageNamed:@"food_bg"]];
-    [self.tableView setBackgroundView:bgImageView];
+//    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.tableView.bounds];
+//    [bgImageView setImage:[UIImage imageNamed:@"food_bg"]];
+//    [self.tableView setBackgroundView:bgImageView];
 
     WEAKSELF_SC
     [WebAPI getpromoWithProduct:self.productItem success:^(NSMutableArray *array) {
         CouponItem *couponItem = (CouponItem*)[array lastObject];
-        weakSelf_SC.productItem.selectCoupon = couponItem;
-        [weakSelf_SC.itemArray addObject:CouponCellIdentifier];
-        [weakSelf_SC.tableView reloadData];
+        if (couponItem != nil) {
+            weakSelf_SC.productItem.selectCoupon = couponItem;
+            [weakSelf_SC.itemArray insertObject:CouponCellIdentifier atIndex:1];
+            [weakSelf_SC.tableView reloadData];
+        }
     } failure:^{
     }];
 
@@ -89,17 +109,16 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
-    switch (indexPath.row) {
-        case 0:{
-            cell = [self getProductInfoCellWithTable:tableView];
-            break;
-        }
-        case 1:{
-            cell = [self getCouponCellWithTable:tableView];
-            break;
-        }
-        default:
-            break;
+    NSString *identifier = self.itemArray[indexPath.row];
+
+    if ([identifier isEqualToString:ProductInfoCellIdentifier]) {
+        cell = [self getProductInfoCellWithTable:tableView];
+    }else if([identifier isEqualToString:CouponCellIdentifier]){
+        cell = [self getCouponCellWithTable:tableView];
+    }else if([identifier isEqualToString:IngredientInfoCellIdentifier]){
+        cell = [self getIngredientInfoCellWithTable:tableView];
+    }else {
+        cell = [self getSingleInfoCellWithTable:tableView WithIndexPath:indexPath];
     }
     return cell;
 }
@@ -118,17 +137,43 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
     return cell;
 }
 
+- (UITableViewCell*) getIngredientInfoCellWithTable:(UITableView*)tableView
+{
+    IngredientInfoCell *cell =  [tableView dequeueReusableCellWithIdentifier:IngredientInfoCellIdentifier];
+    [cell setIngredientInfo:self.productItem];
+    return cell;
+}
+
+// if this cell is last one, must be Spiciness scale cell
+- (UITableViewCell*) getSingleInfoCellWithTable:(UITableView*)tableView WithIndexPath:(NSIndexPath *) indexPath
+{
+    SingleInfoCell *cell =  [tableView dequeueReusableCellWithIdentifier:SingleInfoCellIdentifier];
+
+    if (indexPath.row == (self.itemArray.count-1)) {
+        [cell setSpicinessScaleInfo:self.productItem];
+    }else {
+        [cell setCalariesInfo:self.productItem];
+    }
+    return cell;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int cellHeight = 80;
-    switch (indexPath.row) {
-        case 0:{
-            cellHeight = 80; break;}
-        case 1:{
-            cellHeight = 120; break;}
-        default:
-            break;
+
+    NSString *identifier = self.itemArray[indexPath.row];
+
+    int cellHeight = 44;
+
+    if ([identifier isEqualToString:ProductInfoCellIdentifier]) {
+        cellHeight = 70;
+    }else if([identifier isEqualToString:CouponCellIdentifier]){
+        cellHeight = 100;
+    }else if([identifier isEqualToString:IngredientInfoCellIdentifier]){
+        cellHeight = 70;
+    }else {
+        cellHeight = 44;
     }
+    cellHeight = cellHeight + [self getFixHeightForIndexPath:indexPath];
     return cellHeight;
 }
 
@@ -140,6 +185,37 @@ NSString *const CouponCellIdentifier = @"CouponCellIdentifier";
         [couponViewController configByProductItem];
         [self.navigationController pushViewController:couponViewController animated:YES];
     }
+}
+
+- (int) getFixHeightForIndexPath:(NSIndexPath *) indexPath
+{
+    NSString *identifier = self.itemArray[indexPath.row];
+    float fixheight = 0;
+    NSString *fixString = nil;
+    if ([identifier isEqualToString:ProductInfoCellIdentifier]) {
+        fixString = self.productItem.description;
+    }else if ([identifier isEqualToString:CouponCellIdentifier]) {
+        fixString = self.productItem.selectCoupon.couPonDescription;
+    }else if ([identifier isEqualToString:IngredientInfoCellIdentifier]) {
+        fixString = self.productItem.ingredients;
+    }
+
+    CGSize stringSize = CGSizeZero;
+    if ([identifier isEqualToString:CouponCellIdentifier]) {
+        stringSize = [self getStringHeiWithString:fixString Width:267];
+    }else {
+        stringSize = [self getStringHeiWithString:fixString Width:300];
+    }
+    if (stringSize.height > 20) {
+        fixheight = stringSize.height - 20;
+    }
+    return fixheight;
+}
+
+- (CGSize) getStringHeiWithString:(NSString *)string Width:(float) width
+{
+    CGSize stringSize = [string sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:CGSizeMake(width, 300)];
+    return stringSize;
 }
 
 @end

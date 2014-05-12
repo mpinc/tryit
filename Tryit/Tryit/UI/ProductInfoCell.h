@@ -5,6 +5,8 @@
 //  Created by Mars on 4/10/14.
 //  Copyright (c) 2014 Sktlab. All rights reserved.
 //
+// Mutable Line
+/* Show a title in left, a green lable in right, and a description in bottom*/
 
 #import <UIKit/UIKit.h>
 #import "ProductItem.h"

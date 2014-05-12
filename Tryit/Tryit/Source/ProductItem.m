@@ -37,6 +37,24 @@
         if ([NSString isEmptyString:self.name]) {
             self.name = [NSString ToString:dict[@"name"]];
         }
+
+        /*
+         // ingredients
+         @property (nonatomic, strong) NSString *ingredients;
+         // calaries
+         @property (nonatomic) int calaries;
+         // Spiciness Scale
+         @property (nonatomic) int spicinessScale;
+         */
+        self.ingredients = [NSString ToString:dict[@"ingredient"]];
+        id calorie = dict[@"calorie"];
+        if (![calorie isKindOfClass:[NSNull class]]) {
+            self.calaries = [calorie intValue];
+        }
+        id spiciness = dict[@"spiciness"];
+        if (![spiciness isKindOfClass:[NSNull class]]) {
+            self.spicinessScale = [spiciness intValue];
+        }
     }
     return self;
 

@@ -1,14 +1,14 @@
 //
-//  ProductInfoCell.m
-//  Tryit
+//  IngredientInfoCell.m
+//  TruMenu
 //
-//  Created by Mars on 4/10/14.
+//  Created by Mars on 5/8/14.
 //  Copyright (c) 2014 Sktlab. All rights reserved.
 //
 
-#import "ProductInfoCell.h"
+#import "IngredientInfoCell.h"
 
-@implementation ProductInfoCell
+@implementation IngredientInfoCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -28,14 +28,12 @@
 
 - (void) awakeFromNib
 {
-    [self.nameLabel setAdjustsFontSizeToFitWidth:YES];
+    self.titleLabel.text = @"Ingredients";
 }
 
-- (void) setProductItem:(ProductItem *) item
+- (void) setIngredientInfo:(ProductItem *)item
 {
-    self.nameLabel.text = item.name;
-    self.descriptionLabel.text = item.description;
-    self.priceLabel.text = [NSString stringWithFormat:@"$%@", item.price];
+    self.descriptLabel.text = item.ingredients;
 }
 
 @end

@@ -1,14 +1,14 @@
 //
-//  ProductInfoCell.m
-//  Tryit
+//  SingleInfoCell.m
+//  TruMenu
 //
-//  Created by Mars on 4/10/14.
+//  Created by Mars on 5/8/14.
 //  Copyright (c) 2014 Sktlab. All rights reserved.
 //
 
-#import "ProductInfoCell.h"
+#import "SingleInfoCell.h"
 
-@implementation ProductInfoCell
+@implementation SingleInfoCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -26,16 +26,16 @@
     // Configure the view for the selected state
 }
 
-- (void) awakeFromNib
+- (void) setCalariesInfo:(ProductItem *) item
 {
-    [self.nameLabel setAdjustsFontSizeToFitWidth:YES];
+    self.nameLabel.text = @"Calaries";
+    self.countLabel.text = [NSString stringWithFormat:@"%d cal", item.calaries];
 }
 
-- (void) setProductItem:(ProductItem *) item
+- (void) setSpicinessScaleInfo:(ProductItem *) item
 {
-    self.nameLabel.text = item.name;
-    self.descriptionLabel.text = item.description;
-    self.priceLabel.text = [NSString stringWithFormat:@"$%@", item.price];
+    self.nameLabel.text = @"Spiciness Scale";
+    self.countLabel.text = [NSString stringWithFormat:@"%d out of 5", item.spicinessScale];
 }
 
 @end

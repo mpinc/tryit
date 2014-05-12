@@ -68,6 +68,10 @@
 		41C46B2618BAE011006E2B80 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C46B2418BAE011006E2B80 /* MenuViewController.xib */; };
 		41C46B2B18BAE485006E2B80 /* DishesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C46B2918BAE485006E2B80 /* DishesViewController.m */; };
 		41C46B2C18BAE485006E2B80 /* DishesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C46B2A18BAE485006E2B80 /* DishesViewController.xib */; };
+		41C4A25E191B638500F29383 /* SingleInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C4A25D191B638500F29383 /* SingleInfoCell.xib */; };
+		41C4A264191B64F500F29383 /* SingleInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C4A263191B64F500F29383 /* SingleInfoCell.m */; };
+		41C4A267191B669A00F29383 /* IngredientInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C4A266191B669A00F29383 /* IngredientInfoCell.m */; };
+		41C4A269191B66BC00F29383 /* IngredientInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C4A268191B66BC00F29383 /* IngredientInfoCell.xib */; };
 		41D79AC418E01123001566A3 /* NSString+Utlity.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D79AC318E01123001566A3 /* NSString+Utlity.m */; };
 		41D79AC718E01324001566A3 /* UIButtonExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D79AC618E01324001566A3 /* UIButtonExt.m */; };
 		41EA4F6318D15F7400915A52 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EA4F6118D15F7400915A52 /* LocationViewController.m */; };
@@ -207,6 +211,12 @@
 		41C46B2818BAE485006E2B80 /* DishesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DishesViewController.h; path = UI/DishesViewController.h; sourceTree = "<group>"; };
 		41C46B2918BAE485006E2B80 /* DishesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DishesViewController.m; path = UI/DishesViewController.m; sourceTree = "<group>"; };
 		41C46B2A18BAE485006E2B80 /* DishesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DishesViewController.xib; path = UI/DishesViewController.xib; sourceTree = "<group>"; };
+		41C4A25D191B638500F29383 /* SingleInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SingleInfoCell.xib; path = UI/SingleInfoCell.xib; sourceTree = "<group>"; };
+		41C4A262191B64F500F29383 /* SingleInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SingleInfoCell.h; path = UI/SingleInfoCell.h; sourceTree = "<group>"; };
+		41C4A263191B64F500F29383 /* SingleInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SingleInfoCell.m; path = UI/SingleInfoCell.m; sourceTree = "<group>"; };
+		41C4A265191B669A00F29383 /* IngredientInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IngredientInfoCell.h; path = UI/IngredientInfoCell.h; sourceTree = "<group>"; };
+		41C4A266191B669A00F29383 /* IngredientInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IngredientInfoCell.m; path = UI/IngredientInfoCell.m; sourceTree = "<group>"; };
+		41C4A268191B66BC00F29383 /* IngredientInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IngredientInfoCell.xib; path = UI/IngredientInfoCell.xib; sourceTree = "<group>"; };
 		41D79AC218E01123001566A3 /* NSString+Utlity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utlity.h"; sourceTree = "<group>"; };
 		41D79AC318E01123001566A3 /* NSString+Utlity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utlity.m"; sourceTree = "<group>"; };
 		41D79AC518E01324001566A3 /* UIButtonExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonExt.h; sourceTree = "<group>"; };
@@ -358,6 +368,12 @@
 				4144CD8818F6977C0037726C /* ProductInfoCell.h */,
 				4144CD8918F6977C0037726C /* ProductInfoCell.m */,
 				4144CD8B18F6978E0037726C /* ProductInfoCell.xib */,
+				41C4A265191B669A00F29383 /* IngredientInfoCell.h */,
+				41C4A266191B669A00F29383 /* IngredientInfoCell.m */,
+				41C4A268191B66BC00F29383 /* IngredientInfoCell.xib */,
+				41C4A262191B64F500F29383 /* SingleInfoCell.h */,
+				41C4A263191B64F500F29383 /* SingleInfoCell.m */,
+				41C4A25D191B638500F29383 /* SingleInfoCell.xib */,
 			);
 			name = ProductInfo;
 			sourceTree = "<group>";
@@ -701,11 +717,13 @@
 				41F6684818C6F9D900A0A260 /* ContactCell.xib in Resources */,
 				41FB012418BB323700E852B5 /* ProfileViewController.xib in Resources */,
 				41287E8C18CEE42D000F9F27 /* SignUpViewController.xib in Resources */,
+				41C4A25E191B638500F29383 /* SingleInfoCell.xib in Resources */,
 				41C46B2C18BAE485006E2B80 /* DishesViewController.xib in Resources */,
 				41287E8718CEE40A000F9F27 /* SignInViewController.xib in Resources */,
 				4144CD8C18F6978E0037726C /* ProductInfoCell.xib in Resources */,
 				41FD5D1818D82A4200172DB9 /* UserRestCell.xib in Resources */,
 				41AE9E901908ED320087AA68 /* ChangePassViewController.xib in Resources */,
+				41C4A269191B66BC00F29383 /* IngredientInfoCell.xib in Resources */,
 				412371F018D2A287001DE23E /* CheckSectionView.xib in Resources */,
 				41FD5D1E18D8561500172DB9 /* UserRestViewController.xib in Resources */,
 				412D410618DC4F04007E81F7 /* Images.xcassets in Resources */,
@@ -790,11 +808,13 @@
 				41C2BC7D18BB7E9200686CE8 /* DishesCell.m in Sources */,
 				419985FC18E95420008A1B37 /* CreateCouponItem.m in Sources */,
 				412371EC18D2A1DF001DE23E /* CheckSectionView.m in Sources */,
+				41C4A267191B669A00F29383 /* IngredientInfoCell.m in Sources */,
 				412FBD4718BDEA14009EF882 /* WebAPI.m in Sources */,
 				41F6684618C6F7B300A0A260 /* ContactCell.m in Sources */,
 				41287E8618CEE40A000F9F27 /* SignInViewController.m in Sources */,
 				41AA8C6018BC3C830081EA29 /* FitViewController.m in Sources */,
 				41EA4F6E18D1B7CB00915A52 /* RestaurantAnnotation.m in Sources */,
+				41C4A264191B64F500F29383 /* SingleInfoCell.m in Sources */,
 				41EA4F6918D1998200915A52 /* NearRestaurantCell.m in Sources */,
 				412371F318D2A72E001DE23E /* ProductCell.m in Sources */,
 				41D79AC718E01324001566A3 /* UIButtonExt.m in Sources */,
